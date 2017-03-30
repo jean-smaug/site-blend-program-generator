@@ -1,5 +1,10 @@
 {
-  "ecmaVersion": 2017,
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+      }
+  }
   "extends": "airbnb",
   "env": {
     "browser": true
