@@ -56,6 +56,10 @@ module.exports = {
     ]
   },
 
+  resolve: {
+    extensions: [".jsx", ".js"]
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally

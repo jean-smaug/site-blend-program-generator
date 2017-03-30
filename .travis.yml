@@ -1,11 +1,13 @@
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 cache:
   yarn: true
-
 script:
-  - yarn lint
-  - yarn test
-  - yarn build
+- yarn lint
+- yarn test
+- yarn build
+notifications:
+  slack:
+    rooms:
+      secure: W9+Tr9YWIk8ALU2N+2UjUOz/Tswu5i38BAMWp8nEq31gNcCfeEtxU5JkdkzaCMIrOR6FXnVOAt1VQTn34Kh/d9dGYDB2CUx4uZX925O59NipVHZav0mgiZmujCR1uAcQGXPCTHblC2jBrpMce5X5nuO6YPPeFufkS3GqIUIEe+DbSsrp+Cehzjl+9nAX6DUd9xLPGBMcHNbeu/hBt1A/8HxLxZoG4N3XKcDD5NJtobPlqaQeTiipPbaGB6nMhajnOj+msABj5P3hR9iV2jtprT3CgVC4a7ZpPj6CgVHnKli9eAldzurGBPFejADaK3Nik51GaWby5mBuNJ6flaDIel6j+T4Wdamu0RtuIubOEVa5f6LOTZwZIcyzslQwWiw6ZK5TiZFBtDMZ0BzE8bS2jqy3q2Cm8cpuTjOuecx1CEE3weU7FeBmV4lJSInfQVY5KPzoVxiuSZRueNqp1/sC1+dwIgs1QwVJHNJhBcu9c/zbdx7s+zfKLllSHpw0njDSFhwhS7qrmSEzJqhml4+6UIMfw7ac0UQ1WT80UYgBoIwXn+D+6CypnvfBcAIxCPQ/yQorhukngszIZT08MCeStDu/uo8iSV/uXjNLPkMXV9QxajvgHmenUB83yG0Ne62rIOttnNlN+xlF0iYkzMcLd67rH2+yXNL9mh/2bxQO9qY=
