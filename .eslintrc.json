@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "plugins": [
+        "prettier",
+        "react",
+        "jsx-a11y"
+    ]
+}
