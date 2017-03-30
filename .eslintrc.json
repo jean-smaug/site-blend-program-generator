@@ -4,6 +4,8 @@
     "browser": true
   },
   "plugins": [
-        "prettier"
+        "prettier",
+        "react",
+        "jsx-a11y"
     ]
 }
