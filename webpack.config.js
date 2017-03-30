@@ -55,6 +55,10 @@ module.exports = {
       // },
     ]
   },
+  
+  resolve: {
+    extensions: ['.jsx','.js', '.json'] 
+  },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
