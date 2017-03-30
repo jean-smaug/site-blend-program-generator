@@ -5,11 +5,12 @@
   "author": "Maxime Blanc <maximeblanc.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
+    "build": "webpack",
     "dev": "webpack-dev-server",
-    "lint": "eslint . --fix",
+    "lint": "eslint src/**/*.js src/**/*.jsx --fix",
     "tdd": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -40,8 +41,7 @@
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-prettier": "^2.0.1",
     "husky": "^0.13.3",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.0",

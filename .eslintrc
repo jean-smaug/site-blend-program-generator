@@ -2,6 +2,9 @@
   "ecmaVersion": 2017,
   "extends": "airbnb",
   "env": {
-    "browser": true  
-  }
+    "browser": true
+  },
+  "plugins": [
+        "prettier"
+    ]
 }
