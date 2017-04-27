@@ -8,7 +8,7 @@
         "build": "webpack",
         "dev": "webpack-dev-server",
         "lint": "eslint src/**/*.jsx . --fix",
-        "tdd": "jest --watch",
+        "tdd": "yarn test -- --watch",
         "test": "jest"
     },
     "dependencies": {
