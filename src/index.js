@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 
 import { AppContainer } from 'react-hot-loader';
 // AppContainer is a necessary wrapper component for HMR
@@ -9,7 +10,13 @@ import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
 import reducers from './reducers';
 
-const store = createStore(reducers);
+const conferencesTypes = ['tech', 'blend', 'markenting', 'design'];
+
+const store = createStore(
+  reducers,
+  { conferencesTypes },
+  applyMiddleware(logger),
+);
 
 /* eslint-disable */
 const render = Component => {

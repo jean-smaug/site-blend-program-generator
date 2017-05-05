@@ -8,7 +8,7 @@ const Select = ({ conferenceTypes }) => (
 );
 
 Select.propTypes = {
-  conferenceTypes: PropTypes.array,
+  conferenceTypes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Select;

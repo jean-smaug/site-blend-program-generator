@@ -6,7 +6,7 @@ import conferences from '../conferences.json';
 const App = () => (
   <div>
     <h2>Hello tvds</h2>
-    <SelectList conferencesTypes={conferences} />
+    <SelectList />
   </div>
 );
 
