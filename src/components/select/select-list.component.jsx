@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Select = ({ conferenceTypes }) => (
+const Select = ({ conferencesTypes }) => (
   <select>
-    {conferenceTypes.map((conferenceType, key) => (
-      <option key={key}>{conferenceType}</option>
-    ))}
+    {conferencesTypes.map(({ name, key }) => <option key={key}>{name}</option>)}
   </select>
 );
 
-Select.PropTypes = {
-  conferenceTypes: PropTypes.array,
-};
+// Select.PropTypes = {
+//   conferenceTypes: PropTypes.array,
+// };
 
 export default Select;

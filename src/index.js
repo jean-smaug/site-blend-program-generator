@@ -13,17 +13,14 @@ const store = createStore(reducers);
 
 /* eslint-disable */
 const render = Component => {
-    ReactDOM.render( <
-        AppContainer >
-        <
-        Provider store = { store } >
-        <
-        Component / >
-        <
-        /Provider> <
-        /AppContainer>,
-        document.getElementById("app")
-    );
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    document.getElementById("app")
+  );
 };
 /* eslint-enable */
 
@@ -31,7 +28,7 @@ render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept('./components/App', () => {
-        render(App);
-    });
+  module.hot.accept('./components/App', () => {
+    render(App);
+  });
 }

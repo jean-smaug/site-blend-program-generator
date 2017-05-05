@@ -40,6 +40,7 @@ module.exports = {
 
     publicPath: '/',
     // match the output `publicPath`
+    host: '0.0.0.0',
   },
 
   module: {

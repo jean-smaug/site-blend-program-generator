@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 const Select = ({ conferenceTypes }) => (
   <select>
-    {conferenceTypes.map((conferenceType, key) => (
-      <option key={key}>{conferenceType}</option>
-    ))}
+    {conferenceTypes.map(({ name, key }) => <option key={key}>{name}</option>)}
   </select>
 );
 
-Select.PropTypes = {
+Select.propTypes = {
   conferenceTypes: PropTypes.array,
 };
 

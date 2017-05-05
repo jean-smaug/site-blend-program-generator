@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Select from './select/select.component';
+import SelectList from './select/select-list.component';
+import conferences from '../conferences.json';
 
 const App = () => (
   <div>
     <h2>Hello tvds</h2>
-    <Select />
+    <SelectList conferencesTypes={conferences} />
   </div>
 );
 
