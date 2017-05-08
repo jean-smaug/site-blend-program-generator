@@ -8,13 +8,11 @@ import { AppContainer } from 'react-hot-loader';
 // AppContainer is a necessary wrapper component for HMR
 
 import App from './components/App';
-import reducers from './reducers';
-
-const conferencesTypes = ['tech', 'blend', 'markenting', 'design'];
+import reducers from './reducers/reducers';
 
 const store = createStore(
   reducers,
-  { conferencesTypes },
+  {},
   applyMiddleware(logger),
 );
 
