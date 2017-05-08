@@ -1,7 +1,7 @@
 
 const initialState = {
   conferenceTypes: [
-      { key: 'tech', name: 'Techo' },
+      { key: 'tech', name: 'Techno' },
       { key: 'blend', name: 'Blend' },
       { key: 'market', name: 'Marketing' },
       { key: 'design', name: 'Design' },
@@ -11,7 +11,10 @@ const initialState = {
 export default function conferences(state = initialState, action) {
   switch (action.type) {
     case 'SELECT_TYPE':
-      return { conferenceTypes: state.conferenceTypes.splice(action.choix, 1), ...state };
+      return {
+        ...state,
+        conferenceTypes: state.conferenceTypes.filter(element => element.key !== action.payload),
+      };
     default:
       return state;
   }

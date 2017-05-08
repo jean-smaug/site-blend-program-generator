@@ -13,7 +13,7 @@ class MySelect extends React.Component {
       <select id="select" onChange={this.props.handleChange} >
         {
           this.props.datas.map(({ name, key }, index) =>
-            <option value={index} key={key}>{name}</option>)
+            <option value={key} key={key}>{name}</option>)
         }
       </select>
     );

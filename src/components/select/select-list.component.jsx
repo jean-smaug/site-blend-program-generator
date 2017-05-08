@@ -3,23 +3,25 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Select from './select.component';
 
+class SelectList extends React.Component{
+  render() {
+    console.log("render props", this.props)
 
-const SelectList = (props) => {
-  /* On peut rajouter les selects voulus en lui passant les datas que l'on veut */
-  return (
-    <div>
-      <Select datas={props.conferenceTypes} />
-    </div>
-  );
-};
+    return (
+      <div>
+        <Select datas={this.props.conferences.conferenceTypes} />
+      </div>
+    );
+  }
+}
 
 SelectList.propTypes = {
-  conferenceTypes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  conferences: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
-    conferenceTypes: state.conferences.conferenceTypes,
+    conferences: state.conferences,
   };
 };
 
