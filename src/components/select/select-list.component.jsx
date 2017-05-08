@@ -8,23 +8,21 @@ const SelectList = (props) => {
   /* On peut rajouter les selects voulus en lui passant les datas que l'on veut */
   return (
     <div>
-      <Select datas={props.conferencesTypes} />
-      <Select datas={props.conferencesTypes} />
+      <Select datas={props.conferenceTypes} />
     </div>
   );
 };
 
 SelectList.propTypes = {
-  conferencesTypes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  conferenceTypes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    conferencesTypes: state.typeConferences,
+    conferenceTypes: state.conferences.conferenceTypes,
   };
 };
 
-const MSTPSelect = connect(mapStateToProps)(SelectList);
+const MSTPSelectList = connect(mapStateToProps)(SelectList);
 
-export default MSTPSelect;
+export default MSTPSelectList;

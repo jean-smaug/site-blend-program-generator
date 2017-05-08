@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import typeConferences from './typeConferences';
+import conferences from './conferences';
 
 const rootReducer = combineReducers({
-  typeConferences,
+  conferences,
 });
 
 export default rootReducer;
