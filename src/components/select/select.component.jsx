@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 import { choixType } from '../../actions/typeConferencesAction';
 
 class MySelect extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <select id="select" onChange={this.props.handleChange} >
