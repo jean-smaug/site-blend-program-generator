@@ -14,17 +14,17 @@ export default function formulaire(state = initialState, action) {
       return {
         ...state,
         conferenceTypes: state.conferenceTypes.map(
-          (conf, index) => (index === action.payload.id) ?
+          (conf, index) => ((index === action.payload.id) ?
             { ...conf, selected: action.payload.checked }
-          : conf),
+          : conf)),
       };
     case 'SELECT_LEVEL':
       return {
         ...state,
         conferenceTypes: state.conferenceTypes.map(
-          (conf, index) => (index === action.payload.id) ?
+          (conf, index) => ((index === action.payload.id) ?
             { ...conf, level: action.payload.choix }
-            : conf),
+            : conf)),
       };
     default:
       return state;
