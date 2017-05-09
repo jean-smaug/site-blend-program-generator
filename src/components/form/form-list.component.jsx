@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import FormType from './form-types.component';
+import FormType from './form-types/form-types.component';
 
 class FormList extends React.Component {
   render() {

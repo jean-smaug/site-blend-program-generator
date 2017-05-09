@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { choixType, choixLevel } from '../../actions/FormAction';
+import { choixType, choixLevel } from '../../../actions/FormAction';
 
 class CheckBoxType extends React.Component {
   constructor(props) {
@@ -71,7 +71,7 @@ CheckBoxType.propTypes = {
   handleChangeLevel: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
   level: PropTypes.string.isRequired,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
