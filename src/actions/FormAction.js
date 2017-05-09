@@ -7,7 +7,7 @@ export const choixType = (id, checked) => {
       checked,
     },
   };
-}
+};
 
 export const choixLevel = (id, choix) => {
   return {
@@ -17,5 +17,15 @@ export const choixLevel = (id, choix) => {
       choix,
     },
   };
-}
+};
+
+export const choixMotClef = (id, checked) => {
+  return {
+    type: 'SELECT_MOT_CLEF',
+    payload: {
+      id,
+      checked,
+    },
+  };
+};
 

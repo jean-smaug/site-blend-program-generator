@@ -6,6 +6,12 @@ const initialState = {
     { key: 'market', name: 'Marketing', selected: false, level: 'beginner' },
     { key: 'design', name: 'Design', selected: false, level: 'beginner' },
   ],
+  motsClefs: [
+    { name: 'Php', selected: false },
+    { name: 'Javascript', selected: false },
+    { name: 'React', selected: false },
+    { name: 'Prestashop', selected: false },
+  ],
 };
 
 export default function formulaire(state = initialState, action) {
@@ -16,7 +22,7 @@ export default function formulaire(state = initialState, action) {
         conferenceTypes: state.conferenceTypes.map(
           (conf, index) => ((index === action.payload.id) ?
             { ...conf, selected: action.payload.checked }
-          : conf)),
+            : conf)),
       };
     case 'SELECT_LEVEL':
       return {
@@ -25,6 +31,14 @@ export default function formulaire(state = initialState, action) {
           (conf, index) => ((index === action.payload.id) ?
             { ...conf, level: action.payload.choix }
             : conf)),
+      };
+    case 'SELECT_MOT_CLEF':
+      return {
+        ...state,
+        motsClefs: state.motsClefs.map(
+          (mot, index) => ((index === action.payload.id) ?
+            { ...mot, selected: action.payload.checked }
+            : mot)),
       };
     default:
       return state;
