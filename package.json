@@ -1,44 +1,45 @@
 {
-    "name": "site-blend-program-generator",
-    "version": "1.0.0",
-    "repository": "https://github.com/the-smaug/site-blend-program-generator.git",
-    "author": "Maxime Blanc <maximeblanc.dev@gmail.com>",
-    "license": "MIT",
-    "scripts": {
-        "build": "webpack",
-        "dev": "webpack-dev-server",
-        "lint": "eslint src/**/*.jsx . --fix",
-        "tdd": "yarn test -- --watch",
-        "test": "jest"
-    },
-    "dependencies": {
-        "babel-core": "^6.24.0",
-        "babel-loader": "^6.4.1",
-        "babel-preset-env": "^1.4.0",
-        "babel-preset-react": "^6.23.0",
-        "enzyme": "^2.8.2",
-        "prop-types": "^15.5.8",
-        "react": "^15.5.4",
-        "react-dom": "^15.5.4",
-        "react-hot-loader": "3.0.0-beta.6",
-        "react-redux": "^5.0.4",
-        "redux": "^3.6.0"
-    },
-    "devDependencies": {
-        "babel-jest": "^19.0.0",
-        "eslint": "^3.19.0",
-        "eslint-config-airbnb": "^14.1.0",
-        "eslint-loader": "^1.7.0",
-        "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-jest": "^19.0.1",
-        "eslint-plugin-jsx-a11y": "^4.0.0",
-        "eslint-plugin-prettier": "^2.0.1",
-        "eslint-plugin-react": "^6.10.3",
-        "jest": "^19.0.2",
-        "jest-enzyme": "^3.0.1",
-        "react-test-renderer": "^15.5.4",
-        "redux-logger": "^3.0.1",
-        "webpack": "^2.3.2",
-        "webpack-dev-server": "^2.4.2"
-    }
+  "name": "site-blend-program-generator",
+  "version": "1.0.0",
+  "repository": "https://github.com/the-smaug/site-blend-program-generator.git",
+  "author": "Maxime Blanc <maximeblanc.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "lint": "eslint src/**/*.jsx . --fix",
+    "tdd": "yarn test -- --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.23.0",
+    "enzyme": "^2.8.2",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.3",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^3.0.1",
+    "react-test-renderer": "^15.5.4",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
 }
