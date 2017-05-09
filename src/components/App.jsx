@@ -1,11 +1,11 @@
 import React from 'react';
 
-import SelectList from './select/select-list.component';
+import FormList from './form/form-list.component';
 
 const App = () => (
   <div>
     <h2>Hello tvds</h2>
-    <SelectList />
+    <FormList />
   </div>
 );
 

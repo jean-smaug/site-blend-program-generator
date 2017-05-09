@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import conferences from './conferences';
+import formulaire from './formulaire';
 
 const rootReducer = combineReducers({
-  conferences,
+  formulaire,
 });
 
 export default rootReducer;
