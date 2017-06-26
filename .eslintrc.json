@@ -1,12 +1,15 @@
 {
-    "extends": ["airbnb", "plugin:jest/recommended"],
-    "env": {
-        "browser": true,
-        "jest/globals": true
-    },
-    "plugins": [
-        "react",
-        "jsx-a11y",
-        "jest"
-    ]
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "jest"
+  ]
 }
