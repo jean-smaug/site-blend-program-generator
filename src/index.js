@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 
 import { AppContainer } from 'react-hot-loader';
 // AppContainer is a necessary wrapper component for HMR
@@ -25,3 +26,11 @@ if (module.hot) {
     render(App);
   });
 }
+=======
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+>>>>>>> 16e79f8... init
