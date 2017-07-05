@@ -10,6 +10,7 @@
     "redux": "^3.7.1"
   },
   "devDependencies": {
+    "flow-bin": "^0.49.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
