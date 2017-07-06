@@ -1,14 +1,14 @@
 
 const initialState = {
-  motsClef : []
+  keywords : []
 }
 
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_MOTCLEF' :
+    case 'ADD_KEYWORD' :
       return {
         ...state,
-        motsClef : [...state.motsClef, action.data.mot]
+        keywords : [...state.keywords, action.data.word]
       }
 
     default:
