@@ -1,9 +1,9 @@
 
-export function addMotClef(mot) {
+export const addKeyword = (word) => {
   return {
-    type: 'ADD_MOTCLEF',
+    type: 'ADD_KEYWORD',
     data: {
-      mot : mot
+      word: word
     }
   }
 }

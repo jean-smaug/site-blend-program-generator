@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   componentDidMount () {
     console.log(this.props.state.form);
-    this.props.addMotClef("testaha");
+    this.props.addKeyword("testaha");
 
   }
 
