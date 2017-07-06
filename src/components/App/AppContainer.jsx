@@ -2,6 +2,7 @@ import { connect }      from 'react-redux'
 import * as formActions  from '../../actions/formActions'
 import App              from './App'
 
+
 const mapStateToProps = (state) => () => ({
   state: { form: state.form }
 });
@@ -11,7 +12,6 @@ const mapDispatchToProps = (dispatch) => () => ({
     dispatch(formActions.addKeyword(word))
   }
 });
-
 
 const AppContainer = connect(
   mapStateToProps,
