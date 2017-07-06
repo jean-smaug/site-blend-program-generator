@@ -7,8 +7,8 @@ const mapStateToProps = (state) => () => ({
 });
 
 const mapDispatchToProps = (dispatch) => () => ({
-  addKeyword: (mot) => {
-    dispatch(formActions.addKeyword(mot))
+  addKeyword: (word) => {
+    dispatch(formActions.addKeyword(word))
   }
 });
 
