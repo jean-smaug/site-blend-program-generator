@@ -21,10 +21,14 @@ export const filterByLevel = (data, level) =>
  * @param {Object} data
  * @param {Array} filters
  */
-export const filterByLevelAndDomain = (data, filters = []) => {
-  return _.filter(data, item => {
-    return _.forEach(filters, filter => {
-      return filter.domain === item.domain && filter.level === item.level;
-    });
+export const filterByLevelAndDomain = (data, filters = []) =>
+  _.filter(data, item => {
+    return _.includes(
+      _.map(filters, filter => {
+        if (filter.domain === item.domain && filter.level === item.level) {
+          return true;
+        }
+      }),
+      true
+    );
   });
-};

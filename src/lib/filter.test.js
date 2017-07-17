@@ -17,8 +17,18 @@ it("filter conferences by domain", () => {
 });
 
 it("filter conferences by domain and level", () => {
-  expect(filterByLevelAndDomain(data, "tech").length).toBe(11);
-  expect(filterByLevelAndDomain(data, "blend").length).toBe(10);
-});
+  const filters = [
+    {
+      level: "noob",
+      domain: "tech"
+    },
+    {
+      level: "tech",
+      domain: "tech"
+    }
+  ];
 
-it("return two arrays correspongid to days", () => {});
+  expect(filterByLevelAndDomain(data, filters).length).toBe(
+    filterByDomain(data, "tech").length
+  );
+});
