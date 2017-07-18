@@ -1,11 +1,14 @@
 [
   {
-  "design" : "Design"
+    "id" : "design",
+    "libelle" : "Design"
   },
   {
-    "tech" : "Technique"
+    "id" : "tech",
+    "libelle" : "Technique"
   },
   {
-    "biz" : "Business"
+    "id" : "biz",
+    "libelle" : "Business"
   }
 ]

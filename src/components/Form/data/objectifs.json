@@ -1,11 +1,14 @@
 [
   {
-    "reseau" : "Réseauter"
+    "id" : "reseau",
+    "libelle" : "Reseauter"
   },
   {
-    "culture" : "Me cultiver"
+    "id" : "culture",
+    "libelle" : "Me cultiver"
   },
   {
-    "learn" : "Apprendre"
+    "id" : "learn",
+    "libelle" : "Apprendre"
   }
 ]
