@@ -14,11 +14,10 @@ class CheckboxKeywordComponent extends Component {
   }
 
   render() {
-
-    let keywords = this.props.state.keywords;
+    console.log( this.props.state.keywords)
     return (
       <div >
-        {keywords.includes(this.props.item.id) ?
+        { this.props.state.keywords.includes(this.props.item.id) ?
           <div>
           <input
               onChange={this.toggleCheckbox}

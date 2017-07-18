@@ -10,7 +10,7 @@ class Form extends Component {
 
     return (
         <div className="form">
-          <h2>Formulaire</h2>
+          <h2>Mots clefs</h2>
           { showKeyword }
         </div>
     );

@@ -1,6 +1,6 @@
 
 const initialState = {
-  keywords : []
+  keywords : ["js"]
 }
 
 const formReducer = (state = initialState, action) => {
