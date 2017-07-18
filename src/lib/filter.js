@@ -32,3 +32,7 @@ export const filterByLevelAndDomain = (data, filters = []) =>
       true
     );
   });
+
+export const orderConfences = () => {
+  return 1;
+};
