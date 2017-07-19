@@ -1,0 +1,14 @@
+[
+  {
+    "id" : "design",
+    "libelle" : "Design"
+  },
+  {
+    "id" : "tech",
+    "libelle" : "Technique"
+  },
+  {
+    "id" : "biz",
+    "libelle" : "Business"
+  }
+]

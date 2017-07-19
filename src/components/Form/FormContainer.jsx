@@ -1,6 +1,6 @@
 import { connect }      from 'react-redux'
 import * as formActions  from '../../actions/formActions'
-import App              from './App'
+import Form              from './Form'
 
 
 const mapStateToProps = (state) => ({
@@ -13,9 +13,9 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-const AppContainer = connect(
+const FormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Form);
 
-export default AppContainer
+export default FormContainer
