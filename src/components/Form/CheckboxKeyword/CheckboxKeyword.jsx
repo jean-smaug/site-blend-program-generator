@@ -17,36 +17,25 @@ class CheckboxKeywordComponent extends Component {
     console.log( this.props.state.keywords)
     return (
       <div >
-        { this.props.state.keywords.includes(this.props.item.id) ?
           <div>
           <input
               onChange={this.toggleCheckbox}
               name={this.props.item.id}
               type="checkbox"
-              checked
+              checked={ this.props.state.keywords.includes(this.props.item.id) }
             />
             {this.props.item.libelle}
           </div>
-        :
-        <div>
-          <input
-            onChange={this.toggleCheckbox}
-            name={this.props.item.id}
-            type="checkbox"
-          />
-          {this.props.item.libelle}
-        </div>
-        }
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => () => ({
+const mapStateToProps = (state) => ({
   state: { keywords: state.form.keywords }
 });
 
-const mapDispatchToProps = (dispatch) => () => ({
+const mapDispatchToProps = (dispatch) => ({
   addKeyword: (word) => {
     dispatch(formActions.addKeyword(word))
   },

@@ -3,11 +3,11 @@ import * as formActions  from '../../actions/formActions'
 import App              from './App'
 
 
-const mapStateToProps = (state) => () => ({
+const mapStateToProps = (state) => ({
   state: { form: state.form }
 });
 
-const mapDispatchToProps = (dispatch) => () => ({
+const mapDispatchToProps = (dispatch) => ({
   addKeyword: (word) => {
     dispatch(formActions.addKeyword(word))
   }
