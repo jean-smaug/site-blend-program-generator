@@ -24,7 +24,7 @@ const formReducer = (state = initialState, action) => {
     case 'REMOVE_THEME' :
       return {
         ...state,
-        themes :  state.themes.filter((element) => element !== action.data.theme)
+        themes :  state.themes.filter((element) => element.libelle !== action.data.theme.libelle)
       };
     case 'UPDATE_LEVEL_THEME' :
       return {

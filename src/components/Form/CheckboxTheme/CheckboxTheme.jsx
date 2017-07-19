@@ -45,8 +45,10 @@ class CheckboxThemeComponent extends Component {
         this.props.addTheme(this.state.theme);
         this.setState({hover: true})
       }
-      else
+      else{
         this.props.removeTheme(this.state.theme);
+        this.setState({hover: false})
+      }
   }
 
   isChecked(){
