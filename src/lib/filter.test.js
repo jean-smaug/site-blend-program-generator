@@ -46,5 +46,5 @@ it('should filter conferences by domain and level', () => {
 });
 
 it('should', () => {
-  expect(orderConfences(data)).toBe(1);
+  expect(orderConfences(data).length).toBe(4);
 });

@@ -34,4 +34,15 @@ export const filterByLevelAndDomain = (data, filters = []) =>
     ),
   );
 
-export const orderConfences = () => 1;
+export const orderConfences = (data) => {
+  let result = { eight: [], ten: [], fourteen: [], sixteen: [] };
+  _.forEach(data, (item) => {
+    switch (item.dateBegin) {
+      case value:
+        break;
+
+      default:
+        break;
+    }
+  });
+};
