@@ -35,14 +35,25 @@ export const filterByLevelAndDomain = (data, filters = []) =>
   );
 
 export const orderConfences = (data) => {
-  let result = { eight: [], ten: [], fourteen: [], sixteen: [] };
+  let result = {
+    day1: { eight: [], ten: [], fourteen: [], sixteen: [] },
+    day2: { eight: [], ten: [], fourteen: [], sixteen: [] },
+  };
   _.forEach(data, (item) => {
-    switch (item.dateBegin) {
-      case value:
+    switch (item.timeBegin) {
+      case 8:
+        result[item.date].eight.push(item);
         break;
-
-      default:
+      case 10:
+        result[item.date].ten.push(item);
+        break;
+      case 14:
+        result[item.date].fourteen.push(item);
+        break;
+      case 16:
+        result[item.date].sixteen.push(item);
         break;
     }
   });
+  return result;
 };

@@ -12,7 +12,7 @@ it('should filter conferences by domain', () => {
   expect(filterByDomain(data, 'blend').length).toBe(25);
 });
 
-it(' should filter conferences by domain', () => {
+it('should filter conferences by domain', () => {
   expect(filterByLevel(data, 'confirmed').length).toBe(56);
   expect(filterByLevel(data, 'noob').length).toBe(44);
 });
@@ -45,6 +45,9 @@ it('should filter conferences by domain and level', () => {
   expect(filterByLevelAndDomain(data, filters2).length).toBe(19);
 });
 
-it('should', () => {
-  expect(orderConfences(data).length).toBe(4);
+it('should reorder conferences', () => {
+  expect(orderConfences(data).day1.eight.length).toBe(0);
+  expect(orderConfences(data).day1.ten.length).toBe(26);
+  expect(orderConfences(data).day1.fourteen.length).toBe(4);
+  expect(orderConfences(data).day1.sixteen.length).toBe(4);
 });
