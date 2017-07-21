@@ -17,7 +17,7 @@ export const filterByLevel = (data, level) =>
   _.filter(data, item => item.level === level);
 
 /**
- *
+ * Filter conferences by level and by domain
  * @param {Object} data
  * @param {Array} filters
  */
@@ -34,6 +34,10 @@ export const filterByLevelAndDomain = (data, filters = []) =>
     ),
   );
 
+/**
+ * Return conferences reordered by days and by time
+ * @param {Array} data
+ */
 export const orderConfences = (data) => {
   let result = {
     day1: { eight: [], ten: [], fourteen: [], sixteen: [] },
