@@ -39,7 +39,7 @@ export const filterByLevelAndDomain = (data, filters = []) =>
  * @param {Array} data
  */
 export const orderConfences = (data) => {
-  let result = {
+  const result = {
     day1: { eight: [], ten: [], fourteen: [], sixteen: [] },
     day2: { eight: [], ten: [], fourteen: [], sixteen: [] },
   };
@@ -56,6 +56,8 @@ export const orderConfences = (data) => {
         break;
       case 16:
         result[item.date].sixteen.push(item);
+        break;
+      default:
         break;
     }
   });

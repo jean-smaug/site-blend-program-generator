@@ -12,7 +12,7 @@ it('should filter conferences by domain', () => {
   expect(filterByDomain(data, 'blend').length).toBe(25);
 });
 
-it('should filter conferences by domain', () => {
+it('should filter conferences by level', () => {
   expect(filterByLevel(data, 'confirmed').length).toBe(56);
   expect(filterByLevel(data, 'noob').length).toBe(44);
 });
