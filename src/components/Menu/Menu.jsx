@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 
 class Menu extends Component {
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   render() {
-    <div>
-      Hey
-    </div>;
+    return (
+      <div>
+        Hey
+      </div>
+    );
   }
 }
 
