@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 /**
  * Return conferences filtered by domain
@@ -22,17 +22,13 @@ export const filterByLevel = (data, level) =>
  * @param {Array} filters
  */
 export const filterByLevelAndDomain = (data, filters = []) =>
-  _.filter(data, item => {
-    return _.includes(
-      _.map(filters, filter => {
+  _.filter(data, item => _.includes(
+      _.map(filters, (filter) => {
         if (filter.domain === item.domain && filter.level === item.level) {
           return true;
         }
       }),
-      true
-    );
-  });
+      true,
+    ));
 
-export const orderConfences = () => {
-  return 1;
-};
+export const orderConfences = () => 1;
