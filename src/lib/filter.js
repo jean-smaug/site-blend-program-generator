@@ -22,13 +22,16 @@ export const filterByLevel = (data, level) =>
  * @param {Array} filters
  */
 export const filterByLevelAndDomain = (data, filters = []) =>
-  _.filter(data, item => _.includes(
+  _.filter(data, item =>
+    _.includes(
       _.map(filters, (filter) => {
         if (filter.domain === item.domain && filter.level === item.level) {
           return true;
         }
+        return false;
       }),
       true,
-    ));
+    ),
+  );
 
 export const orderConfences = () => 1;
