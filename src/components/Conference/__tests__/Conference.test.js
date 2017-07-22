@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Conference from '../Conference';
 
-describe('Menu component', () => {
-  it('should render Menu Component', () => {
+describe('conference component', () => {
+  it('should contain a switchButton and lockButton', () => {
     const conference = shallow(<Conference />);
-    expect(conference.find('.switchButton')).toBe('button');
-    expect(conference.find('.lockButton')).toBe('button');
+    expect(conference.find('.switchButton').length).toBe(1);
+    expect(conference.find('.lockButton').length).toBe(1);
   });
 });
