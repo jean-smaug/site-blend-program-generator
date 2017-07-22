@@ -11,5 +11,8 @@
     "react",
     "jsx-a11y",
     "jest"
-  ]
+  ],
+  "rules": {
+    "react/jsx-filename-extension": "off"
+  }
 }
