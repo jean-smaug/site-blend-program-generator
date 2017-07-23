@@ -8,13 +8,13 @@ import {
 } from './filter';
 
 it('should filter conferences by domain', () => {
-  expect(filterByDomain(data, 'tech').length).toBe(11);
-  expect(filterByDomain(data, 'blend').length).toBe(10);
+  expect(filterByDomain(data, 'tech').length).toBe(19);
+  expect(filterByDomain(data, 'blend').length).toBe(25);
 });
 
-it(' should filter conferences by domain', () => {
-  expect(filterByLevel(data, 'tech').length).toBe(30);
-  expect(filterByLevel(data, 'noob').length).toBe(20);
+it('should filter conferences by level', () => {
+  expect(filterByLevel(data, 'confirmed').length).toBe(56);
+  expect(filterByLevel(data, 'noob').length).toBe(44);
 });
 
 it('should filter conferences by domain and level', () => {
@@ -24,7 +24,7 @@ it('should filter conferences by domain and level', () => {
       domain: 'tech',
     },
     {
-      level: 'tech',
+      level: 'confirmed',
       domain: 'tech',
     },
   ];
@@ -42,9 +42,12 @@ it('should filter conferences by domain and level', () => {
   expect(filterByLevelAndDomain(data, filters).length).toBe(
     filterByDomain(data, 'tech').length,
   );
-  expect(filterByLevelAndDomain(data, filters2).length).toBe(7);
+  expect(filterByLevelAndDomain(data, filters2).length).toBe(19);
 });
 
-it('should', () => {
-  expect(orderConfences(data)).toBe(1);
+it('should reorder conferences', () => {
+  expect(orderConfences(data).day1.eight.length).toBe(0);
+  expect(orderConfences(data).day1.ten.length).toBe(26);
+  expect(orderConfences(data).day1.fourteen.length).toBe(4);
+  expect(orderConfences(data).day1.sixteen.length).toBe(4);
 });
