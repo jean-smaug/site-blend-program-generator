@@ -36,7 +36,7 @@ const conferences = [
 ];
 
 describe('conference component', () => {
-  it('should render conferences', () => {
+  it('should render conference component three times', () => {
     const listConference = shallow(
       <ListConference conferences={conferences} />,
     );
