@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Menu extends Component {
   constructor() {
     super();
+    this.state = {
+      foo: 'bar',
+    };
   }
 
   render() {
