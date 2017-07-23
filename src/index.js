@@ -1,4 +1,3 @@
-/* eslint-disalbe */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
