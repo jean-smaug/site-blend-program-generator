@@ -1,16 +1,16 @@
 import React from 'react';
 import PropType from 'prop-types';
 
-const Conference = ({ title }) => (
+const Conference = ({ name }) => (
   <div>
     <button className="switchButton">Switch</button>
-    <h4>{title}</h4>
+    <h4>{name}</h4>
     <button className="lockButton">Lock</button>
   </div>
 );
 
 Conference.propTypes = {
-  title: PropType.string.isRequired,
+  name: PropType.string.isRequired,
 };
 
 export default Conference;

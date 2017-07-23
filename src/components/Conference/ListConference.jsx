@@ -8,19 +8,22 @@ class ListConference extends Component {
   render() {
     const { conferences } = this.props;
     return _.map(conferences, conference => (
-      <Conference title={conference.name} />
+      <Conference name={conference.name} />
     ));
   }
 }
 
 ListConference.propTypes = {
-  conferences: PropType.arrayOf({
-    name: PropType.string.isRequired,
-    level: PropType.string.isRequired,
-    domain: PropType.string.isRequired,
-    dateBegin: PropType.string.isRequired,
-    dateEnd: PropType.string.isRequired,
-  }).isRequired,
+  conferences: PropType.arrayOf(
+    PropType.shape({
+      name: PropType.string.isRequired,
+      level: PropType.string.isRequired,
+      domain: PropType.string.isRequired,
+      date: PropType.string.isRequired,
+      timeEnd: PropType.number.isRequired,
+      timeBegin: PropType.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default ListConference;

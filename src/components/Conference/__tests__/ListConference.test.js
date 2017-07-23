@@ -4,34 +4,43 @@ import ListConference from '../ListConference';
 
 const conferences = [
   {
-    _id: '596d113232ef1731e3f8f520',
-    name: '',
-    level: 'tech',
-    domain: 'design',
-    dateBegin: 'Fri Dec 01 2017 14:35:51 GMT+0100 (Paris, Madrid)',
-    dateEnd: 'Sat Dec 02 2017 02:08:54 GMT+0100 (Paris, Madrid)',
-  },
-  {
-    _id: '596d1132775df778c23a7bee',
-    name: '',
-    level: 'noob',
+    timeEnd: 18,
+    timeBegin: 16,
+    date: 'day2',
     domain: 'blend',
-    dateBegin: 'Fri Dec 01 2017 17:15:55 GMT+0100 (Paris, Madrid)',
-    dateEnd: 'Fri Dec 01 2017 17:34:55 GMT+0100 (Paris, Madrid)',
+    level: 'noob',
+    description: 'Esse amet tempor aute sunt. Magna voluptate nulla duis ullamco amet nisi proident eiusmod duis.',
+    name: 'nisi nostrud',
+    _id: '59724990bb9d86db92537dba',
   },
   {
-    _id: '596d11327391f17fa752448e',
-    name: '',
-    level: 'tech',
+    timeEnd: 12,
+    timeBegin: 10,
+    date: 'day2',
+    domain: 'market',
+    level: 'confirmed',
+    description: 'Nisi elit aute amet magna. Mollit id ipsum amet cillum ea in duis duis officia irure dolor sint.',
+    name: 'tempor anim',
+    _id: '5972499025b0804dc2b05651',
+  },
+  {
+    timeEnd: 12,
+    timeBegin: 10,
+    date: 'day2',
     domain: 'tech',
-    dateBegin: 'Fri Dec 01 2017 14:46:55 GMT+0100 (Paris, Madrid)',
-    dateEnd: 'Sat Dec 02 2017 08:05:20 GMT+0100 (Paris, Madrid)',
+    level: 'noob',
+    description: 'Ex sit deserunt mollit dolore irure in ad nostrud minim enim. Consectetur aute aute culpa dolor irure velit consequat ullamco.',
+    name: 'ad deserunt',
+    _id: '59724990716a4f824a36b3c5',
   },
 ];
 
 describe('conference component', () => {
-  it('should ', () => {
-    const conference = shallow(<ListConference conferences={conferences} />);
-    expect(conference.find('Conference').length).toBe(3);
+  it('should render conferences', () => {
+    const listConference = shallow(
+      <ListConference conferences={conferences} />,
+    );
+    console.log(listConference);
+    expect(listConference.find('Conference').length).toBe(3);
   });
 });
