@@ -40,8 +40,8 @@ class CheckboxThemeComponent extends Component {
     });
   }
 
-  toogleChecked(event) {
-      if( event.target.checked ){
+  toogleChecked(e) {
+      if( e.target.checked ){
         this.props.addTheme(this.state.theme);
         this.setState({hover: true})
       }
