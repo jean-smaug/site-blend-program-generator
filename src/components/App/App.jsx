@@ -11,11 +11,10 @@ class App extends Component {
           <h2>Personnaliser votre Blend</h2>
         </div>
         <FormContainer />
-
-        <MenuContainer />
+         <MenuContainer />
       </div>
     );
   }
 }
 
-export default App;
+export default App
