@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { connect }      from 'react-redux'
 import * as formActions  from '../../../actions/formActions'
@@ -6,6 +5,7 @@ import * as formActions  from '../../../actions/formActions'
 /**
  * Component for one theme's checkbox
  */
+
 class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
