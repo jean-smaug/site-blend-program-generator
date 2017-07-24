@@ -1,6 +1,6 @@
+import _ from 'lodash';
 
-/**import _ from 'lodash';
-
+/**
  * Return conferences filtered by domain
  * @param {Object} data
  * @param {String} domain
