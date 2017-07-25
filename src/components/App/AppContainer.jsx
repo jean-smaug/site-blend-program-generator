@@ -1,21 +1,21 @@
-import { connect }      from 'react-redux'
-import * as formActions  from '../../actions/formActions'
-import App              from './App'
+import { connect } from 'react-redux';
+import * as formActions from '../../actions/formActions';
+import App from './App';
 
 
-const mapStateToProps = (state) => ({
-  state: { form: state.form }
+const mapStateToProps = state => ({
+  state: { form: state.form },
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   addKeyword: (word) => {
-    dispatch(formActions.addKeyword(word))
-  }
+    dispatch(formActions.addKeyword(word));
+  },
 });
 
 const AppContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(App);
 
-export default AppContainer
+export default AppContainer;

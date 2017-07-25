@@ -24,8 +24,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint --ext .js --ext .jsx src",
+    "lint:fix": "yarn lint -- --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
