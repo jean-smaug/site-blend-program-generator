@@ -1,4 +1,4 @@
 import React from 'react';
-import Menu from './Menu';
+import { connect } from 'react-redux';
 
 export default () => <div><Menu /></div>;
