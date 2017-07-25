@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import FormContainer from '../Form/FormContainer';
-import MenuContainer from '../Menu/MenuContainer';
+import SmoothieContainer from '../Smoothie/SmoothieContainer';
 
 const App = () => (
   <div className="App">
@@ -9,7 +9,7 @@ const App = () => (
       <h2>Personnaliser votre Blend</h2>
     </div>
     <FormContainer />
-    <MenuContainer />
+    <SmoothieContainer />
   </div>
 );
 
