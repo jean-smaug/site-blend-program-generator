@@ -1,4 +1,4 @@
-[
+export default [
   {
     timeEnd: 18,
     timeBegin: 16,
