@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropType from 'prop-types';
 
-const Conference = ({ name, timeBegin, timeEnd }) => (
-  <div>
-    <button className="switchButton">Switch</button>
-    <span>{`${timeBegin} - ${timeEnd}`}</span>
-    <button className="lockButton">Lock</button>
-    <span>{name}</span>
-  </div>
-);
+class Conference extends Component {
+  render() {
+    const { name, timeBegin, timeEnd } = this.props;
+    console.log(this.props);
 
+    return (
+      <div>
+        <button className="switchButton">Switch</button>
+        <span>{`${timeBegin} - ${timeEnd}`}</span>
+        <button className="lockButton">Lock</button>
+        <span>{name}</span>
+      </div>
+    );
+  }
+}
 Conference.propTypes = {
   name: PropType.string.isRequired,
   timeBegin: PropType.string.isRequired,

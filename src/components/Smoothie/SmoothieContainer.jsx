@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ListConference from '../Conference/ListConference';
 
-const Smoothie = ({ dayOne, dayTwo }) => (
+const Smoothie = ({ day1, day2 }) => (
   <div>
-    <ListConference {...dayOne} />
-    <ListConference {...dayTwo} />
+    <ListConference day={day1} />
+    <ListConference day={day2} />
   </div>
 );
 
 Smoothie.propTypes = {
-  dayOne: PropTypes.array.isRequired,
-  dayTwo: PropTypes.array.isRequired,
+  day1: PropTypes.array.isRequired,
+  day2: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
-  dayOne: state.dayOne,
-  dayTwo: state.dayTwo,
+  dayOne: state.smoothie.conferences.day1,
+  dayTwo: state.smoothie.conferences.day2,
 });
 
 export default connect(mapStateToProps)(Smoothie);

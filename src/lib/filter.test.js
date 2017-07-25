@@ -1,4 +1,4 @@
-import data from './data-test';
+import data from './data-test.json';
 
 import {
   filterByDomain,
