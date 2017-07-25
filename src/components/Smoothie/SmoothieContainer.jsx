@@ -5,8 +5,8 @@ import ListConference from '../Conference/ListConference';
 
 const Smoothie = ({ dayOne, dayTwo }) => (
   <div>
-    <ListConference {...dayOne} />
-    <ListConference {...dayTwo} />
+    <ListConference conferences={dayOne} />
+    <ListConference conferences={dayTwo} />
   </div>
 );
 
@@ -16,8 +16,8 @@ Smoothie.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  dayOne: state.dayOne,
-  dayTwo: state.dayTwo,
+  dayOne: state.form.dayOne,
+  dayTwo: state.form.dayTwo,
 });
 
 export default connect(mapStateToProps)(Smoothie);
