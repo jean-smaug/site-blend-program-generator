@@ -1,27 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropType from 'prop-types';
 import _ from 'lodash';
 
 import Conference from './Conference';
 
-class ListConference extends Component {
-  constructor() {
-    super();
-    this.state = { foo: 1 };
-  }
-
-  render() {
-    const { conferences } = this.props;
-
-    return (
-      <div>
-        {_.map(conferences, conference => (
-          <Conference key={conference.id} {...conference} />
-        ))}
-      </div>
-    );
-  }
-}
+const ListConference = ({ conferences }) => (
+  <div>
+    {_.map(conferences, conference => (
+      <Conference key={conference.id} {...conference} />
+    ))}
+  </div>
+);
 
 ListConference.propTypes = {
   conferences: PropType.arrayOf(
