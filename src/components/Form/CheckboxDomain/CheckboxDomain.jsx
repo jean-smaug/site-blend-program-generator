@@ -6,7 +6,7 @@ import * as formActions  from '../../../actions/formActions'
 /**
  * Component for one keyword's checkbox
  */
-class CheckboxThemeComponent extends Component {
+class CheckboxDomainComponent extends Component {
   constructor(props) {
     super(props);
     this.submitLevel= this.submitLevel.bind(this);
@@ -16,8 +16,8 @@ class CheckboxThemeComponent extends Component {
     this.handleMouseLeave= this.handleMouseLeave.bind(this);
 
     this.state = {
-      theme:{
-        libelle: this.props.item.id,
+      domain:{
+        domain: this.props.item.id,
         level: 'noob'
       },
       hover: false
@@ -34,27 +34,27 @@ class CheckboxThemeComponent extends Component {
 
   submitLevel(e) {
     this.setState({
-      theme: {libelle: this.props.item.id, level: e.currentTarget.value}
+      domain: {domain: this.props.item.id, level: e.currentTarget.value}
     }, function () {
-      this.props.updateLevel(this.state.theme);
+      this.props.updateLevel(this.state.domain);
     });
   }
 
   toogleChecked(e) {
       if( e.target.checked ){
-        this.props.addTheme(this.state.theme);
+        this.props.addDomain(this.state.domain);
         this.setState({hover: true})
       }
       else{
-        this.props.removeTheme(this.state.theme);
+        this.props.removeDomain(this.state.domain);
         this.setState({hover: false})
       }
   }
 
   isChecked(){
     let checked = false;
-    this.props.state.themes.forEach((element) => {
-      if(element.libelle === this.props.item.id){
+    this.props.state.domains.forEach((element) => {
+      if(element.domain === this.props.item.id){
         checked = true;
       }
     });
@@ -63,8 +63,8 @@ class CheckboxThemeComponent extends Component {
 
   getCheckedLevel(level){
     let checked = false;
-    this.props.state.themes.forEach((element) => {
-      if(element.libelle === this.props.item.id && element.level === level){
+    this.props.state.domains.forEach((element) => {
+      if(element.domain === this.props.item.id && element.level === level){
         checked = true;
       }
     });
@@ -73,7 +73,7 @@ class CheckboxThemeComponent extends Component {
 
   render() {
     return (
-      <div style={{ padding: '20px' }}
+      <div
            onMouseEnter={this.handleMouseEnter}
            onMouseLeave={this.handleMouseLeave}>
         <div>
@@ -96,7 +96,6 @@ class CheckboxThemeComponent extends Component {
             name={this.props.item.id}
             type="checkbox"
             checked={ this.isChecked()}
-
           />
           {this.props.item.libelle}
           </div>
@@ -106,25 +105,25 @@ class CheckboxThemeComponent extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  state: { themes: state.form.themes }
+  state: { domains: state.form.domains }
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addTheme: (theme) => {
-    dispatch(formActions.addTheme(theme))
+  addDomain: (domain) => {
+    dispatch(formActions.addDomain(domain))
   },
-  removeTheme: (theme) => {
-    dispatch(formActions.removeTheme(theme))
+  removeDomain: (domain) => {
+    dispatch(formActions.removeDomain(domain))
   },
-  updateLevel: (theme) => {
-    dispatch(formActions.updateLevel(theme))
+  updateLevel: (domain) => {
+    dispatch(formActions.updateLevel(domain))
   }
 });
 
-const CheckboxTheme = connect(
+const CheckboxDomain = connect(
   mapStateToProps,
   mapDispatchToProps
-)(CheckboxThemeComponent);
+)(CheckboxDomainComponent);
 
-export default CheckboxTheme
+export default CheckboxDomain
 

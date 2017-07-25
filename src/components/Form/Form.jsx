@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import * as keywords from './data/keywords.json';
 import * as thematiques from './data/thematiques.json';
 import CheckboxKeyword from './CheckboxKeyword/CheckboxKeyword';
-import CheckboxTheme from './CheckboxTheme/CheckboxTheme';
+import CheckboxDomain from './CheckboxDomain/CheckboxDomain';
+import Mixeur from './Mixeur/Mixeur';
 
 
 class Form extends Component {
@@ -11,7 +12,7 @@ class Form extends Component {
     const showKeyword = keywords.map((item, index) =>
       <CheckboxKeyword item={item} key={index} /> );
     const showTheme = thematiques.map((item, index) =>
-      <CheckboxTheme item={item} key={index} /> );
+      <CheckboxDomain item={item} key={index} /> );
 
     return (
         <div className="form">
@@ -19,6 +20,7 @@ class Form extends Component {
           { showTheme }
           <h2>Mots clefs</h2>
           { showKeyword }
+          <Mixeur />
         </div>
     );
   }

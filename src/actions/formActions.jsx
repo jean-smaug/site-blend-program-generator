@@ -28,40 +28,40 @@ export const removeKeyword = (word) => {
 };
 
 /**
- * Add a Theme to the state
- * @param theme
+ * Add a Domain to the state
+ * @param domain
  */
-export const addTheme = (theme) => {
+export const addDomain = (domain) => {
   return {
-    type: 'ADD_THEME',
+    type: 'ADD_DOMAIN',
     data: {
-      theme: theme
+      domain: domain
     }
   }
 };
 
 /**
- * Remove a Theme to the state
- * @param theme
+ * Remove a Domain to the state
+ * @param domain
  */
-export const removeTheme = (theme) => {
+export const removeDomain = (domain) => {
   return {
-    type: 'REMOVE_THEME',
+    type: 'REMOVE_DOMAIN',
     data: {
-      theme: theme
+      domain: domain
     }
   }
 };
 
 /**
- * Update level of Theme to the state
- * @param theme
+ * Update level of Domain to the state
+ * @param domain
  */
-export const updateLevel = (theme) => {
+export const updateLevel = (domain) => {
   return {
-    type: 'UPDATE_LEVEL_THEME',
+    type: 'UPDATE_LEVEL_DOMAIN',
     data: {
-      theme: theme
+      domain: domain
     }
   }
 };

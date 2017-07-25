@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 const initialState = {
-  keywords : ["js"],
-  themes: []
+  keywords : [],
+  domains: []
 };
 
 const formReducer = (state = initialState, action) => {
@@ -17,21 +17,21 @@ const formReducer = (state = initialState, action) => {
         ...state,
         keywords :  _.filter(state.keywords, (element) => element !== action.data.word)
       };
-    case 'ADD_THEME' :
+    case 'ADD_DOMAIN' :
       return {
         ...state,
-        themes : [...state.themes, action.data.theme]
+        domains : [...state.domains, action.data.domain]
       };
-    case 'REMOVE_THEME' :
+    case 'REMOVE_DOMAIN' :
       return {
         ...state,
-        themes :  _.filter(state.themes, (element) => element.libelle !== action.data.theme.libelle)
+        domains :  _.filter(state.domains, (element) => element.domain !== action.data.domain.domain)
       };
-    case 'UPDATE_LEVEL_THEME' :
+    case 'UPDATE_LEVEL_DOMAIN' :
       return {
         ...state,
-        themes :  _.map( state.themes, (element) => {
-          if(element.libelle === action.data.theme.libelle) element.level = action.data.theme.level
+        domains :  _.map( state.domains, (element) => {
+          if(element.domain === action.data.domain.domain) element.level = action.data.domain.level
           return element;
         })
       };
