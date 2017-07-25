@@ -15,7 +15,7 @@ class MixeurComponent extends Component {
 
   submitBtn() {
       console.log(this.props.state.form.domains)
-      console.log(filterByLevelAndDomain(data ,this.props.state.form.domains))
+      console.log(orderConfences(filterByLevelAndDomain(data ,this.props.state.form.domains)))
   }
 
   render() {
