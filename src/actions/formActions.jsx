@@ -26,38 +26,32 @@ export const removeKeyword = word => ({
  * Add a Domain to the state
  * @param domain
  */
-export const addDomain = domain => {
-  return {
-    type: 'ADD_DOMAIN',
-    data: {
-      domain: domain
-    }
-  }
-};
+export const addDomain = domain => ({
+  type: 'ADD_DOMAIN',
+  data: {
+    domain,
+  },
+});
 
 /**
  * Remove a Domain to the state
  * @param domain
  */
-export const removeDomain = domain => {
-  return {
-    type: 'REMOVE_DOMAIN',
-    data: {
-      domain: domain
-    }
-  }
-};
+export const removeDomain = domain => ({
+  type: 'REMOVE_DOMAIN',
+  data: {
+    domain,
+  },
+});
 
 /**
  * Update level of Domain to the state
  * @param domain
  */
-export const updateLevel = domain => {
-  return {
-    type: 'UPDATE_LEVEL_DOMAIN',
-    data: {
-      domain: domain
-    }
-  }
-};
+export const updateLevel = domain => ({
+  type: 'UPDATE_LEVEL_DOMAIN',
+  data: {
+    domain,
+  },
+});
 

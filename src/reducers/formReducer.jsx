@@ -28,13 +28,15 @@ const formReducer = (state = initialState, action) => {
     case 'REMOVE_DOMAIN' :
       return {
         ...state,
-        domains :  _.filter(state.domains, (element) => element.domain !== action.data.domain.domain)
+        domains:  _.filter(
+          state.domains, element => element.domain !== action.data.domain.domain
+        ),
       };
     case 'UPDATE_LEVEL_DOMAIN' :
       return {
         ...state,
-        domains :  _.map( state.domains, (element) => {
-          if(element.domain === action.data.domain.domain) element.level = action.data.domain.level
+        domains:  _.map(state.domains, (element) => {
+          if (element.domain === action.data.domain.domain) element.level = action.data.domain.level
           return element;
         }),
       };
