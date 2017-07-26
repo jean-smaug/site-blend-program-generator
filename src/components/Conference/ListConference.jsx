@@ -1,30 +1,27 @@
 import React from 'react';
 import PropType from 'prop-types';
-import _ from 'lodash';
 
 import Conference from './Conference';
 
-const ListConference = ({ conferences }) => (
-  <div>
-    {_.map(conferences, conference => (
-      <Conference key={conference.id} {...conference} />
-    ))}
-  </div>
-);
+const ListConference = ({ day }) => {
+  const { eight, ten, fourteen, sixteen } = day;
 
+  return (
+    <div>
+      <Conference {...eight} />
+      <Conference {...ten} />
+      <Conference {...fourteen} />
+      <Conference {...sixteen} />
+    </div>
+  );
+};
 ListConference.propTypes = {
-  conferences: PropType.arrayOf(
-    PropType.shape({
-      id: PropType.string.isRequired,
-      name: PropType.string.isRequired,
-      description: PropType.string.isRequired,
-      level: PropType.string.isRequired,
-      domain: PropType.string.isRequired,
-      date: PropType.string.isRequired,
-      timeEnd: PropType.number.isRequired,
-      timeBegin: PropType.number.isRequired,
-    }),
-  ).isRequired,
+  day: PropType.shape({
+    eight: Conference.propTypes,
+    ten: Conference.propTypes,
+    fourteen: Conference.propTypes,
+    sixteen: Conference.propTypes,
+  }).isRequired,
 };
 
 export default ListConference;

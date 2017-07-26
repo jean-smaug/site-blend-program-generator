@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ListConference from '../Conference/ListConference';
 
-const Smoothie = ({ dayOne, dayTwo }) => (
+const Smoothie = ({ day1, day2 }) => (
   <div>
-    <ListConference conferences={dayOne} />
-    <ListConference conferences={dayTwo} />
+    <ListConference day={day1} />
+    <ListConference day={day2} />
   </div>
 );
 
 Smoothie.propTypes = {
-  dayOne: PropTypes.array.isRequired,
-  dayTwo: PropTypes.array.isRequired,
+  day1: PropTypes.array.isRequired,
+  day2: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
