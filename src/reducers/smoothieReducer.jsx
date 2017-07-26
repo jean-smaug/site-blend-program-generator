@@ -1,6 +1,6 @@
 
 const initialState = {
-  conferences : [],
+  conferences: [],
 };
 
 const formReducer = (state = initialState, action) => {
@@ -8,10 +8,10 @@ const formReducer = (state = initialState, action) => {
     case 'ADD_CONFERENCES' :
       return {
         ...state,
-        conferences :  action.data.conferences
+        conferences: action.data.conferences,
       };
     default:
-      return state
+      return state;
   }
 };
 
