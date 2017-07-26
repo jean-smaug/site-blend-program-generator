@@ -15,4 +15,4 @@ const formReducer = (state = initialState, action) => {
   }
 };
 
-export default formReducer
+export default formReducer;

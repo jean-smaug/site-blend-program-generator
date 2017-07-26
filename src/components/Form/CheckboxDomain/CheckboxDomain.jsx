@@ -52,11 +52,14 @@ class CheckboxDomainComponent extends Component {
     if (this.isChecked()) this.setState({ hover: true });
   }
   submitLevel(e) {
-    this.setState({
-      domain: { domain: this.props.item.id, level: e.currentTarget.value },
-    }, function () {
-      this.props.updateLevel(this.state.domain);
-    });
+    this.setState(
+      {
+        domain: { domain: this.props.item.id, level: e.currentTarget.value },
+      },
+      () => {
+        this.props.updateLevel(this.state.domain);
+      },
+    );
   }
   toogleChecked(e) {
     if (e.target.checked) {
@@ -84,16 +87,16 @@ class CheckboxDomainComponent extends Component {
                 onChange={this.submitLevel}
                 checked={this.getCheckedLevel('noob')}
               />
-              Débutant
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="confirmed"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('confirmed')}
-              />
-              Expert
-            </div>
+                Débutant
+                <input
+                  type="radio"
+                  name={this.props.item.id}
+                  value="confirmed"
+                  onChange={this.submitLevel}
+                  checked={this.getCheckedLevel('confirmed')}
+                />
+                Expert
+              </div>
             : ''}
           <input
             onChange={this.toogleChecked}
@@ -137,10 +140,8 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxDomain = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CheckboxDomainComponent);
+const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(
+  CheckboxDomainComponent,
+);
 
 export default CheckboxDomain;
-
