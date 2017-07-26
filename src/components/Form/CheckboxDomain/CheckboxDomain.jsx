@@ -6,7 +6,7 @@ import * as formActions from '../../../actions/formActions';
 /**
  * Component for one keyword's checkbox
  */
-class CheckboxThemeComponent extends Component {
+class CheckboxDomainComponent extends Component {
   constructor(props) {
     super(props);
     this.submitLevel = this.submitLevel.bind(this);
@@ -16,8 +16,8 @@ class CheckboxThemeComponent extends Component {
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     this.state = {
-      theme: {
-        libelle: this.props.item.id,
+      domain: {
+        domain: this.props.item.id,
         level: 'noob',
       },
       hover: false,
@@ -26,57 +26,54 @@ class CheckboxThemeComponent extends Component {
 
   getCheckedLevel(level) {
     let checked = false;
-    this.props.state.themes.forEach((element) => {
-      if (element.libelle === this.props.item.id && element.level === level) {
+    this.props.state.domains.forEach((element) => {
+      if (element.domain === this.props.item.id && element.level === level) {
         checked = true;
       }
     });
     return checked;
   }
 
-  handleMouseEnter() {
-    if (this.isChecked()) this.setState({ hover: true });
+  isChecked() {
+    let checked = false;
+    this.props.state.domains.forEach((element) => {
+      if (element.domain === this.props.item.id) {
+        checked = true;
+      }
+    });
+    return checked;
   }
 
   handleMouseLeave() {
     this.setState({ hover: false });
   }
 
+  handleMouseEnter() {
+    if (this.isChecked()) this.setState({ hover: true });
+  }
   submitLevel(e) {
     this.setState(
       {
-        theme: { libelle: this.props.item.id, level: e.currentTarget.value },
+        domain: { domain: this.props.item.id, level: e.currentTarget.value },
       },
       () => {
-        this.props.updateLevel(this.state.theme);
+        this.props.updateLevel(this.state.domain);
       },
     );
   }
-
   toogleChecked(e) {
     if (e.target.checked) {
-      this.props.addTheme(this.state.theme);
+      this.props.addDomain(this.state.domain);
       this.setState({ hover: true });
     } else {
-      this.props.removeTheme(this.state.theme);
+      this.props.removeDomain(this.state.domain);
       this.setState({ hover: false });
     }
-  }
-
-  isChecked() {
-    let checked = false;
-    this.props.state.themes.forEach((element) => {
-      if (element.libelle === this.props.item.id) {
-        checked = true;
-      }
-    });
-    return checked;
   }
 
   render() {
     return (
       <div
-        style={{ padding: '20px' }}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
@@ -90,16 +87,14 @@ class CheckboxThemeComponent extends Component {
                 onChange={this.submitLevel}
                 checked={this.getCheckedLevel('noob')}
               />
-              {' '}
                 Débutant
                 <input
                   type="radio"
                   name={this.props.item.id}
-                  value="expert"
+                  value="confirmed"
                   onChange={this.submitLevel}
-                  checked={this.getCheckedLevel('expert')}
+                  checked={this.getCheckedLevel('confirmed')}
                 />
-              {' '}
                 Expert
               </div>
             : ''}
@@ -116,37 +111,37 @@ class CheckboxThemeComponent extends Component {
   }
 }
 
-CheckboxThemeComponent.propTypes = {
+CheckboxDomainComponent.propTypes = {
   item: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
   }).isRequired,
   state: PropTypes.shape({
-    themes: PropTypes.array.isRequired,
+    domains: PropTypes.array.isRequired,
   }).isRequired,
   updateLevel: PropTypes.func.isRequired,
-  removeTheme: PropTypes.func.isRequired,
-  addTheme: PropTypes.func.isRequired,
+  removeDomain: PropTypes.func.isRequired,
+  addDomain: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  state: { themes: state.form.themes },
+  state: { domains: state.form.domains },
 });
 
 const mapDispatchToProps = dispatch => ({
-  addTheme: (theme) => {
-    dispatch(formActions.addTheme(theme));
+  addDomain: (domain) => {
+    dispatch(formActions.addDomain(domain));
   },
-  removeTheme: (theme) => {
-    dispatch(formActions.removeTheme(theme));
+  removeDomain: (domain) => {
+    dispatch(formActions.removeDomain(domain));
   },
-  updateLevel: (theme) => {
-    dispatch(formActions.updateLevel(theme));
+  updateLevel: (domain) => {
+    dispatch(formActions.updateLevel(domain));
   },
 });
 
-const CheckboxTheme = connect(mapStateToProps, mapDispatchToProps)(
-  CheckboxThemeComponent,
+const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(
+  CheckboxDomainComponent,
 );
 
-export default CheckboxTheme;
+export default CheckboxDomain;

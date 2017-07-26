@@ -23,34 +23,35 @@ export const removeKeyword = word => ({
 });
 
 /**
- * Add a Theme to the state
- * @param theme
+ * Add a Domain to the state
+ * @param domain
  */
-export const addTheme = theme => ({
-  type: 'ADD_THEME',
+export const addDomain = domain => ({
+  type: 'ADD_DOMAIN',
   data: {
-    theme,
+    domain,
   },
 });
 
 /**
- * Remove a Theme to the state
- * @param theme
+ * Remove a Domain to the state
+ * @param domain
  */
-export const removeTheme = theme => ({
-  type: 'REMOVE_THEME',
+export const removeDomain = domain => ({
+  type: 'REMOVE_DOMAIN',
   data: {
-    theme,
+    domain,
   },
 });
 
 /**
- * Update level of Theme to the state
- * @param theme
+ * Update level of Domain to the state
+ * @param domain
  */
-export const updateLevel = theme => ({
-  type: 'UPDATE_LEVEL_THEME',
+export const updateLevel = domain => ({
+  type: 'UPDATE_LEVEL_DOMAIN',
   data: {
-    theme,
+    domain,
   },
 });
+

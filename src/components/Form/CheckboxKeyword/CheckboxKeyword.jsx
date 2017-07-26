@@ -40,7 +40,7 @@ CheckboxKeywordComponent.propTypes = {
   addKeyword: PropTypes.func.isRequired,
   removeKeyword: PropTypes.func.isRequired,
   item: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
   }).isRequired,
   state: PropTypes.shape({
