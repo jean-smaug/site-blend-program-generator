@@ -7,15 +7,18 @@ const initialState = {
 
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_KEYWORD' :
+    case 'ADD_KEYWORD':
       return {
         ...state,
-        keywords : [...state.keywords, action.data.word]
+        keywords: [...state.keywords, action.data.word],
       };
-    case 'REMOVE_KEYWORD' :
+    case 'REMOVE_KEYWORD':
       return {
         ...state,
-        keywords :  _.filter(state.keywords, (element) => element !== action.data.word)
+        keywords: _.filter(
+          state.keywords,
+          element => element !== action.data.word,
+        ),
       };
     case 'ADD_DOMAIN' :
       return {
@@ -33,11 +36,11 @@ const formReducer = (state = initialState, action) => {
         domains :  _.map( state.domains, (element) => {
           if(element.domain === action.data.domain.domain) element.level = action.data.domain.level
           return element;
-        })
+        }),
       };
     default:
-      return state
+      return state;
   }
 };
 
-export default formReducer
+export default formReducer;

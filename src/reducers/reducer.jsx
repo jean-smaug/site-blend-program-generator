@@ -1,5 +1,4 @@
-import { combineReducers }  from 'redux'
-
+import { combineReducers } from 'redux';
 import formReducer from './formReducer'
 import smoothieReducer from './smoothieReducer'
 
@@ -8,4 +7,5 @@ const allReducers = combineReducers({
   smoothie: smoothieReducer,
 })
 
-export default allReducers
+
+export default allReducers;

@@ -1,7 +1,7 @@
-
 import React, { Component } from 'react';
-import { connect }      from 'react-redux'
-import * as formActions  from '../../../actions/formActions'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import * as formActions from '../../../actions/formActions';
 
 /**
  * Component for one keyword's checkbox
@@ -9,28 +9,29 @@ import * as formActions  from '../../../actions/formActions'
 class CheckboxDomainComponent extends Component {
   constructor(props) {
     super(props);
-    this.submitLevel= this.submitLevel.bind(this);
-    this.toogleChecked= this.toogleChecked.bind(this);
-    this.isChecked= this.isChecked.bind(this);
-    this.handleMouseEnter= this.handleMouseEnter.bind(this);
-    this.handleMouseLeave= this.handleMouseLeave.bind(this);
+    this.submitLevel = this.submitLevel.bind(this);
+    this.toogleChecked = this.toogleChecked.bind(this);
+    this.isChecked = this.isChecked.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     this.state = {
       domain:{
         domain: this.props.item.id,
         level: 'noob'
       },
-      hover: false
+      hover: false,
     };
   }
 
-  handleMouseEnter(){
-    if(this.isChecked()) this.setState({hover: true})
+  handleMouseEnter() {
+    if (this.isChecked()) this.setState({ hover: true });
   }
 
   handleMouseLeave() {
-    this.setState({hover: false})
+    this.setState({ hover: false });
   }
+
 
   submitLevel(e) {
     this.setState({
@@ -41,17 +42,17 @@ class CheckboxDomainComponent extends Component {
   }
 
   toogleChecked(e) {
-      if( e.target.checked ){
-        this.props.addDomain(this.state.domain);
-        this.setState({hover: true})
-      }
-      else{
-        this.props.removeDomain(this.state.domain);
-        this.setState({hover: false})
-      }
+    if( e.target.checked ){
+      this.props.addDomain(this.state.domain);
+      this.setState({hover: true})
+    }
+    else{
+      this.props.removeDomain(this.state.domain);
+      this.setState({hover: false})
+    }
   }
 
-  isChecked(){
+  isChecked() {
     let checked = false;
     this.props.state.domains.forEach((element) => {
       if(element.domain === this.props.item.id){
@@ -74,48 +75,69 @@ class CheckboxDomainComponent extends Component {
   render() {
     return (
       <div
-           onMouseEnter={this.handleMouseEnter}
-           onMouseLeave={this.handleMouseLeave}>
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}>
         <div>
-          { this.state.hover ?
-            <div >
-              <input type="radio" name={this.props.item.id} value="noob"
-                     onChange={this.submitLevel}
-                     checked={ this.getCheckedLevel('noob')
-                     }
-              /> Débutant
-              <input type="radio" name={this.props.item.id} value="expert"
-                     onChange={this.submitLevel}
-                     checked={ this.getCheckedLevel('expert')
-                     }
-              /> Expert
-            </div> : ''
-          }
+          {this.state.hover
+            ? <div>
+              <input
+                type="radio"
+                name={this.props.item.id}
+                value="noob"
+                onChange={this.submitLevel}
+                checked={this.getCheckedLevel('noob')}
+              />
+              {' '}
+              Débutant
+              <input
+                type="radio"
+                name={this.props.item.id}
+                value="confirmed"
+                onChange={this.submitLevel}
+                checked={this.getCheckedLevel('confirmed')}
+              />
+              {' '}
+              Expert
+            </div>
+            : ''}
           <input
             onChange={this.toogleChecked}
             name={this.props.item.id}
             type="checkbox"
-            checked={ this.isChecked()}
+            checked={this.isChecked()}
           />
           {this.props.item.libelle}
-          </div>
         </div>
+      </div>
     );
   }
 }
+
+CheckboxDomainComponent.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    libelle: PropTypes.string.isRequired,
+  }).isRequired,
+  state: PropTypes.shape({
+    domains: PropTypes.array.isRequired,
+  }).isRequired,
+  updateLevel: PropTypes.func.isRequired,
+  removeDomain: PropTypes.func.isRequired,
+  addDomain: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   state: { domains: state.form.domains }
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  addDomain: (domain) => {
+const mapDispatchToProps = dispatch => ({
+  addDomain: domain => {
     dispatch(formActions.addDomain(domain))
   },
-  removeDomain: (domain) => {
+  removeDomain: domain => {
     dispatch(formActions.removeDomain(domain))
   },
-  updateLevel: (domain) => {
+  updateLevel: domain => {
     dispatch(formActions.updateLevel(domain))
   }
 });
