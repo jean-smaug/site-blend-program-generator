@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect }      from 'react-redux'
 import {filterByLevelAndDomain, orderConfences} from '../../../lib/filter'
 import data from '../../../lib/data-test.json';
+import * as smoothieAction  from '../../../actions/smoothieAction'
 
 /**
  * Component for Submit button to mix
@@ -14,8 +15,11 @@ class MixeurComponent extends Component {
   }
 
   submitBtn() {
-      console.log(this.props.state.form.domains)
-      console.log(orderConfences(filterByLevelAndDomain(data ,this.props.state.form.domains)))
+      this.props.addConferences(
+        orderConfences(
+          filterByLevelAndDomain(data ,this.props.state.form.domains)
+        )
+      );
   }
 
   render() {
@@ -37,10 +41,15 @@ class MixeurComponent extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  state: { form: state.form }
+  state: {
+    form: state.form
+  }
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  addConferences: (word) => {
+    dispatch(smoothieAction.addConferences(word))
+  },
 });
 
 const Mixeur = connect(
