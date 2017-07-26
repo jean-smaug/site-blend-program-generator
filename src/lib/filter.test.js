@@ -1,4 +1,4 @@
-import data from './data-test.json';
+import data from '../data.json';
 
 import {
   filterByDomain,
@@ -9,7 +9,7 @@ import {
 
 it('should filter conferences by domain', () => {
   expect(filterByDomain(data, 'tech').length).toBe(19);
-  expect(filterByDomain(data, 'blend').length).toBe(25);
+  expect(filterByDomain(data, 'blend').length).toBe(24);
 });
 
 it('should filter conferences by level', () => {
