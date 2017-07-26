@@ -13,8 +13,8 @@ const Smoothie = ({ day1, day2 }) => (
 );
 
 Smoothie.propTypes = {
-  day1: PropTypes.array.isRequired,
-  day2: PropTypes.array.isRequired,
+  day1: PropTypes.arrayOf(ListConference.propTypes).isRequired,
+  day2: PropTypes.arrayOf(ListConference.propTypes).isRequired,
 };
 
 const mapStateToProps = state => ({
