@@ -16,8 +16,8 @@ Smoothie.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  dayOne: state.form.dayOne,
-  dayTwo: state.form.dayTwo,
+  dayOne: state.smoothie.conferences.day1,
+  dayTwo: state.smoothie.conferences.day2,
 });
 
 export default connect(mapStateToProps)(Smoothie);
