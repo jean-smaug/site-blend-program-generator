@@ -8,10 +8,10 @@ const ListConference = ({ day }) => {
 
   return (
     <div>
-      <Conference {...eight} />
-      <Conference {...ten} />
-      <Conference {...fourteen} />
-      <Conference {...sixteen} />
+      <Conference {...eight[0]} />
+      <Conference {...ten[0]} />
+      <Conference {...fourteen[0]} />
+      <Conference {...sixteen[0]} />
     </div>
   );
 };

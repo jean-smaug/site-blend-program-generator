@@ -10,8 +10,7 @@ const App = ({ smoothie }) => (
       <h2>Personnaliser votre Blend</h2>
     </div>
     <FormContainer />
-    {console.log(smoothie)}
-    {smoothie.length !== undefined ? <SmoothieContainer /> : null}
+    {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
   </div>
 );
 
