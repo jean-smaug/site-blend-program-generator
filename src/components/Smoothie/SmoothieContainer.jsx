@@ -5,8 +5,9 @@ import ListConference from '../Conference/ListConference';
 
 const Smoothie = ({ day1, day2 }) => (
   <div>
-    {console.log('##', day1)}
+    <h2>Jour 1</h2>
     <ListConference day={day1} />
+    <h2>Jour 2</h2>
     <ListConference day={day2} />
   </div>
 );

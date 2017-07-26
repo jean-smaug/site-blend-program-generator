@@ -15,6 +15,7 @@ const ListConference = ({ day }) => {
     </div>
   );
 };
+
 ListConference.propTypes = {
   day: PropType.shape({
     eight: Conference.propTypes,

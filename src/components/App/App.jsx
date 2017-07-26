@@ -14,6 +14,10 @@ const App = ({ smoothie }) => (
   </div>
 );
 
+App.propTypes = {
+  smoothie: SmoothieContainer.propTypes.isRequired,
+};
+
 const mapStateToProps = state => ({
   smoothie: state.smoothie,
 });
