@@ -40,22 +40,22 @@ class MixeurComponent extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   state: {
-    form: state.form
+    form: state.form,
   }
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   addConferences: (word) => {
     dispatch(smoothieAction.addConferences(word))
-  },
+  }
 });
 
 const Mixeur = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(MixeurComponent);
 
-export default Mixeur
+export default Mixeur;
 

@@ -21,6 +21,6 @@ const Form = () => {
       <Mixeur />
     </div>
   );
-}
+};
 
 export default Form;
