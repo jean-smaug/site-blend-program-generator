@@ -1,5 +1,7 @@
+import * as conferencesStorage from '../lib/ConferenceStorage';
+
 const initialState = {
-  conferences: [],
+  conferences: conferencesStorage.getConferencesStore(),
 };
 
 const formReducer = (state = initialState, action) => {
