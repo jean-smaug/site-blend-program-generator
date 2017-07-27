@@ -5,7 +5,6 @@ import Conference from './Conference';
 
 const ListConference = ({ day }) => {
   const { eight, ten, fourteen, sixteen } = day;
-
   return (
     <div>
       <Conference {...eight[0]} />

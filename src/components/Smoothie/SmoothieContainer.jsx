@@ -32,7 +32,6 @@ class Smoothie extends Component {
         <ListConference day={this.props.day2} />
       </div>
     );
-
   }
 }
 
