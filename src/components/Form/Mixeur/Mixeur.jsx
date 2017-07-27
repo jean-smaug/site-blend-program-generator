@@ -46,7 +46,7 @@ MixeurComponent.propTypes = {
   addConferences: PropTypes.func.isRequired,
   state: PropTypes.shape({
     form: PropTypes.shape({
-      domains: PropTypes.string.isRequired,
+      domains: PropTypes.array.isRequired,
     }).isRequired,
   }).isRequired,
 };

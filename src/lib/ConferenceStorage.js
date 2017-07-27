@@ -22,12 +22,12 @@ export function setConferenceStore(data) {
 
 /**
  * Get conferences of user in localstorage
- * @return array|boolean
+ * @return array
  */
 export function getConferenceStore() {
+  let conferences = [];
   if (isStore()) {
-    const conferences = JSON.parse(window.localStorage.getItem('conferences'));
-    return conferences;
+    conferences = JSON.parse(window.localStorage.getItem('conferences'));
   }
-  return false;
+  return conferences;
 }
