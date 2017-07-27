@@ -4,7 +4,7 @@
 
 describe('Smoothie component', () => {
   it('should render Smoothie Component', () => {
-    // const SmoothieComponent = shallow(<Smoothie day1={day1} day2={day2} />);
+    // const SmoothieComponent = shallow(<Smoothie dayOne={dayOne} dayTwo={dayTwo} />);
     // expect(SmoothieComponent).toMatchSnapshot();
     expect(1).toBe(1);
   });

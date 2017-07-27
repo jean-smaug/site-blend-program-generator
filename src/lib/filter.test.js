@@ -46,8 +46,8 @@ it('should filter conferences by domain and level', () => {
 });
 
 it('should reorder conferences', () => {
-  expect(orderConfences(data).day1.eight.length).toBe(0);
-  expect(orderConfences(data).day1.ten.length).toBe(26);
-  expect(orderConfences(data).day1.fourteen.length).toBe(4);
-  expect(orderConfences(data).day1.sixteen.length).toBe(4);
+  expect(orderConfences(data).dayOne.eight.length).toBe(0);
+  expect(orderConfences(data).dayOne.ten.length).toBe(26);
+  expect(orderConfences(data).dayOne.fourteen.length).toBe(4);
+  expect(orderConfences(data).dayOne.sixteen.length).toBe(4);
 });

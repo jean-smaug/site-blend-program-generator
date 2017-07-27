@@ -40,8 +40,8 @@ export const filterByLevelAndDomain = (data, filters = []) =>
  */
 export const orderConfences = (data) => {
   const result = {
-    day1: { eight: [], ten: [], fourteen: [], sixteen: [] },
-    day2: { eight: [], ten: [], fourteen: [], sixteen: [] },
+    dayOne: { eight: [], ten: [], fourteen: [], sixteen: [] },
+    dayTwo: { eight: [], ten: [], fourteen: [], sixteen: [] },
   };
   _.forEach(data, (item) => {
     switch (item.timeBegin) {

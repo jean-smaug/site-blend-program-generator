@@ -2,7 +2,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "biz",
     "level": "noob",
     "description": "Esse amet tempor aute sunt. Magna voluptate nulla duis ullamco amet nisi proident eiusmod duis.",
@@ -12,7 +12,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Nisi elit aute amet magna. Mollit id ipsum amet cillum ea in duis duis officia irure dolor sint.",
@@ -22,7 +22,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "noob",
     "description": "Ex sit deserunt mollit dolore irure in ad nostrud minim enim. Consectetur aute aute culpa dolor irure velit consequat ullamco.",
@@ -32,7 +32,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Consectetur reprehenderit aliquip et pariatur eiusmod deserunt ea id culpa exercitation. Exercitation dolore officia sunt consequat fugiat.",
@@ -42,7 +42,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Velit laboris magna eiusmod pariatur consectetur excepteur et dolore ad consectetur ex non aliquip ad. Pariatur ea cillum mollit sit aliqua consectetur reprehenderit sunt ipsum sint irure.",
@@ -52,7 +52,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Velit reprehenderit magna ipsum Lorem cupidatat laborum. Nostrud esse ullamco cillum incididunt.",
@@ -62,7 +62,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Sunt adipisicing dolore mollit aliqua exercitation nostrud labore pariatur excepteur ipsum Lorem nostrud. Cillum cupidatat voluptate et nisi.",
@@ -72,7 +72,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Velit pariatur amet cillum dolore exercitation nostrud pariatur incididunt magna aute ullamco. Occaecat eiusmod et nulla pariatur.",
@@ -82,7 +82,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Duis Lorem velit laborum dolore velit in veniam dolor. Eu aute laborum laborum laborum sit consequat eiusmod.",
@@ -92,7 +92,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Culpa non culpa aliquip aliqua consectetur sint adipisicing laboris occaecat duis laboris deserunt velit. Enim ad nostrud adipisicing deserunt et excepteur mollit amet laborum et.",
@@ -102,7 +102,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Ex sit voluptate ullamco ut aliqua in mollit cupidatat. Cupidatat proident pariatur sunt non sint.",
@@ -112,7 +112,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Qui ipsum aute Lorem proident reprehenderit minim velit cupidatat. Ut voluptate dolore deserunt aliquip et eiusmod mollit.",
@@ -122,7 +122,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Proident velit reprehenderit duis ullamco elit. Consectetur elit minim incididunt aliqua Lorem duis nulla enim aute ullamco voluptate anim nulla.",
@@ -132,7 +132,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Duis laboris ad excepteur amet cupidatat aliqua elit proident non dolor duis. Sint consequat ex nisi sint incididunt.",
@@ -142,7 +142,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Aliqua anim velit reprehenderit consectetur nulla magna veniam do irure ut eu mollit in officia. Cupidatat enim non reprehenderit irure.",
@@ -152,7 +152,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "noob",
     "description": "Ipsum excepteur ad ut eu reprehenderit. Eu nostrud exercitation enim magna velit dolor minim dolor.",
@@ -162,7 +162,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Fugiat aliquip do irure veniam adipisicing sit nostrud culpa Lorem ad cillum. Enim ex est est sint officia non magna eiusmod voluptate consequat ex id.",
@@ -172,7 +172,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Ullamco culpa elit duis laboris proident id enim id dolore nostrud adipisicing sunt sit. Magna et eiusmod quis mollit.",
@@ -182,7 +182,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "noob",
     "description": "Amet id Lorem commodo commodo culpa nulla est Lorem mollit non tempor proident consectetur. Ullamco elit in deserunt mollit incididunt amet.",
@@ -192,7 +192,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Do pariatur nisi anim esse veniam amet amet eiusmod qui est velit exercitation nostrud. Exercitation sit aliquip consectetur consectetur proident ut do laboris.",
@@ -202,7 +202,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "noob",
     "description": "Veniam non enim ex deserunt anim mollit ipsum officia id consequat. Sunt est consequat dolore incididunt quis aliquip.",
@@ -212,7 +212,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "noob",
     "description": "Aliqua nulla nisi velit duis voluptate do dolor enim culpa minim eu. Lorem veniam irure consectetur sunt sunt magna ipsum.",
@@ -222,7 +222,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Consectetur dolore ad et adipisicing veniam cillum sint eiusmod et excepteur ad consequat exercitation ea. Veniam exercitation qui cupidatat fugiat aliquip anim deserunt anim labore ipsum dolore aliqua veniam non.",
@@ -232,7 +232,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "confirmed",
     "description": "Ea anim irure elit nostrud ullamco incididunt laboris cupidatat nulla mollit aliqua. Quis non et adipisicing eiusmod labore labore nostrud nisi elit ullamco.",
@@ -242,7 +242,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Ullamco tempor anim cillum aliqua sit cupidatat nulla adipisicing tempor aliquip nulla veniam nisi. Minim labore esse tempor consectetur consectetur enim consequat ipsum ut pariatur.",
@@ -252,7 +252,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "noob",
     "description": "Qui cillum minim Lorem irure nisi nostrud exercitation ipsum sunt minim nostrud nostrud laborum. Culpa ea voluptate incididunt tempor laborum reprehenderit culpa laboris quis nostrud aute labore ea.",
@@ -262,7 +262,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Officia magna eiusmod id officia et exercitation pariatur consectetur in incididunt. Fugiat voluptate cupidatat elit minim elit reprehenderit excepteur reprehenderit cillum ea.",
@@ -272,7 +272,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Sunt amet mollit dolore ut minim quis culpa deserunt mollit laborum sint veniam. Consequat adipisicing eu qui in voluptate consequat consequat cupidatat in sunt consectetur deserunt.",
@@ -282,7 +282,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Excepteur consequat cupidatat dolore sunt Lorem velit pariatur aute. Officia ea nostrud minim Lorem nulla cupidatat nisi sint et culpa.",
@@ -292,7 +292,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Laborum et in qui commodo labore in cupidatat cillum qui Lorem anim. Adipisicing commodo est aute id non veniam amet sit voluptate magna commodo id.",
@@ -302,7 +302,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "noob",
     "description": "Aliqua dolor nulla eiusmod tempor. In amet fugiat ullamco nisi duis labore occaecat voluptate exercitation pariatur tempor esse aliqua.",
@@ -312,7 +312,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "noob",
     "description": "Ad proident cillum eu nostrud ea consequat Lorem sunt commodo ad. Do in irure sit incididunt elit ipsum.",
@@ -322,7 +322,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Velit culpa est elit do commodo. Excepteur ullamco quis cillum in pariatur voluptate elit culpa ullamco dolor ullamco aute.",
@@ -332,7 +332,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Ipsum mollit duis ea eiusmod cupidatat adipisicing ipsum sunt nostrud nostrud occaecat do consectetur. Elit dolore anim aute aute dolor officia culpa sit.",
@@ -342,7 +342,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Qui mollit sunt nisi mollit elit aliqua consequat. Ad Lorem do occaecat do consequat duis.",
@@ -352,7 +352,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Est ut adipisicing deserunt occaecat sunt sint ut aliquip. Cupidatat aute tempor dolor exercitation aliquip irure veniam pariatur enim amet adipisicing.",
@@ -362,7 +362,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Reprehenderit consectetur labore consectetur labore officia quis id officia cillum culpa sunt Lorem occaecat. Laborum ut Lorem nostrud ad sint laborum do sint laboris anim minim.",
@@ -372,7 +372,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Nostrud velit eu quis fugiat commodo pariatur anim. Aute elit ea exercitation est irure quis ad do ex aliquip dolor exercitation irure.",
@@ -382,7 +382,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "noob",
     "description": "Quis pariatur laboris minim ad proident et ipsum nisi et. Pariatur ea aute cillum laborum ullamco Lorem exercitation aliqua anim laboris aliqua mollit eu.",
@@ -392,7 +392,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "noob",
     "description": "Sint aliquip cupidatat aliquip laboris elit. Excepteur consequat id ea sint adipisicing excepteur incididunt sit eu esse voluptate.",
@@ -402,7 +402,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Magna nostrud aute commodo Lorem eiusmod sit cillum id ut. Quis qui excepteur fugiat consequat proident anim duis officia nulla aute non dolore nisi.",
@@ -412,7 +412,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Anim Lorem voluptate nulla sint anim. Dolore fugiat amet incididunt commodo adipisicing consequat enim est laborum.",
@@ -422,7 +422,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Consequat velit deserunt aliqua enim quis quis voluptate. Amet et irure reprehenderit eu aute.",
@@ -432,7 +432,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Non magna in qui aliquip consectetur eiusmod velit dolore duis. Id irure est nostrud consectetur laboris occaecat ullamco.",
@@ -442,7 +442,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "noob",
     "description": "Fugiat quis enim sunt ullamco irure nostrud. Officia nulla fugiat aute pariatur sunt in nulla laborum tempor ea magna.",
@@ -452,7 +452,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Non aute exercitation nulla anim fugiat culpa cillum nostrud exercitation fugiat. Laboris est est proident pariatur veniam amet pariatur labore pariatur est.",
@@ -462,7 +462,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "noob",
     "description": "Consectetur culpa ullamco esse duis nulla qui reprehenderit proident Lorem laboris nostrud anim. Commodo duis aliqua aute fugiat qui consectetur non exercitation amet minim excepteur.",
@@ -472,7 +472,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "noob",
     "description": "Laboris anim pariatur sit ullamco amet ex exercitation enim nisi nostrud. Adipisicing proident aliquip anim occaecat exercitation.",
@@ -482,7 +482,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Magna voluptate quis sit consectetur officia consectetur. Labore laborum enim incididunt elit enim nostrud velit ea occaecat anim laborum ex irure.",
@@ -492,7 +492,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Consequat ipsum ex incididunt minim cillum esse labore fugiat magna minim. Mollit exercitation Lorem quis magna aliquip dolor.",
@@ -502,7 +502,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "noob",
     "description": "Ex ullamco ullamco pariatur et eu sint laboris occaecat. Excepteur fugiat laboris Lorem sit pariatur anim voluptate laborum sunt eiusmod aliquip eiusmod.",
@@ -512,7 +512,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Culpa pariatur id sunt sunt quis dolor nulla amet eu ad officia tempor in cupidatat. Do commodo adipisicing est non cupidatat deserunt laborum commodo.",
@@ -522,7 +522,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Laborum esse veniam magna ullamco aliqua aliquip quis ullamco dolore mollit commodo. Ut aute exercitation cillum Lorem anim aute anim velit excepteur sit consectetur laborum excepteur aute.",
@@ -532,7 +532,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "confirmed",
     "description": "Elit et sunt laborum commodo incididunt adipisicing consectetur nisi eu qui amet. Nulla ipsum quis nostrud officia Lorem.",
@@ -542,7 +542,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Aute Lorem commodo laborum commodo. Mollit velit enim eiusmod consequat labore eu ullamco officia culpa id ut in.",
@@ -552,7 +552,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Irure fugiat ex laborum laboris. Est esse dolor incididunt eu nostrud aliqua elit sint ut adipisicing cillum minim.",
@@ -562,7 +562,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Aliqua eiusmod in veniam est. Non nisi sit aute consequat duis magna.",
@@ -572,7 +572,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "noob",
     "description": "Anim aute exercitation reprehenderit ea sunt velit laborum dolore proident. Voluptate in consequat consectetur labore enim qui.",
@@ -582,7 +582,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Do veniam nostrud enim nostrud non sit culpa et culpa labore. Esse nostrud incididunt minim aute quis ipsum ad reprehenderit irure qui voluptate.",
@@ -592,7 +592,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "noob",
     "description": "Do ex occaecat dolor nulla ut culpa in duis velit ut consectetur reprehenderit consequat quis. Culpa aute anim eu ex elit enim labore reprehenderit deserunt ullamco.",
@@ -602,7 +602,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Irure veniam occaecat est duis eu do commodo. Exercitation consectetur pariatur exercitation laboris ullamco in est nulla ipsum.",
@@ -612,7 +612,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Aute cupidatat do culpa do. Officia culpa nisi fugiat anim sit deserunt minim.",
@@ -622,7 +622,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "noob",
     "description": "Aliquip cillum ea culpa sint do voluptate excepteur eu mollit anim ea fugiat magna. Eu ullamco fugiat commodo veniam ipsum labore ipsum enim eiusmod ut anim cupidatat culpa Lorem.",
@@ -632,7 +632,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Magna pariatur irure ullamco mollit veniam cupidatat consectetur ea minim aute. Aliqua enim aliquip enim ex.",
@@ -642,7 +642,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Velit ipsum et sit id aliqua sint. Dolor laborum esse eiusmod ullamco do nostrud laboris.",
@@ -652,7 +652,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "tech",
     "level": "confirmed",
     "description": "Dolor labore cupidatat irure amet ipsum. Duis dolore officia minim reprehenderit et excepteur minim.",
@@ -662,7 +662,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Adipisicing minim dolor labore qui. Sint labore deserunt labore nulla laboris nulla adipisicing ullamco veniam aute velit aliqua fugiat.",
@@ -672,7 +672,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "noob",
     "description": "Eiusmod occaecat fugiat ex labore nulla consectetur do duis magna ut. Adipisicing occaecat reprehenderit do ipsum nisi quis culpa veniam fugiat occaecat culpa.",
@@ -682,7 +682,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "noob",
     "description": "Laborum aliquip pariatur sit ipsum veniam veniam commodo laboris esse aute qui. Magna qui cillum amet velit voluptate anim cillum incididunt.",
@@ -692,7 +692,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Nostrud eu culpa veniam reprehenderit elit non velit commodo veniam incididunt deserunt velit ipsum. Ullamco est officia qui id.",
@@ -702,7 +702,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Occaecat ad ullamco in minim adipisicing occaecat. Consectetur dolor eiusmod adipisicing excepteur consequat velit nulla qui velit ad adipisicing voluptate ad aute.",
@@ -712,7 +712,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Veniam velit est irure exercitation exercitation quis anim. Esse enim elit voluptate fugiat non proident labore nulla esse occaecat aliqua tempor minim.",
@@ -722,7 +722,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Commodo velit laboris commodo enim et aliquip sunt ex id voluptate laboris. Velit cillum veniam enim quis sint sint cupidatat mollit culpa elit commodo.",
@@ -732,7 +732,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Labore sit excepteur cupidatat veniam laboris ipsum ea ullamco laborum. Cupidatat enim nisi irure consequat ea do officia amet commodo excepteur ex.",
@@ -742,7 +742,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Enim irure labore eiusmod laboris fugiat ex nostrud sit cupidatat ex et non laboris. Cillum qui aliquip consectetur non sint aliquip in tempor quis magna magna.",
@@ -752,7 +752,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "noob",
     "description": "Consequat esse aute ea nulla laborum elit elit mollit Lorem. Anim voluptate anim consequat cupidatat reprehenderit id proident quis labore esse sint reprehenderit est Lorem.",
@@ -762,7 +762,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "noob",
     "description": "Consectetur ad deserunt eiusmod do duis nisi officia est sit exercitation. Aliquip quis esse pariatur ipsum dolore qui duis labore quis officia id do tempor.",
@@ -772,7 +772,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "confirmed",
     "description": "Qui ad reprehenderit amet voluptate magna aliquip. Esse enim ea exercitation cillum deserunt officia et eiusmod ipsum esse consequat.",
@@ -782,7 +782,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "noob",
     "description": "Ullamco id Lorem consectetur aliquip laboris. Sit ullamco ipsum enim excepteur nisi sunt tempor.",
@@ -792,7 +792,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "noob",
     "description": "In enim nisi laboris ut cupidatat Lorem minim. Occaecat exercitation ullamco in esse do irure est.",
@@ -802,7 +802,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Labore pariatur et cillum sunt magna enim cupidatat laborum id minim deserunt. Consequat dolor exercitation cupidatat duis Lorem laborum amet exercitation.",
@@ -812,7 +812,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "noob",
     "description": "Qui fugiat excepteur minim ipsum. Minim pariatur Lorem magna elit magna voluptate ut minim ex culpa.",
@@ -822,7 +822,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Dolore minim labore voluptate sint aliquip cillum amet et enim minim dolore. Proident commodo velit dolor do nisi dolore nisi cupidatat elit elit consequat deserunt.",
@@ -832,7 +832,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "design",
     "level": "confirmed",
     "description": "Incididunt occaecat proident ut consequat nisi nisi occaecat exercitation do do ullamco. Enim aliqua nisi est reprehenderit quis et culpa sint officia.",
@@ -842,7 +842,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "noob",
     "description": "Exercitation proident velit exercitation quis ad excepteur in. Adipisicing culpa in ea minim eiusmod consequat incididunt sit veniam do pariatur exercitation.",
@@ -852,7 +852,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Veniam dolor adipisicing pariatur pariatur nisi excepteur esse. Ipsum dolor exercitation et aute ipsum irure labore id proident.",
@@ -862,7 +862,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "noob",
     "description": "Cillum veniam fugiat magna non id quis cillum pariatur mollit tempor. Reprehenderit eiusmod exercitation ad exercitation.",
@@ -872,7 +872,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Fugiat exercitation dolor in minim nulla nulla ipsum ea voluptate pariatur commodo elit commodo. Dolore culpa aute eiusmod proident deserunt exercitation officia labore.",
@@ -882,7 +882,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Laborum velit esse incididunt nulla et sunt irure in do occaecat. Exercitation veniam et do eiusmod ipsum mollit.",
@@ -892,7 +892,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Culpa aliquip dolore voluptate qui est. Aliquip adipisicing ipsum voluptate officia nisi cupidatat cupidatat cillum occaecat esse fugiat aliqua.",
@@ -902,7 +902,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "noob",
     "description": "Eiusmod voluptate consequat aliqua minim ipsum eu minim enim ipsum nulla labore magna. Id non ipsum voluptate proident dolore.",
@@ -912,7 +912,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "market",
     "level": "confirmed",
     "description": "Adipisicing sunt nulla tempor adipisicing mollit eu labore occaecat. Sunt sunt nostrud duis ipsum sunt tempor veniam ex magna.",
@@ -922,7 +922,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "noob",
     "description": "Proident excepteur excepteur velit est esse nulla. Elit qui eiusmod voluptate quis.",
@@ -932,7 +932,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "design",
     "level": "confirmed",
     "description": "Minim laborum excepteur enim incididunt ut aliquip et. Do ut elit enim cillum minim ea duis dolor consequat nisi magna.",
@@ -942,7 +942,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Incididunt irure proident minim in eu irure. Non eiusmod eiusmod dolore anim adipisicing sit laborum sunt in eu laboris.",
@@ -952,7 +952,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "blend",
     "level": "confirmed",
     "description": "Veniam ad sit adipisicing enim esse proident irure ut anim fugiat. Laborum pariatur aute ea est adipisicing Lorem anim incididunt culpa reprehenderit et ad occaecat pariatur.",
@@ -962,7 +962,7 @@
   {
     "timeEnd": 18,
     "timeBegin": 16,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Id tempor aute dolor ex ad. Adipisicing esse sint laboris minim occaecat pariatur veniam.",
@@ -972,7 +972,7 @@
   {
     "timeEnd": 17,
     "timeBegin": 15,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "market",
     "level": "confirmed",
     "description": "Do eiusmod est ut proident magna minim occaecat labore elit tempor duis ullamco proident incididunt. Do veniam aliquip aliqua aute aute Lorem.",
@@ -982,7 +982,7 @@
   {
     "timeEnd": 12,
     "timeBegin": 10,
-    "date": "day1",
+    "date": "dayOne",
     "domain": "blend",
     "level": "confirmed",
     "description": "Culpa cupidatat sit exercitation exercitation voluptate laborum laboris ea magna ad. Sint elit excepteur consectetur fugiat incididunt Lorem incididunt sunt consequat proident consequat.",
@@ -992,7 +992,7 @@
   {
     "timeEnd": 16,
     "timeBegin": 14,
-    "date": "day2",
+    "date": "dayTwo",
     "domain": "tech",
     "level": "confirmed",
     "description": "Excepteur voluptate nulla consequat consectetur reprehenderit fugiat dolor. Cupidatat aute pariatur cupidatat dolore nulla esse commodo ad qui minim ex minim do pariatur.",
