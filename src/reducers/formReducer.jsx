@@ -20,19 +20,20 @@ const formReducer = (state = initialState, action) => {
           element => element !== action.data.word,
         ),
       };
-    case 'ADD_DOMAIN' :
+    case 'ADD_DOMAIN':
       return {
         ...state,
         domains: [...state.domains, action.data.domain],
       };
-    case 'REMOVE_DOMAIN' :
+    case 'REMOVE_DOMAIN':
       return {
         ...state,
         domains: _.filter(
-          state.domains, element => element.domain !== action.data.domain.domain,
+          state.domains,
+          element => element.domain !== action.data.domain.domain,
         ),
       };
-    case 'UPDATE_LEVEL_DOMAIN' :
+    case 'UPDATE_LEVEL_DOMAIN':
       return {
         ...state,
         domains: _.map(state.domains, (element) => {

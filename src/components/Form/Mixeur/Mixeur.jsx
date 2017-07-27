@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { filterByLevelAndDomain, orderConfences } from '../../../lib/filter';
-import data from '../../../lib/data-test.json';
+import data from '../../../data.json';
 import * as smoothieAction from '../../../actions/smoothieAction';
 
 /**
