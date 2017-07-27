@@ -15,7 +15,7 @@ export function isStore() {
  * @param data
  * @return void
  */
-export function setConferenceStore(data) {
+export function setConferencesStore(data) {
   const conferences = JSON.stringify(data);
   window.localStorage.setItem('conferences', conferences);
 }
@@ -24,7 +24,7 @@ export function setConferenceStore(data) {
  * Get conferences of user in localstorage
  * @return array
  */
-export function getConferenceStore() {
+export function getConferencesStore() {
   let conferences = [];
   if (isStore()) {
     conferences = JSON.parse(window.localStorage.getItem('conferences'));

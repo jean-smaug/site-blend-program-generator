@@ -4,7 +4,6 @@ import PropType from 'prop-types';
 class Conference extends Component {
   render() {
     const { name, timeBegin, timeEnd } = this.props;
-    console.log(this.props);
 
     return (
       <div>
