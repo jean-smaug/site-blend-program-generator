@@ -4,7 +4,13 @@ import Conference from '../Conference';
 
 describe('conference component', () => {
   it('should contain a switchButton and lockButton', () => {
-    const conference = shallow(<Conference name="foo" />);
+    const props = {
+      name: 'foo',
+      timeBegin: '10',
+      timeEnd: '12',
+    };
+
+    const conference = shallow(<Conference {...props} />);
     expect(conference.find('.switchButton').length).toBe(1);
     expect(conference.find('.lockButton').length).toBe(1);
   });

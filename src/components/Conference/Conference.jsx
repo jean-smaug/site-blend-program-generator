@@ -6,10 +6,10 @@ const Conference = ({ name, timeBegin, timeEnd }) => (
     <button className="switchButton">Switch</button>
     <span>{`${timeBegin} - ${timeEnd}`}</span>
     <button className="lockButton">Lock</button>
-    <span>{name}</span>
+    <br />
+    <span>{name !== undefined ? name : 'Temps libre'}</span>
   </div>
 );
-
 Conference.propTypes = {
   name: PropType.string.isRequired,
   timeBegin: PropType.string.isRequired,

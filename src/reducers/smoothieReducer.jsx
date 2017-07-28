@@ -1,11 +1,12 @@
+import * as conferencesStorage from '../lib/ConferenceStorage';
 
 const initialState = {
-  conferences: [],
+  conferences: conferencesStorage.getConferencesStore(),
 };
 
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_CONFERENCES' :
+    case 'ADD_CONFERENCES':
       return {
         ...state,
         conferences: action.data.conferences,
