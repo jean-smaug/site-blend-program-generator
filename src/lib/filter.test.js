@@ -5,7 +5,7 @@ import {
   filterByLevel,
   filterByLevelAndDomain,
   orderConfences,
-} from './filter';
+} from './dataFilter.lib';
 
 it('should filter conferences by domain', () => {
   expect(filterByDomain(data, 'tech').length).toBe(19);
