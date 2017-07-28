@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as formActions from '../../../actions/formActions';
+import * as formActions from '../formActions';
 
 /**
  * Component for one keyword's checkbox
@@ -73,10 +73,7 @@ class CheckboxDomainComponent extends Component {
 
   render() {
     return (
-      <div
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
+      <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
         <div>
           {this.state.hover
             ? <div>
@@ -140,8 +137,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(
-  CheckboxDomainComponent,
-);
+const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(CheckboxDomainComponent);
 
 export default CheckboxDomain;

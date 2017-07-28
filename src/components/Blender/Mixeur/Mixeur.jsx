@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { filterByLevelAndDomain, orderConfences } from '../../../lib/filter';
 import data from '../../../data.json';
-import * as smoothieAction from '../../../actions/smoothieAction';
+import * as smoothieAction from '../../Smoothie/smoothieAction';
 
 /**
  * Component for Submit button to mix
@@ -16,9 +16,7 @@ class MixeurComponent extends Component {
 
   submitBtn() {
     this.props.addConferences(
-      orderConfences(
-        filterByLevelAndDomain(data, this.props.state.form.domains),
-      ),
+      orderConfences(filterByLevelAndDomain(data, this.props.state.form.domains)),
     );
   }
 

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import * as formActions from '../../actions/formActions';
+import * as formActions from '../Blender/formActions';
 import App from './App';
-
 
 const mapStateToProps = state => ({
   state: { form: state.form },
@@ -13,9 +12,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const AppContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default AppContainer;
