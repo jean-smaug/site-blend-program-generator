@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { filterByLevelAndDomain, orderConfences } from '../../../lib/filter';
-import data from '../../../data.json';
+import data from '../../../lib/data-test.json';
 import * as smoothieAction from '../../../actions/smoothieAction';
 
 /**
@@ -28,10 +28,13 @@ class MixeurComponent extends Component {
         <input
           style={{
             margin: '20px',
-            height: '50px',
-            width: '200px',
-            backgroundColor: 'black',
+            height: '100px',
+            width: '100px',
+            borderRadius: '50%',
+            boxShadow: '2px 2px 8px #aaa',
+            backgroundColor: '#E6421D',
             color: 'white',
+            fontWeight: 'bold'
           }}
           type="button"
           onClick={this.submitBtn}
@@ -46,7 +49,7 @@ MixeurComponent.propTypes = {
   addConferences: PropTypes.func.isRequired,
   state: PropTypes.shape({
     form: PropTypes.shape({
-      domains: PropTypes.array.isRequired,
+      domains: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };

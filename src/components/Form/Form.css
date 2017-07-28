@@ -1,0 +1,18 @@
+.form {text-align: center;}
+
+.items {
+  width: 70%;
+  display: inline-flex;
+  margin:2%;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+  background-color: #F2F2F2;
+}
+
+.item {
+  margin: auto;
+}
+
+.category-title {
+  font-size: 1.6em;
+}
