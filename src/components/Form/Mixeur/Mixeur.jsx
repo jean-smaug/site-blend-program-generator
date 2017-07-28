@@ -28,10 +28,13 @@ class MixeurComponent extends Component {
         <input
           style={{
             margin: '20px',
-            height: '50px',
-            width: '200px',
-            backgroundColor: 'black',
+            height: '100px',
+            width: '100px',
+            borderRadius: '50%',
+            boxShadow: '2px 2px 8px #aaa',
+            backgroundColor: '#E6421D',
             color: 'white',
+            fontWeight: 'bold'
           }}
           type="button"
           onClick={this.submitBtn}

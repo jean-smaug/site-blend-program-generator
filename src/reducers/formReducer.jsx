@@ -3,6 +3,7 @@ import _ from 'lodash';
 const initialState = {
   keywords: [],
   domains: [],
+  objectifs: []
 };
 
 const formReducer = (state = initialState, action) => {
@@ -43,6 +44,19 @@ const formReducer = (state = initialState, action) => {
           return element;
         }),
       };
+    case 'ADD_OBJECTIF':
+      return {
+        ...state,
+        objectifs: [...state.objectifs, action.data.objectif]
+      }
+    case 'REMOVE_OBJECTIF':
+      return {
+        ...state,
+        objectifs: _.filter(
+          state.objectifs,
+          element => element !== action.data.objectif
+        )
+      }
     default:
       return state;
   }

@@ -7,7 +7,8 @@ import SmoothieContainer from '../Smoothie/SmoothieContainer';
 const App = ({ smoothie }) => (
   <div className="App">
     <div className="App-header">
-      <h2>Personnaliser votre Blend</h2>
+      <h1>Choisissez les ingrédients de vos smoothies</h1>
+      <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
     </div>
     <FormContainer />
     {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
