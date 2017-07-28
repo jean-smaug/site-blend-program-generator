@@ -5,7 +5,7 @@
 - les fichiers sont suffixés
   - .reducer.js => reducer
   - .action.js => action
-  - .component.js => composants
+  - .component.jsx => composants
 
 - le nom des fichiers est en camelCase
 
