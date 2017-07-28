@@ -15,11 +15,13 @@ class Smoothie extends Component {
     this.toast.success(
       `Votre menu est maintenant enregistré dans votre navigateur. (Celui-ci sera
        présent directement à chaque fois que vous venez sur cette page)`,
-      'Un vrai chef!', {
+      'Un vrai chef!',
+      {
         timeOut: 7000,
         extendedTimeOut: 1000,
         closeButton: true,
-      });
+      },
+    );
     conferencesStorage.setConferencesStore({
       dayOne: this.props.dayOne,
       dayTwo: this.props.dayTwo,
@@ -30,7 +32,9 @@ class Smoothie extends Component {
     return (
       <div>
         <ToastContainer
-          ref={(input) => { this.toast = input; }}
+          ref={(input) => {
+            this.toast = input;
+          }}
           toastMessageFactory={React.createFactory(ToastMessage.animation)}
           className="toast-bottom-full-width"
         />
