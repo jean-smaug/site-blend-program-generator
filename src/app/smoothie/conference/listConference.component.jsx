@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 
-import Conference from './Conference';
+import Conference from './conference.component';
 
 const ListConference = ({ day }) => {
   const { eight, ten, fourteen, sixteen } = day;
