@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from '../Conference/ListConference';
 import * as conferencesStorage from '../../lib/ConferenceStorage';
 
@@ -11,6 +12,14 @@ class Smoothie extends Component {
   }
 
   handleClickSave() {
+    this.toast.success(
+      `Votre menu est maintenant enregistré dans votre navigateur. (Celui-ci sera
+       présent directement à chaque fois que vous venez sur cette page)`,
+      'Un vrai chef!', {
+        timeOut: 7000,
+        extendedTimeOut: 1000,
+        closeButton: true,
+      });
     conferencesStorage.setConferencesStore({
       dayOne: this.props.dayOne,
       dayTwo: this.props.dayTwo,
@@ -20,6 +29,12 @@ class Smoothie extends Component {
   render() {
     return (
       <div>
+        <ToastContainer
+          ref={(input) => { this.toast = input; }}
+          toastMessageFactory={React.createFactory(ToastMessage.animation)}
+          className="toast-bottom-full-width"
+        />
+
         <input
           type="button"
           onClick={this.handleClickSave}
