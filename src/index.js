@@ -5,11 +5,14 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import allReducers from './reducer';
-import App from './components/App/App';
+import App from './app/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-const store = createStore(allReducers, composeWithDevTools(applyMiddleware(logger)));
+const store = createStore(
+  allReducers,
+  composeWithDevTools(applyMiddleware(logger)),
+);
 
 ReactDOM.render(
   <Provider store={store}>

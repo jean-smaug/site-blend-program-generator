@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import ListConference from '../Conference/ListConference';
+import ListConference from './Conference/ListConference';
 import * as conferencesStorage from '../../lib/ConferenceStorage';
 
 class Smoothie extends Component {

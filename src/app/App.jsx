@@ -1,18 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
-import FormContainer from '../Blender/BlenderContainer';
-import SmoothieContainer from '../Smoothie/SmoothieContainer';
+import FormContainer from './Blender/BlenderContainer';
+import SmoothieContainer from './Smoothie/SmoothieContainer';
 
-const App = ({ smoothie }) =>
-  (<div className="App">
+const App = ({ smoothie }) => (
+  <div className="App">
     <div className="App-header">
       <h1>Choisissez les ingrédients de vos smoothies</h1>
       <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
     </div>
     <FormContainer />
     {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
-  </div>);
+  </div>
+);
 
 App.propTypes = {
   smoothie: SmoothieContainer.propTypes.isRequired,
