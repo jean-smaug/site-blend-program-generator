@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
+import CSSTransition from 'react-transition-group/CSSTransition';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
@@ -39,6 +40,12 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
           : null}
       </div>
     </div>
+    <FormContainer />
+    <CSSTransition in={smoothie.conferences.length !== 0} timeout={500} classNames="smoothie">
+      <div key="transition-group-content">
+        {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : ''}
+      </div>
+    </CSSTransition>
   </div>);
 
 App.propTypes = {
