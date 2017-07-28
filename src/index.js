@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import allReducers from './reducer';
-import AppContainer from './components/App/AppContainer';
+import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -13,7 +13,7 @@ const store = createStore(allReducers, composeWithDevTools(applyMiddleware(logge
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>,
   document.getElementById('root'),
 );

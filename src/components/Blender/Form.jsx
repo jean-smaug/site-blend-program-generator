@@ -23,15 +23,15 @@ const Form = () => {
       <div className="items">
         <div className="item">
           <h1 className="category-title">Les thématiques</h1>
-          { showTheme }
+          {showTheme}
         </div>
         <div className="item">
           <h1 className="category-title">Les sujets</h1>
-          { showKeyword }
+          {showKeyword}
         </div>
         <div className="item">
           <h1 className="category-title">Vos objectifs</h1>
-          { showObjectif }
+          {showObjectif}
         </div>
         <div className="item">
           <Mixeur />
