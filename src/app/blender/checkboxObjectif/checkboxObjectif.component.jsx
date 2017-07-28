@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import * as formActions from '../../../actions/formActions';
+import * as formActions from '../blender.action';
 
 /**
  * Component for one objectif's checkbox
