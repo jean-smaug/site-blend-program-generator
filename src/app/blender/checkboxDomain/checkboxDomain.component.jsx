@@ -88,15 +88,15 @@ class CheckboxDomainComponent extends Component {
                 checked={this.getCheckedLevel('noob')}
               />
                 Débutant
-                <input
-                  type="radio"
-                  name={this.props.item.id}
-                  value="confirmed"
-                  onChange={this.submitLevel}
-                  checked={this.getCheckedLevel('confirmed')}
-                />
+              <input
+                type="radio"
+                name={this.props.item.id}
+                value="confirmed"
+                onChange={this.submitLevel}
+                checked={this.getCheckedLevel('confirmed')}
+              />
                 Expert
-              </div>
+            </div>
             : ''}
           <input
             onChange={this.toogleChecked}

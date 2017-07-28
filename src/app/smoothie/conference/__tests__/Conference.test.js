@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Conference from '../Conference';
+import Conference from '../conference.component';
 
 describe('conference component', () => {
   it('should contain a switchButton and lockButton', () => {
