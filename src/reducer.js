@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import formReducer from './components/Blender/formReducer';
-import smoothieReducer from './components/Smoothie/smoothieReducer';
+import formReducer from './app/Blender/formReducer';
+import smoothieReducer from './app/smoothie/smoothie.reducer';
 
 const allReducers = combineReducers({
   form: formReducer,
