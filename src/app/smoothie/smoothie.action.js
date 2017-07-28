@@ -1,4 +1,3 @@
-
 /**
  * Add a conferences to the smoothie state
  * @param conferences

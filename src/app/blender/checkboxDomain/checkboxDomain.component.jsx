@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as formActions from '../../../actions/formActions';
+import * as formActions from '../blender.action';
 
 /**
  * Component for one keyword's checkbox
@@ -140,8 +140,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(
+export default connect(mapStateToProps, mapDispatchToProps)(
   CheckboxDomainComponent,
 );
-
-export default CheckboxDomain;

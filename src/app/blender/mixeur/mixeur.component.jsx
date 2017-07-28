@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { filterByLevelAndDomain, orderConfences } from '../../../lib/filter';
+import {
+  filterByLevelAndDomain,
+  orderConfences,
+} from '../../../lib/dataFilter.lib';
 import data from '../../../data.json';
-import * as smoothieAction from '../../../actions/smoothieAction';
+import { addConferences } from '../../smoothie/smoothie.action';
 
 /**
  * Component for Submit button to mix
@@ -62,7 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addConferences: (word) => {
-    dispatch(smoothieAction.addConferences(word));
+    dispatch(addConferences(word));
   },
 });
 

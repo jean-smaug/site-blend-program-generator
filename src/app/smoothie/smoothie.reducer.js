@@ -1,4 +1,4 @@
-import * as conferencesStorage from '../lib/ConferenceStorage';
+import * as conferencesStorage from '../../lib/localStorage.lib';
 
 const initialState = {
   conferences: conferencesStorage.getConferencesStore(),

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './App.css';
-import FormContainer from '../Form/FormContainer';
-import SmoothieContainer from '../Smoothie/SmoothieContainer';
+import './index.css';
+import FormContainer from './blender/blender.component';
+import SmoothieContainer from './smoothie/smoothie.component';
 
 const App = ({ smoothie }) => (
   <div className="App">

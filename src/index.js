@@ -4,10 +4,9 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import allReducers from './reducers/reducer';
-import AppContainer from './components/App/AppContainer';
+import allReducers from './reducer';
+import App from './app';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
 const store = createStore(
   allReducers,
@@ -16,7 +15,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>,
   document.getElementById('root'),
 );
