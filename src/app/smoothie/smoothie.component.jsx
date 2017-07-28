@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
-import * as conferencesStorage from '../../lib/ConferenceStorage';
+import { setConferencesStore } from '../../lib/localStorage.lib';
 
 class Smoothie extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Smoothie extends Component {
         closeButton: true,
       },
     );
-    conferencesStorage.setConferencesStore({
+    setConferencesStore({
       dayOne: this.props.dayOne,
       dayTwo: this.props.dayTwo,
     });

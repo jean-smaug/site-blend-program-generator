@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as keywords from './data/keywords.json';
 import * as thematiques from './data/thematiques.json';
-import CheckboxKeyword from './checkboxDomain/checkboxDomain.component';
+import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
 import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
 import Mixeur from './mixeur/mixeur.component';
 import { addKeyword } from './blender.action';

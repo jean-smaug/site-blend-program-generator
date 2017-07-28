@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
-import FormContainer from './Blender/BlenderContainer';
+import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 
 const App = ({ smoothie }) => (

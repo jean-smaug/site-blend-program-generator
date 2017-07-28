@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as formActions from '../formActions';
+import * as formActions from '../blender.action';
 
 /**
  * Component for one keyword's checkbox
