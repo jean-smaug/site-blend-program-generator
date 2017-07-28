@@ -63,9 +63,9 @@ export const updateLevel = domain => ({
 export const addObjectif = objectif => ({
   type: 'ADD_OBJECTIF',
   data: {
-    objectif
-  }
-})
+    objectif,
+  },
+});
 
 /**
  * Remove an objectif from the state
@@ -75,6 +75,6 @@ export const addObjectif = objectif => ({
 export const removeObjectif = objectif => ({
   type: 'REMOVE_OBJECTIF',
   data: {
-    objectif
-  }
-})
+    objectif,
+  },
+});
