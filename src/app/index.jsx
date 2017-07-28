@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './App.css';
+import './index.css';
 import FormContainer from './Blender/BlenderContainer';
 import SmoothieContainer from './smoothie/smoothie.component';
 

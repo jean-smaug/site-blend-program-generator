@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import * as formActions from '../formActions';
+import * as formActions from '../blender.action';
 
 /**
  * Component for one theme's checkbox
@@ -61,6 +61,8 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxKeyword = connect(mapStateToProps, mapDispatchToProps)(CheckboxKeywordComponent);
+const CheckboxKeyword = connect(mapStateToProps, mapDispatchToProps)(
+  CheckboxKeywordComponent,
+);
 
 export default CheckboxKeyword;

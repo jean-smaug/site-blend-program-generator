@@ -73,7 +73,10 @@ class CheckboxDomainComponent extends Component {
 
   render() {
     return (
-      <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+      <div
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+      >
         <div>
           {this.state.hover
             ? <div>
@@ -85,15 +88,15 @@ class CheckboxDomainComponent extends Component {
                 checked={this.getCheckedLevel('noob')}
               />
                 Débutant
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="confirmed"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('confirmed')}
-              />
+                <input
+                  type="radio"
+                  name={this.props.item.id}
+                  value="confirmed"
+                  onChange={this.submitLevel}
+                  checked={this.getCheckedLevel('confirmed')}
+                />
                 Expert
-            </div>
+              </div>
             : ''}
           <input
             onChange={this.toogleChecked}
@@ -137,6 +140,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxDomain = connect(mapStateToProps, mapDispatchToProps)(CheckboxDomainComponent);
-
-export default CheckboxDomain;
+export default connect(mapStateToProps, mapDispatchToProps)(
+  CheckboxDomainComponent,
+);
