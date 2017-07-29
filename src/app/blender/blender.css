@@ -1,11 +1,8 @@
 .form {text-align: center;}
 
 .items {
-  width: 70%;
-  display: inline-flex;
-  margin:2%;
+  margin:2% 12%;
   padding: 2%;
-  font-family: 'Lato', sans-serif;
   background-color: #F2F2F2;
 }
 
@@ -15,4 +12,5 @@
 
 .category-title {
   font-size: 1.6em;
+  font-family: 'Lato', sans-serif;
 }

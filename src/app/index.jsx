@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
+import 'bulma/css/bulma.css';
 
 const App = ({ smoothie }) => (
   <div className="App">
@@ -10,8 +11,16 @@ const App = ({ smoothie }) => (
       <h1>Choisissez les ingrédients de vos smoothies</h1>
       <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
     </div>
-    <FormContainer />
-    {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
+    <div className="columns">
+      <div className="column">
+      <FormContainer />
+      </div>
+    </div>
+    <div className="columns">
+      <div className="column">
+      {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
+      </div>
+    </div>
   </div>
 );
 

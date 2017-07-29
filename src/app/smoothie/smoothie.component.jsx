@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import { setConferencesStore } from '../../lib/localStorage.lib';
+import './smoothie.css';
 
 class Smoothie extends Component {
   constructor(props) {
@@ -39,16 +40,27 @@ class Smoothie extends Component {
           className="toast-bottom-full-width"
         />
 
-        <input
-          type="button"
-          onClick={this.handleClickSave}
-          value="Sauvegarder"
-        />
-        <hr />
-        <h2>Jour 1</h2>
-        <ListConference day={this.props.dayOne} />
-        <h2>Jour 2</h2>
-        <ListConference day={this.props.dayTwo} />
+        <div className="outils">
+        <a
+        type="button"
+        onClick={this.handleClickSave}
+       >
+          <i className="fa fa-save"> </i></a>
+        </div>
+        <div className="columns itemsSmoothie">
+          <div className="column">
+          <h2>Jour 1</h2><br />
+            <ListConference day={this.props.dayOne} />
+          </div>
+          </div>
+          <div className="columns itemsSmoothie">
+            <div className="column">
+            <h2>Jour 2</h2>
+            <ListConference day={this.props.dayTwo} />
+            </div>
+          </div>
+          <div className="column is-one-quarter">
+          </div>
       </div>
     );
   }
