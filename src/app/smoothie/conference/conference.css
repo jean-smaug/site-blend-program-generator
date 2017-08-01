@@ -1,0 +1,34 @@
+.conferences {
+  background-color: rgb(254,206,142);
+  padding-top: 4%;
+  margin-bottom: 5%;
+}
+
+.conference {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+
+.conference-opt {
+  color: white;
+}
+
+.conference-opt > a {
+  color: white;
+}
+
+.conference-opt > a:hover {
+  color: black;
+}
+
+.conference-time {
+  padding: 0 3%;
+}
+
+.circle {
+  width: 25px;
+  border: 1px solid white;
+  border-radius: 50%;
+}

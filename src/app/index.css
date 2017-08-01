@@ -3,28 +3,11 @@
   height: 80px;
 }
 
-.App-header {
-  text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 100px;
-}
-
-.App-header > h1 {
-  padding:0; margin: 0;
-  font-size: 1.6em;
-}
-
-.App-header > h2 {
-  padding:0; margin: 0;
-  font-size: 1.2em;
-  font-weight: lighter;
-}
-
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.App {
+  background-color: #E2E2E2;
 }
+

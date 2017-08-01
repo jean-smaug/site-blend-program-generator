@@ -1,0 +1,41 @@
+.header-date {
+  font-family: 'Permanent Marker';
+  padding: 1%;
+}
+
+.header-date > h1 {
+  padding:0; margin: 0;
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+
+.header-date > h2 {
+  padding:0; margin: 0;
+  font-size: 1.8em;
+}
+
+.titreConference {
+  font-size: 1.4em;
+}
+
+.itemsSmoothie{
+  margin: 0% 30% 30%;
+  padding: 0% 2%;
+  background-color: rgba(255, 255, 242, 0.7);
+  text-align: center;
+}
+
+.outils {
+  position: fixed;
+  top: 500px;
+  right: 0px;
+  width: 70px;
+  background-color: rgba(255, 255, 242, 0.7);
+  padding: 20px;
+  text-align: center;
+}
+
+.outils > a {
+  color: black;
+  font-weight: bold;
+}
