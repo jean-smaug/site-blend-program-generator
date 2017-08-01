@@ -1,6 +1,16 @@
-h2 {
+.header-date {
+  font-family: 'Permanent Marker';
+  padding: 1%;
+}
+
+.header-date > h1 {
   padding:0; margin: 0;
+  font-size: 2.5em;
   font-weight: bolder;
+}
+
+.header-date > h2 {
+  padding:0; margin: 0;
   font-size: 1.8em;
 }
 
@@ -9,9 +19,9 @@ h2 {
 }
 
 .itemsSmoothie{
-  margin:2% 25%;
-  padding: 2%;
-  background-color: #F2F2F2;
+  margin: 0% 30% 30%;
+  padding: 0% 2%;
+  background-color: rgba(255, 255, 242, 0.7);
   text-align: center;
 }
 
@@ -19,8 +29,13 @@ h2 {
   position: fixed;
   top: 500px;
   right: 0px;
-  width: 20px;
-  background-color: #eee;
-  font-size: 1.2em;
+  width: 70px;
+  background-color: rgba(255, 255, 242, 0.7);
   padding: 20px;
+  text-align: center;
+}
+
+.outils > a {
+  color: black;
+  font-weight: bold;
 }

@@ -30,7 +30,6 @@ class MixeurComponent extends Component {
       <div>
         <input
           style={{
-            margin: '20px',
             height: '100px',
             width: '100px',
             borderRadius: '50%',
@@ -38,10 +37,11 @@ class MixeurComponent extends Component {
             backgroundColor: '#E6421D',
             color: 'white',
             fontWeight: 'bold',
+            fontSize: '1.2em'
           }}
           type="button"
           onClick={this.submitBtn}
-          value="Mixer"
+          value="GO MIX"
         />
       </div>
     );
