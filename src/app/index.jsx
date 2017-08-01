@@ -41,7 +41,7 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
       </div>
     </div>
     <FormContainer />
-    <CSSTransition in={smoothie.conferences.length !== 0} timeout={500} classNames="smoothie">
+    <CSSTransition in={smoothie.conferences.length !== 0} timeout={1500} classNames="smoothie">
       <div key="transition-group-content">
         {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : ''}
       </div>

@@ -31,7 +31,7 @@ export class SmoothieComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="smoothie">
         <ToastContainer
           ref={(input) => {
             this.toast = input;
