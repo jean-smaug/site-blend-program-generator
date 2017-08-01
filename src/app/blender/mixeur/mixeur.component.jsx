@@ -37,7 +37,7 @@ class MixeurComponent extends Component {
             backgroundColor: '#E6421D',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: '1.2em'
+            fontSize: '1.2em',
           }}
           type="button"
           onClick={this.submitBtn}
