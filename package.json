@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://the-smaug.github.io/site-blend-program-generator/",
   "dependencies": {
+    "bulma": "^0.5.0",
     "gh-pages": "^1.0.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
