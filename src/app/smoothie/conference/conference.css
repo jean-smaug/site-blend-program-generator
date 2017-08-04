@@ -32,3 +32,63 @@
   border: 1px solid white;
   border-radius: 50%;
 }
+
+.modal-card {
+  border-radius: 7px;
+}
+
+.modal-card-header > h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.modal-card-body > h1 {
+  color: #E6421C;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.modal-card-body > h2 {
+  color: #E6421C;
+  padding-bottom: 10px;
+}
+
+.modal-card-header {
+  background-color: #E6421C;
+  padding-bottom: 5px;
+}
+
+.social-twitter {
+  z-index: 1;
+  position: relative;
+  margin-right: -50px;
+}
+
+.social-linkedin {
+  z-index: 1;
+  position: relative;
+  margin-left: -50px;
+  padding: 17px;
+  background-color: #0073B0;
+  color: white;
+  border-radius: 8px;
+}
+
+.speaker {
+  border-radius: 50%;
+  width: 25%;
+  display: inline-block;
+  margin-top: 5px;
+  position: relative;
+  z-index: 0;
+  background-color: #F2F2F2;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tags :nth-child(n) {
+  margin-right: 10px;
+}
