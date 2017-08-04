@@ -12,26 +12,29 @@ export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
+    this.state = {
+      color: _.sample(['info', 'success', 'primary', 'warning']),
+    };
   }
 
   toggleCheckbox(e) {
-    if (e.target.checked) this.props.addKeyword(this.props.item.id);
-    else this.props.removeKeyword(this.props.item.id);
+    if (!_.includes(this.props.state.keywords, this.props.item.id)) {
+      this.props.addKeyword(this.props.item.id);
+    } else this.props.removeKeyword(this.props.item.id);
   }
 
   render() {
     return (
-      <div>
-        <div>
-          <input
-            onChange={this.toggleCheckbox}
-            name={this.props.item.id}
-            type="checkbox"
-            checked={_.includes(this.props.keywords, this.props.item.id)}
-          />
-          {this.props.item.libelle}
-        </div>
-      </div>
+      <span
+        className={
+          _.includes(this.props.state.keywords, this.props.item.id)
+            ? `tag is-${this.state.color} keyword-elt`
+            : 'tag is-notselected keyword-elt'
+        }
+        onClick={this.toggleCheckbox}
+      >
+        {this.props.item.libelle}
+      </span>
     );
   }
 }
@@ -59,8 +62,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxKeyword = connect(mapStateToProps, mapDispatchToProps)(
-  CheckboxKeywordComponent,
-);
+const CheckboxKeyword = connect(mapStateToProps, mapDispatchToProps)(CheckboxKeywordComponent);
 
 export default CheckboxKeyword;

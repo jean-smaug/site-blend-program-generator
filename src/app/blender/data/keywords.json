@@ -10,5 +10,25 @@
   {
     "id" : "management",
     "libelle" : "Gestion de projet"
+  },
+  {
+    "id" : "nosql",
+    "libelle" : "NoSQL"
+  },
+  {
+    "id" : "node",
+    "libelle" : "Node"
+  },
+  {
+    "id" : "mongodb",
+    "libelle" : "MongoDB"
+  },
+  {
+    "id" : "react",
+    "libelle" : "React"
+  },
+  {
+    "id" : "graphql",
+    "libelle" : "GraphQL"
   }
 ]
