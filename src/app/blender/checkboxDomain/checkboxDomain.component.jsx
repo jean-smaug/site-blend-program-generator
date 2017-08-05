@@ -26,7 +26,7 @@ class CheckboxDomainComponent extends Component {
 
   getCheckedLevel(level) {
     let checked = false;
-    this.props.state.domains.forEach((element) => {
+    this.props.domains.forEach((element) => {
       if (element.domain === this.props.item.id && element.level === level) {
         checked = true;
       }
@@ -36,7 +36,7 @@ class CheckboxDomainComponent extends Component {
 
   isChecked() {
     let checked = false;
-    this.props.state.domains.forEach((element) => {
+    this.props.domains.forEach((element) => {
       if (element.domain === this.props.item.id) {
         checked = true;
       }
@@ -116,16 +116,14 @@ CheckboxDomainComponent.propTypes = {
     id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
   }).isRequired,
-  state: PropTypes.shape({
-    domains: PropTypes.array.isRequired,
-  }).isRequired,
+  domains: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   updateLevel: PropTypes.func.isRequired,
   removeDomain: PropTypes.func.isRequired,
   addDomain: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  state: { domains: state.form.domains },
+  domains: state.form.domains,
 });
 
 const mapDispatchToProps = dispatch => ({
