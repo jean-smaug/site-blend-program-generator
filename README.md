@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/the-smaug/site-blend-program-generator.svg?branch=master)](https://travis-ci.org/the-smaug/site-blend-program-generator)
+
 # site-blend-program-generator
 
 ## Charte de codage
