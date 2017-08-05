@@ -14,6 +14,6 @@ const props = {
 describe('listConference.component', () => {
   it('should render listConference.component', () => {
     const listConference = shallow(<ListConference {...props} />);
-    expect(listConference).toMatchSnapshot();
+    expect(listConference.getNodes()).toMatchSnapshot();
   });
 });
