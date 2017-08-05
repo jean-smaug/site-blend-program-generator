@@ -92,16 +92,16 @@ class CheckboxThemeComponent extends Component {
               />
               {' '}
                 Débutant
-                <input
-                  type="radio"
-                  name={this.props.item.id}
-                  value="expert"
-                  onChange={this.submitLevel}
-                  checked={this.getCheckedLevel('expert')}
-                />
+              <input
+                type="radio"
+                name={this.props.item.id}
+                value="expert"
+                onChange={this.submitLevel}
+                checked={this.getCheckedLevel('expert')}
+              />
               {' '}
                 Expert
-              </div>
+            </div>
             : ''}
           <input
             onChange={this.toogleChecked}
