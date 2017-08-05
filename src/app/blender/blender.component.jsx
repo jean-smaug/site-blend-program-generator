@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import './blender.css';
 import * as keywords from './data/keywords.json';
 import * as domains from './data/domains.json';
@@ -11,13 +13,13 @@ import Mixeur from './mixeur/mixeur.component';
 import { addKeyword } from './blender.action';
 
 export const Blender = () => {
-  const showKeyword = keywords.map(item => (
+  const showKeyword = _.map(keywords, item => (
     <CheckboxKeyword item={item} key={item.id} />
   ));
-  const showTheme = domains.map(item => (
+  const showTheme = _.map(domains, item => (
     <CheckboxDomain item={item} key={item.id} />
   ));
-  const showObjectif = objectifs.map(item => (
+  const showObjectif = _.map(objectifs, item => (
     <CheckboxObjectif item={item} key={item.id} />
   ));
   return (

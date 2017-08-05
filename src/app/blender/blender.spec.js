@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStore } from 'redux-mock-store';
-import ConnectedBlender, { Blender } from './blender.component';
+import configureStore from 'redux-mock-store';
+import { Blender } from './blender.component';
 
 describe('blender.component', () => {
-  let wrapper,
-    store;
+  let wrapper;
+  let store;
+  const mockStore = configureStore();
   const initialState = {};
-  const props = {};
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = shallow(<Blender />);
+    wrapper = shallow(<Blender store={store} />);
   });
 
   it('should render blender component', () => {
