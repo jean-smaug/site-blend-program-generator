@@ -1,4 +1,3 @@
-
 /**
  * Return if storage with conferences exist
  * @return Boolean
