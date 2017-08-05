@@ -175,7 +175,7 @@ Array [
             <div
                 className="column mix-btn"
             >
-                <Connect(Mixeur) />
+                <Connect(MixeurComponent) />
             </div>
         </div>
     </div>
