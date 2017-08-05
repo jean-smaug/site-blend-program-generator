@@ -27,7 +27,7 @@ class CheckboxObjectifComponent extends Component {
             onChange={this.toggleCheckbox}
             name={this.props.item.id}
             type="checkbox"
-            checked={_.includes(this.props.state.objectifs, this.props.item.id)}
+            checked={_.includes(this.props.objectifs, this.props.item.id)}
           />
           {this.props.item.libelle}
         </div>
@@ -43,16 +43,14 @@ CheckboxObjectifComponent.propTypes = {
     id: PropType.number.isRequired,
     libelle: PropType.string.isRequired,
   }).isRequired,
-  state: PropType.shape({
-    objectifs: PropType.arrayOf({
-      id: PropType.number.isRequired,
-      libelle: PropType.string.isRequired,
-    }),
+  objectifs: PropType.arrayOf({
+    id: PropType.number.isRequired,
+    libelle: PropType.string.isRequired,
   }).isRequired,
 };
 
 const mapStateToProps = state => ({
-  state: { objectifs: state.form.objectifs },
+  objectifs: state.form.objectifs,
 });
 
 const mapDispatchToProps = dispatch => ({
