@@ -10,7 +10,7 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import Mixeur from './mixeur/mixeur.component';
 import { addKeyword } from './blender.action';
 
-const Form = () => {
+export const Blender = () => {
   const showKeyword = keywords.map(item => (
     <CheckboxKeyword item={item} key={item.id} />
   ));
@@ -60,6 +60,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-connect(mapStateToProps, mapDispatchToProps)(Form);
-
-export default Form;
+export default connect(mapStateToProps, mapDispatchToProps)(Blender);
