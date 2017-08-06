@@ -8,7 +8,7 @@ import * as formActions from '../blender.action';
  * Component for one objectif's checkbox
  */
 
-class CheckboxObjectifComponent extends Component {
+export class CheckboxObjectifComponent extends Component {
   constructor(props) {
     super(props);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);

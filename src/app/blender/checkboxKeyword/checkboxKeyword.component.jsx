@@ -8,7 +8,7 @@ import * as formActions from '../blender.action';
  * Component for one theme's checkbox
  */
 
-class CheckboxKeywordComponent extends Component {
+export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
