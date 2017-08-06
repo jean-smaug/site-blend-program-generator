@@ -16,8 +16,10 @@ travis.repos('the-smaug', 'site-blend-program-generator').get((err, res) => {
   const lastBuildNumber = res.repo.last_build_number;
 
   ghPages.publish('build', ghPagesConfig, (errorPublish) => {
-    errorPublish !== null ? console.error(err) : console.log(err);
+    if (errorPublish !== null) {
+      console.error(errorPublish);
+    }
   });
 
-  console.log(res);
+  console.log(lastBuildNumber);
 });
