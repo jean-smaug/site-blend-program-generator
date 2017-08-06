@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const Travis = require('travis-ci');
 const ghPages = require('gh-pages');
 const gitBranch = require('git-branch');
@@ -7,7 +9,7 @@ const travis = new Travis({
 });
 
 const ghPagesConfig = {
-  repo: 'https://github.com/the-smaug/site-blend-program-generator',
+  repo: 'git@github.com:the-smaug/site-blend-program-generator.git',
   branch: gitBranch.sync(),
   dest: 'recipe',
 };
