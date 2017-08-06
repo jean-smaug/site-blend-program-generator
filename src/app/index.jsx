@@ -5,7 +5,7 @@ import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 
-const App = ({ smoothie }) => (
+export const App = ({ smoothie }) => (
   <div className="App">
     <div className="columns">
       <div className="column">

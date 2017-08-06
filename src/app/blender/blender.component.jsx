@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import './blender.css';
 import * as keywords from './data/keywords.json';
 import * as domains from './data/domains.json';
@@ -10,14 +12,14 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import Mixeur from './mixeur/mixeur.component';
 import { addKeyword } from './blender.action';
 
-const Form = () => {
-  const showKeyword = keywords.map(item => (
+export const Blender = () => {
+  const showKeyword = _.map(keywords, item => (
     <CheckboxKeyword item={item} key={item.id} />
   ));
-  const showTheme = domains.map(item => (
+  const showTheme = _.map(domains, item => (
     <CheckboxDomain item={item} key={item.id} />
   ));
-  const showObjectif = objectifs.map(item => (
+  const showObjectif = _.map(objectifs, item => (
     <CheckboxObjectif item={item} key={item.id} />
   ));
   return (
@@ -60,6 +62,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-connect(mapStateToProps, mapDispatchToProps)(Form);
-
-export default Form;
+export default connect(mapStateToProps, mapDispatchToProps)(Blender);

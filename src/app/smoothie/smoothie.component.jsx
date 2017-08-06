@@ -6,7 +6,7 @@ import ListConference from './conference/listConference.component';
 import { setConferencesStore } from '../../lib/localStorage.lib';
 import './smoothie.css';
 
-class Smoothie extends Component {
+export class SmoothieComponent extends Component {
   constructor(props) {
     super(props);
     this.handleClickSave = this.handleClickSave.bind(this);
@@ -47,7 +47,8 @@ class Smoothie extends Component {
             tabIndex="0"
             onClick={this.handleClickSave}
           >
-            <i className="fa fa-save" /></a>
+            <i className="fa fa-save" />
+          </a>
         </div>
         <div className="columns itemsSmoothie">
           <div className="column">
@@ -73,7 +74,7 @@ class Smoothie extends Component {
   }
 }
 
-Smoothie.propTypes = {
+SmoothieComponent.propTypes = {
   dayOne: PropTypes.arrayOf(ListConference.propTypes).isRequired,
   dayTwo: PropTypes.arrayOf(ListConference.propTypes).isRequired,
 };
@@ -83,4 +84,4 @@ const mapStateToProps = state => ({
   dayTwo: state.smoothie.conferences.dayTwo,
 });
 
-export default connect(mapStateToProps)(Smoothie);
+export default connect(mapStateToProps)(SmoothieComponent);
