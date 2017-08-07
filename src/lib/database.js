@@ -6,6 +6,4 @@ export const writeStore = (state) => {
   db.ref('user').push(state);
 };
 
-export const readStore = (state) => {
-  db.ref('user').get(state);
-};
+export const readStore = async id => (await db.ref('user').get(id)).val();
