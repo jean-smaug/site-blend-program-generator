@@ -9,6 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2%;
+  cursor: pointer;
 }
 
 .conference-opt {
@@ -91,4 +92,8 @@
 
 .tags :nth-child(n) {
   margin-right: 10px;
+}
+
+.is-notselected{
+  border: 1px dashed;
 }

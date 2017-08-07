@@ -1,5 +1,5 @@
 .form {
-  background-color: #F2F2F2; 
+  background-color: #F2F2F2;
   padding:2% 18%;
 }
 
@@ -23,6 +23,17 @@
 
 .items {
   padding: 0% 3%;
+  text-align: center;
+}
+
+.keyword-elt {
+  margin: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.keyword-checkbox {
+  margin-right: 3px;
 }
 
 .mix-btn{
@@ -31,7 +42,7 @@
 
 .category-title {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
   margin-bottom: 4%;
