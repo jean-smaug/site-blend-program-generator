@@ -45,6 +45,7 @@ class Form extends React.Component {
       return (
         <div className="column">
           <h1 className="category-title">Les objectifs</h1>
+          <input type="text" placeholder="Rechercher d'autres mots clefs..."/>
           {objectifs.map(item => (<CheckboxObjectif item={item} key={item.id} />))}
         </div>
       );
@@ -66,7 +67,7 @@ class Form extends React.Component {
             <h1>Choisissez les ingrédients de vos smoothies</h1>
             <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
           </div>
-          <progress className="progress is-orangegit " value={ this.state.currentPage * 33.333} max="100">45%</progress>
+          <progress className="progress is-orange" value={ this.state.currentPage * 33.333} max="100">45%</progress>
           <div className="columns items">
             <div className="column">
               { this.state.currentPage > 1 ? <input type="button" onClick={this.previousPage} value="Précédent" /> : '' }
