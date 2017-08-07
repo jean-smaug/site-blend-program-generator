@@ -56,3 +56,11 @@
   border-top:100px solid #F2F2F2;
   }
 
+
+.progress.is-orange::-webkit-progress-value {
+  background-color: #E6421C;
+}
+
+.progress.is-orange::-moz-progress-bar {
+  background-color: #E6421C;
+}
