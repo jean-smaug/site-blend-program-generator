@@ -38,7 +38,11 @@ class Conference extends React.Component {
           timeBegin={this.props.timeBegin}
           timeEnd={this.props.timeEnd}
         />
-        <div className="columns">
+        <div className="columns"
+             onClick={this.toggleModal}
+             aria-pressed="true"
+             tabIndex="0"
+        >
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
@@ -47,10 +51,7 @@ class Conference extends React.Component {
                 <a><i className="fa fa-lock circle" /></a>
               </div>
               <div
-                onClick={this.toggleModal}
                 role="button"
-                aria-pressed="true"
-                tabIndex="0"
                 className="conference-title"
               >{this.props.name !== undefined ? this.props.name : 'Temps libre'}
               </div>
@@ -69,7 +70,7 @@ Conference.propTypes = {
   keywords: PropType.array,
   picture: PropType.string,
   twitter: PropType.string,
-  linkedin: PropType.string, 
+  linkedin: PropType.string,
   speaker: PropType.string,
   description: PropType.string,
 };
