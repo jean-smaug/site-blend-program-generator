@@ -15,10 +15,12 @@ class Form extends React.Component {
     super(props);
     this.state = {
       currentPage: 1,
+      filterKeywords: ''
     };
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.renderPage = this.renderPage.bind(this);
+    this.handleFilterKeyword = this.handleFilterKeyword.bind(this);
   }
 
   nextPage() {
@@ -33,19 +35,31 @@ class Form extends React.Component {
     });
   }
 
+  handleFilterKeyword(event){
+    const value = event.target.value;
+    this.setState(() => {
+      return {filterKeywords: value}
+    })
+  }
+
   renderPage() {
     if (this.state.currentPage === 2) {
       return (
         <div className="column">
           <h1 className="category-title">Les thématiques</h1>
-          {keywords.map(item => (<CheckboxKeyword item={item} key={item.id} />))}
+          <input type="text" onChange={this.handleFilterKeyword} placeholder="Rechercher d'autres mots clefs..."/><br />
+          {keywords.map((item) => {
+            if((this.state.filterKeywords === '' || item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase()))){
+              return <CheckboxKeyword item={item} key={item.id} />;
+            }
+            return null;
+          }).filter(item => (item !== null )).slice(0, 5)}
         </div>
       );
     } else if (this.state.currentPage === 3) {
       return (
         <div className="column">
           <h1 className="category-title">Les objectifs</h1>
-          <input type="text" placeholder="Rechercher d'autres mots clefs..."/>
           {objectifs.map(item => (<CheckboxObjectif item={item} key={item.id} />))}
         </div>
       );
