@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
@@ -14,7 +15,9 @@ export const App = ({ smoothie }) => (
     </div>
     <div className="columns">
       <div className="column">
-        {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : null}
+        {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)
+          ? <SmoothieContainer />
+          : null}
       </div>
     </div>
   </div>

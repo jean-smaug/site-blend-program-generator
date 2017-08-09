@@ -6,7 +6,8 @@
 export const addConferences = conferences => ({
   type: 'ADD_CONFERENCES',
   data: {
-    conferences,
+    dayOne: conferences.dayOne,
+    dayTwo: conferences.dayTwo,
   },
 });
 

@@ -1,4 +1,3 @@
-
 /**
  * Return if storage with conferences exist
  * @return Boolean
@@ -25,7 +24,7 @@ export function setConferencesStore(data) {
  * @return array
  */
 export function getConferencesStore() {
-  let conferences = [];
+  let conferences = {};
   if (isStore()) {
     conferences = JSON.parse(window.localStorage.getItem('conferences'));
   }

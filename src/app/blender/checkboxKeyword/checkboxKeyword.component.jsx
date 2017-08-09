@@ -8,7 +8,7 @@ import * as formActions from '../blender.action';
  * Component for one theme's checkbox
  */
 
-class CheckboxKeywordComponent extends Component {
+export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
@@ -27,7 +27,7 @@ class CheckboxKeywordComponent extends Component {
             onChange={this.toggleCheckbox}
             name={this.props.item.id}
             type="checkbox"
-            checked={_.includes(this.props.state.keywords, this.props.item.id)}
+            checked={_.includes(this.props.keywords, this.props.item.id)}
           />
           {this.props.item.libelle}
         </div>
@@ -43,13 +43,11 @@ CheckboxKeywordComponent.propTypes = {
     id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
   }).isRequired,
-  state: PropTypes.shape({
-    keywords: PropTypes.array.isRequired,
-  }).isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 const mapStateToProps = state => ({
-  state: { keywords: state.form.keywords },
+  keywords: state.form.keywords,
 });
 
 const mapDispatchToProps = dispatch => ({

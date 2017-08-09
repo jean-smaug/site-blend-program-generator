@@ -1,7 +1,8 @@
 import * as conferencesStorage from '../../lib/localStorage.lib';
 
 const initialState = {
-  conferences: conferencesStorage.getConferencesStore(),
+  dayOne: conferencesStorage.getConferencesStore().dayOne || {},
+  dayTwo: conferencesStorage.getConferencesStore().dayTwo || {},
 };
 
 const formReducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ const formReducer = (state = initialState, action) => {
     case 'ADD_CONFERENCES':
       return {
         ...state,
-        conferences: action.data.conferences,
+        dayOne: action.data.dayOne,
+        dayTwo: action.data.dayTwo,
       };
     default:
       return state;

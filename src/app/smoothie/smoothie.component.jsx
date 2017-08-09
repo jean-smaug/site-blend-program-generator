@@ -80,8 +80,8 @@ SmoothieComponent.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  dayOne: state.smoothie.conferences.dayOne,
-  dayTwo: state.smoothie.conferences.dayTwo,
+  dayOne: state.smoothie.dayOne,
+  dayTwo: state.smoothie.dayTwo,
 });
 
 export default connect(mapStateToProps)(SmoothieComponent);
