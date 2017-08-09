@@ -5,7 +5,6 @@ import {
   filterByLevelAndDomain,
   orderConfences,
 } from '../../../lib/dataFilter.lib';
-import data from '../../../data.json';
 import { addConferences } from '../../smoothie/smoothie.action';
 
 /**
@@ -18,11 +17,11 @@ export class MixeurComponent extends Component {
   }
 
   submitBtn() {
-    this.props.addConferences(
-      orderConfences(
-        filterByLevelAndDomain(data, this.props.state.form.domains),
-      ),
-    );
+    // this.props.addConferences(
+    //   orderConfences(
+    //     filterByLevelAndDomain(data, this.props.state.form.domains),
+    //   ),
+    // );
   }
 
   render() {
