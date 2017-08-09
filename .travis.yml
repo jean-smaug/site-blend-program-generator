@@ -13,6 +13,9 @@ script:
 - yarn test
 - yarn build
 
+after_success:
+- yarn recipe
+
 notifications:
   slack:
     rooms:
