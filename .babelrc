@@ -1,4 +1,5 @@
 {
   "presets": ["env", "react", "flow"],
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": ["react-hot-loader/babel"],
+  "retainLines": true
 }

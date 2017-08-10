@@ -1,18 +1,18 @@
 // @flow
 
-import React from "react";
-import "./conference.css";
+import React from 'react';
+import './conference.css';
 
 const Conference = ({
   name,
   timeBegin,
-  timeEnd
-}: {
+  timeEnd,
+  }: {
   name: string,
   timeBegin: number,
   timeEnd: number
 }) =>
-  <div className="columns">
+  (<div className="columns">
     <div className="column">
       <div className="conference">
         <div className="conference-opt">
@@ -25,10 +25,10 @@ const Conference = ({
           </a>
         </div>
         <div className="conference-title">
-          {name !== undefined ? name : "Temps libre"}
+          {name !== undefined ? name : 'Temps libre'}
         </div>
       </div>
     </div>
-  </div>;
+  </div>);
 
 export default Conference;
