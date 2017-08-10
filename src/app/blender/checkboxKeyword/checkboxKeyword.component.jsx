@@ -27,7 +27,7 @@ export class CheckboxKeywordComponent extends Component {
     return (
       <span
         className={
-          _.includes(this.props.state.keywords, this.props.item.id)
+          _.includes(this.props.keywords, this.props.item.id)
             ? `tag is-${this.state.color} keyword-elt`
             : 'tag is-notselected keyword-elt'
         }

@@ -1,13 +1,4 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.App {
-  background-color: #E2E2E2;
+html{
+  background: radial-gradient(#fff176, #f57f17);
 }
 

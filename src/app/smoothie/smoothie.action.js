@@ -16,9 +16,7 @@ export const addConferences = conferences => ({
  * @param conferences
  * @returns {{type: string, data: {word: *}}}
  */
-export const removeConferences = conferences => ({
+export const removeConferences = () => ({
   type: 'REMOVE_CONFERENCES',
-  data: {
-    conferences,
-  },
 });
+

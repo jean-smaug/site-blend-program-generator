@@ -8,7 +8,7 @@ class Conference extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalState: false,
+      isModalVisible: false,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -16,28 +16,22 @@ class Conference extends React.Component {
 
   toggleModal() {
     this.setState((prev) => {
-      const newState = !prev.modalState;
+      const newState = !prev.isModalVisible;
       return {
-        modalState: newState,
+        isModalVisible: newState,
       };
     });
   }
 
   render() {
+    const { name, timeBegin, timeEnd } = { ...this.props };
     return (
       <div>
         <Modal
           closeModal={this.toggleModal}
-          modalState={this.state.modalState}
-          title={this.props.name !== undefined ? this.props.name : 'Temps libre'}
-          speaker={this.props.speaker}
-          description={this.props.description}
-          keywords={this.props.keywords}
-          picture={this.props.picture}
-          twitter={this.props.twitter}
-          linkedin={this.props.linkedin}
-          timeBegin={this.props.timeBegin}
-          timeEnd={this.props.timeEnd}
+          modalState={this.state.isModalVisible}
+          title={name !== undefined ? name : 'Temps libre'}
+          {...this.props}
         />
         <div className="columns" onClick={this.toggleModal} aria-pressed="true" tabIndex="0">
           <div className="column">
@@ -46,14 +40,13 @@ class Conference extends React.Component {
                 <a>
                   <i className="fa fa-arrows-h circle" />
                 </a>
-                <span className="conference-time">{`${this.props.timeBegin}h00 > ${this.props
-                  .timeEnd}h00`}</span>
+                <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
                 <a>
                   <i className="fa fa-lock circle" />
                 </a>
               </div>
               <div role="button" className="conference-title">
-                {this.props.name !== undefined ? this.props.name : 'Temps libre'}
+                {name !== undefined ? name : 'Temps libre'}
               </div>
             </div>
           </div>
