@@ -11,7 +11,7 @@ import { addConferences } from '../../smoothie/smoothie.action';
 /**
  * Component for Submit button to mix
  */
-class MixeurComponent extends Component {
+export class MixeurComponent extends Component {
   constructor(props) {
     super(props);
     this.submitBtn = this.submitBtn.bind(this);
@@ -69,6 +69,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const Mixeur = connect(mapStateToProps, mapDispatchToProps)(MixeurComponent);
-
-export default Mixeur;
+export default connect(mapStateToProps, mapDispatchToProps)(MixeurComponent);

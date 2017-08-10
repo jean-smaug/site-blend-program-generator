@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`listConference.component should render listConference.component 1`] = `
+Array [
+  <div
+    className="conferences"
+>
+    <Conference />
+    <Conference />
+    <Conference />
+    <Conference />
+</div>,
+]
+`;

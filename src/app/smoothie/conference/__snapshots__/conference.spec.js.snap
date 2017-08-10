@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`conference.component should render conference.component 1`] = `
+Array [
+  <div
+    className="columns"
+>
+    <div
+        className="column"
+    >
+        <div
+            className="conference"
+        >
+            <div
+                className="conference-opt"
+            >
+                <a>
+                    <i
+                        className="fa fa-arrows-h circle"
+                    />
+                </a>
+                <span
+                    className="conference-time"
+                >
+                    10h00 &gt; 12h00
+                </span>
+                <a>
+                    <i
+                        className="fa fa-lock circle"
+                    />
+                </a>
+            </div>
+            <div
+                className="conference-title"
+            >
+                foo
+            </div>
+        </div>
+    </div>
+</div>,
+]
+`;

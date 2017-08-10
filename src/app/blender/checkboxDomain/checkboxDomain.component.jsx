@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import * as formActions from '../blender.action';
 
 /**
  * Component for one keyword's checkbox
  */
-class CheckboxDomainComponent extends Component {
+export class CheckboxDomainComponent extends Component {
   constructor(props) {
     super(props);
     this.submitLevel = this.submitLevel.bind(this);
@@ -23,7 +24,7 @@ class CheckboxDomainComponent extends Component {
 
   getCheckedLevel(level) {
     let checked = false;
-    this.props.state.domains.forEach((element) => {
+    _.forEach(this.props.domains, (element) => {
       if (element.domain === this.props.item.id && element.level === level) {
         checked = true;
       }
@@ -33,7 +34,7 @@ class CheckboxDomainComponent extends Component {
 
   isChecked() {
     let checked = false;
-    this.props.state.domains.forEach((element) => {
+    _.forEach(this.props.domains, (element) => {
       if (element.domain === this.props.item.id) {
         checked = true;
       }
@@ -85,16 +86,14 @@ CheckboxDomainComponent.propTypes = {
     id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
   }).isRequired,
-  state: PropTypes.shape({
-    domains: PropTypes.array.isRequired,
-  }).isRequired,
+  domains: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   updateLevel: PropTypes.func.isRequired,
   removeDomain: PropTypes.func.isRequired,
   addDomain: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  state: { domains: state.form.domains },
+  domains: state.form.domains,
 });
 
 const mapDispatchToProps = dispatch => ({

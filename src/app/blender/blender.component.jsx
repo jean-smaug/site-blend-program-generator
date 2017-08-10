@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import './blender.css';
 import * as keywords from './data/keywords.json';
 import * as domains from './data/domains.json';
@@ -10,7 +12,7 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import Mixeur from './mixeur/mixeur.component';
 import { addKeyword } from './blender.action';
 
-class Form extends React.Component {
+class Blender extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -112,6 +114,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-connect(mapStateToProps, mapDispatchToProps)(Form);
-
-export default Form;
+export default connect(mapStateToProps, mapDispatchToProps)(Blender);
