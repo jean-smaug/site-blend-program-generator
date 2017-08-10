@@ -64,3 +64,39 @@
 .progress.is-orange::-moz-progress-bar {
   background-color: #E6421C;
 }
+
+.blockDomain{
+  background-color: grey;
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.groupBtnLevel{
+  position: relative;
+  z-index: 1;
+}
+
+.domain-selected{
+  background-color: blue;
+}
+
+.blockDomain:hover{
+  height: 302px;
+  width: 302px;
+}
+
+.blockDomain h1 {
+  font-size: 1.4em;
+  font-weight: bolder;
+}
+
+.level-objectif {
+  margin: 6px;
+  font-size: 1.0em;
+  cursor: pointer;
+}

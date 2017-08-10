@@ -7,7 +7,7 @@ class Conference extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalState: false,
+      isModalVisible: false,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -15,9 +15,9 @@ class Conference extends React.Component {
 
   toggleModal() {
     this.setState((prev) => {
-      const newState = !prev.modalState;
+      const newState = !prev.isModalVisible;
       return {
-        modalState: newState,
+        isModalVisible: newState,
       };
     });
   }
@@ -27,16 +27,9 @@ class Conference extends React.Component {
       <div>
         <Modal
           closeModal={this.toggleModal}
-          modalState={this.state.modalState}
+          modalState={this.state.isModalVisible}
           title={this.props.name !== undefined ? this.props.name : 'Temps libre'}
-          speaker={this.props.speaker}
-          description={this.props.description}
-          keywords={this.props.keywords}
-          picture={this.props.picture}
-          twitter={this.props.twitter}
-          linkedin={this.props.linkedin}
-          timeBegin={this.props.timeBegin}
-          timeEnd={this.props.timeEnd}
+          {...this.props}
         />
         <div className="columns"
              onClick={this.toggleModal}

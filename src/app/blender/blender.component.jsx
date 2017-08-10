@@ -47,7 +47,9 @@ class Form extends React.Component {
       return (
         <div className="column">
           <h1 className="category-title">Les thématiques</h1>
-          <input type="text" onChange={this.handleFilterKeyword} placeholder="Rechercher d'autres mots clefs..."/><br />
+          <div className="control">
+            <input className="input" onChange={this.handleFilterKeyword} type="text" placeholder="Rechercher d'autres mots clefs..." />
+          </div>
           {keywords.map((item) => {
             if((this.state.filterKeywords === '' || item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase()))){
               return <CheckboxKeyword item={item} key={item.id} />;
@@ -67,7 +69,9 @@ class Form extends React.Component {
     return (
       <div className="column">
         <h1 className="category-title">Les sujets</h1>
-        {domains.map(item => (<CheckboxDomain item={item} key={item.id} />))}
+        <div className="columns">
+          {domains.map(item => (<div className="column"><CheckboxDomain item={item} key={item.id} /></div>))}
+        </div>
       </div>
     );
   }

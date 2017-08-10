@@ -12,15 +12,12 @@ class CheckboxDomainComponent extends Component {
     this.submitLevel = this.submitLevel.bind(this);
     this.toogleChecked = this.toogleChecked.bind(this);
     this.isChecked = this.isChecked.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     this.state = {
       domain: {
         domain: this.props.item.id,
         level: 'noob',
       },
-      hover: false,
     };
   }
 
@@ -44,67 +41,39 @@ class CheckboxDomainComponent extends Component {
     return checked;
   }
 
-  handleMouseLeave() {
-    this.setState({ hover: false });
-  }
 
-  handleMouseEnter() {
-    if (this.isChecked()) this.setState({ hover: true });
-  }
-  submitLevel(e) {
+  submitLevel(e, level) {
+    e.stopPropagation();
     this.setState(
       {
-        domain: { domain: this.props.item.id, level: e.currentTarget.value },
+        domain: { domain: this.props.item.id, level: level },
       },
       () => {
         this.props.updateLevel(this.state.domain);
       },
     );
   }
-  toogleChecked(e) {
-    if (e.target.checked) {
+  toogleChecked() {
+    if (!this.isChecked()) {
       this.props.addDomain(this.state.domain);
-      this.setState({ hover: true });
     } else {
       this.props.removeDomain(this.state.domain);
-      this.setState({ hover: false });
     }
   }
 
   render() {
     return (
       <div
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
+        className={ this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
+        onClick={this.toogleChecked}
       >
         <div>
-          {this.state.hover
-            ? <div>
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="noob"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('noob')}
-              />
-                Débutant
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="confirmed"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('confirmed')}
-              />
-                Expert
-            </div>
-            : ''}
-          <input
-            onChange={this.toogleChecked}
-            name={this.props.item.id}
-            type="checkbox"
-            checked={this.isChecked()}
-          />
-          {this.props.item.libelle}
+          <h1> {this.props.item.libelle} </h1>
+          {this.isChecked()
+            ? <div className="groupBtnLevel">
+              <span onClick={(event) => this.submitLevel(event, 'noob')} className={this.getCheckedLevel('noob') ? `tag is-info level-objectif` : `tag is-notselected level-objectif` } > Découvrir </span>
+              <span onClick={(event) => this.submitLevel(event, 'confirmed')} className={this.getCheckedLevel('confirmed') ? `tag is-warning level-objectif` : `tag is-notselected level-objectif` } > Appronfondir </span>
+            </div> : '' }
         </div>
       </div>
     );
