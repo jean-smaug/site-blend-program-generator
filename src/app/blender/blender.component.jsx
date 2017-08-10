@@ -67,7 +67,7 @@ class Blender extends React.Component {
     return (
       <div className="column">
         <h1 className="category-title">Vos sujets favoris</h1>
-        <h2 className="category-desc">Choisissez vos types de conférences préférés ainsi que le niveau souhaite.. :)</h2>
+        <h2 className="category-desc">Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)</h2>
         <hr/>
         <div className="columns">
           {domains.map(item => (<div className="column"><CheckboxDomain item={item} key={item.id} /></div>))}
@@ -85,18 +85,27 @@ class Blender extends React.Component {
             <h1>Choisissez les ingrédients de vos smoothies</h1>
             <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
           </div>
-          <progress className="progress is-orange" value={this.state.currentPage * 33.333} max="100" />
-          <div className="columns items">
-            <div className="column">
-              { this.state.currentPage > 1 ? <input className="btn-precedent" type="button" onClick={this.previousPage} value="Précédent" /> : '' }
+          <div className="modal-wrap">
+            <div className="modal-header">
+              <span className={ this.state.currentPage === 1 ?  "is-active" : null} />
+              <span className={ this.state.currentPage === 2 ?  "is-active" : null} />
+              <span className={ this.state.currentPage === 3 ?  "is-active" : null} />
             </div>
-            { this.renderPage() }
-            <div className="column">
-              { this.state.currentPage < 3 ? <input className="btn-suivant" type="button" onClick={this.nextPage} value="Suivant" /> : <Mixeur /> }
+            <div className="modal-bodies">
+              <div className="modal-body">
+                <div className=" columns items">
+                  <div className="column">
+                    { this.state.currentPage > 1 ? <input className="btn-precedent" type="button" onClick={this.previousPage} value="Précédent" /> : '' }
+                  </div>
+                  { this.renderPage() }
+                  <div className="column">
+                    { this.state.currentPage < 3 ? <input className="btn-suivant" type="button" onClick={this.nextPage} value="Suivant" /> : <Mixeur /> }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="arrow" />
       </div>
     );
   }

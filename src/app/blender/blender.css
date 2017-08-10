@@ -1,12 +1,11 @@
 .form {
-  background-color: #F2F2F2;
-  padding:2% 18%;
+  padding:2% 12%;
 }
 
 .form-header {
   text-align: center;
   font-family: 'Lato', sans-serif;
-  padding: 3% 0%;
+  padding: 3%;
 }
 
 .form-header > h1 {
@@ -110,12 +109,21 @@
   font-weight: bolder;
 }
 
-.btn-suivant{
-  background-color: #E6421C;
-  color: white;
-  font-weight: bolder;
+.btn-suivant,
+.btn-precedent{
+  padding: 10px 20px;
+  border-radius: 6px;
   border: none;
-  padding: 15%;
+  background: #FF6F00;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-suivant:hover,
+.btn-precedent:hover {
+  background: #e66400;
 }
 
 
@@ -125,8 +133,7 @@ MODAL CODEPEN
 
 
 .modal-wrap {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 3000px;
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
@@ -173,7 +180,6 @@ MODAL CODEPEN
   margin-bottom: 50px;
   position: absolute;
   top: 0;
-  display: none;
   box-sizing: border-box;
   width: 100%;
   -webkit-transform-origin: top left;
