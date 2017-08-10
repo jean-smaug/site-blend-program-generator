@@ -48,14 +48,23 @@ export class CheckboxDomainComponent extends Component {
 
   submitLevel(e, level) {
     e.stopPropagation();
-    if(this.isChecked()){
-      this.setState({ domain: { domain: this.props.item.id, level: level },},
-        () => { this.props.updateLevel(this.state.domain); },
-      );
-    }else{
-      this.setState({ domain: { domain: this.props.item.id, level: level },},
-        () => { this.toogleChecked() },
-      );
+    if(!this.getCheckedLevel(level)) {
+      if (this.isChecked()) {
+        this.setState({domain: {domain: this.props.item.id, level: level},},
+          () => {
+            this.props.updateLevel(this.state.domain);
+          },
+        );
+      } else {
+        this.setState({domain: {domain: this.props.item.id, level: level},},
+          () => {
+            this.toogleChecked();
+          },
+        );
+      }
+    }
+    else{
+      this.toogleChecked();
     }
   }
   toogleChecked() {
