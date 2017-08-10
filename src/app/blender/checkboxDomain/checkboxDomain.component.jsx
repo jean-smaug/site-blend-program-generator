@@ -90,13 +90,17 @@ export class CheckboxDomainComponent extends Component {
   render() {
     return (
       <div
-        className={this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
+        // className={this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
+        className="blockDomain"
         onClick={this.toogleChecked}
         onMouseEnter={this.onMouseEnterHandler}
         onMouseLeave={this.onMouseLeaveHandler}
+        style={ this.isChecked() || this.state.hover ? { backgroundImage: `url(img/domains/${this.props.item.id}.png)`} : { backgroundImage: `url(./img/domains/${this.props.item.id}-disabled.png)` } }
       >
         <div>
           <h1> {this.props.item.libelle} </h1>
+          {!this.isChecked() && !this.state.hover
+            ? <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam asperiores autem dicta dignissimos dolore dolorum ea facere, impedit in iste molestiae, nisi nostrum perferendis, placeat quod sapiente tempora velit.</p> : '' }
           {this.isChecked() || this.state.hover
             ? <div className="groupBtnLevel">
               <span onClick={event => this.submitLevel(event, 'noob')} className={this.getCheckedLevel('noob') ? 'tag is-info level-objectif' : 'tag is-notselected level-objectif'} > Découvrir </span>
