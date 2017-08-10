@@ -31,10 +31,11 @@ class Conference extends React.Component {
           title={this.props.name !== undefined ? this.props.name : 'Temps libre'}
           {...this.props}
         />
-        <div className="columns"
-             onClick={this.toggleModal}
-             aria-pressed="true"
-             tabIndex="0"
+        <div
+          className="columns"
+          onClick={this.toggleModal}
+          aria-pressed="true"
+          tabIndex="0"
         >
           <div className="column">
             <div className="conference">

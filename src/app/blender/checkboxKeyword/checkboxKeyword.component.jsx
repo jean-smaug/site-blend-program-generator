@@ -12,8 +12,8 @@ export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
-    this.state =  {
-      color: _.sample(['info', 'success', 'primary', 'warning'])
+    this.state = {
+      color: _.sample(['info', 'success', 'primary', 'warning']),
     };
   }
 
@@ -25,10 +25,11 @@ export class CheckboxKeywordComponent extends Component {
 
   render() {
     return (
-      <span className={_.includes(this.props.keywords, this.props.item.id) ? `tag is-${this.state.color} keyword-elt` : `tag is-notselected keyword-elt` }
-            onClick={this.toggleCheckbox}
+      <span
+        className={_.includes(this.props.keywords, this.props.item.id) ? `tag is-${this.state.color} keyword-elt` : 'tag is-notselected keyword-elt'}
+        onClick={this.toggleCheckbox}
       >
-          {this.props.item.libelle}
+        {this.props.item.libelle}
       </span>
     );
   }

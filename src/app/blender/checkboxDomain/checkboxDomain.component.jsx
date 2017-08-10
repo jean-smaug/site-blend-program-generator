@@ -21,7 +21,7 @@ export class CheckboxDomainComponent extends Component {
         domain: this.props.item.id,
         level: 'noob',
       },
-      hover: false
+      hover: false,
     };
   }
 
@@ -48,22 +48,21 @@ export class CheckboxDomainComponent extends Component {
 
   submitLevel(e, level) {
     e.stopPropagation();
-    if(!this.getCheckedLevel(level)) {
+    if (!this.getCheckedLevel(level)) {
       if (this.isChecked()) {
-        this.setState({domain: {domain: this.props.item.id, level: level},},
+        this.setState({ domain: { domain: this.props.item.id, level } },
           () => {
             this.props.updateLevel(this.state.domain);
           },
         );
       } else {
-        this.setState({domain: {domain: this.props.item.id, level: level},},
+        this.setState({ domain: { domain: this.props.item.id, level } },
           () => {
             this.toogleChecked();
           },
         );
       }
-    }
-    else{
+    } else {
       this.toogleChecked();
     }
   }
@@ -76,32 +75,32 @@ export class CheckboxDomainComponent extends Component {
   }
 
   onMouseEnterHandler() {
-  this.setState({
-    hover: true
-  });
-}
+    this.setState({
+      hover: true,
+    });
+  }
 
   onMouseLeaveHandler() {
-  this.setState({
-    hover: false
-  });
-}
+    this.setState({
+      hover: false,
+    });
+  }
 
 
   render() {
     return (
       <div
-        className={ this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
+        className={this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
         onClick={this.toogleChecked}
         onMouseEnter={this.onMouseEnterHandler}
         onMouseLeave={this.onMouseLeaveHandler}
       >
         <div>
           <h1> {this.props.item.libelle} </h1>
-          {this.isChecked() | this.state.hover
+          {this.isChecked() || this.state.hover
             ? <div className="groupBtnLevel">
-              <span onClick={(event) => this.submitLevel(event, 'noob')} className={this.getCheckedLevel('noob') ? `tag is-info level-objectif` : `tag is-notselected level-objectif` } > Découvrir </span>
-              <span onClick={(event) => this.submitLevel(event, 'confirmed')} className={this.getCheckedLevel('confirmed') ? `tag is-warning level-objectif` : `tag is-notselected level-objectif` } > Appronfondir </span>
+              <span onClick={event => this.submitLevel(event, 'noob')} className={this.getCheckedLevel('noob') ? 'tag is-info level-objectif' : 'tag is-notselected level-objectif'} > Découvrir </span>
+              <span onClick={event => this.submitLevel(event, 'confirmed')} className={this.getCheckedLevel('confirmed') ? 'tag is-warning level-objectif' : 'tag is-notselected level-objectif'} > Appronfondir </span>
             </div> : '' }
         </div>
       </div>

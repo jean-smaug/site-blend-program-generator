@@ -17,7 +17,7 @@ class Blender extends React.Component {
     super(props);
     this.state = {
       currentPage: 1,
-      filterKeywords: ''
+      filterKeywords: '',
     };
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
@@ -26,22 +26,16 @@ class Blender extends React.Component {
   }
 
   nextPage() {
-    this.setState((prevState) => {
-      return {currentPage: prevState.currentPage + 1};
-    });
+    this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
   }
 
   previousPage() {
-    this.setState((prevState) => {
-      return {currentPage: prevState.currentPage - 1};
-    });
+    this.setState(prevState => ({ currentPage: prevState.currentPage - 1 }));
   }
 
-  handleFilterKeyword(event){
+  handleFilterKeyword(event) {
     const value = event.target.value;
-    this.setState(() => {
-      return {filterKeywords: value}
-    })
+    this.setState(() => ({ filterKeywords: value }));
   }
 
   renderPage() {
@@ -53,11 +47,11 @@ class Blender extends React.Component {
             <input className="input" onChange={this.handleFilterKeyword} type="text" placeholder="Rechercher d'autres mots clefs..." />
           </div>
           {keywords.map((item) => {
-            if((this.state.filterKeywords === '' || item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase()))){
+            if ((this.state.filterKeywords === '' || item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase()))) {
               return <CheckboxKeyword item={item} key={item.id} />;
             }
             return null;
-          }).filter(item => (item !== null )).slice(0, 5)}
+          }).filter(item => (item !== null)).slice(0, 5)}
         </div>
       );
     } else if (this.state.currentPage === 3) {
@@ -87,7 +81,7 @@ class Blender extends React.Component {
             <h1>Choisissez les ingrédients de vos smoothies</h1>
             <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
           </div>
-          <progress className="progress is-orange" value={ this.state.currentPage * 33.333} max="100">45%</progress>
+          <progress className="progress is-orange" value={this.state.currentPage * 33.333} max="100">45%</progress>
           <div className="columns items">
             <div className="column">
               { this.state.currentPage > 1 ? <input type="button" onClick={this.previousPage} value="Précédent" /> : '' }
