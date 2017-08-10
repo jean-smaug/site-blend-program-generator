@@ -20,6 +20,7 @@
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-jest": "^20.0.3",
     "flow-bin": "^0.52.0",
     "react-scripts": "1.0.7",
