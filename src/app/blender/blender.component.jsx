@@ -43,6 +43,8 @@ class Blender extends React.Component {
       return (
         <div className="column">
           <h1 className="category-title">Les thématiques</h1>
+          <h2 className="category-desc">Cochez les mots clefs qui correspondent à votre profil de chef... :)</h2>
+          <hr/>
           <div className="control">
             <input className="input" onChange={this.handleFilterKeyword} type="text" placeholder="Rechercher d'autres mots clefs..." />
           </div>
@@ -51,7 +53,7 @@ class Blender extends React.Component {
               return <CheckboxKeyword item={item} key={item.id} />;
             }
             return null;
-          }).filter(item => (item !== null)).slice(0, 5)}
+          }).filter(item => (item !== null)).slice(0, 10)}
         </div>
       );
     } else if (this.state.currentPage === 3) {
@@ -64,7 +66,9 @@ class Blender extends React.Component {
     }
     return (
       <div className="column">
-        <h1 className="category-title">Les sujets</h1>
+        <h1 className="category-title">Vos sujets favoris</h1>
+        <h2 className="category-desc">Choisissez vos types de conférences préférés ainsi que le niveau souhaite.. :)</h2>
+        <hr/>
         <div className="columns">
           {domains.map(item => (<div className="column"><CheckboxDomain item={item} key={item.id} /></div>))}
         </div>
@@ -81,14 +85,14 @@ class Blender extends React.Component {
             <h1>Choisissez les ingrédients de vos smoothies</h1>
             <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
           </div>
-          <progress className="progress is-orange" value={this.state.currentPage * 33.333} max="100">45%</progress>
+          <progress className="progress is-orange" value={this.state.currentPage * 33.333} max="100" />
           <div className="columns items">
             <div className="column">
-              { this.state.currentPage > 1 ? <input type="button" onClick={this.previousPage} value="Précédent" /> : '' }
+              { this.state.currentPage > 1 ? <input className="btn-precedent" type="button" onClick={this.previousPage} value="Précédent" /> : '' }
             </div>
             { this.renderPage() }
             <div className="column">
-              { this.state.currentPage < 3 ? <input type="button" onClick={this.nextPage} value="Suivant" /> : <Mixeur /> }
+              { this.state.currentPage < 3 ? <input className="btn-suivant" type="button" onClick={this.nextPage} value="Suivant" /> : <Mixeur /> }
             </div>
           </div>
         </div>
