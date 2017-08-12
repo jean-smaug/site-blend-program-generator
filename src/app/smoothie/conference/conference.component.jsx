@@ -17,6 +17,12 @@ class Conference extends React.Component {
     name: string,
     timeBegin: string,
     timeEnd: string,
+    // keywords: Array<string>,
+    // picture: string,
+    // twitter: string,
+    // linkedin: string,
+    // speaker: string,
+    // description: string,
   };
 
   toggleModal = () => {
@@ -38,7 +44,7 @@ class Conference extends React.Component {
           title={name !== undefined ? name : 'Temps libre'}
           {...this.props}
         />
-        <div className="columns" onClick={this.toggleModal} aria-pressed="true" tabIndex="0">
+        <div className="columns" onClick={this.toggleModal} role="presentation">
           <div className="column">
             <div className="conference">
               <div className="conference-opt">

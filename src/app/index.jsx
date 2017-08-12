@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 import { removeConferences } from './smoothie/smoothie.action';
 
-export const App = ({ smoothie, removeConferences }) =>
+export const App = ({ smoothie, removeConferencesFromState }) =>
   (<div className="App">
     <div className="columns">
       <div className="column">
@@ -31,7 +32,7 @@ export const App = ({ smoothie, removeConferences }) =>
               }}
               type="button"
               value="Remix"
-              onClick={removeConferences}
+              onClick={removeConferencesFromState}
             />{' '}
             <SmoothieContainer />
           </div>
@@ -42,6 +43,7 @@ export const App = ({ smoothie, removeConferences }) =>
 
 App.propTypes = {
   smoothie: SmoothieContainer.propTypes.isRequired,
+  removeConferencesFromState: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -49,7 +51,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeConferences: () => {
+  removeConferencesFromState: () => {
     dispatch(removeConferences());
   },
 });
