@@ -1,7 +1,5 @@
 import firebase from 'firebase';
 
-require('dotenv').config();
-
 const config = {
   apiKey: 'AIzaSyA0Kf7uR1jIr2yZGO9478fULgjPTK1NIfE',
   authDomain: 'blender-dev.firebaseapp.com',
