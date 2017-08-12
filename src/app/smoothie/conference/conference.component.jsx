@@ -14,6 +14,18 @@ class Conference extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
+  props: {
+    name: string,
+    timeBegin: string,
+    timeEnd: string,
+    keywords: array,
+    picture: string,
+    twitter: string,
+    linkedin: string,
+    speaker: string,
+    description: string,
+  };
+
   toggleModal() {
     this.setState((prev) => {
       const newState = !prev.isModalVisible;
@@ -55,17 +67,5 @@ class Conference extends React.Component {
     );
   }
 }
-
-Conference.propTypes = {
-  name: PropType.string.isRequired,
-  timeBegin: PropType.string.isRequired,
-  timeEnd: PropType.string.isRequired,
-  keywords: PropType.array,
-  picture: PropType.string,
-  twitter: PropType.string,
-  linkedin: PropType.string,
-  speaker: PropType.string,
-  description: PropType.string,
-};
 
 export default Conference;

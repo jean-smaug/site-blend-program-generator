@@ -17,8 +17,8 @@ export class CheckboxKeywordComponent extends Component {
     };
   }
 
-  toggleCheckbox(e) {
-    if (!_.includes(this.props.state.keywords, this.props.item.id)) {
+  toggleCheckbox() {
+    if (!_.includes(this.props.keywords, this.props.item.id)) {
       this.props.addKeyword(this.props.item.id);
     } else this.props.removeKeyword(this.props.item.id);
   }

@@ -104,12 +104,12 @@ class Blender extends React.Component {
                   <div className="items">
                     { this.renderPage() }
                   </div>
-                  <hr/>
+                  <hr />
                   <div className=" columns">
                     <div className="column is-4">
                       { this.state.currentPage > 1 ? <input className="btn-precedent" type="button" onClick={this.previousPage} value="< Précédent" /> : '' }
                     </div>
-                      <div className="column is-4 is-offset-6">
+                    <div className="column is-4 is-offset-6">
                       { this.state.currentPage < 3 ? <input className="btn-suivant" type="button" onClick={this.nextPage} value="Suivant >" /> : '' }
                     </div>
                   </div>
