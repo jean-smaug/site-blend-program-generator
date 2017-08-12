@@ -9,22 +9,9 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div>
-    <ToastContainer
-        className="toast-bottom-full-width"
-        id="toast-container"
-        newestOnTop={true}
-        onClick={[Function]}
-        preventDuplicates={true}
-        toastMessageFactory={[Function]}
-        toastType={
-            Object {
-                "error": "error",
-                "info": "info",
-                "success": "success",
-                "warning": "warning",
-              }
-        }
-    />
+    <p>
+        czeez
+    </p>
     <div
         className="outils"
     >
@@ -48,12 +35,12 @@ ShallowWrapper {
             <div
                 className="header-date"
             >
-                <h1>
-                    Jour 1
-                </h1>
                 <h2>
-                    Jeudi 26 octobre
+                    Jour 1
                 </h2>
+                <h3>
+                    Jeudi 26 octobre
+                </h3>
             </div>
             <ListConference
                 day={Object {}}
@@ -72,9 +59,9 @@ ShallowWrapper {
                 <h1>
                     Jour 2
                 </h1>
-                <h2>
+                <h3>
                     Vendredi 27 octobre
-                </h2>
+                </h3>
             </div>
             <ListConference
                 day={Object {}}
@@ -87,22 +74,9 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div>
-      <ToastContainer
-            className="toast-bottom-full-width"
-            id="toast-container"
-            newestOnTop={true}
-            onClick={[Function]}
-            preventDuplicates={true}
-            toastMessageFactory={[Function]}
-            toastType={
-                  Object {
-                        "error": "error",
-                        "info": "info",
-                        "success": "success",
-                        "warning": "warning",
-                      }
-            }
-      />
+      <p>
+            czeez
+      </p>
       <div
             className="outils"
       >
@@ -126,12 +100,12 @@ ShallowWrapper {
                   <div
                         className="header-date"
                   >
-                        <h1>
-                              Jour 1
-                        </h1>
                         <h2>
-                              Jeudi 26 octobre
+                              Jour 1
                         </h2>
+                        <h3>
+                              Jeudi 26 octobre
+                        </h3>
                   </div>
                   <ListConference
                         day={Object {}}
@@ -150,9 +124,9 @@ ShallowWrapper {
                         <h1>
                               Jour 2
                         </h1>
-                        <h2>
+                        <h3>
                               Vendredi 27 octobre
-                        </h2>
+                        </h3>
                   </div>
                   <ListConference
                         day={Object {}}
@@ -206,22 +180,9 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
-          <ToastContainer
-                    className="toast-bottom-full-width"
-                    id="toast-container"
-                    newestOnTop={true}
-                    onClick={[Function]}
-                    preventDuplicates={true}
-                    toastMessageFactory={[Function]}
-                    toastType={
-                              Object {
-                                        "error": "error",
-                                        "info": "info",
-                                        "success": "success",
-                                        "warning": "warning",
-                                      }
-                    }
-          />
+          <p>
+                    czeez
+          </p>
           <div
                     className="outils"
           >
@@ -245,12 +206,12 @@ ShallowWrapper {
                               <div
                                         className="header-date"
                               >
-                                        <h1>
-                                                  Jour 1
-                                        </h1>
                                         <h2>
-                                                  Jeudi 26 octobre
+                                                  Jour 1
                                         </h2>
+                                        <h3>
+                                                  Jeudi 26 octobre
+                                        </h3>
                               </div>
                               <ListConference
                                         day={Object {}}
@@ -269,9 +230,9 @@ ShallowWrapper {
                                         <h1>
                                                   Jour 2
                                         </h1>
-                                        <h2>
+                                        <h3>
                                                   Vendredi 27 octobre
-                                        </h2>
+                                        </h3>
                               </div>
                               <ListConference
                                         day={Object {}}
@@ -284,22 +245,9 @@ ShallowWrapper {
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div>
-          <ToastContainer
-                    className="toast-bottom-full-width"
-                    id="toast-container"
-                    newestOnTop={true}
-                    onClick={[Function]}
-                    preventDuplicates={true}
-                    toastMessageFactory={[Function]}
-                    toastType={
-                              Object {
-                                        "error": "error",
-                                        "info": "info",
-                                        "success": "success",
-                                        "warning": "warning",
-                                      }
-                    }
-          />
+          <p>
+                    czeez
+          </p>
           <div
                     className="outils"
           >
@@ -323,12 +271,12 @@ ShallowWrapper {
                               <div
                                         className="header-date"
                               >
-                                        <h1>
-                                                  Jour 1
-                                        </h1>
                                         <h2>
-                                                  Jeudi 26 octobre
+                                                  Jour 1
                                         </h2>
+                                        <h3>
+                                                  Jeudi 26 octobre
+                                        </h3>
                               </div>
                               <ListConference
                                         day={Object {}}
@@ -347,9 +295,9 @@ ShallowWrapper {
                                         <h1>
                                                   Jour 2
                                         </h1>
-                                        <h2>
+                                        <h3>
                                                   Vendredi 27 octobre
-                                        </h2>
+                                        </h3>
                               </div>
                               <ListConference
                                         day={Object {}}
