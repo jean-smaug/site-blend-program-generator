@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
@@ -7,7 +9,7 @@ import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 
-export const App = ({ smoothie }) =>
+export const App = ({ smoothie }: { smoothie: Object }) =>
   (<div className="App">
     <div className="columns">
       <div className="column">
