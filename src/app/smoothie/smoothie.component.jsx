@@ -32,6 +32,21 @@ export class SmoothieComponent extends Component {
   render() {
     return (
       <div className="smoothie">
+        <input
+          style={{
+            height: '100px',
+            width: '100px',
+            borderRadius: '50%',
+            boxShadow: '2px 2px 8px #aaa',
+            backgroundColor: '#E6421D',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '1.2em',
+          }}
+          type="button"
+          value="Remix"
+          onClick={removeConferencesFromState}
+        />
         <ToastContainer
           ref={(input) => {
             this.toast = input;
@@ -41,12 +56,7 @@ export class SmoothieComponent extends Component {
         />
 
         <div className="outils">
-          <a
-            role="button"
-            aria-pressed="true"
-            tabIndex="0"
-            onClick={this.handleClickSave}
-          >
+          <a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>
             <i className="fa fa-save" />
           </a>
         </div>
