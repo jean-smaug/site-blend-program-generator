@@ -17,171 +17,138 @@ Array [
             </h2>
         </div>
         <div
-            className="columns items"
+            className="columns"
         >
             <div
-                className="column"
+                className="modal-wrap column"
             >
-                <h1
-                    className="category-title"
+                <div
+                    className="modal-header"
                 >
-                    Les thématiques
-                </h1>
-                <Connect(CheckboxDomainComponent)
-                    item={
-                        Object {
-                            "id": "tech",
-                            "libelle": "Technique",
-                          }
-                    }
-                />
-                <Connect(CheckboxDomainComponent)
-                    item={
-                        Object {
-                            "id": "market",
-                            "libelle": "Market",
-                          }
-                    }
-                />
-                <Connect(CheckboxDomainComponent)
-                    item={
-                        Object {
-                            "id": "biz",
-                            "libelle": "Business",
-                          }
-                    }
-                />
-                <Connect(CheckboxDomainComponent)
-                    item={
-                        Array [
-                            Object {
-                              "id": "tech",
-                              "libelle": "Technique",
-                            },
-                            Object {
-                              "id": "market",
-                              "libelle": "Market",
-                            },
-                            Object {
-                              "id": "biz",
-                              "libelle": "Business",
-                            },
-                          ]
-                    }
-                />
-            </div>
-            <div
-                className="column"
-            >
-                <h1
-                    className="category-title"
+                    <span
+                        className="is-active"
+                    />
+                    <span
+                        className={null}
+                    />
+                    <span
+                        className={null}
+                    />
+                </div>
+                <div
+                    className="modal-bodies"
                 >
-                    Les sujets
-                </h1>
-                <Connect(CheckboxKeywordComponent)
-                    item={
-                        Object {
-                            "id": "js",
-                            "libelle": "Javascript",
-                          }
-                    }
-                />
-                <Connect(CheckboxKeywordComponent)
-                    item={
-                        Object {
-                            "id": "php",
-                            "libelle": "Php",
-                          }
-                    }
-                />
-                <Connect(CheckboxKeywordComponent)
-                    item={
-                        Object {
-                            "id": "management",
-                            "libelle": "Gestion de projet",
-                          }
-                    }
-                />
-                <Connect(CheckboxKeywordComponent)
-                    item={
-                        Array [
-                            Object {
-                              "id": "js",
-                              "libelle": "Javascript",
-                            },
-                            Object {
-                              "id": "php",
-                              "libelle": "Php",
-                            },
-                            Object {
-                              "id": "management",
-                              "libelle": "Gestion de projet",
-                            },
-                          ]
-                    }
-                />
-            </div>
-            <div
-                className="column"
-            >
-                <h1
-                    className="category-title"
-                >
-                    Vos objectifs
-                </h1>
-                <Connect(CheckboxObjectifComponent)
-                    item={
-                        Object {
-                            "id": "reseau",
-                            "libelle": "Reseauter",
-                          }
-                    }
-                />
-                <Connect(CheckboxObjectifComponent)
-                    item={
-                        Object {
-                            "id": "culture",
-                            "libelle": "Me cultiver",
-                          }
-                    }
-                />
-                <Connect(CheckboxObjectifComponent)
-                    item={
-                        Object {
-                            "id": "learn",
-                            "libelle": "Apprendre",
-                          }
-                    }
-                />
-                <Connect(CheckboxObjectifComponent)
-                    item={
-                        Array [
-                            Object {
-                              "id": "reseau",
-                              "libelle": "Reseauter",
-                            },
-                            Object {
-                              "id": "culture",
-                              "libelle": "Me cultiver",
-                            },
-                            Object {
-                              "id": "learn",
-                              "libelle": "Apprendre",
-                            },
-                          ]
-                    }
-                />
-            </div>
-            <div
-                className="column mix-btn"
-            >
-                <Connect(MixeurComponent) />
+                    <div
+                        className="modal-body"
+                    >
+                        <div
+                            className="items"
+                        >
+                            <div
+                                className="columns"
+                            >
+                                <div
+                                    className="column"
+                                >
+                                    <h1
+                                        className="category-title"
+                                    >
+                                        Vos sujets favoris
+                                    </h1>
+                                    <h2
+                                        className="category-desc"
+                                    >
+                                        Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
+                                    </h2>
+                                    <hr />
+                                    <div
+                                        className="columns"
+                                    >
+                                        <div
+                                            className="column"
+                                        >
+                                            <Connect(CheckboxDomainComponent)
+                                                item={
+                                                    Object {
+                                                        "id": "tech",
+                                                        "libelle": "Technique",
+                                                      }
+                                                }
+                                            />
+                                        </div>
+                                        <div
+                                            className="column"
+                                        >
+                                            <Connect(CheckboxDomainComponent)
+                                                item={
+                                                    Object {
+                                                        "id": "market",
+                                                        "libelle": "Market",
+                                                      }
+                                                }
+                                            />
+                                        </div>
+                                        <div
+                                            className="column"
+                                        >
+                                            <Connect(CheckboxDomainComponent)
+                                                item={
+                                                    Object {
+                                                        "id": "biz",
+                                                        "libelle": "Business",
+                                                      }
+                                                }
+                                            />
+                                        </div>
+                                        <div
+                                            className="column"
+                                        >
+                                            <Connect(CheckboxDomainComponent)
+                                                item={
+                                                    Array [
+                                                        Object {
+                                                          "id": "tech",
+                                                          "libelle": "Technique",
+                                                        },
+                                                        Object {
+                                                          "id": "market",
+                                                          "libelle": "Market",
+                                                        },
+                                                        Object {
+                                                          "id": "biz",
+                                                          "libelle": "Business",
+                                                        },
+                                                      ]
+                                                }
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div
+                            className=" columns"
+                        >
+                            <div
+                                className="column is-4"
+                            />
+                            <div
+                                className="column is-4 is-offset-6"
+                            >
+                                <input
+                                    className="btn-suivant"
+                                    onClick={[Function]}
+                                    type="button"
+                                    value="Suivant >"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div
-        className="arrow"
-    />
 </div>,
 ]
 `;

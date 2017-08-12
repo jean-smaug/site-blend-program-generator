@@ -12,10 +12,9 @@ Array [
         title="foo"
     />
     <div
-        aria-pressed="true"
         className="columns"
         onClick={[Function]}
-        tabIndex="0"
+        role="presentation"
     >
         <div
             className="column"

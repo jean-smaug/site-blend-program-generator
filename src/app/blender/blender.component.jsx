@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 import './blender.css';
 import * as keywords from './data/keywords.json';
@@ -10,32 +11,25 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import Mixeur from './mixeur/mixeur.component';
 
 export default class Blender extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentPage: 1,
-      filterKeywords: '',
-    };
-    this.nextPage = this.nextPage.bind(this);
-    this.previousPage = this.previousPage.bind(this);
-    this.renderPage = this.renderPage.bind(this);
-    this.handleFilterKeyword = this.handleFilterKeyword.bind(this);
-  }
+  state = {
+    currentPage: 1,
+    filterKeywords: '',
+  };
 
-  nextPage() {
+  nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
-  }
+  };
 
-  previousPage() {
+  previousPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage - 1 }));
-  }
+  };
 
-  handleFilterKeyword(event) {
+  handleFilterKeyword = (event) => {
     const value = event.target.value;
     this.setState(() => ({ filterKeywords: value }));
-  }
+  };
 
-  renderPage() {
+  renderPage = () => {
     if (this.state.currentPage === 2) {
       return (
         <div className="columns">
@@ -53,16 +47,15 @@ export default class Blender extends React.Component {
                 placeholder="Rechercher d'autres mots clefs..."
               />
             </div>
-            {keywords
-              .map((item) => {
-                if (
-                  this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-                ) {
-                  return <CheckboxKeyword item={item} key={item.id} />;
-                }
-                return null;
-              })
+            {_.map(keywords, (item) => {
+              if (
+                this.state.filterKeywords === '' ||
+                item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+              ) {
+                return <CheckboxKeyword item={item} key={item.id} />;
+              }
+              return null;
+            })
               .filter(item => item !== null)
               .slice(0, 10)}
           </div>
@@ -73,7 +66,7 @@ export default class Blender extends React.Component {
         <div className="columns">
           <div className="column">
             <h1 className="category-title">Les objectifs</h1>
-            {objectifs.map(item => <CheckboxObjectif item={item} key={item.id} />)}
+            {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
           </div>
           <div className="column">
             <Mixeur />
@@ -81,6 +74,7 @@ export default class Blender extends React.Component {
         </div>
       );
     }
+
     return (
       <div className="columns">
         <div className="column">
@@ -90,7 +84,7 @@ export default class Blender extends React.Component {
           </h2>
           <hr />
           <div className="columns">
-            {domains.map(item =>
+            {_.map(domains, item =>
               (<div className="column">
                 <CheckboxDomain item={item} key={item.id} />
               </div>),
@@ -99,7 +93,7 @@ export default class Blender extends React.Component {
         </div>
       </div>
     );
-  }
+  };
 
   render() {
     return (

@@ -5,6 +5,7 @@ Array [
   <span
     className="tag is-notselected keyword-elt"
     onClick={[Function]}
+    role="presentation"
 >
     tech
 </span>,
