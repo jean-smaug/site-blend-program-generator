@@ -217,6 +217,11 @@
     "level": "noob",
     "description": "Aliqua nulla nisi velit duis voluptate do dolor enim culpa minim eu. Lorem veniam irure consectetur sunt sunt magna ipsum.",
     "name": "dolore qui",
+    "speaker": "Maxime CHABERT",
+    "twitter" : "max_chbt",
+    "linkedin": "https://fr.linkedin.com/in/maxime-chabert",
+    "picture" : "https://scontent-mrs1-1.xx.fbcdn.net/v/t1.0-9/14199506_10208968323340522_854125829666055805_n.jpg?oh=43b09cf18b1bb9a4c3a783f933451208&oe=59EF236A",
+    "keywords" : [ "js", "php", "Symfony" ],
     "_id": "5972499097401a09f91a1bde"
   },
   {

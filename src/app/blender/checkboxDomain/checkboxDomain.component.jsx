@@ -13,8 +13,8 @@ export class CheckboxDomainComponent extends Component {
     this.submitLevel = this.submitLevel.bind(this);
     this.toogleChecked = this.toogleChecked.bind(this);
     this.isChecked = this.isChecked.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
+    this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
 
     this.state = {
       domain: {
@@ -23,6 +23,18 @@ export class CheckboxDomainComponent extends Component {
       },
       hover: false,
     };
+  }
+
+  onMouseEnterHandler() {
+    this.setState({
+      hover: true,
+    });
+  }
+
+  onMouseLeaveHandler() {
+    this.setState({
+      hover: false,
+    });
   }
 
   getCheckedLevel(level) {
@@ -45,67 +57,57 @@ export class CheckboxDomainComponent extends Component {
     return checked;
   }
 
-  handleMouseLeave() {
-    this.setState({ hover: false });
+
+  submitLevel(e, level) {
+    e.stopPropagation();
+    if (!this.getCheckedLevel(level)) {
+      if (this.isChecked()) {
+        this.setState({ domain: { domain: this.props.item.id, level } },
+          () => {
+            this.props.updateLevel(this.state.domain);
+          },
+        );
+      } else {
+        this.setState({ domain: { domain: this.props.item.id, level } },
+          () => {
+            this.toogleChecked();
+          },
+        );
+      }
+    } else {
+      this.toogleChecked();
+    }
   }
 
-  handleMouseEnter() {
-    if (this.isChecked()) this.setState({ hover: true });
-  }
-  submitLevel(e) {
-    this.setState(
-      {
-        domain: { domain: this.props.item.id, level: e.currentTarget.value },
-      },
-      () => {
-        this.props.updateLevel(this.state.domain);
-      },
-    );
-  }
-  toogleChecked(e) {
-    if (e.target.checked) {
+  toogleChecked() {
+    if (!this.isChecked()) {
       this.props.addDomain(this.state.domain);
-      this.setState({ hover: true });
     } else {
       this.props.removeDomain(this.state.domain);
-      this.setState({ hover: false });
     }
   }
 
   render() {
     return (
       <div
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
+        // className={this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
+        className="blockDomain"
+        role="presentation"
+        onClick={this.toogleChecked}
+        onMouseEnter={this.onMouseEnterHandler}
+        onMouseLeave={this.onMouseLeaveHandler}
+        style={this.isChecked() ? { backgroundImage: `url(img/domains/${this.props.item.id}.png)` } : { backgroundImage: `url(./img/domains/${this.props.item.id}-disabled.png)` }}
       >
         <div>
-          {this.state.hover
-            ? <div>
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="noob"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('noob')}
-              />
-                Débutant
-              <input
-                type="radio"
-                name={this.props.item.id}
-                value="confirmed"
-                onChange={this.submitLevel}
-                checked={this.getCheckedLevel('confirmed')}
-              />
-                Expert
-            </div>
-            : ''}
-          <input
-            onChange={this.toogleChecked}
-            name={this.props.item.id}
-            type="checkbox"
-            checked={this.isChecked()}
-          />
-          {this.props.item.libelle}
+          <h1
+            style={this.isChecked() ? { backgroundColor: '#E6421C' } : { backgroundColor: '' }}
+          > {this.props.item.libelle} </h1>
+          { !this.isChecked() ? <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam asperiores autem dicta dignissimos dolore dolorum ea facere, impedit in iste molestiae, nisi nostrum perferendis, placeat quod sapiente tempora velit.</p> : '' }
+          {this.isChecked() || this.state.hover
+            ? <div className="groupBtnLevel">
+              <span role="presentation" onClick={event => this.submitLevel(event, 'noob')} className={this.getCheckedLevel('noob') ? 'tag domain-selected level-objectif' : 'tag is-notselected level-objectif'} > Découvrir </span>
+              <span role="presentation" onClick={event => this.submitLevel(event, 'confirmed')} className={this.getCheckedLevel('confirmed') ? 'tag domain-selected level-objectif' : 'tag is-notselected level-objectif'} > Appronfondir </span>
+            </div> : '' }
         </div>
       </div>
     );

@@ -13,6 +13,12 @@ const formReducer = (state = initialState, action) => {
         dayOne: action.data.dayOne,
         dayTwo: action.data.dayTwo,
       };
+    case 'REMOVE_CONFERENCES':
+      return {
+        ...state,
+        dayOne: {},
+        dayTwo: {},
+      };
     default:
       return state;
   }
