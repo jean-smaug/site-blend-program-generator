@@ -1,28 +1,28 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  filterByLevelAndDomain,
-  orderConfences,
-} from '../../../lib/dataFilter.lib';
+import { filterByLevelAndDomain, orderConfences } from '../../../lib/dataFilter.lib';
+import { getConferences } from '../../../lib/database';
 import { addConferences } from '../../smoothie/smoothie.action';
 
 /**
  * Component for Submit button to mix
  */
 export class MixeurComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.submitBtn = this.submitBtn.bind(this);
-  }
+  props: {
+    addConferences: () => void,
+    state: Object,
+  };
 
-  submitBtn() {
-    // this.props.addConferences(
-    //   orderConfences(
-    //     filterByLevelAndDomain(data, this.props.state.form.domains),
-    //   ),
-    // );
-  }
+  submitBtn = async () => {
+    const conferences = (await getConferences()) || [];
+
+    this.props.addConferences(
+      orderConfences(filterByLevelAndDomain(conferences, this.props.state.form.domains)),
+    );
+  };
 
   render() {
     return (
