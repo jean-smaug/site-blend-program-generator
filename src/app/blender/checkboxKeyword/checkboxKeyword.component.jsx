@@ -26,6 +26,7 @@ export class CheckboxKeywordComponent extends Component {
   render() {
     return (
       <span
+        role="presentation"
         className={
           _.includes(this.props.keywords, this.props.item.id)
             ? `tag is-${this.state.color} keyword-elt`

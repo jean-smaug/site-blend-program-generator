@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
 const conferenceModal = ({
   closeModal,
@@ -77,7 +77,7 @@ const conferenceModal = ({
             {title}
           </h1>
           <h2>
-            {' '}{timeBegin}h00 > {timeEnd}h00
+            {`${timeBegin}h00 > ${timeEnd}h00`}
           </h2>
           {description}
           <div className="tags">

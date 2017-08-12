@@ -17,12 +17,6 @@ class Conference extends React.Component {
     name: string,
     timeBegin: string,
     timeEnd: string,
-    keywords: Array<string>,
-    picture: string,
-    twitter: string,
-    linkedin: string,
-    speaker: string,
-    description: string,
   };
 
   toggleModal = () => {
@@ -35,7 +29,7 @@ class Conference extends React.Component {
   };
 
   render() {
-    const { name, timeBegin, timeEnd } = { ...this.props };
+    const { name, timeBegin, timeEnd } = this.props;
     return (
       <div>
         <Modal
