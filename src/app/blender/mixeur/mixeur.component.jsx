@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { filterByLevelAndDomain, orderConfences } from '../../../lib/dataFilter.lib';
 import { getConferences } from '../../../lib/database';
 import { addConferences } from '../../smoothie/smoothie.action';
@@ -12,16 +11,15 @@ import { addConferences } from '../../smoothie/smoothie.action';
  */
 export class MixeurComponent extends Component {
   props: {
-    addConferences: () => void,
-    state: Object,
+    addConference: () => void,
+    form: Object,
   };
 
   submitBtn = async () => {
     const conferences = (await getConferences()) || [];
+    const { addConference, form } = this.props;
 
-    this.props.addConferences(
-      orderConfences(filterByLevelAndDomain(conferences, this.props.state.form.domains)),
-    );
+    addConference(orderConfences(filterByLevelAndDomain(conferences, form.domains)));
   };
 
   render() {
@@ -47,23 +45,12 @@ export class MixeurComponent extends Component {
   }
 }
 
-MixeurComponent.propTypes = {
-  addConferences: PropTypes.func.isRequired,
-  state: PropTypes.shape({
-    form: PropTypes.shape({
-      domains: PropTypes.array.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-
 const mapStateToProps = state => ({
-  state: {
-    form: state.form,
-  },
+  form: state.form,
 });
 
 const mapDispatchToProps = dispatch => ({
-  addConferences: (word) => {
+  addConference: (word) => {
     dispatch(addConferences(word));
   },
 });
