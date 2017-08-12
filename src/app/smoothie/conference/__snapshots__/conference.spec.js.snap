@@ -2,38 +2,52 @@
 
 exports[`conference.component should render conference.component 1`] = `
 Array [
-  <div
-    className="columns"
->
+  <div>
+    <conferenceModal
+        closeModal={[Function]}
+        modalState={false}
+        name="foo"
+        timeBegin="10"
+        timeEnd="12"
+        title="foo"
+    />
     <div
-        className="column"
+        aria-pressed="true"
+        className="columns"
+        onClick={[Function]}
+        tabIndex="0"
     >
         <div
-            className="conference"
+            className="column"
         >
             <div
-                className="conference-opt"
+                className="conference"
             >
-                <a>
-                    <i
-                        className="fa fa-arrows-h circle"
-                    />
-                </a>
-                <span
-                    className="conference-time"
+                <div
+                    className="conference-opt"
                 >
-                    10h00 &gt; 12h00
-                </span>
-                <a>
-                    <i
-                        className="fa fa-lock circle"
-                    />
-                </a>
-            </div>
-            <div
-                className="conference-title"
-            >
-                foo
+                    <a>
+                        <i
+                            className="fa fa-arrows-h circle"
+                        />
+                    </a>
+                    <span
+                        className="conference-time"
+                    >
+                        10h00 &gt; 12h00
+                    </span>
+                    <a>
+                        <i
+                            className="fa fa-lock circle"
+                        />
+                    </a>
+                </div>
+                <div
+                    className="conference-title"
+                    role="button"
+                >
+                    foo
+                </div>
             </div>
         </div>
     </div>

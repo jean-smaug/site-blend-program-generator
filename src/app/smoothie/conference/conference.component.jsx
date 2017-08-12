@@ -5,20 +5,19 @@ import './conference.css';
 import Modal from './conferenceModal.component';
 
 class Conference extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalVisible: false,
-    };
+  state = {
+    isModalVisible: false,
+  };
 
-    this.toggleModal = this.toggleModal.bind(this);
-  }
+  state: {
+    isModalVisible: boolean,
+  };
 
   props: {
     name: string,
     timeBegin: string,
     timeEnd: string,
-    keywords: array,
+    keywords: Array<string>,
     picture: string,
     twitter: string,
     linkedin: string,
@@ -26,14 +25,14 @@ class Conference extends React.Component {
     description: string,
   };
 
-  toggleModal() {
+  toggleModal = () => {
     this.setState((prev) => {
       const newState = !prev.isModalVisible;
       return {
         isModalVisible: newState,
       };
     });
-  }
+  };
 
   render() {
     const { name, timeBegin, timeEnd } = { ...this.props };

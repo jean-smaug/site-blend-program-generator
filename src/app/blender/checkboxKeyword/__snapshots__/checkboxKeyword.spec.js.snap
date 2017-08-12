@@ -2,16 +2,11 @@
 
 exports[`checkboxDomain.component should render component 1`] = `
 Array [
-  <div>
-    <div>
-        <input
-            checked={false}
-            name="1"
-            onChange={[Function]}
-            type="checkbox"
-        />
-        tech
-    </div>
-</div>,
+  <span
+    className="tag is-notselected keyword-elt"
+    onClick={[Function]}
+>
+    tech
+</span>,
 ]
 `;
