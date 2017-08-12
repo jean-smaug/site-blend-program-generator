@@ -39,3 +39,15 @@
   color: black;
   font-weight: bold;
 }
+
+.smoothie {
+  background: white;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  z-index: 1000;
+}

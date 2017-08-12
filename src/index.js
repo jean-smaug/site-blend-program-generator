@@ -8,10 +8,7 @@ import allReducers from './reducer';
 import App from './app';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(
-  allReducers,
-  composeWithDevTools(applyMiddleware(logger)),
-);
+const store = createStore(allReducers, composeWithDevTools(applyMiddleware(logger)));
 
 ReactDOM.render(
   <Provider store={store}>

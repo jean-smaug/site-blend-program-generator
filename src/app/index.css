@@ -2,3 +2,20 @@ html{
   background: radial-gradient(#fff176, #f57f17);
 }
 
+.smoothie-enter {
+  transform: translateY(100vh);
+}
+
+.smoothie-enter.smoothie-enter-active {
+  transition: transform 500ms ease-in;
+  transform: translateY(0);
+}
+
+.smoothie-exit {
+  transform: translateY(0);
+}
+
+.smoothie-exit.fade-smoothie-active {
+  transition: transform 500ms ease-in;
+  transform: translateY(100vh);
+}
