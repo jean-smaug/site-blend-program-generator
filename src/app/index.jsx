@@ -13,39 +13,37 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
   (<div className="App">
     <div className="columns">
       <div className="column">
-        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ? <FormContainer /> : null}
-      </div>
-    </div>
-    <div className="columns">
-      <div className="column">
-        {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)
-          ? <div>
-            <input
-              style={{
-                height: '100px',
-                width: '100px',
-                borderRadius: '50%',
-                boxShadow: '2px 2px 8px #aaa',
-                backgroundColor: '#E6421D',
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: '1.2em',
-              }}
-              type="button"
-              value="Remix"
-              onClick={removeConferencesFromState}
-            />{' '}
-            <SmoothieContainer />
+        <CSSTransition
+          in={!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)}
+          timeout={1500}
+          classNames="smoothie"
+        >
+          <div key="transition-group-content">
+            {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)
+              ? <div>
+                <input
+                  style={{
+                    height: '100px',
+                    width: '100px',
+                    borderRadius: '50%',
+                    boxShadow: '2px 2px 8px #aaa',
+                    backgroundColor: '#E6421D',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: '1.2em',
+                  }}
+                  type="button"
+                  value="Remix"
+                  onClick={removeConferencesFromState}
+                />{' '}
+                <SmoothieContainer />
+              </div>
+              : null}
           </div>
-          : null}
+        </CSSTransition>
       </div>
+      <FormContainer />
     </div>
-    <FormContainer />
-    <CSSTransition in={smoothie.conferences.length !== 0} timeout={1500} classNames="smoothie">
-      <div key="transition-group-content">
-        {smoothie.conferences.length !== 0 ? <SmoothieContainer /> : ''}
-      </div>
-    </CSSTransition>
   </div>);
 
 App.propTypes = {
