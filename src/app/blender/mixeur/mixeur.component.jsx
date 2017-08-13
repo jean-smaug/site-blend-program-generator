@@ -16,7 +16,7 @@ export class MixeurComponent extends Component {
   };
 
   submitBtn = async () => {
-   if(this.props.state.form.informations.isValidEmail){
+   if(this.props.form.informations.isValidEmail){
     const conferences = (await getConferences()) || [];
     const { addConference, form } = this.props;
 
