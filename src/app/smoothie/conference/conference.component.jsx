@@ -1,16 +1,19 @@
 // @flow
 
-import React from 'react';
-import './conference.css';
+import React, { Component } from 'react';
 import Modal from './conferenceModal.component';
+import './conference.css';
 
-class Conference extends React.Component {
+export default class Conference extends Component {
   state = {
     isModalVisible: false,
+    isSwitcherOpened: false,
   };
 
   state: {
+    selectedConference: number,
     isModalVisible: boolean,
+    isSwitcherOpened: boolean,
   };
 
   props: {
@@ -34,8 +37,21 @@ class Conference extends React.Component {
     });
   };
 
+  openSwitcher = () => {
+    this.setState({
+      isSwitcherOpened: !this.state.isSwitcherOpened,
+    });
+  };
+
+  switchConference = (index: number) => {
+    this.setState({
+      selectedConference: index,
+    });
+  };
+
   render() {
-    const { name, timeBegin, timeEnd } = this.props;
+    const { timeBegin, timeEnd, name } = this.props;
+
     return (
       <div>
         <Modal
@@ -48,13 +64,13 @@ class Conference extends React.Component {
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                <a>
-                  <i className="fa fa-arrows-h circle" />
-                </a>
+                <i
+                  role="presentation"
+                  onClick={this.openSwitcher}
+                  className="fa fa-arrows-h circle"
+                />
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                <a>
-                  <i className="fa fa-lock circle" />
-                </a>
+                <i className="fa fa-lock circle" />
               </div>
               <div role="button" className="conference-title">
                 {name !== undefined ? name : 'Temps libre'}
@@ -66,5 +82,3 @@ class Conference extends React.Component {
     );
   }
 }
-
-export default Conference;

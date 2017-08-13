@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`switch component should render the switch component 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <div
+        className="switcher"
+    >
+        <div>
+            <a
+                role="button"
+            >
+                nisi nostrud
+            </a>
+            <br />
+        </div>
+        <div>
+            <a
+                role="button"
+            >
+                tempor anim
+            </a>
+            <br />
+        </div>
+        <div>
+            <a
+                role="button"
+            >
+                ad deserunt
+            </a>
+            <br />
+        </div>
+    </div>
+</div>,
+  "nodes": Array [
+    <div>
+      <div
+            className="switcher"
+      >
+            <div>
+                  <a
+                        role="button"
+                  >
+                        nisi nostrud
+                  </a>
+                  <br />
+            </div>
+            <div>
+                  <a
+                        role="button"
+                  >
+                        tempor anim
+                  </a>
+                  <br />
+            </div>
+            <div>
+                  <a
+                        role="button"
+                  >
+                        ad deserunt
+                  </a>
+                  <br />
+            </div>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Switch
+        conferences={
+                Array [
+                        Object {
+                          "date": "day2",
+                          "description": "Esse amet tempor aute sunt. Magna voluptate nulla duis ullamco amet nisi proident eiusmod duis.",
+                          "domain": "biz",
+                          "id": "59724990bb9d86db92537dba",
+                          "level": "noob",
+                          "name": "nisi nostrud",
+                          "timeBegin": 16,
+                          "timeEnd": 18,
+                        },
+                        Object {
+                          "date": "day2",
+                          "description": "Nisi elit aute amet magna. Mollit id ipsum amet cillum ea in duis duis officia irure dolor sint.",
+                          "domain": "market",
+                          "id": "5972499025b0804dc2b05651",
+                          "level": "confirmed",
+                          "name": "tempor anim",
+                          "timeBegin": 10,
+                          "timeEnd": 12,
+                        },
+                        Object {
+                          "date": "day2",
+                          "description": "Ex sit deserunt mollit dolore irure in ad nostrud minim enim. Consectetur aute aute culpa dolor irure velit consequat ullamco.",
+                          "domain": "tech",
+                          "id": "59724990716a4f824a36b3c5",
+                          "level": "noob",
+                          "name": "ad deserunt",
+                          "timeBegin": 10,
+                          "timeEnd": 12,
+                        },
+                      ]
+        }
+        id={0}
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Switch {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "conferences": Array [
+            Object {
+              "date": "day2",
+              "description": "Esse amet tempor aute sunt. Magna voluptate nulla duis ullamco amet nisi proident eiusmod duis.",
+              "domain": "biz",
+              "id": "59724990bb9d86db92537dba",
+              "level": "noob",
+              "name": "nisi nostrud",
+              "timeBegin": 16,
+              "timeEnd": 18,
+            },
+            Object {
+              "date": "day2",
+              "description": "Nisi elit aute amet magna. Mollit id ipsum amet cillum ea in duis duis officia irure dolor sint.",
+              "domain": "market",
+              "id": "5972499025b0804dc2b05651",
+              "level": "confirmed",
+              "name": "tempor anim",
+              "timeBegin": 10,
+              "timeEnd": 12,
+            },
+            Object {
+              "date": "day2",
+              "description": "Ex sit deserunt mollit dolore irure in ad nostrud minim enim. Consectetur aute aute culpa dolor irure velit consequat ullamco.",
+              "domain": "tech",
+              "id": "59724990716a4f824a36b3c5",
+              "level": "noob",
+              "name": "ad deserunt",
+              "timeBegin": 10,
+              "timeEnd": 12,
+            },
+          ],
+          "id": 0,
+        },
+        "refs": Object {},
+        "selectConference": [Function],
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div>
+          <div
+                    className="switcher"
+          >
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        nisi nostrud
+                              </a>
+                              <br />
+                    </div>
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        tempor anim
+                              </a>
+                              <br />
+                    </div>
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        ad deserunt
+                              </a>
+                              <br />
+                    </div>
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div>
+          <div
+                    className="switcher"
+          >
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        nisi nostrud
+                              </a>
+                              <br />
+                    </div>
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        tempor anim
+                              </a>
+                              <br />
+                    </div>
+                    <div>
+                              <a
+                                        role="button"
+                              >
+                                        ad deserunt
+                              </a>
+                              <br />
+                    </div>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Switch
+    conferences={
+        Array [
+            Object {
+              "date": "day2",
+              "description": "Esse amet tempor aute sunt. Magna voluptate nulla duis ullamco amet nisi proident eiusmod duis.",
+              "domain": "biz",
+              "id": "59724990bb9d86db92537dba",
+              "level": "noob",
+              "name": "nisi nostrud",
+              "timeBegin": 16,
+              "timeEnd": 18,
+            },
+            Object {
+              "date": "day2",
+              "description": "Nisi elit aute amet magna. Mollit id ipsum amet cillum ea in duis duis officia irure dolor sint.",
+              "domain": "market",
+              "id": "5972499025b0804dc2b05651",
+              "level": "confirmed",
+              "name": "tempor anim",
+              "timeBegin": 10,
+              "timeEnd": 12,
+            },
+            Object {
+              "date": "day2",
+              "description": "Ex sit deserunt mollit dolore irure in ad nostrud minim enim. Consectetur aute aute culpa dolor irure velit consequat ullamco.",
+              "domain": "tech",
+              "id": "59724990716a4f824a36b3c5",
+              "level": "noob",
+              "name": "ad deserunt",
+              "timeBegin": 10,
+              "timeEnd": 12,
+            },
+          ]
+    }
+    id={0}
+/>,
+}
+`;

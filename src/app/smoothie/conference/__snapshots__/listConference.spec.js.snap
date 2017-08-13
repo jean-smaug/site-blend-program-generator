@@ -5,10 +5,26 @@ Array [
   <div
     className="conferences"
 >
-    <Conference />
-    <Conference />
-    <Conference />
-    <Conference />
+    <Conference
+        conferences={Array []}
+        timeBegin={8}
+        timeEnd={10}
+    />
+    <Conference
+        conferences={Array []}
+        timeBegin={10}
+        timeEnd={12}
+    />
+    <Conference
+        conferences={Array []}
+        timeBegin={14}
+        timeEnd={16}
+    />
+    <Conference
+        conferences={Array []}
+        timeBegin={16}
+        timeEnd={18}
+    />
 </div>,
 ]
 `;

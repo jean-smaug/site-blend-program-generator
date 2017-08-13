@@ -5,13 +5,13 @@ const initialState = {
   dayTwo: conferencesStorage.getConferencesStore().dayTwo || {},
 };
 
-const formReducer = (state = initialState, action) => {
-  switch (action.type) {
+export default (state = initialState, payload) => {
+  switch (payload.type) {
     case 'ADD_CONFERENCES':
       return {
         ...state,
-        dayOne: action.data.dayOne,
-        dayTwo: action.data.dayTwo,
+        dayOne: payload.data.dayOne,
+        dayTwo: payload.data.dayTwo,
       };
     case 'REMOVE_CONFERENCES':
       return {
@@ -19,9 +19,13 @@ const formReducer = (state = initialState, action) => {
         dayOne: {},
         dayTwo: {},
       };
+
+    case 'SWITCH_CONFERENCE':
+      console.log(payload);
+      // return { ...state, conferences: data.conferences };
+      return { ...state };
+
     default:
       return state;
   }
 };
-
-export default formReducer;

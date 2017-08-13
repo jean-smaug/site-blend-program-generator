@@ -5,11 +5,15 @@ Array [
   <div>
     <conferenceModal
         closeModal={[Function]}
+        conferences={
+            Array [
+                Object {},
+              ]
+        }
         modalState={false}
-        name="foo"
         timeBegin="10"
         timeEnd="12"
-        title="foo"
+        title="Temps libre"
     />
     <div
         className="columns"
@@ -25,27 +29,25 @@ Array [
                 <div
                     className="conference-opt"
                 >
-                    <a>
-                        <i
-                            className="fa fa-arrows-h circle"
-                        />
-                    </a>
+                    <i
+                        className="fa fa-arrows-h circle"
+                        onClick={[Function]}
+                        role="presentation"
+                    />
                     <span
                         className="conference-time"
                     >
                         10h00 &gt; 12h00
                     </span>
-                    <a>
-                        <i
-                            className="fa fa-lock circle"
-                        />
-                    </a>
+                    <i
+                        className="fa fa-lock circle"
+                    />
                 </div>
                 <div
                     className="conference-title"
                     role="button"
                 >
-                    foo
+                    Temps libre
                 </div>
             </div>
         </div>
