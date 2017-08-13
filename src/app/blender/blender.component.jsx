@@ -63,7 +63,6 @@ export default class Blender extends React.Component {
             </div>
           </div>
         );
-        break;
       case 3:
         return (
           <div className="columns">
@@ -73,18 +72,16 @@ export default class Blender extends React.Component {
             </div>
           </div>
         );
-        break;
       case 4:
         return (<div className="columns">
           <div className="column">
             <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput/>
+            <InformationsInput />
           </div>
           <div className="column">
             <Mixeur />
           </div>
         </div>);
-        break;
       default:
         return (
           <div className="columns">
@@ -108,48 +105,49 @@ export default class Blender extends React.Component {
   };
 
 
-render() {
-  return (
-    <div>
-      <div className="form">
-        <div className="form-header">
-          <h1>Choisissez les ingrédients de vos smoothies</h1>
-          <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
-        </div>
-        <div className="columns">
-          <div className="modal-wrap column">
-            <div className="modal-header">
-              <span className={this.state.currentPage === 1 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 2 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 3 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 4 ? 'is-active' : null} />
-            </div>
-            <div className="modal-bodies">
-              <div className="modal-body">
-                <div className="items">
-                  {this.renderPage()}
-                </div>
-                <hr />
-                <div className=" columns">
-                  <div className="column is-4">
-                    {this.state.currentPage > 1
-                      ? <input
-                        className="btn-precedent"
-                        type="button"
-                        onClick={this.previousPage}
-                        value="< Précédent"
-                      />
-                      : ''}
+  render() {
+    return (
+      <div>
+        <div className="form">
+          <div className="form-header">
+            <h1>Choisissez les ingrédients de vos smoothies</h1>
+            <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
+          </div>
+          <div className="columns">
+            <div className="modal-wrap column">
+              <div className="modal-header">
+                <span className={this.state.currentPage === 1 ? 'is-active' : null} />
+                <span className={this.state.currentPage === 2 ? 'is-active' : null} />
+                <span className={this.state.currentPage === 3 ? 'is-active' : null} />
+                <span className={this.state.currentPage === 4 ? 'is-active' : null} />
+              </div>
+              <div className="modal-bodies">
+                <div className="modal-body">
+                  <div className="items">
+                    {this.renderPage()}
                   </div>
-                  <div className="column is-4 is-offset-6">
-                    {this.state.currentPage < 4
-                      ? <input
-                        className="btn-suivant"
-                        type="button"
-                        onClick={this.nextPage}
-                        value="Suivant >"
-                      />
-                      : ''}
+                  <hr />
+                  <div className=" columns">
+                    <div className="column is-4">
+                      {this.state.currentPage > 1
+                        ? <input
+                          className="btn-precedent"
+                          type="button"
+                          onClick={this.previousPage}
+                          value="< Précédent"
+                        />
+                        : ''}
+                    </div>
+                    <div className="column is-4 is-offset-6">
+                      {this.state.currentPage < 4
+                        ? <input
+                          className="btn-suivant"
+                          type="button"
+                          onClick={this.nextPage}
+                          value="Suivant >"
+                        />
+                        : ''}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,7 +155,6 @@ render() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }

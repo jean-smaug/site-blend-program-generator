@@ -17,21 +17,21 @@ export class MixeurComponent extends Component {
   };
 
   submitBtn = async () => {
-   if(this.props.form.informations.isValidEmail){
-    const conferences = (await getConferences()) || [];
-    const { addConference, form } = this.props;
-    addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
-   } else {
-     this.toastError.error(
-       `L'email que vous avez renseigné a un format incorrect.`,
-       'Attention !',
-       {
-         timeOut: 7000,
-         extendedTimeOut: 1000,
-         closeButton: true,
-       },
-     );
-   }
+    if (this.props.form.informations.isValidEmail) {
+      const conferences = (await getConferences()) || [];
+      const { addConference, form } = this.props;
+      addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
+    } else {
+      this.toastError.error(
+        'L\'email que vous avez renseigné a un format incorrect.',
+        'Attention !',
+        {
+          timeOut: 7000,
+          extendedTimeOut: 1000,
+          closeButton: true,
+        },
+      );
+    }
   };
 
   render() {
