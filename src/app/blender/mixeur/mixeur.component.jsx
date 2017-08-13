@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ToastContainer, ToastMessage } from 'react-toastr';
 import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences } from '../../../lib/database';
 import { addConferenceAction } from '../../smoothie/smoothie.action';
@@ -19,16 +20,30 @@ export class MixeurComponent extends Component {
    if(this.props.form.informations.isValidEmail){
     const conferences = (await getConferences()) || [];
     const { addConference, form } = this.props;
-
     addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
    } else {
-      alert("Format de l'email incorrect"); //TODO POPUP ERREUR
+     this.toastError.error(
+       `L'email que vous avez renseigné a un format incorrect.`,
+       'Attention !',
+       {
+         timeOut: 7000,
+         extendedTimeOut: 1000,
+         closeButton: true,
+       },
+     );
    }
   };
 
   render() {
     return (
       <div>
+        <ToastContainer
+          ref={(input) => {
+            this.toastError = input;
+          }}
+          toastMessageFactory={React.createFactory(ToastMessage.animation)}
+          className="toast-top-full-width"
+        />
         <input
           style={{
             height: '100px',
