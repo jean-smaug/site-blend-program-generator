@@ -3,7 +3,7 @@
  * @param conferences
  * @returns {{type: string, data: {word: *}}}
  */
-export const addConferences = conferences => ({
+export const addConferenceAction = conferences => ({
   type: 'ADD_CONFERENCES',
   data: {
     dayOne: conferences.dayOne,
@@ -19,4 +19,3 @@ export const addConferences = conferences => ({
 export const removeConferences = () => ({
   type: 'REMOVE_CONFERENCES',
 });
-
