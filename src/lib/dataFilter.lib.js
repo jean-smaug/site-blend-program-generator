@@ -56,3 +56,9 @@ export const orderConferences = (data) => {
   });
   return result;
 };
+
+/**
+ * Retourne les tags des conférences en supprimant les doublons
+ * @param {Array} conferences
+ */
+export const getTags = conferences => _.uniq(_.flatten(_.map(conferences, item => item.tags)));

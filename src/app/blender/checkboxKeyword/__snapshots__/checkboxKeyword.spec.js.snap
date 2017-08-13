@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkboxDomain.component should render component 1`] = `
-Array [
-  <span
-    className="tag is-notselected keyword-elt"
-    onClick={[Function]}
-    role="presentation"
+exports[`checkboxKeyword.component === SNAPSHOT === 1`] = `
+<span
+  className="tag is-notselected keyword-elt"
+  onClick={[Function]}
+  role="presentation"
 >
-    tech
-</span>,
-]
+  tech
+</span>
 `;

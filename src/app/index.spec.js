@@ -1,14 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 import { App } from './index';
 
-const props = {
-  smoothie: { conferences: [], dayOne: {}, dayTwo: {} },
-};
-
 describe('app.component', () => {
-  it('should render App Component', () => {
-    const smoothie = shallow(<App {...props} />);
-    expect(smoothie).toMatchSnapshot();
+  let store;
+  let tree;
+  const mockStore = configureStore();
+  const initialState = {
+    smoothie: { dayOne: {}, dayTwo: {} },
+  };
+
+  beforeEach(() => {
+    store = mockStore(initialState);
+    tree = renderer.create(<App store={store} />).toJSON();
+  });
+
+  it('=== SNAPSHOT ===', () => {
+    expect(tree).toMatchSnapshot();
   });
 });

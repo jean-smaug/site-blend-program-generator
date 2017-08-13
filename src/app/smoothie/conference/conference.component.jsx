@@ -20,18 +20,15 @@ export class ConferenceComponent extends Component {
   };
 
   props: {
-    timeBegin: number,
-    timeEnd: number,
-    openSwitcher: () => void,
-    conferences: Array<{
-      name: string,
-      keywords: Array<string>,
-      picture: string,
-      twitter: string,
-      linkedin: string,
-      speaker: string,
-      description: string,
-    }>,
+    name: string,
+    timeBegin: string,
+    timeEnd: string,
+    keywords: Array<string>,
+    picture: string,
+    twitter: string,
+    linkedin: string,
+    speaker: string,
+    description: string,
   };
 
   toggleModal = () => {

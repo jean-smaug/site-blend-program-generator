@@ -1,5 +1,6 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import * as formActions from '../blender.action';
@@ -9,10 +10,17 @@ import * as formActions from '../blender.action';
  */
 
 export class CheckboxObjectifComponent extends Component {
-  toggleCheckbox = (e) => {
+  props: {
+    addObjectif: (objectif: Object) => void,
+    removeObjectif: (objectif: Object) => void,
+    item: Object,
+    objectifs: Object,
+  };
+
+  toggleCheckbox = (e: Event) => {
     if (e.target.checked) this.props.addObjectif(this.props.item.id);
     else this.props.removeObjectif(this.props.item.id);
-  }
+  };
 
   render() {
     return (
@@ -31,19 +39,6 @@ export class CheckboxObjectifComponent extends Component {
   }
 }
 
-CheckboxObjectifComponent.propTypes = {
-  addObjectif: PropType.func.isRequired,
-  removeObjectif: PropType.func.isRequired,
-  item: PropType.shape({
-    id: PropType.number.isRequired,
-    libelle: PropType.string.isRequired,
-  }).isRequired,
-  objectifs: PropType.arrayOf({
-    id: PropType.number.isRequired,
-    libelle: PropType.string.isRequired,
-  }).isRequired,
-};
-
 const mapStateToProps = state => ({
   objectifs: state.form.objectifs,
 });
@@ -57,8 +52,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const CheckboxObjectif = connect(mapStateToProps, mapDispatchToProps)(
-  CheckboxObjectifComponent,
-);
+const CheckboxObjectif = connect(mapStateToProps, mapDispatchToProps)(CheckboxObjectifComponent);
 
 export default CheckboxObjectif;

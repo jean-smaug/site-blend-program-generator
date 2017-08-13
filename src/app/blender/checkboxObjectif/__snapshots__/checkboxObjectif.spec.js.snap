@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkboxDomain.component should render component 1`] = `
-Array [
+exports[`checkboxDomain.component === SNAPSHOT === 1`] = `
+<div>
   <div>
-    <div>
-        <input
-            checked={false}
-            name="1"
-            onChange={[Function]}
-            type="checkbox"
-        />
-        tech
-    </div>
-</div>,
-]
+    <input
+      checked={false}
+      name="1"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    tech
+  </div>
+</div>
 `;
