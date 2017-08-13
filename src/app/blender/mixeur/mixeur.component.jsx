@@ -1,34 +1,30 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import {
-  filterByLevelAndDomain,
-  orderConfences,
-} from '../../../lib/dataFilter.lib';
-import data from '../../../data.json';
-import { addConferences } from '../../smoothie/smoothie.action';
+import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
+import { getConferences } from '../../../lib/database';
+import { addConferenceAction } from '../../smoothie/smoothie.action';
 
 /**
  * Component for Submit button to mix
  */
 export class MixeurComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.submitBtn = this.submitBtn.bind(this);
-  }
+  props: {
+    addConference: () => void,
+    form: Object,
+  };
 
-  submitBtn() {
-    if(this.props.state.form.informations.isValidEmail){
-    this.props.addConferences(
-      orderConfences(
-        filterByLevelAndDomain(data, this.props.state.form.domains),
-      ),
-    );
-    }
-    else{
+  submitBtn = async () => {
+   if(this.props.state.form.informations.isValidEmail){
+    const conferences = (await getConferences()) || [];
+    const { addConference, form } = this.props;
+
+    addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
+   } else {
       alert("Format de l'email incorrect"); //TODO POPUP ERREUR
-    }
-  }
+   }
+  };
 
   render() {
     return (
@@ -53,24 +49,13 @@ export class MixeurComponent extends Component {
   }
 }
 
-MixeurComponent.propTypes = {
-  addConferences: PropTypes.func.isRequired,
-  state: PropTypes.shape({
-    form: PropTypes.shape({
-      domains: PropTypes.array.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-
 const mapStateToProps = state => ({
-  state: {
-    form: state.form,
-  },
+  form: state.form,
 });
 
 const mapDispatchToProps = dispatch => ({
-  addConferences: (word) => {
-    dispatch(addConferences(word));
+  addConference: (word) => {
+    dispatch(addConferenceAction(word));
   },
 });
 
