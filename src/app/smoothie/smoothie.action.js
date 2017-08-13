@@ -1,10 +1,12 @@
+import { MIX_CONFERENCES, REMOVE_CONFERENCES } from './smoothie.constant';
+
 /**
  * Add a conferences to the smoothie state
  * @param conferences
  * @returns {{type: string, data: {word: *}}}
  */
 export const addConferenceAction = conferences => ({
-  type: 'ADD_CONFERENCES',
+  type: MIX_CONFERENCES,
   data: {
     dayOne: conferences.dayOne,
     dayTwo: conferences.dayTwo,
@@ -17,7 +19,7 @@ export const addConferenceAction = conferences => ({
  * @returns {{type: string, data: {word: *}}}
  */
 export const removeConferences = () => ({
-  type: 'REMOVE_CONFERENCES',
+  type: REMOVE_CONFERENCES,
 });
 
 export const switchConference = conference => ({

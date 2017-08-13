@@ -1,3 +1,4 @@
+import { MIX_CONFERENCES, REMOVE_CONFERENCES } from './smoothie.constant';
 import * as conferencesStorage from '../../lib/localStorage.lib';
 
 const initialState = {
@@ -8,16 +9,15 @@ const initialState = {
   switcherConferences: [],
 };
 
-export default (state = initialState, payload) => {
-  switch (payload.type) {
-    case 'ADD_CONFERENCES':
+const formReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case MIX_CONFERENCES:
       return {
         ...state,
         dayOne: payload.data.dayOne,
         dayTwo: payload.data.dayTwo,
       };
-
-    case 'REMOVE_CONFERENCES':
+    case REMOVE_CONFERENCES:
       return {
         ...state,
         dayOne: {},

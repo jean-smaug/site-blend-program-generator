@@ -1,7 +1,7 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
-import CheckboxDomain, { CheckboxDomainComponent } from './checkboxDomain.component';
+import { CheckboxDomainComponent } from './checkboxDomain.component';
 
 describe('checkboxDomain.component', () => {
   let tree;
