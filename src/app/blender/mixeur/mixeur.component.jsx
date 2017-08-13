@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { filterByLevelAndDomain, orderConfences } from '../../../lib/dataFilter.lib';
+import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences } from '../../../lib/database';
-import { addConferences } from '../../smoothie/smoothie.action';
+import { addConferenceAction } from '../../smoothie/smoothie.action';
 
 /**
  * Component for Submit button to mix
@@ -19,7 +19,7 @@ export class MixeurComponent extends Component {
     const conferences = (await getConferences()) || [];
     const { addConference, form } = this.props;
 
-    addConference(orderConfences(filterByLevelAndDomain(conferences, form.domains)));
+    addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
   };
 
   render() {
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addConference: (word) => {
-    dispatch(addConferences(word));
+    dispatch(addConferenceAction(word));
   },
 });
 
