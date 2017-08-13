@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import * as formActions from '../blender.action';
 
 /**
@@ -19,15 +18,45 @@ export class InformationsInputComponent extends Component {
       [event.target.name]: event.target.value
     }, () => {
       this.props.addInformations(this.state);
+      this.validateEmail();
+    });
+  };
+
+  validateEmail = () => {
+    const reg = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    this.setState({
+      isValidEmail: reg.test(this.state.email)
     });
   };
 
   render() {
     return (
       <div>
-        <input onChange={this.handleChangeInput} type="text" name="firstname" value={this.props.informations.firstname} placeholder="Prénom"/>
-        <input onChange={this.handleChangeInput} type="text" name="lastname" value={this.props.informations.lastname} placeholder="Nom"/>
-        <input onChange={this.handleChangeInput} type="email"name="email"value={this.props.informations.email} placeholder="Email"/>
+        <div className="field">
+          <label className="label">Prénom</label>
+          <div className="control">
+            <input className="input" onChange={this.handleChangeInput} type="text" name="firstname" value={this.props.informations.firstname} placeholder="Prénom" />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Nom</label>
+          <div className="control">
+            <input className="input" onChange={this.handleChangeInput} type="text" name="lastname" value={this.props.informations.lastname} placeholder="Nom" />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Email</label>
+          <div className="control has-icons-left has-icons-right">
+            <input  className={ this.state.isValidEmail ? 'input' : 'input is-danger'} onChange={this.handleChangeInput} type="email" name="email" value={this.props.informations.email} placeholder="Email"/>
+            <span className="icon is-small is-left">
+              <i className="fa fa-envelope" />
+            </span>
+            <span className="icon is-small is-right">
+              <i className="fa fa-warning" />
+            </span>
+          </div>
+          { !this.state.isValidEmail ? <p className="help is-danger">Le format de l'email est invalide</p> : ''}
+        </div>
       </div>
     );
   }

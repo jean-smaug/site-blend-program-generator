@@ -18,11 +18,16 @@ export class MixeurComponent extends Component {
   }
 
   submitBtn() {
+    if(this.props.state.form.informations.isValidEmail){
     this.props.addConferences(
       orderConfences(
         filterByLevelAndDomain(data, this.props.state.form.domains),
       ),
     );
+    }
+    else{
+      alert("Format de l'email incorrect"); //TODO POPUP ERREUR
+    }
   }
 
   render() {

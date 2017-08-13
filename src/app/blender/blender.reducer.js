@@ -4,7 +4,7 @@ const initialState = {
   keywords: [],
   domains: [],
   objectifs: [],
-  informations: { firstname: '', lastname: '', email: ''},
+  informations: { firstname: '', lastname: '', email: '', isValidEmail: true},
 };
 
 const formReducer = (state = initialState, action) => {
