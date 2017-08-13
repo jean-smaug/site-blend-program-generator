@@ -78,3 +78,15 @@ export const removeObjectif = objectif => ({
     objectif,
   },
 });
+
+/**
+ * Add information's user
+ * @param infos
+ * @param domain
+ */
+export const addInformations = infos => ({
+  type: 'ADD_INFORMATIONS',
+  data: {
+    infos,
+  },
+});
