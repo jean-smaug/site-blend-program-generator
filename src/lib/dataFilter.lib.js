@@ -17,10 +17,9 @@ export const filterByLevel = (conferences: Conferences, level: string) =>
 
 /**
  * Filter conferences by level and by domain
- * @param {Object} data
- * @param {Array} filters
  */
-export const filterByLevelAndDomain = (conferences: Conferences, filters = []) =>
+type Filters = [{ domain: string, level: string }];
+export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
   _.filter(conferences, conference =>
     _.includes(
       _.map(filters, (filter) => {

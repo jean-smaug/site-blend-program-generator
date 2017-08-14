@@ -8,7 +8,7 @@ import { switchConference } from '../smoothie.action';
 import { Conference, Conferences } from '../smoothie.type';
 import './switcher.css';
 
-class SwitchComponent extends Component {
+export class SwitchComponent extends Component {
   props: {
     switchConference: (conference: Conference) => void,
     conferences: Conferences,
