@@ -4,6 +4,7 @@ const initialState = {
   keywords: [],
   domains: [],
   objectifs: [],
+  informations: { firstname: '', lastname: '', email: '', isValidEmail: true },
 };
 
 const formReducer = (state = initialState, action) => {
@@ -56,6 +57,11 @@ const formReducer = (state = initialState, action) => {
           state.objectifs,
           element => element !== action.data.objectif,
         ),
+      };
+    case 'ADD_INFORMATIONS':
+      return {
+        ...state,
+        informations: action.data.infos,
       };
     default:
       return state;

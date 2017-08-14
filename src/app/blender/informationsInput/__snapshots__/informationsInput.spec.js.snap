@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InformationsInput.component should render component 1`] = `
+Array [
+  <div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="firstname"
+        >
+            Prénom
+        </label>
+        <div
+            className="control"
+        >
+            <input
+                className="input"
+                name="firstname"
+                onChange={[Function]}
+                placeholder="Prénom"
+                type="text"
+                value=""
+            />
+        </div>
+    </div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="lastname"
+        >
+            Nom
+        </label>
+        <div
+            className="control"
+        >
+            <input
+                className="input"
+                name="lastname"
+                onChange={[Function]}
+                placeholder="Nom"
+                type="text"
+                value=""
+            />
+        </div>
+    </div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="email"
+        >
+            Email
+        </label>
+        <div
+            className="control has-icons-left has-icons-right"
+        >
+            <input
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="email"
+                value=""
+            />
+            <span
+                className="icon is-small is-left"
+            >
+                <i
+                    className="fa fa-envelope"
+                />
+            </span>
+            
+        </div>
+        
+    </div>
+</div>,
+]
+`;

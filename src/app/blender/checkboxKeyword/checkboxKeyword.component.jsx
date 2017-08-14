@@ -11,13 +11,12 @@ import * as formActions from '../blender.action';
 export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
-    this.toggleCheckbox = this.toggleCheckbox.bind(this);
     this.state = {
       color: _.sample(['info', 'success', 'primary', 'warning']),
     };
   }
 
-  toggleCheckbox() {
+  toggleCheckbox = () => {
     if (!_.includes(this.props.keywords, this.props.item.id)) {
       this.props.addKeyword(this.props.item.id);
     } else this.props.removeKeyword(this.props.item.id);
