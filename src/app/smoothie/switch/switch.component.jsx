@@ -29,7 +29,7 @@ export class SwitchComponent extends Component {
             {_.map(remainingConferences, item =>
               (<li key={item.id}>
                 <button onClick={() => this.selectConference(item)}>
-                  {item.name}
+                  {item.title}
                 </button>
               </li>),
             )}

@@ -32,8 +32,10 @@ export default (state = initialState, payload) => {
       };
 
     case SWITCH_CONFERENCE: {
-      const { conference, conference: { date, timeBegin } } = payload.data;
-      return { ...state, [date[timeBegin]]: conference };
+      const { conference, conference: { day, timeBegin } } = payload.data;
+      const time = timeBegin.split('h')[0];
+      console.log(state[day]);
+      return { ...state, conference };
     }
 
     case OPEN_SWITCHER:
