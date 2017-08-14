@@ -74,7 +74,9 @@ CONTAINER FORM
 }
 
 .modal-footer {
-  text-align: right;
+  position: absolute;
+  width: 90%;
+  bottom: 17px;
 }
 
 .modal-body {
@@ -88,6 +90,7 @@ CONTAINER FORM
   width: 100%;
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  min-height: 550px;
 }
 
 /** Liste des mots clefs **/
