@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import Modal from './conferenceModal.component';
 import { openSwitcherAction } from '../smoothie.action';
 import { Conferences } from '../smoothie.type';
@@ -42,7 +43,7 @@ export class ConferenceComponent extends Component {
     const { timeBegin, timeEnd, conferences } = this.props;
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
-        {this.state.isModalVisible
+        {this.state.isModalVisible && !_.isEmpty(conferences)
           ? <Modal
             closeModal={this.toggleModal}
             conference={conferences[this.state.selectedConferenceId]}
@@ -52,11 +53,11 @@ export class ConferenceComponent extends Component {
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                <button
+                <i
+                  className="fa fa-arrows-h circle"
+                  role="presentation"
                   onClick={e => this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
-                >
-                  <i className="fa fa-arrows-h circle" />
-                </button>
+                />
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
                 <i className="fa fa-lock circle" />
               </div>

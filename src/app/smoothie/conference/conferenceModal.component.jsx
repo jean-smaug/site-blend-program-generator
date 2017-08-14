@@ -15,7 +15,10 @@ const ConferenceModal = ({
   const { title, speaker, description, timeBegin, tags } = conference;
 
   const keywordsShow = _.map(tags, element =>
-    (<span className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}>
+    (<span
+      key={element}
+      className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}
+    >
       {element}
     </span>),
   );
