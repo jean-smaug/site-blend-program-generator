@@ -4,11 +4,13 @@ import configureStore from 'redux-mock-store';
 import InformationsInput from './informationsInputcomponent';
 
 const initialState = {
-  informations: {
-    firstname: '',
-    lastname: '',
-    email: '',
-    isValidEmail: true,
+  form: {
+    informations: {
+      firstname: '',
+      lastname: '',
+      email: '',
+      isValidEmail: true,
+    },
   },
 };
 

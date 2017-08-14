@@ -2,7 +2,16 @@
 
 exports[`InformationsInput.component should render component 1`] = `
 Array [
-  <informationsInput
+  <InformationsInputComponent
+    addInformations={[Function]}
+    informations={
+        Object {
+            "email": "",
+            "firstname": "",
+            "isValidEmail": true,
+            "lastname": "",
+          }
+    }
     store={
         Object {
             "clearActions": [Function],
@@ -11,6 +20,24 @@ Array [
             "getState": [Function],
             "replaceReducer": [Function],
             "subscribe": [Function],
+          }
+    }
+    storeSubscription={
+        Subscription {
+            "listeners": Object {
+              "notify": [Function],
+            },
+            "onStateChange": [Function],
+            "parentSub": undefined,
+            "store": Object {
+              "clearActions": [Function],
+              "dispatch": [Function],
+              "getActions": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+            },
+            "unsubscribe": null,
           }
     }
 />,
