@@ -145,6 +145,7 @@ CONTAINER FORM
 .groupBtnLevel{
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
 .domain-selected{
@@ -164,12 +165,13 @@ CONTAINER FORM
   font-weight: bolder;
 }
 
-.level-objectif {
-  margin: 1%;
-  font-size: 1.0em;
+.level-domaine {
+  margin: 1% 1% 5%;
+  font-size: 1.1em;
   cursor: pointer;
   font-weight: bolder;
 }
+
 
 /** Button suivant/précédent **/
 
@@ -190,6 +192,16 @@ CONTAINER FORM
 .btn-suivant:hover,
 .btn-precedent:hover {
   background: #e66400;
+}
+
+/** tag **/
+
+.is-notselected{
+  border: 1px dashed;
+}
+
+.is-notselected:hover{
+  border: 1px solid;
 }
 
 
