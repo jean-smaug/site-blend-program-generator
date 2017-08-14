@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { Conferences } from '../app/smoothie/smoothie.type';
 
 /**
  * Return conferences filtered by domain
@@ -19,11 +20,11 @@ export const filterByLevel = (data, level) => _.filter(data, item => item.level 
  * @param {Object} data
  * @param {Array} filters
  */
-export const filterByLevelAndDomain = (data, filters = []) =>
-  _.filter(data, item =>
+export const filterByLevelAndDomain = (conferences: Conferences, filters = []) =>
+  _.filter(conferences, conference =>
     _.includes(
       _.map(filters, (filter) => {
-        if (filter.domain === item.domain && filter.level === item.level) {
+        if (filter.domain === conference.domain && filter.level === conference.level) {
           return true;
         }
         return false;

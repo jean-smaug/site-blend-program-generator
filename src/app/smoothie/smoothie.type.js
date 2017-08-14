@@ -20,6 +20,8 @@ export type Conference = {
   'title': string,
 };
 
+export type Conferences = Array<Conference> | [];
+
 export type Day = {
   eight: Array<Conference> | [],
   ten: Array<Conference> | [],
