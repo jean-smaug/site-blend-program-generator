@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
+import emailValidator from 'email-validator';
+
 import * as formActions from '../blender.action';
 
 /**
- * Component for get information's user
+ * Component to get user's informations
  */
-
 export class InformationsInputComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = this.props.informations;
+    this.state = {
+      ...this.props.informations,
+    };
   }
 
   handleChangeInput = (event) => {
@@ -23,9 +26,8 @@ export class InformationsInputComponent extends Component {
   };
 
   validateEmail = () => {
-    const reg = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     this.setState({
-      isValidEmail: reg.test(this.state.email),
+      isValidEmail: emailValidator.validate(this.state.email) || this.state.email === '',
     });
   };
 
@@ -33,9 +35,9 @@ export class InformationsInputComponent extends Component {
     return (
       <div>
         <div className="field">
-          <label className="label">Prénom</label>
+          <label htmlFor="firstname" className="label">Prénom</label>
           <div className="control">
-            <input htmlFor="firstname" className="input" onChange={this.handleChangeInput} type="text" name="firstname" value={this.props.informations.firstname} placeholder="Prénom" />
+            <input className="input" onChange={this.handleChangeInput} type="text" name="firstname" value={this.props.informations.firstname} placeholder="Prénom" />
           </div>
         </div>
         <div className="field">
@@ -64,7 +66,7 @@ export class InformationsInputComponent extends Component {
 
 InformationsInputComponent.propTypes = {
   addInformations: PropType.func.isRequired,
-  informations: PropType.object.isRequired,
+  informations: PropType.objectOf(PropType.string).isRequired,
 };
 
 const mapStateToProps = state => ({
