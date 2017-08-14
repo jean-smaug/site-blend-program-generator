@@ -5,7 +5,7 @@
 ## Données
 
 - Conférence
-```json
+```
 {
   "day" : "dayOne" || "dayTwo",
   "description" : "Lorem ipsum dolor sit amet",
