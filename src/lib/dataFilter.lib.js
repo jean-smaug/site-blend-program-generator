@@ -1,19 +1,19 @@
+// @flow
+
 import _ from 'lodash';
 import { Conferences } from '../app/smoothie/smoothie.type';
 
 /**
  * Return conferences filtered by domain
- * @param {Object} data
- * @param {String} domain
  */
-export const filterByDomain = (data, domain) => _.filter(data, item => item.domain === domain);
+export const filterByDomain = (conferences: Conferences, domain: string) =>
+  _.filter(conferences, conference => conference.domain === domain);
 
 /**
  * Return conferences filtered by level
- * @param {Object} data
- * @param {String} level
  */
-export const filterByLevel = (data, level) => _.filter(data, item => item.level === level);
+export const filterByLevel = (conferences: Conferences, level: string) =>
+  _.filter(conferences, conference => conference.level === level);
 
 /**
  * Filter conferences by level and by domain
@@ -37,22 +37,22 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters = []) =
  * Return conferences reordered by days and by time
  * @param {Array} data
  */
-export const orderConferences = (data) => {
+export const orderConferences = (conferences: Conferences) => {
   const result = {
     dayOne: { eight: [], ten: [], fourteen: [], sixteen: [] },
     dayTwo: { eight: [], ten: [], fourteen: [], sixteen: [] },
   };
 
-  _.forEach(data, (item) => {
-    const switcher = _.split(item.timeBegin, 'h')[0];
+  _.forEach(conferences, (conference) => {
+    const switcher = _.split(conference.timeBegin, 'h')[0];
     if (switcher < 10) {
-      result[item.day].eight.push(item);
+      result[conference.day].eight.push(conference);
     } else if (switcher < 12) {
-      result[item.day].ten.push(item);
+      result[conference.day].ten.push(conference);
     } else if (switcher < 16) {
-      result[item.day].fourteen.push(item);
+      result[conference.day].fourteen.push(conference);
     } else {
-      result[item.day].sixteen.push(item);
+      result[conference.day].sixteen.push(conference);
     }
   });
   return result;

@@ -5,13 +5,13 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { switchConference } from '../smoothie.action';
 
-import { Conference } from '../smoothie.type';
+import { Conference, Conferences } from '../smoothie.type';
 import './switcher.css';
 
 class SwitchComponent extends Component {
   props: {
     switchConference: (conference: Conference) => void,
-    conferences: Array<Conference>,
+    conferences: Conferences,
     currentConferenceId: number,
   };
 
