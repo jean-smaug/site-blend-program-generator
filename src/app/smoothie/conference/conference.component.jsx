@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from './conferenceModal.component';
 import { openSwitcherAction } from '../smoothie.action';
-import { Conference } from '../smoothie.type';
+import { Conferences } from '../smoothie.type';
 import './conference.css';
 
 export class ConferenceComponent extends Component {
@@ -23,8 +23,8 @@ export class ConferenceComponent extends Component {
   props: {
     timeBegin: number,
     timeEnd: number,
-    openSwitcher: (selectedConferenceId: number, conferences: Array<Conference>) => void,
-    conferences: Array<Conference>,
+    openSwitcher: (selectedConferenceId: number, conferences: Conferences) => void,
+    conferences: Conferences,
   };
 
   toggleModal = () => {
@@ -33,7 +33,7 @@ export class ConferenceComponent extends Component {
     });
   };
 
-  openSwitcher = (e: Event, selectedConferenceId: number, conferences: Array<Object>) => {
+  openSwitcher = (e: Event, selectedConferenceId: number, conferences: Conferences) => {
     e.stopPropagation();
     this.props.openSwitcher(selectedConferenceId, conferences);
   };
