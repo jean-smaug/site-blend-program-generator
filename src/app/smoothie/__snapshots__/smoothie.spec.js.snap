@@ -9,8 +9,24 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div>
+    <ToastContainer
+        className="toast-bottom-full-width"
+        id="toast-container"
+        newestOnTop={true}
+        onClick={[Function]}
+        preventDuplicates={true}
+        toastMessageFactory={[Function]}
+        toastType={
+            Object {
+                "error": "error",
+                "info": "info",
+                "success": "success",
+                "warning": "warning",
+              }
+        }
+    />
     <p>
-        czeez
+        Switcher
     </p>
     <div
         className="outils"
@@ -74,8 +90,24 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div>
+      <ToastContainer
+            className="toast-bottom-full-width"
+            id="toast-container"
+            newestOnTop={true}
+            onClick={[Function]}
+            preventDuplicates={true}
+            toastMessageFactory={[Function]}
+            toastType={
+                  Object {
+                        "error": "error",
+                        "info": "info",
+                        "success": "success",
+                        "warning": "warning",
+                      }
+            }
+      />
       <p>
-            czeez
+            Switcher
       </p>
       <div
             className="outils"
@@ -180,8 +212,24 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
+          <ToastContainer
+                    className="toast-bottom-full-width"
+                    id="toast-container"
+                    newestOnTop={true}
+                    onClick={[Function]}
+                    preventDuplicates={true}
+                    toastMessageFactory={[Function]}
+                    toastType={
+                              Object {
+                                        "error": "error",
+                                        "info": "info",
+                                        "success": "success",
+                                        "warning": "warning",
+                                      }
+                    }
+          />
           <p>
-                    czeez
+                    Switcher
           </p>
           <div
                     className="outils"
@@ -245,8 +293,24 @@ ShallowWrapper {
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div>
+          <ToastContainer
+                    className="toast-bottom-full-width"
+                    id="toast-container"
+                    newestOnTop={true}
+                    onClick={[Function]}
+                    preventDuplicates={true}
+                    toastMessageFactory={[Function]}
+                    toastType={
+                              Object {
+                                        "error": "error",
+                                        "info": "info",
+                                        "success": "success",
+                                        "warning": "warning",
+                                      }
+                    }
+          />
           <p>
-                    czeez
+                    Switcher
           </p>
           <div
                     className="outils"

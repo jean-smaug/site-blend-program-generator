@@ -2,31 +2,33 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { ToastContainer, ToastMessage } from 'react-toastr';
+import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
 import { setConferencesStore } from '../../lib/localStorage.lib';
+
+import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
 
 export class SmoothieComponent extends Component {
   props: {
-    dayOne: Array<Object>,
-    dayTwo: Array<Object>,
+    dayOne: Day,
+    dayTwo: Day,
     isSwitcherOpened: boolean,
-    switcherConferences: Array<Object>,
+    switcherConferences: Array<Conference>,
   };
 
   handleClickSave = () => {
-    // this.toast.success(
-    //   `Votre menu est maintenant enregistré dans votre navigateur. (Celui-ci sera
-    //    présent directement à chaque fois que vous venez sur cette page)`,
-    //   'Un vrai chef!',
-    //   {
-    //     timeOut: 7000,
-    //     extendedTimeOut: 1000,
-    //     closeButton: true,
-    //   },
-    // );
+    this.toast.success(
+      `Votre menu est maintenant enregistré dans votre navigateur. (Celui-ci sera
+       présent directement à chaque fois que vous venez sur cette page)`,
+      'Un vrai chef!',
+      {
+        timeOut: 7000,
+        extendedTimeOut: 1000,
+        closeButton: true,
+      },
+    );
     setConferencesStore({
       dayOne: this.props.dayOne,
       dayTwo: this.props.dayTwo,
@@ -37,13 +39,13 @@ export class SmoothieComponent extends Component {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
     return (
       <div>
-        {/* <ToastContainer
+        <ToastContainer
           ref={(input) => {
             this.toast = input;
           }}
           toastMessageFactory={React.createFactory(ToastMessage.animation)}
           className="toast-bottom-full-width"
-        /> */}
+        />
 
         {isSwitcherOpened
           ? <Switcher currentConferenceId={0} conferences={switcherConferences} />

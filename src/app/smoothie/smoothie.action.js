@@ -1,35 +1,35 @@
-/**
- * Add a conferences to the smoothie state
- * @param conferences
- * @returns {{type: string, data: {word: *}}}
- */
-export const addConferenceAction = conferences => ({
-  type: 'ADD_CONFERENCES',
+import {
+  MIX_CONFERENCES,
+  REMOVE_CONFERENCES,
+  SWITCH_CONFERENCE,
+  OPEN_SWITCHER,
+  CLOSE_SWITCHER,
+} from '../constants';
+
+import { Conference } from './smoothie.type';
+
+export const mixConferencesAction = (conferences: Array<Conference>) => ({
+  type: MIX_CONFERENCES,
   data: {
     dayOne: conferences.dayOne,
     dayTwo: conferences.dayTwo,
   },
 });
 
-/**
- * remove all conferences to the smoothie state
- * @param conferences
- * @returns {{type: string, data: {word: *}}}
- */
 export const removeConferences = () => ({
-  type: 'REMOVE_CONFERENCES',
+  type: REMOVE_CONFERENCES,
 });
 
-export const switchConference = conference => ({
-  type: 'SWITCH_CONFERENCE',
+export const switchConference = (conference: Conference) => ({
+  type: SWITCH_CONFERENCE,
   data: { conference },
 });
 
 export const closeSwitcherAction = () => ({
-  type: 'CLOSE_SWITCHER',
+  type: CLOSE_SWITCHER,
 });
 
-export const openSwitcherAction = (currentConferenceId, conferences) => ({
-  type: 'OPEN_SWITCHER',
+export const openSwitcherAction = (currentConferenceId: number, conferences: Conference) => ({
+  type: OPEN_SWITCHER,
   data: { currentConferenceId, conferences },
 });

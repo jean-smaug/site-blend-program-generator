@@ -1,8 +1,15 @@
-import * as conferencesStorage from '../../lib/localStorage.lib';
+import {
+  MIX_CONFERENCES,
+  REMOVE_CONFERENCES,
+  SWITCH_CONFERENCE,
+  OPEN_SWITCHER,
+  CLOSE_SWITCHER,
+} from '../constants';
+import { getConferencesStore } from '../../lib/localStorage.lib';
 
 const initialState = {
-  dayOne: conferencesStorage.getConferencesStore().dayOne || {},
-  dayTwo: conferencesStorage.getConferencesStore().dayTwo || {},
+  dayOne: getConferencesStore().dayOne || {},
+  dayTwo: getConferencesStore().dayTwo || {},
   isSwitcherOpened: false,
   substitutionConferencesPath: '',
   switcherConferences: [],
@@ -10,33 +17,33 @@ const initialState = {
 
 export default (state = initialState, payload) => {
   switch (payload.type) {
-    case 'ADD_CONFERENCES':
+    case MIX_CONFERENCES:
       return {
         ...state,
         dayOne: payload.data.dayOne,
         dayTwo: payload.data.dayTwo,
       };
 
-    case 'REMOVE_CONFERENCES':
+    case REMOVE_CONFERENCES:
       return {
         ...state,
         dayOne: {},
         dayTwo: {},
       };
 
-    case 'SWITCH_CONFERENCE': {
+    case SWITCH_CONFERENCE: {
       const { conference, conference: { date, timeBegin } } = payload.data;
       return { ...state, [date[timeBegin]]: conference };
     }
 
-    case 'OPEN_SWITCHER':
+    case OPEN_SWITCHER:
       return {
         ...state,
         isSwitcherOpened: true,
         switcherConferences: payload.data.conferences,
       };
 
-    case 'CLOSE_SWITCHER':
+    case CLOSE_SWITCHER:
       return {
         ...state,
         isSwitcherOpened: false,

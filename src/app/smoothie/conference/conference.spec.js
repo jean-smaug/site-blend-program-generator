@@ -1,16 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Conference from './conference.component';
+import { ConferenceComponent } from './conference.component';
 
 const props = {
-  timeBegin: '10',
-  timeEnd: '12',
+  timeBegin: 10,
+  timeEnd: 12,
   conferences: [{}],
+  openSwitcher: jest.fn(() => 1),
 };
 
 describe('conference.component', () => {
   it('should render conference.component', () => {
-    const conference = shallow(<Conference {...props} />);
+    const conference = shallow(<ConferenceComponent {...props} />);
     expect(conference.getNodes()).toMatchSnapshot();
   });
 });

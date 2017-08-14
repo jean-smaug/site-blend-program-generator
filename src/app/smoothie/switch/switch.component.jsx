@@ -5,23 +5,23 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { switchConference } from '../smoothie.action';
 
+import { Conference, Conferences } from '../smoothie.type';
 import './switcher.css';
 
-class SwitchComponent extends Component {
+export class SwitchComponent extends Component {
   props: {
-    switchConference: (conference: Object) => void,
-    conferences: Array<Object>,
+    switchConference: (conference: Conference) => void,
+    conferences: Conferences,
     currentConferenceId: number,
   };
 
-  selectConference = (conference: Object) => {
+  selectConference = (conference: Conference) => {
     this.props.switchConference(conference);
   };
 
   render() {
     const { conferences, currentConferenceId } = this.props;
     const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
-    console.log(conferences);
     return (
       <div>
         <div className="switcher">

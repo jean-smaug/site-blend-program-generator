@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences } from '../../../lib/database';
-import { addConferenceAction } from '../../smoothie/smoothie.action';
+import { mixConferencesAction } from '../../smoothie/smoothie.action';
 
 /**
  * Component for Submit button to mix
@@ -56,7 +56,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addConference: (word) => {
-    dispatch(addConferenceAction(word));
+    dispatch(mixConferencesAction(word));
   },
 });
 
