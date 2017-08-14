@@ -10,7 +10,7 @@ const ConferenceModal = ({
   timeBegin,
   closeModal,
   tags,
-  }: {
+}: {
   title: string,
   speaker: Object,
   description: string,
