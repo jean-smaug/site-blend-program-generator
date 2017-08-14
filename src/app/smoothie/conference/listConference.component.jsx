@@ -3,9 +3,10 @@
 import React from 'react';
 import Conference from './conference.component';
 
+import { Day } from '../smoothie.type';
 import './conference.css';
 
-const ListConference = ({ day: { eight, ten, fourteen, sixteen } }: { day: Object }) =>
+const ListConference = ({ day: { eight, ten, fourteen, sixteen } }: { day: Day }) =>
   (<div className="conferences">
     <Conference timeBegin={8} timeEnd={10} conferences={eight} />
     <Conference timeBegin={10} timeEnd={12} conferences={ten} />

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from './conferenceModal.component';
 import { openSwitcherAction } from '../smoothie.action';
+import { Conference } from '../smoothie.type';
 import './conference.css';
 
 export class ConferenceComponent extends Component {
@@ -22,16 +23,8 @@ export class ConferenceComponent extends Component {
   props: {
     timeBegin: number,
     timeEnd: number,
-    openSwitcher: () => void,
-    conferences: Array<{
-      name: string,
-      keywords: Array<string>,
-      picture: string,
-      twitter: string,
-      linkedin: string,
-      speaker: string,
-      description: string,
-    }>,
+    openSwitcher: (selectedConferenceId: number, conferences: Array<Conference>) => void,
+    conferences: Array<Conference>,
   };
 
   toggleModal = () => {

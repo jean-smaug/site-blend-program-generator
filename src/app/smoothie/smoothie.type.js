@@ -26,8 +26,3 @@ export type Day = {
   fourteen: Array<Conference> | [],
   sixteen: Array<Conference> | [],
 };
-
-export type Smoothie = {
-  dayOne: Day,
-  dayTwo: Day,
-};
