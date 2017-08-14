@@ -6,7 +6,9 @@ import {
   CLOSE_SWITCHER,
 } from '../constants';
 
-export const addConferenceAction = conferences => ({
+import { Conference } from './smoothie.type';
+
+export const mixConferencesAction = (conferences: Array<Conference>) => ({
   type: MIX_CONFERENCES,
   data: {
     dayOne: conferences.dayOne,
@@ -18,7 +20,7 @@ export const removeConferences = () => ({
   type: REMOVE_CONFERENCES,
 });
 
-export const switchConference = conference => ({
+export const switchConference = (conference: Conference) => ({
   type: SWITCH_CONFERENCE,
   data: { conference },
 });
@@ -27,7 +29,7 @@ export const closeSwitcherAction = () => ({
   type: CLOSE_SWITCHER,
 });
 
-export const openSwitcherAction = (currentConferenceId, conferences) => ({
+export const openSwitcherAction = (currentConferenceId: number, conferences: Conference) => ({
   type: OPEN_SWITCHER,
   data: { currentConferenceId, conferences },
 });
