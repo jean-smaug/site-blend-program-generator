@@ -207,4 +207,31 @@ CONTAINER FORM
   border: 1px solid;
 }
 
+/** animation-form **/
 
+.animation-form-appear {
+  opacity: 0.01;
+}
+
+.animation-form-appear.animation-form-appear-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in;
+}
+
+.animation-form-enter {
+  opacity: 0.01;
+}
+
+.animation-form-enter.animation-form-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.animation-form-leave {
+  opacity: 1;
+}
+
+.animation-form-leave.animation-form-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './blender.css';
 import * as keywords from './data/keywords.json';
@@ -38,7 +39,7 @@ export default class Blender extends React.Component {
             <div className="column">
               <h1 className="category-title">Les thématiques</h1>
               <h2 className="category-desc">
-                Cochez les mots clefs qui correspondent à votre profil de chef... :)
+                  Cochez les mots clefs qui correspondent à votre profil de chef... :)
               </h2>
               <hr />
               <div className="control">
@@ -52,7 +53,7 @@ export default class Blender extends React.Component {
               {_.map(keywords, (item) => {
                 if (
                   this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+                    item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
                 ) {
                   return <CheckboxKeyword item={item} key={item.id} />;
                 }
@@ -73,15 +74,17 @@ export default class Blender extends React.Component {
           </div>
         );
       case 4:
-        return (<div className="columns">
-          <div className="column">
-            <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput />
+        return (
+          <div className="columns">
+            <div className="column">
+              <h1 className="category-title">Vos informations (facultatif)</h1>
+              <InformationsInput />
+            </div>
+            <div className="column">
+              <Mixeur />
+            </div>
           </div>
-          <div className="column">
-            <Mixeur />
-          </div>
-        </div>);
+        );
       default:
         return (
           <div className="columns">
@@ -124,7 +127,16 @@ export default class Blender extends React.Component {
               <div className="modal-bodies">
                 <div className="modal-body">
                   <div className="items">
-                    {this.renderPage()}
+                    <ReactCSSTransitionGroup
+                      transitionName="animation-form"
+                      transitionAppear
+                      transitionAppearTimeout={600}
+                      transitionEnterTimeout={500}
+                      transitionLeaveTimeout={300}
+                    >
+                      <div key={this.state.currentPage}>{this.renderPage()}</div>
+
+                    </ReactCSSTransitionGroup>
                   </div>
                   <div className="modal-footer">
                     <hr />
