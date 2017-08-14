@@ -53,13 +53,16 @@ export class ConferenceComponent extends Component {
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                <i
-                  className="fa fa-arrows-h circle"
-                  role="presentation"
-                  onClick={e => this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
-                />
+                {conferences.length > 1
+                  ? <i
+                    className="fa fa-arrows-h circle"
+                    role="presentation"
+                    onClick={e =>
+                      this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
+                  />
+                  : null}
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                <i className="fa fa-lock circle" />
+                {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null}
               </div>
               <div role="button" className="conference-title">
                 {conferences[0] !== undefined ? conferences[0].title : 'Temps libre'}
