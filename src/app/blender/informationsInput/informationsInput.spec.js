@@ -19,7 +19,7 @@ describe('InformationsInput.component', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = shallow(<informationsInput store={store} />);
+    wrapper = shallow(<InformationsInput store={store} />);
   });
 
   it('should render component', () => {

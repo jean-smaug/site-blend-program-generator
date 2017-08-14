@@ -68,7 +68,12 @@ export class InformationsInputComponent extends Component {
 
 InformationsInputComponent.propTypes = {
   addInformations: PropType.func.isRequired,
-  informations: PropType.object.isRequired,
+  informations: PropType.shape({
+    firstname: PropType.string,
+    lastname: PropType.string,
+    email: PropType.string,
+    isValidEmail: PropType.boolean,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({

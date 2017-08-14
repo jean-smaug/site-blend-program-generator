@@ -3,20 +3,25 @@
 exports[`blender.component should render blender component 1`] = `
 Array [
   <div>
-    <input
+    <ToastContainer
+        className="toast-top-full-width"
+        id="toast-container"
+        newestOnTop={true}
         onClick={[Function]}
-        style={
+        preventDuplicates={true}
+        toastMessageFactory={[Function]}
+        toastType={
             Object {
-                "backgroundColor": "#E6421D",
-                "borderRadius": "50%",
-                "boxShadow": "2px 2px 8px #aaa",
-                "color": "white",
-                "fontSize": "1.2em",
-                "fontWeight": "bold",
-                "height": "100px",
-                "width": "100px",
+                "error": "error",
+                "info": "info",
+                "success": "success",
+                "warning": "warning",
               }
         }
+    />
+    <input
+        className="mix-btn"
+        onClick={[Function]}
         type="button"
         value="GO MIX"
     />

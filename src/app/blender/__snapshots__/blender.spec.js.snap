@@ -129,22 +129,26 @@ Array [
                                 </div>
                             </div>
                         </div>
-                        <hr />
                         <div
-                            className=" columns"
+                            className="modal-footer"
                         >
+                            <hr />
                             <div
-                                className="column is-4"
-                            />
-                            <div
-                                className="column is-4 is-offset-6"
+                                className="columns"
                             >
-                                <input
-                                    className="btn-suivant"
-                                    onClick={[Function]}
-                                    type="button"
-                                    value="Suivant >"
+                                <div
+                                    className="column is-4"
                                 />
+                                <div
+                                    className="column is-4 is-offset-6"
+                                >
+                                    <input
+                                        className="btn-suivant"
+                                        onClick={[Function]}
+                                        type="button"
+                                        value="Suivant >"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

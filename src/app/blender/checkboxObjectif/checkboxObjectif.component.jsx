@@ -9,7 +9,6 @@ import * as formActions from '../blender.action';
  */
 
 export class CheckboxObjectifComponent extends Component {
-
   toggleCheckbox = (e) => {
     if (e.target.checked) this.props.addObjectif(this.props.item.id);
     else this.props.removeObjectif(this.props.item.id);
