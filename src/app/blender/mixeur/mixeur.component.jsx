@@ -45,16 +45,7 @@ export class MixeurComponent extends Component {
           className="toast-top-full-width"
         />
         <input
-          style={{
-            height: '100px',
-            width: '100px',
-            borderRadius: '50%',
-            boxShadow: '2px 2px 8px #aaa',
-            backgroundColor: '#E6421D',
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '1.2em',
-          }}
+          className="mix-btn"
           type="button"
           onClick={this.submitBtn}
           value="GO MIX"
