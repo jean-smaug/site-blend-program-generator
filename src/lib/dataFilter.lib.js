@@ -57,3 +57,9 @@ export const orderConferences = (conferences: Conferences) => {
   });
   return result;
 };
+
+/**
+ * Return all tags
+ */
+export const getTags = (conferences: Conferences) =>
+  _.uniq(_.flatten(_.map(conferences, item => item.tags)));
