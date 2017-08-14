@@ -1,25 +1,26 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 import { CheckboxDomainComponent } from './checkboxDomain.component';
 
-const item = {
-  id: '1',
-  libelle: 'tech',
-};
-
 describe('checkboxDomain.component', () => {
-  let wrapper;
+  let tree;
   let store;
   const mockStore = configureStore();
   const initialState = {};
+  const props = {
+    item: {
+      id: '1',
+      libelle: 'tech',
+    },
+  };
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = shallow(<CheckboxDomainComponent item={item} store={store} />);
+    tree = renderer.create(<CheckboxDomainComponent item={props.item} store={store} />).toJSON();
   });
 
-  it('should render component', () => {
-    expect(wrapper.getNodes()).toMatchSnapshot();
+  it('=== SNAPSHOT ===', () => {
+    expect(tree).toMatchSnapshot();
   });
 });

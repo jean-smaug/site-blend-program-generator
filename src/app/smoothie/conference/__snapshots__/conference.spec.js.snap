@@ -5,6 +5,7 @@ Array [
   <div>
     <conferenceModal
         closeModal={[Function]}
+<<<<<<< HEAD
         conferences={
             Array [
                 Object {},
@@ -14,6 +15,18 @@ Array [
         timeBegin="10"
         timeEnd="12"
         title="Temps libre"
+=======
+        description={undefined}
+        keywords={undefined}
+        linkedin={undefined}
+        modalState={false}
+        picture={undefined}
+        speaker={undefined}
+        timeBegin="10"
+        timeEnd="12"
+        title="foo"
+        twitter={undefined}
+>>>>>>> febaeb9... init fix lint
     />
     <div
         className="columns"
@@ -29,11 +42,20 @@ Array [
                 <div
                     className="conference-opt"
                 >
+<<<<<<< HEAD
                     <i
                         className="fa fa-arrows-h circle"
                         onClick={[Function]}
                         role="presentation"
                     />
+=======
+                    <a>
+                        <i
+                            className="fa fa-arrows-h circle"
+                        />
+                    </a>
+                    ²
+>>>>>>> febaeb9... init fix lint
                     <span
                         className="conference-time"
                     >

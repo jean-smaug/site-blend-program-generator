@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`blender.component should render blender component 1`] = `
+<<<<<<< HEAD
 Array [
   <div>
     <ToastContainer
@@ -27,4 +28,25 @@ Array [
     />
 </div>,
 ]
+=======
+<div>
+  <input
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#E6421D",
+        "borderRadius": "50%",
+        "boxShadow": "2px 2px 8px #aaa",
+        "color": "white",
+        "fontSize": "1.2em",
+        "fontWeight": "bold",
+        "height": "100px",
+        "width": "100px",
+      }
+    }
+    type="button"
+    value="GO MIX"
+  />
+</div>
+>>>>>>> 2d55509... migration flow
 `;

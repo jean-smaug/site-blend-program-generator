@@ -1,20 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import { MixeurComponent } from './mixeur.component';
 
 describe('blender.component', () => {
-  let wrapper;
+  let tree;
   let store;
   const mockStore = configureStore();
   const initialState = {};
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = shallow(<MixeurComponent store={store} />);
+    tree = renderer.create(<MixeurComponent store={store} />).toJSON();
   });
 
   it('should render blender component', () => {
-    expect(wrapper.getNodes()).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 });

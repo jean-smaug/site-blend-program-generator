@@ -1,6 +1,7 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
 import * as formActions from '../blender.action';
 
@@ -8,17 +9,36 @@ import * as formActions from '../blender.action';
  * Component for one keyword's checkbox
  */
 export class CheckboxDomainComponent extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    domain: {
+      domain: this.props.item.id,
+      level: 'noob',
+    },
+    hover: false,
+  };
 
-    this.state = {
-      domain: {
-        domain: this.props.item.id,
-        level: 'beginner',
-      },
-      hover: false,
-    };
-  }
+  getCheckedLevel = (level: string) => {
+    let checked = false;
+    _.forEach(this.props.domains, (element) => {
+      if (element.domain === this.props.item.id && element.level === level) {
+        checked = true;
+      }
+    });
+    return checked;
+  };
+
+  state: {
+    domain: Object,
+    hover: boolean,
+  };
+
+  props: {
+    item: Object,
+    domains: Array<string>,
+    updateLevel: (domain: Object) => void,
+    removeDomain: (domain: Object) => void,
+    addDomain: (domain: Object) => void,
+  };
 
   onMouseEnterHandler = () => {
     this.setState({
@@ -52,7 +72,7 @@ export class CheckboxDomainComponent extends Component {
     return checked;
   };
 
-  submitLevel = (e, level) => {
+  submitLevel = (e: Event, level: string) => {
     e.stopPropagation();
     if (!this.getCheckedLevel(level)) {
       if (this.isChecked()) {
@@ -134,17 +154,6 @@ export class CheckboxDomainComponent extends Component {
     );
   }
 }
-
-CheckboxDomainComponent.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    libelle: PropTypes.string.isRequired,
-  }).isRequired,
-  domains: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  updateLevel: PropTypes.func.isRequired,
-  removeDomain: PropTypes.func.isRequired,
-  addDomain: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = state => ({
   domains: state.form.domains,

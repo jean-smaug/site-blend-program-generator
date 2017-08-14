@@ -4,13 +4,15 @@
 }
 
 .header-date > h1 {
-  padding:0; margin: 0;
+  padding: 0;
+  margin: 0;
   font-size: 2.5em;
   font-weight: bolder;
 }
 
 .header-date > h2 {
-  padding:0; margin: 0;
+  padding: 0;
+  margin: 0;
   font-size: 1.8em;
 }
 
@@ -18,7 +20,7 @@
   font-size: 1.4em;
 }
 
-.itemsSmoothie{
+.itemsSmoothie {
   margin: 0% 30% 30%;
   padding: 0% 2%;
   background-color: rgba(255, 255, 242, 0.7);

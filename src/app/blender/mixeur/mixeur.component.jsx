@@ -12,7 +12,7 @@ import { addConferenceAction } from '../../smoothie/smoothie.action';
  */
 export class MixeurComponent extends Component {
   props: {
-    addConference: () => void,
+    addConference: (word: string) => void,
     form: Object,
   };
 
