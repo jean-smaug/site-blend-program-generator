@@ -209,29 +209,53 @@ CONTAINER FORM
 
 /** animation-form **/
 
-.animation-form-appear {
-  opacity: 0.01;
-}
 
-.animation-form-appear.animation-form-appear-active {
+.right-animation-enter {
+  opacity: 0;
+  transform:   translate(250px,0);
+}
+.right-animation-enter.right-animation-enter-active {
   opacity: 1;
-  transition: opacity 600ms ease-in;
+  transition: opacity 1s ease;
+  transform:   translate(0,0);
+  transition-property: transform, opacity;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
-
-.animation-form-enter {
-  opacity: 0.01;
-}
-
-.animation-form-enter.animation-form-enter-active {
+.right-animation-leave {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transform:   translate(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+.right-animation-leave.right-animation-leave-active {
+  opacity: 0;
+  transform: translate(-250px, 0);
 }
 
-.animation-form-leave {
+
+
+.left-animation-enter {
+  opacity: 0;
+  transform:   translate(-250px,0);
+}
+.left-animation-enter.left-animation-enter-active {
   opacity: 1;
+  transition: opacity 1s ease;
+  transform:   translate(0,0);
+  transition-property: transform, opacity;
+  transition-duration: 1500ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
-
-.animation-form-leave.animation-form-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.left-animation-leave {
+  opacity: 1;
+  transform:   translate(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+.left-animation-leave.left-animation-leave-active {
+  opacity: 0;
+  transform:   translate(250px,0);
 }

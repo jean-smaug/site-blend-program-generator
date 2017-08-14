@@ -16,14 +16,19 @@ export default class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
+    direction: 'right',
   };
 
   nextPage = () => {
-    this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
+    this.setState({ direction: 'right' }, () => {
+      this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
+    });
   };
 
   previousPage = () => {
-    this.setState(prevState => ({ currentPage: prevState.currentPage - 1 }));
+    this.setState({ direction: 'left' }, () => {
+      this.setState(prevState => ({ currentPage: prevState.currentPage - 1 }));
+    });
   };
 
   handleFilterKeyword = (event) => {
@@ -127,15 +132,8 @@ export default class Blender extends React.Component {
               <div className="modal-bodies">
                 <div className="modal-body">
                   <div className="items">
-                    <ReactCSSTransitionGroup
-                      transitionName="animation-form"
-                      transitionAppear
-                      transitionAppearTimeout={600}
-                      transitionEnterTimeout={500}
-                      transitionLeaveTimeout={300}
-                    >
+                    <ReactCSSTransitionGroup transitionName={`${this.state.direction}-animation`} >
                       <div key={this.state.currentPage}>{this.renderPage()}</div>
-
                     </ReactCSSTransitionGroup>
                   </div>
                   <div className="modal-footer">
