@@ -28,7 +28,7 @@ export class InformationsInputComponent extends Component {
   validateEmail = () => {
     this.setState({
       isValidEmail: emailValidator.validate(this.state.email) || this.state.email === '',
-    });
+    }, () => { this.props.addInformations(this.state); });
   };
 
   render() {
@@ -53,9 +53,11 @@ export class InformationsInputComponent extends Component {
             <span className="icon is-small is-left">
               <i className="fa fa-envelope" />
             </span>
-            <span className="icon is-small is-right">
-              <i className="fa fa-warning" />
-            </span>
+            { !this.state.isValidEmail ?
+              <span className="icon is-small is-right">
+                <i className="fa fa-warning" />
+              </span> :
+              '' }
           </div>
           { !this.state.isValidEmail ? <p className="help is-danger">Le format de votre email est invalide</p> : ''}
         </div>
@@ -66,7 +68,7 @@ export class InformationsInputComponent extends Component {
 
 InformationsInputComponent.propTypes = {
   addInformations: PropType.func.isRequired,
-  informations: PropType.objectOf(PropType.string).isRequired,
+  informations: PropType.object.isRequired,
 };
 
 const mapStateToProps = state => ({
