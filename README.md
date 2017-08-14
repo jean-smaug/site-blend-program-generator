@@ -5,13 +5,13 @@
 ## Données
 
 - Conférence
-```
+```json
 {
   "day" : "dayOne" || "dayTwo",
   "description" : "Lorem ipsum dolor sit amet",
   "domain" : "tech" || "societe" || "design",
   "duration" : 15,
-  "level": "beginner" || "expert"
+  "level": "beginner" || "expert",
   "room" : "Amphi X",
   "speaker" : {
     "linkedinLink" : "linkedin.com/fe156vse1",
