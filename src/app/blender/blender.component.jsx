@@ -8,7 +8,7 @@ import * as objectifs from './data/objectives.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
 import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
 import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
-import InformationsInput from './InformationsInput/InformationsInput.component';
+import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 
 export default class Blender extends React.Component {

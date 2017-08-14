@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import InformationsInput from './InformationsInput.component';
+import InformationsInput from './informationsInputcomponent';
 
 const initialState = {
   informations: {
@@ -19,7 +19,7 @@ describe('InformationsInput.component', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = shallow(<InformationsInput store={store} />);
+    wrapper = shallow(<informationsInput store={store} />);
   });
 
   it('should render component', () => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InformationsInput.component should render component`] = `
+exports[`informationsInput.component should render component`] = `
 Array [
    <div>
         <div className="field">
