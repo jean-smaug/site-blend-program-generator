@@ -45,7 +45,7 @@ export class ConferenceComponent extends Component {
         {this.state.isModalVisible
           ? <Modal
             closeModal={this.toggleModal}
-            {...conferences[this.state.selectedConferenceId]}
+            conference={conferences[this.state.selectedConferenceId]}
           />
           : null}
         <div className="columns">

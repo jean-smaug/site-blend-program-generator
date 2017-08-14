@@ -3,21 +3,17 @@
 import React from 'react';
 import _ from 'lodash';
 
+import { Conference } from '../smoothie.type';
+
 const ConferenceModal = ({
-  title,
-  speaker,
-  description,
-  timeBegin,
+  conference,
   closeModal,
-  tags,
-  }: {
-  title: string,
-  speaker: Object,
-  description: string,
-  timeBegin: string,
+}: {
+  conference: Conference,
   closeModal: () => void,
-  tags: Array<string>,
 }) => {
+  const { title, speaker, description, timeBegin, tags } = conference;
+
   const keywordsShow = _.map(tags, element =>
     (<span className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}>
       {element}
