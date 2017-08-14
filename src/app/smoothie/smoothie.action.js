@@ -19,3 +19,17 @@ export const addConferenceAction = conferences => ({
 export const removeConferences = () => ({
   type: 'REMOVE_CONFERENCES',
 });
+
+export const switchConference = conference => ({
+  type: 'SWITCH_CONFERENCE',
+  data: { conference },
+});
+
+export const closeSwitcherAction = () => ({
+  type: 'CLOSE_SWITCHER',
+});
+
+export const openSwitcherAction = (currentConferenceId, conferences) => ({
+  type: 'OPEN_SWITCHER',
+  data: { currentConferenceId, conferences },
+});

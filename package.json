@@ -40,6 +40,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "flow": "flow",
     "flow:start": "flow start",
     "flow:stop": "flow stop",
     "flow:status": "flow status",

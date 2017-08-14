@@ -3,40 +3,27 @@
 import React from 'react';
 import _ from 'lodash';
 
-const conferenceModal = ({
-  closeModal,
-  modalState,
+const ConferenceModal = ({
   title,
   speaker,
   description,
-  keywords,
-  picture,
-  twitter,
-  linkedin,
   timeBegin,
-  timeEnd,
-  }: {
-  modalState: boolean,
+  closeModal,
+  tags,
+}: {
   title: string,
-  picture: string,
-  twitter: string,
-  linkedin: string,
-  speaker: string,
+  speaker: Object,
   description: string,
   timeBegin: string,
-  timeEnd: string,
   closeModal: () => void,
-  keywords: Array<string>,
+  tags: Array<string>,
 }) => {
-  if (!modalState) {
-    return null;
-  }
-
-  const keywordsShow = _.map(keywords, element =>
+  const keywordsShow = _.map(tags, element =>
     (<span className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}>
       {element}
     </span>),
   );
+  const { twitterLink, pictureLink, linkedinLink, name } = speaker;
 
   return (
     <div className="modal is-active">
@@ -49,8 +36,8 @@ const conferenceModal = ({
       />
       <div className="modal-card">
         <section className="modal-card-header">
-          {twitter
-            ? <a href={`https://twitter.com/${twitter}`} className="social-twitter">
+          {twitterLink
+            ? <a href={`https://twitter.com/${twitterLink}`} className="social-twitter">
               <span className="icon is-large">
                 <i className="fa fa-twitter" aria-hidden="true" />
               </span>
@@ -58,18 +45,18 @@ const conferenceModal = ({
             : null}
           <img
             className="image speaker"
-            src={picture || 'https://img15.hostingpics.net/pics/688698speaker.png'}
+            src={pictureLink || 'https://img15.hostingpics.net/pics/688698speaker.png'}
             alt="speaker"
           />
-          {linkedin
-            ? <a href={linkedin}>
+          {linkedinLink
+            ? <a href={linkedinLink}>
               <span className="icon is-medium social-linkedin">
                 <i className="fa fa-linkedin" aria-hidden="true" />
               </span>
             </a>
             : null}
           <h1>
-            {speaker || 'Chef inconnu'}
+            {name || 'Chef inconnu'}
           </h1>
         </section>
         <section className="modal-card-body">
@@ -77,7 +64,7 @@ const conferenceModal = ({
             {title}
           </h1>
           <h2>
-            {`${timeBegin}h00 > ${timeEnd}h00`}
+            {`${timeBegin}h00 > h00`}
           </h2>
           {description}
           <div className="tags">
@@ -90,4 +77,4 @@ const conferenceModal = ({
   );
 };
 
-export default conferenceModal;
+export default ConferenceModal;

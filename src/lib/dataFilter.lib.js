@@ -41,22 +41,17 @@ export const orderConferences = (data) => {
     dayOne: { eight: [], ten: [], fourteen: [], sixteen: [] },
     dayTwo: { eight: [], ten: [], fourteen: [], sixteen: [] },
   };
+
   _.forEach(data, (item) => {
-    switch (item.timeBegin) {
-      case 8:
-        result[item.date].eight.push(item);
-        break;
-      case 10:
-        result[item.date].ten.push(item);
-        break;
-      case 14:
-        result[item.date].fourteen.push(item);
-        break;
-      case 16:
-        result[item.date].sixteen.push(item);
-        break;
-      default:
-        break;
+    const switcher = _.split(item.timeBegin, 'h')[0];
+    if (switcher < 10) {
+      result[item.day].eight.push(item);
+    } else if (switcher < 12) {
+      result[item.day].ten.push(item);
+    } else if (switcher < 16) {
+      result[item.day].fourteen.push(item);
+    } else {
+      result[item.day].sixteen.push(item);
     }
   });
   return result;

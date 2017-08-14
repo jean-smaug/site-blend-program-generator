@@ -1,63 +1,74 @@
 // @flow
 
-import React from 'react';
-import './conference.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Modal from './conferenceModal.component';
+import { openSwitcherAction } from '../smoothie.action';
+import './conference.css';
 
-class Conference extends React.Component {
+export class ConferenceComponent extends Component {
   state = {
+    selectedConferenceId: 0,
     isModalVisible: false,
+    isSwitcherOpened: false,
   };
 
   state: {
+    selectedConferenceId: number,
     isModalVisible: boolean,
+    isSwitcherOpened: boolean,
   };
 
   props: {
-    name: string,
-    timeBegin: string,
-    timeEnd: string,
-    // keywords: Array<string>,
-    // picture: string,
-    // twitter: string,
-    // linkedin: string,
-    // speaker: string,
-    // description: string,
+    timeBegin: number,
+    timeEnd: number,
+    openSwitcher: () => void,
+    conferences: Array<{
+      name: string,
+      keywords: Array<string>,
+      picture: string,
+      twitter: string,
+      linkedin: string,
+      speaker: string,
+      description: string,
+    }>,
   };
 
   toggleModal = () => {
-    this.setState((prev) => {
-      const newState = !prev.isModalVisible;
-      return {
-        isModalVisible: newState,
-      };
+    this.setState({
+      isModalVisible: !this.state.isModalVisible,
     });
   };
 
+  openSwitcher = (e: Event, selectedConferenceId: number, conferences: Array<Object>) => {
+    e.stopPropagation();
+    this.props.openSwitcher(selectedConferenceId, conferences);
+  };
+
   render() {
-    const { name, timeBegin, timeEnd } = this.props;
+    const { timeBegin, timeEnd, conferences } = this.props;
     return (
-      <div>
-        <Modal
-          closeModal={this.toggleModal}
-          modalState={this.state.isModalVisible}
-          title={name !== undefined ? name : 'Temps libre'}
-          {...this.props}
-        />
-        <div className="columns" onClick={this.toggleModal} role="presentation">
+      <div onClick={() => this.toggleModal()} role="presentation">
+        {this.state.isModalVisible
+          ? <Modal
+            closeModal={this.toggleModal}
+            {...conferences[this.state.selectedConferenceId]}
+          />
+          : null}
+        <div className="columns">
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                <a>
+                <button
+                  onClick={e => this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
+                >
                   <i className="fa fa-arrows-h circle" />
-                </a>
+                </button>
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                <a>
-                  <i className="fa fa-lock circle" />
-                </a>
+                <i className="fa fa-lock circle" />
               </div>
               <div role="button" className="conference-title">
-                {name !== undefined ? name : 'Temps libre'}
+                {conferences[0] !== undefined ? conferences[0].title : 'Temps libre'}
               </div>
             </div>
           </div>
@@ -67,4 +78,9 @@ class Conference extends React.Component {
   }
 }
 
-export default Conference;
+const mapDispatchToProps = dispatch => ({
+  openSwitcher: (selectedConferenceId, conferences) =>
+    dispatch(openSwitcherAction(selectedConferenceId, conferences)),
+});
+
+export default connect(null, mapDispatchToProps)(ConferenceComponent);

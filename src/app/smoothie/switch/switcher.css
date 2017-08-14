@@ -1,0 +1,7 @@
+.switcher {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  background: grey;
+  width: 200px;
+}

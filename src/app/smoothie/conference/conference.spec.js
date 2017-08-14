@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import Conference from './conference.component';
 
 const props = {
-  name: 'foo',
   timeBegin: '10',
   timeEnd: '12',
+  conferences: [{}],
 };
 
 describe('conference.component', () => {

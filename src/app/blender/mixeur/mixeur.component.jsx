@@ -23,7 +23,7 @@ export class MixeurComponent extends Component {
       addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
     } else {
       this.toastError.error(
-        'L\'email que vous avez renseigné a un format incorrect.',
+        "L'email que vous avez renseigné a un format incorrect.",
         'Attention !',
         {
           timeOut: 7000,
@@ -44,12 +44,7 @@ export class MixeurComponent extends Component {
           toastMessageFactory={React.createFactory(ToastMessage.animation)}
           className="toast-top-full-width"
         />
-        <input
-          className="mix-btn"
-          type="button"
-          onClick={this.submitBtn}
-          value="GO MIX"
-        />
+        <input className="mix-btn" type="button" onClick={this.submitBtn} value="GO MIX" />
       </div>
     );
   }
