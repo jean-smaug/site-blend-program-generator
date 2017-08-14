@@ -1,4 +1,3 @@
-import * as conferencesStorage from '../../lib/localStorage.lib';
 import {
   MIX_CONFERENCES,
   REMOVE_CONFERENCES,
@@ -6,10 +5,11 @@ import {
   OPEN_SWITCHER,
   CLOSE_SWITCHER,
 } from '../constants';
+import { getConferencesStore } from '../../lib/localStorage.lib';
 
 const initialState = {
-  dayOne: conferencesStorage.getConferencesStore().dayOne || {},
-  dayTwo: conferencesStorage.getConferencesStore().dayTwo || {},
+  dayOne: getConferencesStore().dayOne || {},
+  dayTwo: getConferencesStore().dayTwo || {},
   isSwitcherOpened: false,
   substitutionConferencesPath: '',
   switcherConferences: [],

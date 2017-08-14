@@ -6,14 +6,16 @@ import { connect } from 'react-redux';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
 import { setConferencesStore } from '../../lib/localStorage.lib';
+
+import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
 
 export class SmoothieComponent extends Component {
   props: {
-    dayOne: Array<Object>,
-    dayTwo: Array<Object>,
+    dayOne: Day,
+    dayTwo: Day,
     isSwitcherOpened: boolean,
-    switcherConferences: Array<Object>,
+    switcherConferences: Array<Conference>,
   };
 
   handleClickSave = () => {
