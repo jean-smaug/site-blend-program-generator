@@ -2,44 +2,82 @@
 
 exports[`InformationsInput.component should render component 1`] = `
 Array [
-  <InformationsInputComponent
-    addInformations={[Function]}
-    informations={
-        Object {
-            "email": "",
-            "firstname": "",
-            "isValidEmail": true,
-            "lastname": "",
-          }
-    }
-    store={
-        Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          }
-    }
-    storeSubscription={
-        Subscription {
-            "listeners": Object {
-              "notify": [Function],
-            },
-            "onStateChange": [Function],
-            "parentSub": undefined,
-            "store": Object {
-              "clearActions": [Function],
-              "dispatch": [Function],
-              "getActions": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-            },
-            "unsubscribe": null,
-          }
-    }
-/>,
+  <div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="firstname"
+        >
+            Prénom
+        </label>
+        <div
+            className="control"
+        >
+            <input
+                className="input"
+                name="firstname"
+                onChange={[Function]}
+                placeholder="Prénom"
+                type="text"
+                value=""
+            />
+        </div>
+    </div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="lastname"
+        >
+            Nom
+        </label>
+        <div
+            className="control"
+        >
+            <input
+                className="input"
+                name="lastname"
+                onChange={[Function]}
+                placeholder="Nom"
+                type="text"
+                value=""
+            />
+        </div>
+    </div>
+    <div
+        className="field"
+    >
+        <label
+            className="label"
+            htmlFor="email"
+        >
+            Email
+        </label>
+        <div
+            className="control has-icons-left has-icons-right"
+        >
+            <input
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="email"
+                value=""
+            />
+            <span
+                className="icon is-small is-left"
+            >
+                <i
+                    className="fa fa-envelope"
+                />
+            </span>
+            
+        </div>
+        
+    </div>
+</div>,
 ]
 `;

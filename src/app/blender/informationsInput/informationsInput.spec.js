@@ -1,27 +1,23 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import configureStore from 'redux-mock-store';
-import InformationsInput from './informationsInputcomponent';
+import { InformationsInputComponent } from './informationsInputcomponent';
+import * as formActions from '../blender.action';
 
-const initialState = {
-  form: {
-    informations: {
-      firstname: '',
-      lastname: '',
-      email: '',
-      isValidEmail: true,
-    },
-  },
+const informations = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  isValidEmail: true,
 };
 
 describe('InformationsInput.component', () => {
   let wrapper;
-  let store;
-  const mockStore = configureStore();
 
   beforeEach(() => {
-    store = mockStore(initialState);
-    wrapper = shallow(<InformationsInput store={store} />);
+    wrapper = shallow(<InformationsInputComponent
+      addInformations={formActions.addInformations}
+      informations={informations}
+    />);
   });
 
   it('should render component', () => {
