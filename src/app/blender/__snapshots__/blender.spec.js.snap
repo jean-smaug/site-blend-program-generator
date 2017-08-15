@@ -85,8 +85,8 @@ Array [
                                             <Connect(CheckboxDomainComponent)
                                                 item={
                                                     Object {
-                                                        "id": "market",
-                                                        "libelle": "Market",
+                                                        "id": "societe",
+                                                        "libelle": "Société",
                                                       }
                                                 }
                                             />
@@ -97,8 +97,8 @@ Array [
                                             <Connect(CheckboxDomainComponent)
                                                 item={
                                                     Object {
-                                                        "id": "biz",
-                                                        "libelle": "Business",
+                                                        "id": "design",
+                                                        "libelle": "Design",
                                                       }
                                                 }
                                             />
@@ -114,12 +114,12 @@ Array [
                                                           "libelle": "Technique",
                                                         },
                                                         Object {
-                                                          "id": "market",
-                                                          "libelle": "Market",
+                                                          "id": "societe",
+                                                          "libelle": "Société",
                                                         },
                                                         Object {
-                                                          "id": "biz",
-                                                          "libelle": "Business",
+                                                          "id": "design",
+                                                          "libelle": "Design",
                                                         },
                                                       ]
                                                 }

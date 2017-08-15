@@ -18,21 +18,11 @@ Array [
                 <div
                     className="conference-opt"
                 >
-                    <button
-                        onClick={[Function]}
-                    >
-                        <i
-                            className="fa fa-arrows-h circle"
-                        />
-                    </button>
                     <span
                         className="conference-time"
                     >
                         10h00 &gt; 12h00
                     </span>
-                    <i
-                        className="fa fa-lock circle"
-                    />
                 </div>
                 <div
                     className="conference-title"

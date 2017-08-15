@@ -10,7 +10,7 @@ import './conference.css';
 
 export class ConferenceComponent extends Component {
   state = {
-    currentConferenceId: !_.isEmpty(this.props.conferences) ? this.props.conferences[0].id : null,
+    currentConferenceId: !_.isEmpty(this.props.conferences) ? this.props.conferences[0].id : 0,
     isModalVisible: false,
     isSwitcherOpened: false,
   };
@@ -21,18 +21,18 @@ export class ConferenceComponent extends Component {
     isSwitcherOpened: boolean,
   };
 
+  componentWillReceiveProps(nextProps: Object) {
+    this.setState({
+      currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : 0,
+    });
+  }
+
   props: {
     timeBegin: number,
     timeEnd: number,
     openSwitcher: (currentConferenceId: number, conferences: Conferences) => void,
     conferences: Conferences,
   };
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : null,
-    });
-  }
 
   toggleModal = () => {
     this.setState({
@@ -47,8 +47,6 @@ export class ConferenceComponent extends Component {
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
-
-    console.log(this.state.currentConferenceId, 'current');
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
         {this.state.isModalVisible && !_.isEmpty(conferences)
