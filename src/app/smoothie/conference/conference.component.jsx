@@ -10,13 +10,13 @@ import './conference.css';
 
 export class ConferenceComponent extends Component {
   state = {
-    selectedConferenceId: 0,
+    currentConferenceId: !_.isEmpty(this.props.conferences) ? this.props.conferences[0].id : null,
     isModalVisible: false,
     isSwitcherOpened: false,
   };
 
   state: {
-    selectedConferenceId: number,
+    currentConferenceId: number,
     isModalVisible: boolean,
     isSwitcherOpened: boolean,
   };
@@ -24,7 +24,7 @@ export class ConferenceComponent extends Component {
   props: {
     timeBegin: number,
     timeEnd: number,
-    openSwitcher: (selectedConferenceId: number, conferences: Conferences) => void,
+    openSwitcher: (currentConferenceId: number, conferences: Conferences) => void,
     conferences: Conferences,
   };
 
@@ -34,9 +34,10 @@ export class ConferenceComponent extends Component {
     });
   };
 
-  openSwitcher = (e: Event, selectedConferenceId: number, conferences: Conferences) => {
+  openSwitcher = (e: Event, currentConferenceId: number, conferences: Conferences) => {
     e.stopPropagation();
-    this.props.openSwitcher(selectedConferenceId, conferences);
+    console.log(currentConferenceId, 'current');
+    this.props.openSwitcher(currentConferenceId, conferences);
   };
 
   render() {
@@ -46,7 +47,7 @@ export class ConferenceComponent extends Component {
         {this.state.isModalVisible && !_.isEmpty(conferences)
           ? <Modal
             closeModal={this.toggleModal}
-            conference={conferences[this.state.selectedConferenceId]}
+            conference={_.find(conferences, { id: this.state.currentConferenceId })}
           />
           : null}
         <div className="columns">
@@ -58,7 +59,7 @@ export class ConferenceComponent extends Component {
                     className="fa fa-arrows-h circle"
                     role="presentation"
                     onClick={e =>
-                      this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
+                      this.openSwitcher(e, this.state.currentConferenceId, conferences)}
                   />
                   : null}
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
@@ -76,8 +77,8 @@ export class ConferenceComponent extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  openSwitcher: (selectedConferenceId, conferences) =>
-    dispatch(openSwitcherAction(selectedConferenceId, conferences)),
+  openSwitcher: (currentConferenceId, conferences) =>
+    dispatch(openSwitcherAction(currentConferenceId, conferences)),
 });
 
 export default connect(null, mapDispatchToProps)(ConferenceComponent);

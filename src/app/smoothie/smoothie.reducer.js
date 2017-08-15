@@ -6,6 +6,7 @@ import {
   CLOSE_SWITCHER,
 } from '../constants';
 import { getConferencesStore } from '../../lib/localStorage.lib';
+import { convertHourToString } from '../../lib/time.lib';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -34,7 +35,7 @@ export default (state = initialState, payload) => {
     case SWITCH_CONFERENCE: {
       const { conference, conference: { day, timeBegin } } = payload.data;
       const time = timeBegin.split('h')[0];
-      console.log(state[day]);
+      console.log(state[day][convertHourToString(time)]);
       return { ...state, conference };
     }
 
@@ -43,6 +44,7 @@ export default (state = initialState, payload) => {
         ...state,
         isSwitcherOpened: true,
         switcherConferences: payload.data.conferences,
+        currentConferenceId: payload.data.currentConferenceId,
       };
 
     case CLOSE_SWITCHER:

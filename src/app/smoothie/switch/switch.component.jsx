@@ -21,6 +21,7 @@ export class SwitchComponent extends Component {
 
   render() {
     const { conferences, currentConferenceId } = this.props;
+    console.log(conferences, '##', currentConferenceId);
     const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
     return (
       <div>
@@ -40,8 +41,12 @@ export class SwitchComponent extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  currentConferenceId: state.smoothie.currentConferenceId,
+});
+
 const mapDispatchToProps = dispatch => ({
   switchConference: conference => dispatch(switchConference(conference)),
 });
 
-export default connect(null, mapDispatchToProps)(SwitchComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SwitchComponent);
