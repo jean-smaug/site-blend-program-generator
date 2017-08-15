@@ -36,13 +36,14 @@ export default (state = initialState, payload) => {
     case SWITCH_CONFERENCE: {
       const { conference, conference: { day, timeBegin } } = payload.data;
       const time = timeBegin.split('h')[0];
-      const timeSlotConferences = state[day][convertHourToString(time)];
+      const letterTime = convertHourToString(time);
+      const timeSlotConferences = state[day][letterTime];
 
       return {
         ...state,
         [day]: {
           ...state[day],
-          [convertHourToString(time)]: reorderConferences(conference, timeSlotConferences),
+          [letterTime]: reorderConferences(conference, timeSlotConferences),
         },
       };
     }

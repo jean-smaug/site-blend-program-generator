@@ -28,6 +28,12 @@ export class ConferenceComponent extends Component {
     conferences: Conferences,
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : null,
+    });
+  }
+
   toggleModal = () => {
     this.setState({
       isModalVisible: !this.state.isModalVisible,
@@ -36,12 +42,13 @@ export class ConferenceComponent extends Component {
 
   openSwitcher = (e: Event, currentConferenceId: number, conferences: Conferences) => {
     e.stopPropagation();
-    console.log(currentConferenceId, 'current');
     this.props.openSwitcher(currentConferenceId, conferences);
   };
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
+
+    console.log(this.state.currentConferenceId, 'current');
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
         {this.state.isModalVisible && !_.isEmpty(conferences)
