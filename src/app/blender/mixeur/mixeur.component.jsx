@@ -3,8 +3,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
+import randomString from 'randomstring';
 import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
-import { getConferences } from '../../../lib/database';
+import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 
 /**
@@ -20,7 +21,18 @@ export class MixeurComponent extends Component {
     if (this.props.form.informations.isValidEmail) {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
-      addConference(orderConferences(filterByLevelAndDomain(conferences, form.domains)));
+      const orderedConferences = orderConferences(
+        filterByLevelAndDomain(conferences, form.domains),
+      );
+
+      const userKey = randomString.generate({
+        length: 4,
+        capitalization: 'uppercase',
+      });
+
+      writeStore(userKey, { ...orderedConferences, blender: form.domains });
+
+      addConference(orderedConferences);
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",
