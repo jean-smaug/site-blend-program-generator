@@ -21,17 +21,20 @@ export class SwitchComponent extends Component {
 
   render() {
     const { conferences, currentConferenceId } = this.props;
-    console.log(conferences, '##', currentConferenceId);
+
     const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
     return (
       <div>
         <div className="switcher">
           <ul>
             {_.map(remainingConferences, item =>
-              (<li key={item.id}>
-                <button onClick={() => this.selectConference(item)}>
-                  {item.title}
-                </button>
+              (<li
+                className="switcher__item"
+                key={item.id}
+                role="presentation"
+                onClick={() => this.selectConference(item)}
+              >
+                {item.title}
               </li>),
             )}
           </ul>

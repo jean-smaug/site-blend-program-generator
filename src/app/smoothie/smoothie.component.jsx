@@ -47,9 +47,7 @@ export class SmoothieComponent extends Component {
           className="toast-bottom-full-width"
         />
 
-        {isSwitcherOpened
-          ? <Switcher currentConferenceId={0} conferences={switcherConferences} />
-          : <p>Switcher</p>}
+        {isSwitcherOpened ? <Switcher conferences={switcherConferences} /> : null}
 
         <div className="outils">
           <a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>

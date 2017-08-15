@@ -5,3 +5,8 @@
   background: grey;
   width: 200px;
 }
+
+.switcher__item {
+  background: white;
+  cursor: pointer;
+}

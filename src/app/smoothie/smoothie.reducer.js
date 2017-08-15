@@ -13,7 +13,6 @@ const initialState = {
   dayOne: getConferencesStore().dayOne || {},
   dayTwo: getConferencesStore().dayTwo || {},
   isSwitcherOpened: false,
-  substitutionConferencesPath: '',
   switcherConferences: [],
 };
 
@@ -41,6 +40,7 @@ export default (state = initialState, payload) => {
 
       return {
         ...state,
+        isSwitcherOpened: false,
         [day]: {
           ...state[day],
           [letterTime]: reorderConferences(conference, timeSlotConferences),
