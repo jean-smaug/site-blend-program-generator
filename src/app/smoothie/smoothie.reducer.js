@@ -7,6 +7,7 @@ import {
 } from '../constants';
 import { getConferencesStore } from '../../lib/localStorage.lib';
 import { convertHourToString } from '../../lib/time.lib';
+import { reorderConferences } from '../../lib/dataFilter.lib';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -35,8 +36,15 @@ export default (state = initialState, payload) => {
     case SWITCH_CONFERENCE: {
       const { conference, conference: { day, timeBegin } } = payload.data;
       const time = timeBegin.split('h')[0];
-      console.log(state[day][convertHourToString(time)]);
-      return { ...state, conference };
+      const timeSlotConferences = state[day][convertHourToString(time)];
+
+      return {
+        ...state,
+        [day]: {
+          ...state[day],
+          [convertHourToString(time)]: reorderConferences(conference, timeSlotConferences),
+        },
+      };
     }
 
     case OPEN_SWITCHER:
