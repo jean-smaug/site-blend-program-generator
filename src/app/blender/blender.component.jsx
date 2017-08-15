@@ -10,12 +10,21 @@ import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
 import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
+import { getConferences } from '../../lib/database';
+import { getTags } from '../../lib/dataFilter.lib';
 
 export default class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
+    tags: [],
   };
+
+  async componentWillMount() {
+    this.setState({
+      tags: getTags(await getConferences()),
+    });
+  }
 
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
@@ -32,7 +41,7 @@ export default class Blender extends React.Component {
 
   renderPage = () => {
     switch (this.state.currentPage) {
-      case 2:
+      case 2: {
         return (
           <div className="columns">
             <div className="column">
@@ -49,12 +58,12 @@ export default class Blender extends React.Component {
                   placeholder="Rechercher d'autres mots clefs..."
                 />
               </div>
-              {_.map(keywords, (item) => {
+              {_.map(this.state.tags, (item) => {
                 if (
                   this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+                  item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
                 ) {
-                  return <CheckboxKeyword item={item} key={item.id} />;
+                  return <CheckboxKeyword item={item} key={item} />;
                 }
                 return null;
               })
@@ -63,6 +72,7 @@ export default class Blender extends React.Component {
             </div>
           </div>
         );
+      }
       case 3:
         return (
           <div className="columns">
@@ -73,15 +83,17 @@ export default class Blender extends React.Component {
           </div>
         );
       case 4:
-        return (<div className="columns">
-          <div className="column">
-            <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput />
+        return (
+          <div className="columns">
+            <div className="column">
+              <h1 className="category-title">Vos informations (facultatif)</h1>
+              <InformationsInput />
+            </div>
+            <div className="column">
+              <Mixeur />
+            </div>
           </div>
-          <div className="column">
-            <Mixeur />
-          </div>
-        </div>);
+        );
       default:
         return (
           <div className="columns">
@@ -103,7 +115,6 @@ export default class Blender extends React.Component {
         );
     }
   };
-
 
   render() {
     return (

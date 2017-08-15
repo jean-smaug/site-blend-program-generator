@@ -20,20 +20,20 @@ export class CheckboxKeywordComponent extends Component {
     if (!_.includes(this.props.keywords, this.props.item.id)) {
       this.props.addKeyword(this.props.item.id);
     } else this.props.removeKeyword(this.props.item.id);
-  }
+  };
 
   render() {
     return (
       <span
         role="presentation"
         className={
-          _.includes(this.props.keywords, this.props.item.id)
+          _.includes(this.props.keywords, this.props.item)
             ? `tag is-${this.state.color} keyword-elt`
             : 'tag is-notselected keyword-elt'
         }
         onClick={this.toggleCheckbox}
       >
-        {this.props.item.libelle}
+        {this.props.item}
       </span>
     );
   }
@@ -42,10 +42,7 @@ export class CheckboxKeywordComponent extends Component {
 CheckboxKeywordComponent.propTypes = {
   addKeyword: PropTypes.func.isRequired,
   removeKeyword: PropTypes.func.isRequired,
-  item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    libelle: PropTypes.string.isRequired,
-  }).isRequired,
+  item: PropTypes.string.isRequired,
   keywords: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
