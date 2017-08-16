@@ -110,8 +110,8 @@ export class CheckboxDomainComponent extends Component {
                 onClick={event => this.submitLevel(event, 'beginner')}
                 className={
                   this.getCheckedLevel('beginner')
-                    ? 'tag domain-selected level-objectif'
-                    : 'tag is-notselected level-objectif'
+                    ? 'tag domain-selected level-domain'
+                    : 'tag is-notselected level-domain'
                 }
               >
                 {' '}Découvrir{' '}
@@ -121,8 +121,8 @@ export class CheckboxDomainComponent extends Component {
                 onClick={event => this.submitLevel(event, 'expert')}
                 className={
                   this.getCheckedLevel('expert')
-                    ? 'tag domain-selected level-objectif'
-                    : 'tag is-notselected level-objectif'
+                    ? 'tag domain-selected level-domain'
+                    : 'tag is-notselected level-domain'
                 }
               >
                 {' '}Appronfondir{' '}

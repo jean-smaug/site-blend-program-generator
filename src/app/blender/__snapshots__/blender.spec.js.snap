@@ -74,7 +74,7 @@ Array [
                                                 item={
                                                     Object {
                                                         "id": "tech",
-                                                        "libelle": "Technique",
+                                                        "libelle": "Tech",
                                                       }
                                                 }
                                             />
@@ -85,8 +85,8 @@ Array [
                                             <Connect(CheckboxDomainComponent)
                                                 item={
                                                     Object {
-                                                        "id": "societe",
-                                                        "libelle": "Société",
+                                                        "id": "market",
+                                                        "libelle": "Webmarketing",
                                                       }
                                                 }
                                             />
@@ -111,11 +111,11 @@ Array [
                                                     Array [
                                                         Object {
                                                           "id": "tech",
-                                                          "libelle": "Technique",
+                                                          "libelle": "Tech",
                                                         },
                                                         Object {
-                                                          "id": "societe",
-                                                          "libelle": "Société",
+                                                          "id": "market",
+                                                          "libelle": "Webmarketing",
                                                         },
                                                         Object {
                                                           "id": "design",
