@@ -21,16 +21,20 @@ export class SwitchComponent extends Component {
 
   render() {
     const { conferences, currentConferenceId } = this.props;
+
     const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
     return (
       <div>
         <div className="switcher">
           <ul>
             {_.map(remainingConferences, item =>
-              (<li key={item.id}>
-                <button onClick={() => this.selectConference(item)}>
-                  {item.name}
-                </button>
+              (<li
+                className="switcher__item"
+                key={item.id}
+                role="presentation"
+                onClick={() => this.selectConference(item)}
+              >
+                {item.title}
               </li>),
             )}
           </ul>
@@ -40,8 +44,12 @@ export class SwitchComponent extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  currentConferenceId: state.smoothie.currentConferenceId,
+});
+
 const mapDispatchToProps = dispatch => ({
   switchConference: conference => dispatch(switchConference(conference)),
 });
 
-export default connect(null, mapDispatchToProps)(SwitchComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SwitchComponent);

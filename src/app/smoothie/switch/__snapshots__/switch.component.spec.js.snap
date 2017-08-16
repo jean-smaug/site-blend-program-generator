@@ -13,11 +13,11 @@ ShallowWrapper {
         className="switcher"
     >
         <ul>
-            <li>
-                <button
-                    onClick={[Function]}
-                />
-            </li>
+            <li
+                className="switcher__item"
+                onClick={[Function]}
+                role="presentation"
+            />
         </ul>
     </div>
 </div>,
@@ -27,11 +27,11 @@ ShallowWrapper {
             className="switcher"
       >
             <ul>
-                  <li>
-                        <button
-                              onClick={[Function]}
-                        />
-                  </li>
+                  <li
+                        className="switcher__item"
+                        onClick={[Function]}
+                        role="presentation"
+                  />
             </ul>
       </div>
 </div>,
@@ -88,11 +88,11 @@ ShallowWrapper {
                     className="switcher"
           >
                     <ul>
-                              <li>
-                                        <button
-                                                  onClick={[Function]}
-                                        />
-                              </li>
+                              <li
+                                        className="switcher__item"
+                                        onClick={[Function]}
+                                        role="presentation"
+                              />
                     </ul>
           </div>
 </div>,
@@ -102,11 +102,11 @@ ShallowWrapper {
                     className="switcher"
           >
                     <ul>
-                              <li>
-                                        <button
-                                                  onClick={[Function]}
-                                        />
-                              </li>
+                              <li
+                                        className="switcher__item"
+                                        onClick={[Function]}
+                                        role="presentation"
+                              />
                     </ul>
           </div>
 </div>,

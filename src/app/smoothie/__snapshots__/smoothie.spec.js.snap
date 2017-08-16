@@ -25,9 +25,6 @@ ShallowWrapper {
               }
         }
     />
-    <p>
-        Switcher
-    </p>
     <div
         className="outils"
     >
@@ -106,9 +103,6 @@ ShallowWrapper {
                       }
             }
       />
-      <p>
-            Switcher
-      </p>
       <div
             className="outils"
       >
@@ -228,9 +222,6 @@ ShallowWrapper {
                                       }
                     }
           />
-          <p>
-                    Switcher
-          </p>
           <div
                     className="outils"
           >
@@ -309,9 +300,6 @@ ShallowWrapper {
                                       }
                     }
           />
-          <p>
-                    Switcher
-          </p>
           <div
                     className="outils"
           >

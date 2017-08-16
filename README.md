@@ -17,10 +17,10 @@
     "city": "Lyon",
     "company": "Cuisine du Web",
     "gender": "male" || "female",
-    "linkedinLink" : "linkedin.com/fe156vse1",
+    "linkedin" : "linkedin.com/fe156vse1",
     "name" : "Maxime Blanc",
-    "pictureLink" : "https://cdn.pixabay.com/photo/2016/11/01/21/11/avatar-1789663_960_720.png",
-    "twitterLink" : "twitter.com/_MaximeBlanc"
+    "picture" : "https://cdn.pixabay.com/photo/2016/11/01/21/11/avatar-1789663_960_720.png",
+    "twitter" : "twitter.com/_MaximeBlanc"
   },
   "sponsored" : true || false,
   "tags" : [ "react", "js", "front-end" ],

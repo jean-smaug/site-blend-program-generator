@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import Modal from './conferenceModal.component';
 import { openSwitcherAction } from '../smoothie.action';
 import { Conferences } from '../smoothie.type';
@@ -9,21 +10,27 @@ import './conference.css';
 
 export class ConferenceComponent extends Component {
   state = {
-    selectedConferenceId: 0,
+    currentConferenceId: !_.isEmpty(this.props.conferences) ? this.props.conferences[0].id : 0,
     isModalVisible: false,
     isSwitcherOpened: false,
   };
 
   state: {
-    selectedConferenceId: number,
+    currentConferenceId: number,
     isModalVisible: boolean,
     isSwitcherOpened: boolean,
   };
 
+  componentWillReceiveProps(nextProps: Object) {
+    this.setState({
+      currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : 0,
+    });
+  }
+
   props: {
     timeBegin: number,
     timeEnd: number,
-    openSwitcher: (selectedConferenceId: number, conferences: Conferences) => void,
+    openSwitcher: (currentConferenceId: number, conferences: Conferences) => void,
     conferences: Conferences,
   };
 
@@ -33,32 +40,35 @@ export class ConferenceComponent extends Component {
     });
   };
 
-  openSwitcher = (e: Event, selectedConferenceId: number, conferences: Conferences) => {
+  openSwitcher = (e: Event, currentConferenceId: number, conferences: Conferences) => {
     e.stopPropagation();
-    this.props.openSwitcher(selectedConferenceId, conferences);
+    this.props.openSwitcher(currentConferenceId, conferences);
   };
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
-        {this.state.isModalVisible
+        {this.state.isModalVisible && !_.isEmpty(conferences)
           ? <Modal
             closeModal={this.toggleModal}
-            conference={conferences[this.state.selectedConferenceId]}
+            conference={_.find(conferences, { id: this.state.currentConferenceId })}
           />
           : null}
         <div className="columns">
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                <button
-                  onClick={e => this.openSwitcher(e, this.state.selectedConferenceId, conferences)}
-                >
-                  <i className="fa fa-arrows-h circle" />
-                </button>
+                {conferences.length > 1
+                  ? <i
+                    className="fa fa-arrows-h circle"
+                    role="presentation"
+                    onClick={e =>
+                      this.openSwitcher(e, this.state.currentConferenceId, conferences)}
+                  />
+                  : null}
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                <i className="fa fa-lock circle" />
+                {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null}
               </div>
               <div role="button" className="conference-title">
                 {conferences[0] !== undefined ? conferences[0].title : 'Temps libre'}
@@ -72,8 +82,8 @@ export class ConferenceComponent extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  openSwitcher: (selectedConferenceId, conferences) =>
-    dispatch(openSwitcherAction(selectedConferenceId, conferences)),
+  openSwitcher: (currentConferenceId, conferences) =>
+    dispatch(openSwitcherAction(currentConferenceId, conferences)),
 });
 
 export default connect(null, mapDispatchToProps)(ConferenceComponent);

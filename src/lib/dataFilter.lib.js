@@ -1,7 +1,7 @@
 // @flow
 
 import _ from 'lodash';
-import { Conferences } from '../app/smoothie/smoothie.type';
+import { Conference, Conferences } from '../app/smoothie/smoothie.type';
 
 /**
  * Return conferences filtered by domain
@@ -55,6 +55,11 @@ export const orderConferences = (conferences: Conferences) => {
     }
   });
   return result;
+};
+
+export const reorderConferences = (conference: Conference, conferences: Conferences) => {
+  const remaingingConferences = _.pull(conferences, conference);
+  return _.concat(conference, remaingingConferences);
 };
 
 /**

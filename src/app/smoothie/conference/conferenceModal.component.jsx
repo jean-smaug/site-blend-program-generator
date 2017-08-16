@@ -15,11 +15,14 @@ const ConferenceModal = ({
   const { title, speaker, description, timeBegin, tags } = conference;
 
   const keywordsShow = _.map(tags, element =>
-    (<span className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}>
+    (<span
+      key={element}
+      className={`tag is-${_.sample(['danger', 'info', 'success', 'primary', 'warning'])}`}
+    >
       {element}
     </span>),
   );
-  const { twitterLink, pictureLink, linkedinLink, name } = speaker;
+  const { twitter, picture, linkedin, name } = speaker;
 
   return (
     <div className="modal is-active">
@@ -32,8 +35,8 @@ const ConferenceModal = ({
       />
       <div className="modal-card">
         <section className="modal-card-header">
-          {twitterLink
-            ? <a href={`https://twitter.com/${twitterLink}`} className="social-twitter">
+          {twitter
+            ? <a href={`https://twitter.com/${twitter}`} className="social-twitter">
               <span className="icon is-large">
                 <i className="fa fa-twitter" aria-hidden="true" />
               </span>
@@ -41,11 +44,11 @@ const ConferenceModal = ({
             : null}
           <img
             className="image speaker"
-            src={pictureLink || 'https://img15.hostingpics.net/pics/688698speaker.png'}
+            src={picture || 'https://img15.hostingpics.net/pics/688698speaker.png'}
             alt="speaker"
           />
-          {linkedinLink
-            ? <a href={linkedinLink}>
+          {linkedin
+            ? <a href={linkedin}>
               <span className="icon is-medium social-linkedin">
                 <i className="fa fa-linkedin" aria-hidden="true" />
               </span>
