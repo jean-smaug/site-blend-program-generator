@@ -63,6 +63,13 @@ const formReducer = (state = initialState, action) => {
         ...state,
         informations: action.data.infos,
       };
+    case 'RESTORE_FULL_STORE':
+      return {
+        informations: action.data.informations,
+        objectifs: action.data.objectifs,
+        domains: action.data.domains,
+        keywords: action.data.keywords,
+      };
     default:
       return state;
   }
