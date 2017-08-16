@@ -4,7 +4,7 @@ import { db } from '../firebase';
 const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
 
 export const writeStore = (userKey, state) => {
-  dbRef(`/users/${userKey}`).set(state);
+  dbRef('/users').child(userKey).set(state);
 };
 
 export const readStore = async id => (await db.ref('/users').get(id)).val();
