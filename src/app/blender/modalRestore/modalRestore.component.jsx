@@ -1,8 +1,11 @@
 // @flow
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import { ToastContainer, ToastMessage } from 'react-toastr';
+import _ from 'lodash';
+
 import './modalRestore.css';
-import { readStoreByKey } from '../../../lib/database';
+import { readStoreByKey, readStoreByEmail } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
 import { restoreAllForm } from '../blender.action';
@@ -18,10 +21,50 @@ export class ModalRestoreComponent extends Component {
 
   onClickSubmit = async () => {
     if (this.state.key !== '') {
-      const userData = (await readStoreByKey(this.state.key)) || [];
-      this.props.restoreAllForm(userData.blender);
-      this.props.closeModal();
+      this.checkWithKey();
+    } else if (this.state.email !== '') {
+      this.checkWithEmail();
+    } else {
+      this.modalError('Vous devez remplir au moins l\'un des deux champs !');
     }
+  };
+
+  modalError = (text) => {
+    this.toastErrorForm.error(
+      text,
+      'Erreur',
+      {
+        timeOut: 7000,
+        extendedTimeOut: 1000,
+        closeButton: true,
+      },
+    );
+  };
+
+  checkWithKey = async () => {
+    const userData = (await readStoreByKey(this.state.key)) || [];
+    if (!_.isEmpty(userData)) {
+      this.restoreStore(userData);
+    } else {
+      this.modalError('Votre key est incorrect chef..');
+    }
+  };
+
+  checkWithEmail = async () => {
+    const userData = (await readStoreByEmail(this.state.email)) || [];
+    if (!_.isEmpty(userData)) {
+      this.restoreStore(userData);
+    } else {
+      this.modalError('Votre email n\est pas encore connu chef..');
+    }
+  };
+
+  restoreStore = (userData) => {
+    // Restore blender
+    this.props.restoreAllForm(userData.blender);
+    // restore smoothie
+    // TODO
+    this.props.closeModal();
   };
 
   handleChangeInput = (event) => {
@@ -33,11 +76,18 @@ export class ModalRestoreComponent extends Component {
   props: {
     closeModal: () => void,
     addConference: (conferences: Conferences) => void,
+    restoreAllForm: () => void,
   };
-
 
   render = () => (
     <div className="modal is-active">
+      <ToastContainer
+        ref={(input) => {
+          this.toastErrorForm = input;
+        }}
+        toastMessageFactory={React.createFactory(ToastMessage.animation)}
+        className="toast-top-right"
+      />
       <div
         className="modal-background"
         onClick={this.props.closeModal}
