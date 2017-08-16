@@ -52,6 +52,7 @@ export class ModalRestoreComponent extends Component {
 
   checkWithEmail = async () => {
     const userData = (await readStoreByEmail(this.state.email)) || [];
+    console.log(userData);
     if (!_.isEmpty(userData)) {
       this.restoreStore(userData);
     } else {
