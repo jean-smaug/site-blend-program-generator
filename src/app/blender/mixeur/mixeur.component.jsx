@@ -25,12 +25,12 @@ export class MixeurComponent extends Component {
         filterByLevelAndDomain(conferences, form.domains),
       );
 
-      const userKey = randomString.generate({
-        length: 4,
-        capitalization: 'uppercase',
-      });
+      // const userKey = randomString.generate({
+      //   length: 4,
+      //   capitalization: 'uppercase',
+      // });
 
-      writeStore(userKey, { ...orderedConferences, blender: form.domains });
+      writeStore('userKey', { ...orderedConferences, blender: form });
 
       addConference(orderedConferences);
     } else {
