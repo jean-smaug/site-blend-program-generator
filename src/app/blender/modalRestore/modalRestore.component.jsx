@@ -56,16 +56,32 @@ export class ModalRestoreComponent extends Component {
     if (!_.isEmpty(userData)) {
       this.restoreStore(userData);
     } else {
-      this.modalError('Votre email n\est pas encore connu chef..');
+      this.modalError('Votre email n\'est pas encore connu chef..');
     }
   };
 
   restoreStore = (userData) => {
+    const userDataManip = userData;
     // Restore blender
     this.props.restoreAllForm(userData.blender);
     // restore smoothie
-    // TODO
+    if (userData.dayOne === undefined) userDataManip.dayOne = {};
+    if (userData.dayTwo === undefined) userDataManip.dayTwo = {};
+    userDataManip.dayOne = this.formatDay(userData.dayOne);
+    userDataManip.dayTwo = this.formatDay(userData.dayTwo);
+    _.map(userData.dayTwo, conf => this.formatDay(conf));
+    this.props.addConference({ ...userData });
+
     this.props.closeModal();
+  };
+
+  formatDay = (day) => {
+    const dayManip = day;
+    if (day.ten === undefined) dayManip.ten = [];
+    if (day.eight === undefined) dayManip.eight = [];
+    if (day.fourteen === undefined) dayManip.fourteen = [];
+    if (day.sixteen === undefined) dayManip.sixteen = [];
+    return dayManip;
   };
 
   handleChangeInput = (event) => {

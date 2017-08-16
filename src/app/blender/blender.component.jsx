@@ -153,7 +153,9 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-4">
-                        <a onClick={() => this.toggleModal()} >Vous avez déja généré un planning ? Cliquez-ici</a>
+                        <a role="presentation" onClick={() => this.toggleModal()} >
+                          Vous avez déja généré un planning ? Cliquez-ici
+                        </a>
                       </div>
                       <div className="column is-4 is-offset-2">
                         {this.state.currentPage < 4

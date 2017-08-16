@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import randomString from 'randomstring';
 import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
