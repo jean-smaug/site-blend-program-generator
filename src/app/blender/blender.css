@@ -147,7 +147,7 @@ CONTAINER FORM
 
 .groupBtnLevel{
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
 }
 
@@ -168,7 +168,7 @@ CONTAINER FORM
   font-weight: bolder;
 }
 
-.level-domaine {
+.level-domain {
   margin: 1% 1% 5%;
   font-size: 1.1em;
   cursor: pointer;
