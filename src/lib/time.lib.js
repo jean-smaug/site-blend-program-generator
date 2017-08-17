@@ -20,7 +20,7 @@ export const getEndTime = (time, duration) => {
   const tempMinute = minute + duration;
   const moduloMinute = tempMinute % 60;
 
-  const finalMinute = moduloMinute > 10 ? tempMinute : _.padStart(tempMinute, 2, '0');
+  const finalMinute = tempMinute >= 60 ? _.padStart(moduloMinute, 2, '0') : tempMinute;
   const finalHour = tempMinute >= 60 ? hour + 1 : hour;
 
   return `${finalHour}h${finalMinute}`;
