@@ -65,12 +65,12 @@ export class ModalRestoreComponent extends Component {
     // Restore blender
     this.props.restoreAllForm(userData.blender);
     // restore smoothie
-    if (userData.dayOne === undefined) userDataManip.dayOne = {};
-    if (userData.dayTwo === undefined) userDataManip.dayTwo = {};
-    userDataManip.dayOne = this.formatDay(userData.dayOne);
-    userDataManip.dayTwo = this.formatDay(userData.dayTwo);
-    _.map(userData.dayTwo, conf => this.formatDay(conf));
-    this.props.addConference({ ...userData });
+    if (userData.smoothie.dayOne === undefined) userDataManip.smoothie.dayOne = {};
+    if (userData.smoothie.dayTwo === undefined) userDataManip.smoothie.dayTwo = {};
+    userDataManip.smoothie.dayOne = this.formatDay(userData.smoothie.dayOne);
+    userDataManip.smoothie.dayTwo = this.formatDay(userData.smoothie.dayTwo);
+    _.map(userData.smoothie.dayTwo, conf => this.formatDay(conf));
+    this.props.addConference({ ...userData.smoothie });
 
     this.props.closeModal();
   };
