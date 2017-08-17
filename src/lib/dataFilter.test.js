@@ -21,7 +21,7 @@ const conferences = [
     },
     sponsored: true,
     tags: ['react', 'js', 'front-end'],
-    timeBegin: '10h40',
+    timeBegin: '16h40',
     title: 'React en 2017',
   },
   {
@@ -57,7 +57,7 @@ const conferences = [
     },
     sponsored: false,
     tags: ['blog', 'slasheuse', 'entreprendre'],
-    timeBegin: '10h',
+    timeBegin: '16h',
     title: "Comment le blogging m'a permis d'inventer mon propre métier",
   },
   {
@@ -75,7 +75,7 @@ const conferences = [
     },
     sponsored: false,
     tags: ['blog', 'slasheuse', 'entreprendre'],
-    timeBegin: '17h',
+    timeBegin: '16h',
     title:
       "Comment publier une application mobile en un clic ? Notre expérience de l'intégration continue sur mobile",
   },
@@ -87,7 +87,48 @@ describe('database.lib', () => {
   });
 
   it('should order conferences', () => {
-    expect(orderConferencesV2(conferences)).toBe({ dayOne: {}, dayTwo: {} });
+    expect(orderConferencesV2(conferences).dayOne.siwteen).toEqual({
+      selected: [conferences[0], conferences[1]],
+      remaining: [conferences[0], conferences[1]],
+    });
+    expect(orderConferencesV2([])).toEqual({
+      dayOne: {
+        eight: {
+          selected: [],
+          remaining: [],
+        },
+        ten: {
+          selected: [],
+          remaining: [],
+        },
+        fourteen: {
+          selected: [],
+          remaining: [],
+        },
+        sixteen: {
+          selected: [],
+          remaining: [],
+        },
+      },
+      dayTwo: {
+        eight: {
+          selected: [],
+          remaining: [],
+        },
+        ten: {
+          selected: [],
+          remaining: [],
+        },
+        fourteen: {
+          selected: [],
+          remaining: [],
+        },
+        sixteen: {
+          selected: [],
+          remaining: [],
+        },
+      },
+    });
   });
 });
 

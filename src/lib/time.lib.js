@@ -15,7 +15,7 @@ export const convertHourToString = (hour) => {
  * time {String} format 15h05
  */
 export const getEndTime = (time, duration) => {
-  const [hour, minute] = _.map(_.split(time, 'h'), _.parseInt);
+  const [hour, minute = 0] = _.map(_.split(time, 'h'), _.parseInt);
 
   const tempMinute = minute + duration;
   const moduloMinute = tempMinute % 60;

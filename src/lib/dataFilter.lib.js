@@ -73,8 +73,42 @@ export const getTags = (conferences: Conferences) =>
  */
 export const orderConferencesV2 = (conferences: Conferences) => {
   const defaultResult = {
-    dayOne: {},
-    dayTwo: {},
+    dayOne: {
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
+    },
+    dayTwo: {
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
+    },
   };
 
   return defaultResult;
