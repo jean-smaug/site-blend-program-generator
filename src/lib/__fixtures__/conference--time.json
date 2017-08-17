@@ -1,0 +1,26 @@
+[
+  {
+    "day": "dayOne",
+    "duration": 15,
+    "timeBegin": "10h40",
+    "title": "React en 2017"
+  },
+  {
+    "day": "dayOne",
+    "duration": 40,
+    "timeBegin": "16h",
+    "title": "Guérilla UX, \"quick\" mais pas \"dirty\""
+  },
+  {
+    "day": "dayOne",
+    "duration": 15,
+    "timeBegin": "10h",
+    "title": "Comment le blogging m'a permis d'inventer mon propre métier"
+  },
+  {
+    "day": "dayOne",
+    "duration": 40,
+    "timeBegin": "17h",
+    "title": "Comment publier une application mobile en un clic ? Notre expérience de l'intégration continue sur mobile"
+  }
+]

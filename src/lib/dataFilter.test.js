@@ -6,15 +6,18 @@
 // } from './dataFilter.lib';
 import { getTags, orderConferencesV2 } from './dataFilter.lib';
 
+import conferencesTag from './__fixtures__/conference--tags.json';
+import conferencesTime from './__fixtures__/conference--time.json';
+
 const conferences = describe('database.lib', () => {
   it('should get tags', async () => {
-    expect((await getTags(conferences)).length).toBe(8);
+    expect((await getTags(conferencesTag)).length).toBe(8);
   });
 
   it('should order conferences', () => {
-    expect(orderConferencesV2(conferences).dayOne.siwteen).toEqual({
-      selected: [conferences[0], conferences[1]],
-      remaining: [conferences[0], conferences[1]],
+    expect(orderConferencesV2(conferencesTime).dayOne.siwteen).toEqual({
+      selected: [conferencesTime[0], conferencesTime[1]],
+      remaining: [conferencesTime[0], conferencesTime[1]],
     });
     expect(orderConferencesV2([])).toEqual({
       dayOne: {
