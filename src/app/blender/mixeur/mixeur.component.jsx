@@ -3,17 +3,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import randomString from 'randomstring';
 import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
+import { Conferences } from '../../smoothie/smoothie.type';
 
 /**
  * Component for Submit button to mix
  */
 export class MixeurComponent extends Component {
   props: {
-    addConference: () => void,
+    addConference: (orderedConferences: Conferences) => void,
     form: Object,
   };
 
@@ -25,12 +25,9 @@ export class MixeurComponent extends Component {
         filterByLevelAndDomain(conferences, form.domains),
       );
 
-      // const userKey = randomString.generate({
-      //   length: 4,
-      //   capitalization: 'uppercase',
-      // });
-
-      writeStore('userKey', { ...orderedConferences, blender: form });
+      // TODO store userKey in local storage
+      // const userKey = writeStore({ smoothie: orderedConferences, blender: form });
+      writeStore({ smoothie: orderedConferences, blender: form });
 
       addConference(orderedConferences);
     } else {
