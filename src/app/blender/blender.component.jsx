@@ -10,11 +10,13 @@ import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
 import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
+import ModalRestore from './modalRestore/modalRestore.component';
 
 export default class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
+    isModalVisible: false,
   };
 
   nextPage = () => {
@@ -28,6 +30,12 @@ export default class Blender extends React.Component {
   handleFilterKeyword = (event) => {
     const value = event.target.value;
     this.setState(() => ({ filterKeywords: value }));
+  };
+
+  toggleModal = () => {
+    this.setState({
+      isModalVisible: !this.state.isModalVisible,
+    });
   };
 
   renderPage = () => {
@@ -108,6 +116,11 @@ export default class Blender extends React.Component {
   render() {
     return (
       <div>
+        {this.state.isModalVisible
+          ? <ModalRestore
+            closeModal={this.toggleModal}
+          />
+          : null}
         <div className="form">
           <div className="form-header">
             <h1>Choisissez les ingrédients de vos smoothies</h1>
@@ -139,7 +152,12 @@ export default class Blender extends React.Component {
                           />
                           : ''}
                       </div>
-                      <div className="column is-4 is-offset-6">
+                      <div className="column is-4">
+                        <a role="presentation" onClick={() => this.toggleModal()} >
+                          Vous avez déja généré un planning ? Cliquez-ici
+                        </a>
+                      </div>
+                      <div className="column is-4 is-offset-2">
                         {this.state.currentPage < 4
                           ? <input
                             className="btn-suivant"

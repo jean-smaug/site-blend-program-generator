@@ -23,9 +23,16 @@ export const writeStore = async (state) => {
   return userKey;
 };
 
-export const readStore = async id => (await db.ref('/users').get(id)).val();
+export const readStoreByKey = async id => ((await dbRef(`/users/${id}`).once('value')).val());
+
+export const readStoreByEmail = async (email) => {
+  const users = (await dbRef('/users').once('value')).val();
+  return _.filter(users, user => (user.blender.informations.email === email))[0];
+};
+
 
 export const getConferences = async () => {
   const conferences = (await dbRef('/conferences').once('value')).val();
   return _.map(conferences, (conference, key) => ({ ...conference, id: key }));
 };
+

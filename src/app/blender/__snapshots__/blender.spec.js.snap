@@ -140,7 +140,17 @@ Array [
                                     className="column is-4"
                                 />
                                 <div
-                                    className="column is-4 is-offset-6"
+                                    className="column is-4"
+                                >
+                                    <a
+                                        onClick={[Function]}
+                                        role="presentation"
+                                    >
+                                        Vous avez déja généré un planning ? Cliquez-ici
+                                    </a>
+                                </div>
+                                <div
+                                    className="column is-4 is-offset-2"
                                 >
                                     <input
                                         className="btn-suivant"

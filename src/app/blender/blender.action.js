@@ -1,4 +1,15 @@
 /**
+ * Restore all form with full state
+ * @param blender
+ * @returns {{type: string, data: {word: *}}}
+ */
+export const restoreAllForm = blender => ({
+  type: 'RESTORE_FULL_STORE',
+  data: blender,
+});
+
+
+/**
  * Add a Keyword to the state
  * @param word
  * @returns {{type: string, data: {word: *}}}

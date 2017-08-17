@@ -1,0 +1,22 @@
+.header-restore {
+  text-align: center;
+}
+
+.header-restore > h1 {
+  margin: 15px;
+}
+
+.footer-restore {
+  background-color: white;
+}
+
+.separation-input {
+  margin: 15px;
+  text-align: center;
+}
+
+.separation-input > p {
+  font-size: 1.3em;
+  color: #E6421D;
+  font-weight: bolder;
+}
