@@ -67,3 +67,15 @@ export const reorderConferences = (conference: Conference, conferences: Conferen
  */
 export const getTags = (conferences: Conferences) =>
   _.uniq(_.flatten(_.map(conferences, item => item.tags)));
+
+/**
+ *
+ */
+export const orderConferencesV2 = (conferences: Conferences) => {
+  const defaultResult = {
+    dayOne: {},
+    dayTwo: {},
+  };
+
+  return defaultResult;
+};
