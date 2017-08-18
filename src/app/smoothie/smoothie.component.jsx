@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
-import { setConferencesStore } from '../../lib/localStorage.lib';
+import { setConferencesStore, isStore } from '../../lib/localStorage.lib';
 
 import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
+import ModalShowKey from './modalShowKey/modalShowKey.component';
 
 export class SmoothieComponent extends Component {
   props: {
@@ -16,6 +17,22 @@ export class SmoothieComponent extends Component {
     dayTwo: Day,
     isSwitcherOpened: boolean,
     switcherConferences: Array<Conference>,
+  };
+
+  state = {
+    isModalVisible: false,
+  };
+
+  state: {
+    isModalVisible: boolean,
+  };
+
+  componentDidMount= () => {
+    if (isStore('key')) {
+      this.setState({
+        isModalVisible: !this.state.isModalVisible,
+      });
+    }
   };
 
   handleClickSave = () => {
@@ -35,10 +52,22 @@ export class SmoothieComponent extends Component {
     });
   };
 
+  toggleModal = () => {
+    this.setState({
+      isModalVisible: !this.state.isModalVisible,
+    });
+  };
+
   render() {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
     return (
       <div>
+        {this.state.isModalVisible
+          ? <ModalShowKey
+            closeModal={this.toggleModal}
+          />
+          : null}
+
         <ToastContainer
           ref={(input) => {
             this.toast = input;
@@ -49,10 +78,16 @@ export class SmoothieComponent extends Component {
 
         {isSwitcherOpened ? <Switcher conferences={switcherConferences} /> : null}
 
-        <div className="outils">
-          <a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>
-            <i className="fa fa-save" />
-          </a>
+        <div className="outils columns">
+          <div className="column">
+            <a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>
+              <i className="fa fa-save" />
+            </a>
+            { isStore('key') ?
+              <a role="button" aria-pressed="true" tabIndex="0" onClick={this.toggleModal}>
+                <i className="fa fa-info" />
+              </a> : '' }
+          </div>
         </div>
         <div className="columns itemsSmoothie">
           <div className="column">

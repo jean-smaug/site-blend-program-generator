@@ -7,6 +7,7 @@ import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilte
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
+import { setKeyStore } from '../../../lib/localStorage.lib';
 
 /**
  * Component for Submit button to mix
@@ -25,10 +26,7 @@ export class MixeurComponent extends Component {
         filterByLevelAndDomain(conferences, form.domains),
       );
 
-      // TODO store userKey in local storage
-      // const userKey = writeStore({ smoothie: orderedConferences, blender: form });
-      writeStore({ smoothie: orderedConferences, blender: form });
-
+      setKeyStore(writeStore({ smoothie: orderedConferences, blender: form }));
       addConference(orderedConferences);
     } else {
       this.toastError.error(
