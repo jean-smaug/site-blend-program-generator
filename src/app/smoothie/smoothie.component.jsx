@@ -12,13 +12,6 @@ import './smoothie.css';
 import ModalShowKey from './modalShowKey/modalShowKey.component';
 
 export class SmoothieComponent extends Component {
-  props: {
-    dayOne: Day,
-    dayTwo: Day,
-    isSwitcherOpened: boolean,
-    switcherConferences: Array<Conference>,
-  };
-
   state = {
     isModalVisible: false,
   };
@@ -33,6 +26,13 @@ export class SmoothieComponent extends Component {
         isModalVisible: !this.state.isModalVisible,
       });
     }
+  };
+
+  props: {
+    dayOne: Day,
+    dayTwo: Day,
+    isSwitcherOpened: boolean,
+    switcherConferences: Array<Conference>,
   };
 
   handleClickSave = () => {

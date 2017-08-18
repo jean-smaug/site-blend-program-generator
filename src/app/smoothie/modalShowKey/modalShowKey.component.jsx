@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import _ from 'lodash';
 
 import './modalShowKey.css';
 import { getKeyStore } from '../../../lib/localStorage.lib';
