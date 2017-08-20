@@ -7,17 +7,18 @@
 import { getTags, orderConferencesV2 } from './dataFilter.lib';
 
 import conferencesTag from './__fixtures__/conference--tags.json';
-import conferencesTime from './__fixtures__/conference--time.json';
+import conferencesTime1 from './__fixtures__/conference--time-1.json';
+import conferencesTime2 from './__fixtures__/conference--time-2.json';
 
-const conferences = describe('database.lib', () => {
+describe('database.lib', () => {
   it('should get tags', async () => {
     expect((await getTags(conferencesTag)).length).toBe(8);
   });
 
   it('should order conferences', () => {
-    expect(orderConferencesV2(conferencesTime).dayOne.siwteen).toEqual({
-      selected: [conferencesTime[0], conferencesTime[1]],
-      remaining: [conferencesTime[0], conferencesTime[1]],
+    expect(orderConferencesV2(conferencesTime1).dayOne.siwteen).toEqual({
+      selected: [conferencesTime1[0], conferencesTime1[1]],
+      remaining: [conferencesTime1[0], conferencesTime1[1]],
     });
     expect(orderConferencesV2([])).toEqual({
       dayOne: {

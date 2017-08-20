@@ -2,6 +2,7 @@
 
 import _ from 'lodash';
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
+import { getEndTime } from './time.lib';
 
 /**
  * Return conferences filtered by domain
@@ -111,5 +112,18 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     },
   };
 
+  _.forEach(conferences, (item) => {
+    const [timeBegin] = _.split(item.timeBegin, 'h');
+    defaultResult[item.day][timeBegin] = item;
+  });
+
   return defaultResult;
+};
+
+const isConferenceSlotFree = (currentConferences, newConference) => {
+  const timestampsCurrentConferences = [];
+
+  _.forEach(currentConferences, (currentConference) => {
+    const endTimeConference = getEndTime(currentConference);
+  });
 };
