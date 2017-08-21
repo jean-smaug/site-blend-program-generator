@@ -16,46 +16,18 @@ describe('database.lib', () => {
   });
 
   it('should order conferences', () => {
-    expect(orderConferencesV2(conferencesTime1).dayOne.siwteen).toEqual({
+    expect(orderConferencesV2(conferencesTime1).dayOne).toEqual({
       selected: [conferencesTime1[0], conferencesTime1[1]],
       remaining: [conferencesTime1[0], conferencesTime1[1]],
     });
     expect(orderConferencesV2([])).toEqual({
       dayOne: {
-        eight: {
-          selected: [],
-          remaining: [],
-        },
-        ten: {
-          selected: [],
-          remaining: [],
-        },
-        fourteen: {
-          selected: [],
-          remaining: [],
-        },
-        sixteen: {
-          selected: [],
-          remaining: [],
-        },
+        selected: [],
+        remaining: [],
       },
       dayTwo: {
-        eight: {
-          selected: [],
-          remaining: [],
-        },
-        ten: {
-          selected: [],
-          remaining: [],
-        },
-        fourteen: {
-          selected: [],
-          remaining: [],
-        },
-        sixteen: {
-          selected: [],
-          remaining: [],
-        },
+        selected: [],
+        remaining: [],
       },
     });
   });

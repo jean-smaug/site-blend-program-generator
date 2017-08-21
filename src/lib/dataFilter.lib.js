@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
-import { getEndTime } from './time.lib';
+import { getEndTime, convertToMinutes } from './time.lib';
 
 /**
  * Return conferences filtered by domain
@@ -75,55 +75,38 @@ export const getTags = (conferences: Conferences) =>
 export const orderConferencesV2 = (conferences: Conferences) => {
   const defaultResult = {
     dayOne: {
-      eight: {
-        selected: [],
-        remaining: [],
-      },
-      ten: {
-        selected: [],
-        remaining: [],
-      },
-      fourteen: {
-        selected: [],
-        remaining: [],
-      },
-      sixteen: {
-        selected: [],
-        remaining: [],
-      },
+      selected: [],
+      remaining: [],
     },
     dayTwo: {
-      eight: {
-        selected: [],
-        remaining: [],
-      },
-      ten: {
-        selected: [],
-        remaining: [],
-      },
-      fourteen: {
-        selected: [],
-        remaining: [],
-      },
-      sixteen: {
-        selected: [],
-        remaining: [],
-      },
+      selected: [],
+      remaining: [],
     },
   };
 
   _.forEach(conferences, (item) => {
-    const [timeBegin] = _.split(item.timeBegin, 'h');
-    defaultResult[item.day][timeBegin] = item;
+    // const [timeBegin] = _.split(item.timeBegin, 'h');
+    defaultResult[item.day].selected.push(item);
   });
 
   return defaultResult;
 };
 
-const isConferenceSlotFree = (currentConferences, newConference) => {
-  const timestampsCurrentConferences = [];
+// const isConferenceSlotFree = (currentConferences, newConference) => {
+//   const timeSlotCurrentConferences = [];
+//   let isSlotFree = true;
 
-  _.forEach(currentConferences, (currentConference) => {
-    const endTimeConference = getEndTime(currentConference);
-  });
-};
+//   _.forEach(currentConferences, (currentConference) => {
+//     _.push(timeSlotCurrentConferences, convertToMinutes(currentConference));
+//   });
+
+//   const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
+
+//   _.forEach(timeSlotCurrentConferences, (item, key) => {
+//     if (minuteBegin) {
+//       isSlotFree = false;
+//     }
+//   });
+
+//   return isSlotFree;
+// };
