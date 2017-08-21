@@ -97,7 +97,7 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
  *
  */
 export const orderConferencesV2 = (conferences: Conferences) => {
-  const defaultResult = {
+  const smoothie = {
     dayOne: {
       selected: [],
       remaining: [],
@@ -109,7 +109,7 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   };
 
   _.forEach(conferences, (item) => {
-    const day = defaultResult[item.day];
+    const day = smoothie[item.day];
 
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
@@ -118,5 +118,8 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     }
   });
 
-  return defaultResult;
+  _.orderBy(smoothie.dayOne.selected, 'timeBegin', 'asc');
+  _.orderBy(smoothie.dayTwo.selected, 'timeBegin', 'asc');
+
+  return smoothie;
 };
