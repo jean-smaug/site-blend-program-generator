@@ -71,6 +71,30 @@ export const getTags = (conferences: Conferences) =>
 
 /**
  *
+ * @param {*} currentConferences
+ * @param {*} newConference
+ */
+const isConferenceSlotFree = (currentConferences, newConference) => {
+  const timeSlotCurrentConferences = [];
+  let isSlotFree = true;
+
+  _.forEach(currentConferences, (currentConference) => {
+    timeSlotCurrentConferences.push(convertToMinutes(currentConference));
+  });
+
+  const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
+
+  _.forEach(timeSlotCurrentConferences, (item, key) => {
+    if (minuteBegin) {
+      isSlotFree = false;
+    }
+  });
+
+  return isSlotFree;
+};
+
+/**
+ *
  */
 export const orderConferencesV2 = (conferences: Conferences) => {
   const defaultResult = {
@@ -85,28 +109,14 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   };
 
   _.forEach(conferences, (item) => {
-    // const [timeBegin] = _.split(item.timeBegin, 'h');
-    defaultResult[item.day].selected.push(item);
+    const day = defaultResult[item.day];
+
+    if (isConferenceSlotFree(day.selected, item)) {
+      day.selected.push(item);
+    } else {
+      day.remaining.push(item);
+    }
   });
 
   return defaultResult;
 };
-
-// const isConferenceSlotFree = (currentConferences, newConference) => {
-//   const timeSlotCurrentConferences = [];
-//   let isSlotFree = true;
-
-//   _.forEach(currentConferences, (currentConference) => {
-//     _.push(timeSlotCurrentConferences, convertToMinutes(currentConference));
-//   });
-
-//   const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
-
-//   _.forEach(timeSlotCurrentConferences, (item, key) => {
-//     if (minuteBegin) {
-//       isSlotFree = false;
-//     }
-//   });
-
-//   return isSlotFree;
-// };
