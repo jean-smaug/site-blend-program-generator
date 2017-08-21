@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
-import { getEndTime, convertToMinutes } from './time.lib';
+import { getEndTime, convertToMinutes, convertHourToString } from './time.lib';
 
 /**
  * Return conferences filtered by domain
@@ -137,8 +137,8 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   };
 
   _.forEach(conferences, (item) => {
-    const timeBegin = getEndTime(item);
-    const day = smoothie[item.day][timeBegin];
+    const [timeBegin] = _.split(item.timeBegin, 'h');
+    const day = smoothie[item.day][convertHourToString(timeBegin)];
 
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
@@ -146,9 +146,6 @@ export const orderConferencesV2 = (conferences: Conferences) => {
       day.remaining.push(item);
     }
   });
-
-  _.orderBy(smoothie.dayOne.selected, 'timeBegin', 'asc');
-  _.orderBy(smoothie.dayTwo.selected, 'timeBegin', 'asc');
 
   return smoothie;
 };
