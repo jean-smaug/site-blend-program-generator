@@ -99,17 +99,46 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
 export const orderConferencesV2 = (conferences: Conferences) => {
   const smoothie = {
     dayOne: {
-      selected: [],
-      remaining: [],
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
     },
     dayTwo: {
-      selected: [],
-      remaining: [],
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
     },
   };
 
   _.forEach(conferences, (item) => {
-    const day = smoothie[item.day];
+    const timeBegin = getEndTime(item);
+    const day = smoothie[item.day][timeBegin];
 
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
