@@ -8,29 +8,9 @@ import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 import { removeConferences } from './smoothie/smoothie.action';
 
-
-// var $mainButton = $(".main-button"),
-//   $closeButton = $(".close-button"),
-//   $buttonWrapper = $(".button-wrapper"),
-//   $ripple = $(".ripple"),
-//   $layer = $(".layered-content");
-//
-// $mainButton.on("click", function(){
-//   $buttonWrapper.addClass("clicked").delay(900).queue(function(next){
-//     $layer.addClass("active");
-//     next();
-//   });
-// });
-//
-// $closeButton.on("click", function(){
-//   $layer.removeClass("active");
-//   $buttonWrapper.removeClass("clicked");
-// });
-
-
 const handleClickOpen = () => {
   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
-  document.getElementsByClassName('layered-content')[0].className = 'layered-content active';
+  setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
 };
 
 const handleClickClose = () => {
@@ -51,10 +31,10 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
       <div className="layered-content">
         <button onClick={handleClickClose} className="close-button close-button1 fa fa-times" />
         <div className="content">
-          <p>Développeur de l'application</p>
+          <p>Développeur</p>
           <h1>Maxime Blanc</h1>
           <h1>Maxime Chabert</h1>
-          <p>On peut aussi mettre ici plein de texte, a quoi sert l'application etc</p>
+          <p>On peut aussi mettre ici plein de texte, ça quoi sert l\'application etc</p>
         </div>
       </div>
     </div>
