@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
-import { getEndTime, convertToMinutes, convertHourToString } from './time.lib';
+import { convertToMinutes, convertHourToString } from './time.lib';
 
 /**
  * Return conferences filtered by domain
@@ -82,10 +82,9 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
     timeSlotCurrentConferences.push(convertToMinutes(currentConference));
   });
 
-  const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
+  const { minuteBegin } = convertToMinutes(newConference);
 
-  for (let i = 0; i < currentConferences.length - 1; i++) {
-    const element = currentConferences[i];
+  for (let i = 0; i < currentConferences.length - 1; i += 1) {
     if (minuteBegin) {
       isSlotFree = false;
     }
