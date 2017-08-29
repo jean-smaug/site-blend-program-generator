@@ -84,17 +84,19 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
 
   const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
 
-  _.forEach(timeSlotCurrentConferences, (item, key) => {
+  for (let i = 0; i < currentConferences.length - 1; i++) {
+    const element = currentConferences[i];
     if (minuteBegin) {
       isSlotFree = false;
     }
-  });
+  }
 
   return isSlotFree;
 };
 
 /**
- *
+ * Pour obtenir l'effet aléatoire on passera un
+ * tabeau de conférences shuffle au préalable
  */
 export const orderConferencesV2 = (conferences: Conferences) => {
   const smoothie = {

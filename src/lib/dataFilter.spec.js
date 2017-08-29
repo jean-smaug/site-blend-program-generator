@@ -20,44 +20,44 @@ describe('database.lib', () => {
       selected: [conferencesTime1[0], conferencesTime1[1]],
       remaining: [conferencesTime1[0], conferencesTime1[1]],
     });
-    // expect(orderConferencesV2([])).toEqual({
-    //   dayOne: {
-    //     eight: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     ten: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     fourteen: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     sixteen: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //   },
-    //   dayTwo: {
-    //     eight: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     ten: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     fourteen: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //     sixteen: {
-    //       selected: [],
-    //       remaining: [],
-    //     },
-    //   },
-    // });
+    expect(orderConferencesV2([])).toEqual({
+      dayOne: {
+        eight: {
+          selected: [],
+          remaining: [],
+        },
+        ten: {
+          selected: [],
+          remaining: [],
+        },
+        fourteen: {
+          selected: [],
+          remaining: [],
+        },
+        sixteen: {
+          selected: [],
+          remaining: [],
+        },
+      },
+      dayTwo: {
+        eight: {
+          selected: [],
+          remaining: [],
+        },
+        ten: {
+          selected: [],
+          remaining: [],
+        },
+        fourteen: {
+          selected: [],
+          remaining: [],
+        },
+        sixteen: {
+          selected: [],
+          remaining: [],
+        },
+      },
+    });
   });
 });
 
