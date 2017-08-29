@@ -20,7 +20,7 @@ export class SmoothieComponent extends Component {
     isModalVisible: boolean,
   };
 
-  componentDidMount= () => {
+  componentDidMount = () => {
     if (isStore('key')) {
       this.setState({
         isModalVisible: !this.state.isModalVisible,

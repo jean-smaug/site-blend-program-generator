@@ -121,11 +121,16 @@ export default class Blender extends React.Component {
             closeModal={this.toggleModal}
           />
           : null}
+        <div className="header">
+          <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
+          {/*<h1> Créer votre menu personnalisé ! </h1>*/}
+            {/*<h1>Choisissez les ingrédients de vos smoothies</h1>*/}
+            {/*<h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>*/}
+        </div>
+        {/*<div className="sub-header" >*/}
+          {/*<img src="http://www.blendwebmix.com/wp-content/uploads/2016/05/top-header_lowres-2.jpg" alt="banniere" />*/}
+        {/*</div>*/}
         <div className="form">
-          <div className="form-header">
-            <h1>Choisissez les ingrédients de vos smoothies</h1>
-            <h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>
-          </div>
           <div className="columns">
             <div className="modal-wrap column">
               <div className="modal-header">
@@ -153,7 +158,7 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-4">
-                        <a role="presentation" onClick={() => this.toggleModal()} >
+                        <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
                           Vous avez déja généré un planning ? Cliquez-ici
                         </a>
                       </div>

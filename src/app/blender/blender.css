@@ -4,22 +4,22 @@
   padding:2% 12%;
 }
 
-.form-header {
+.header {
   text-align: center;
+  position: relative;
   font-family: 'Lato', sans-serif;
-  padding: 3%;
+  background-color: white;
+  color: #435965;
 }
 
-.form-header > h1 {
-  padding:0; margin: 0;
-  font-weight: bold;
-  font-size: 1.6em;
+.sub-header {
+  width: 100%;
+  height: auto;
 }
 
-.form-header > h2 {
-  padding:0; margin: 0;
-  font-size: 1.2em;
-  font-weight: lighter;
+.sub-header > img{
+  width: 100%;
+  height: auto;
 }
 
 .items {
@@ -207,4 +207,8 @@ CONTAINER FORM
   border: 1px solid;
 }
 
+
+.link-restore {
+  color: #00A2DF;
+}
 
