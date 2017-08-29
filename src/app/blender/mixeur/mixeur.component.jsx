@@ -26,7 +26,7 @@ export class MixeurComponent extends Component {
         filterByLevelAndDomain(conferences, form.domains),
       );
 
-      setKeyStore(writeStore({ smoothie: orderedConferences, blender: form }));
+      setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
       addConference(orderedConferences);
     } else {
       this.toastError.error(

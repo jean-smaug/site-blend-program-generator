@@ -9,14 +9,14 @@ const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
  * Store the state in firebase and return the userKey
  * @param {*} state
  */
-export const writeStore = (state) => {
+export const writeStore = async (state) => {
   const userKey = randomString.generate({
     length: 4,
     capitalization: 'uppercase',
   });
 
   try {
-    dbRef('/users').child(userKey).set(state);
+    await dbRef('/users').child(userKey).set(state);
   } catch (error) {
     writeStore(state);
   }
