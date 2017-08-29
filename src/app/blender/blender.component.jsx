@@ -55,7 +55,7 @@ export default class Blender extends React.Component {
       case 2:
         return (
           <div className="columns">
-            <div className="column">
+            <div className="column is-12">
               <h1 className="category-title">Les thématiques</h1>
               <h2 className="category-desc">
                 Cochez les mots clefs qui correspondent à votre profil de chef... :)
@@ -86,7 +86,7 @@ export default class Blender extends React.Component {
       case 3:
         return (
           <div className="columns">
-            <div className="column">
+            <div className="column is-12">
               <h1 className="category-title">Les objectifs</h1>
               {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
             </div>
@@ -94,18 +94,18 @@ export default class Blender extends React.Component {
         );
       case 4:
         return (<div className="columns">
-          <div className="column">
+          <div className="column is-8">
             <h1 className="category-title">Vos informations (facultatif)</h1>
             <InformationsInput />
           </div>
-          <div className="column">
+          <div className="column is-4">
             <Mixeur />
           </div>
         </div>);
       default:
         return (
           <div className="columns">
-            <div className="column">
+            <div className="column is-12">
               <h1 className="category-title">Vos sujets favoris</h1>
               <h2 className="category-desc">
                 Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
@@ -113,7 +113,7 @@ export default class Blender extends React.Component {
               <hr />
               <div className="columns">
                 {_.map(domains, item =>
-                  (<div className="column">
+                  (<div className="column is-4">
                     <CheckboxDomain item={item} key={item.id} />
                   </div>),
                 )}
@@ -149,24 +149,28 @@ export default class Blender extends React.Component {
             closeModal={this.toggleModal}
           />
           : null}
-        <div className="form">
-          <div className="columns">
-            <div className="modal-wrap column">
-              <div className="modal-header">
-                <span className={this.state.currentPage === 1 ? 'is-active' : null} />
-                <span className={this.state.currentPage === 2 ? 'is-active' : null} />
-                <span className={this.state.currentPage === 3 ? 'is-active' : null} />
-                <span className={this.state.currentPage === 4 ? 'is-active' : null} />
-              </div>
-              <div className="modal-bodies">
-                <div className="modal-body">
-                  <div className="items">
+        <div className="columns">
+          <div className="modal-wrap column is-10 is-offset-1">
+            <div className="modal-header">
+              <span className={this.state.currentPage === 1 ? 'is-active' : null} />
+              <span className={this.state.currentPage === 2 ? 'is-active' : null} />
+              <span className={this.state.currentPage === 3 ? 'is-active' : null} />
+              <span className={this.state.currentPage === 4 ? 'is-active' : null} />
+            </div>
+            <div className="modal-bodies">
+              <div className="modal-body">
+                <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
+                  Vous avez déja généré un planning ? Cliquez-ici </a>
+                <div className="columns">
+                  <div className="column is-12">
                     {this.renderPage()}
                   </div>
-                  <div className="modal-footer">
+                </div>
+                <div className="columns">
+                  <div className="column is-12">
                     <hr />
                     <div className="columns">
-                      <div className="column is-4">
+                      <div className="column is-3">
                         {this.state.currentPage > 1
                           ? <input
                             className="btn-precedent"
@@ -176,12 +180,7 @@ export default class Blender extends React.Component {
                           />
                           : ''}
                       </div>
-                      <div className="column is-4">
-                        <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
-                          Vous avez déja généré un planning ? Cliquez-ici
-                        </a>
-                      </div>
-                      <div className="column is-4 is-offset-2">
+                      <div className="column is-3 is-offset-7" >
                         {this.state.currentPage < 4
                           ? <input
                             className="btn-suivant"
