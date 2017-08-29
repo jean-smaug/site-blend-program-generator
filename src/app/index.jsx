@@ -8,37 +8,10 @@ import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 import { removeConferences } from './smoothie/smoothie.action';
 
-const handleClickOpen = () => {
-  document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
-  document.getElementById('pool').className = 'onShow';
-  setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
-};
-
-const handleClickClose = () => {
-  document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
-  document.getElementsByClassName('layered-content')[0].className = 'layered-content';
-  setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
-};
-
-
 export const App = ({ smoothie, removeConferencesFromState }) =>
   (<div className="App">
-    <div id="pool">
-      <div className="button-wrapper">
-        <div className="layer" />
-        <button onClick={handleClickOpen} className="btn-info main-button fa fa-info">
-          <div className="ripple" />
-        </button>
-      </div>
-      <div className="layered-content">
-        <button onClick={handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
-        <div className="content">
-          <p>Développeur</p>
-          <h1>Maxime Blanc</h1>
-          <h1>Maxime Chabert</h1>
-          <p>On peut aussi mettre ici plein de texte, ça quoi sert l\'application etc</p>
-        </div>
-      </div>
+    <div className="header">
+      <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
     </div>
     <div className="columns">
       <div className="column">
@@ -46,7 +19,7 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
       </div>
     </div>
     <div className="columns">
-      <div className="column">
+      <div className="column ">
         {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)
           ? <div>
             <input

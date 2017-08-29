@@ -38,6 +38,18 @@ export default class Blender extends React.Component {
     });
   };
 
+  handleClickOpen = () => {
+    document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
+    document.getElementById('pool').className = 'onShow';
+    setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
+  };
+
+  handleClickClose = () => {
+    document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
+    document.getElementsByClassName('layered-content')[0].className = 'layered-content';
+    setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
+  };
+
   renderPage = () => {
     switch (this.state.currentPage) {
       case 2:
@@ -112,24 +124,31 @@ export default class Blender extends React.Component {
     }
   };
 
-
   render() {
     return (
       <div>
+        <div id="pool" >
+          <div className="button-wrapper">
+            <div className="layer" />
+            <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">
+              <div className="ripple" />
+            </button>
+          </div>
+          <div className="layered-content">
+            <button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
+            <div className="content">
+              <p>Développeur</p>
+              <h1>Maxime Blanc</h1>
+              <h1>Maxime Chabert</h1>
+              <p>On peut aussi mettre ici plein de texte, ça quoi sert l\'application etc</p>
+            </div>
+          </div>
+        </div>
         {this.state.isModalVisible
           ? <ModalRestore
             closeModal={this.toggleModal}
           />
           : null}
-        <div className="header">
-          <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
-          {/*<h1> Créer votre menu personnalisé ! </h1>*/}
-            {/*<h1>Choisissez les ingrédients de vos smoothies</h1>*/}
-            {/*<h2>et laissez-nous vous proposer un BlendWebMix sur mesure...</h2>*/}
-        </div>
-        {/*<div className="sub-header" >*/}
-          {/*<img src="http://www.blendwebmix.com/wp-content/uploads/2016/05/top-header_lowres-2.jpg" alt="banniere" />*/}
-        {/*</div>*/}
         <div className="form">
           <div className="columns">
             <div className="modal-wrap column">

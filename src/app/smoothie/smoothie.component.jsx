@@ -61,7 +61,7 @@ export class SmoothieComponent extends Component {
   render() {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
     return (
-      <div>
+      <div className="smoothie">
         {this.state.isModalVisible
           ? <ModalShowKey
             closeModal={this.toggleModal}
