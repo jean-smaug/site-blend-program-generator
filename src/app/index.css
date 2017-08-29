@@ -19,12 +19,15 @@ button:hover { opacity: .8; }
 }
 
 #pool {
-  z-index: 100000;
   width: 100vw;
   height: 100vh;
   background: none;
   position: absolute;
   overflow: hidden;
+}
+
+.onShow{
+  z-index: 100000;
 }
 
 .button-wrapper {
@@ -43,7 +46,7 @@ button:hover { opacity: .8; }
   transition: 1.25s all ease .9s;
 }
 
-button {
+.btn-info {
   width: 54px;
   height: 54px;
   border: none;

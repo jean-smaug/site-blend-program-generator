@@ -10,12 +10,14 @@ import { removeConferences } from './smoothie/smoothie.action';
 
 const handleClickOpen = () => {
   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
+  document.getElementById('pool').className = 'onShow';
   setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
 };
 
 const handleClickClose = () => {
   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
   document.getElementsByClassName('layered-content')[0].className = 'layered-content';
+  setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
 };
 
 
@@ -24,12 +26,12 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
     <div id="pool">
       <div className="button-wrapper">
         <div className="layer" />
-        <button onClick={handleClickOpen} className="main-button fa fa-info">
+        <button onClick={handleClickOpen} className="btn-info main-button fa fa-info">
           <div className="ripple" />
         </button>
       </div>
       <div className="layered-content">
-        <button onClick={handleClickClose} className="close-button close-button1 fa fa-times" />
+        <button onClick={handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
         <div className="content">
           <p>Développeur</p>
           <h1>Maxime Blanc</h1>
