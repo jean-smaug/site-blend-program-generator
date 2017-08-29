@@ -4,18 +4,51 @@ exports[`blender.component should render blender component 1`] = `
 Array [
   <div>
     <div
-        className="form"
+        id="pool"
     >
         <div
-            className="form-header"
+            className="button-wrapper"
         >
-            <h1>
-                Choisissez les ingrédients de vos smoothies
-            </h1>
-            <h2>
-                et laissez-nous vous proposer un BlendWebMix sur mesure...
-            </h2>
+            <div
+                className="layer"
+            />
+            <button
+                className="btn-info main-button fa fa-info"
+                onClick={[Function]}
+            >
+                <div
+                    className="ripple"
+                />
+            </button>
         </div>
+        <div
+            className="layered-content"
+        >
+            <button
+                className="btn-info close-button close-button1 fa fa-times"
+                onClick={[Function]}
+            />
+            <div
+                className="content"
+            >
+                <p>
+                    Développeur
+                </p>
+                <h1>
+                    Maxime Blanc
+                </h1>
+                <h1>
+                    Maxime Chabert
+                </h1>
+                <p>
+                    On peut aussi mettre ici plein de texte, ça quoi sert l\\'application etc
+                </p>
+            </div>
+        </div>
+    </div>
+    <div
+        className="form"
+    >
         <div
             className="columns"
         >
@@ -143,6 +176,7 @@ Array [
                                     className="column is-4"
                                 >
                                     <a
+                                        className="link-restore"
                                         onClick={[Function]}
                                         role="presentation"
                                     >

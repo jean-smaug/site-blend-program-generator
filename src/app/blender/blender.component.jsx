@@ -140,7 +140,7 @@ export default class Blender extends React.Component {
               <p>Développeur</p>
               <h1>Maxime Blanc</h1>
               <h1>Maxime Chabert</h1>
-              <p>On peut aussi mettre ici plein de texte, ça quoi sert l\'application etc</p>
+              <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>
             </div>
           </div>
         </div>
