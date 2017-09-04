@@ -14,30 +14,27 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
       <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
     </div>
     <div className="columns">
-      <div className="column">
+      <div className="column  is-12">
         {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ? <FormContainer /> : null}
       </div>
     </div>
     <div className="columns">
-      <div className="column ">
+      <div className="column  is-12">
         {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo)
           ? <div>
-            <input
-              style={{
-                height: '100px',
-                width: '100px',
-                borderRadius: '50%',
-                boxShadow: '2px 2px 8px #aaa',
-                backgroundColor: '#E6421D',
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: '1.2em',
-              }}
-              type="button"
-              value="Remix"
-              onClick={removeConferencesFromState}
-            />{' '}
-            <SmoothieContainer />
+            <div className="columns">
+              <div className="div-remix column is-2">
+                <input
+                 className="btn-remix"
+                  type="button"
+                  value="Remix"
+                  onClick={removeConferencesFromState}
+                />{' '}
+              </div>
+              <div className="column is-12">
+                <SmoothieContainer />
+              </div>
+            </div>
           </div>
           : null}
       </div>

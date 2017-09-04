@@ -12,3 +12,24 @@ html {
   color: #435965;
 }
 
+.div-remix{
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.btn-remix {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px #aaa;
+  background-color: #E6421D;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+
+.btn-remix:hover {
+  box-shadow: 0px 0px 0px 2px #aaa;
+}

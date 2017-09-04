@@ -82,9 +82,9 @@ export class SmoothieComponent extends Component {
 
         <div className="outils columns">
           <div className="column">
-            <a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>
-              <i className="fa fa-save" />
-            </a>
+            {/*<a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>*/}
+              {/*<i className="fa fa-save" />*/}
+            {/*</a>*/}
             { isStore('key') ?
               <a role="button" aria-pressed="true" tabIndex="0" onClick={this.toggleModal}>
                 <i className="fa fa-info" />
@@ -92,7 +92,7 @@ export class SmoothieComponent extends Component {
           </div>
         </div>
         <div className="columns">
-          <div className="column is-6 is-offset-3 itemsSmoothie">
+          <div className="column is-6 is-offset-1 itemsSmoothie">
             <div className="header-date">
               <h1>Jour 1</h1>
               <h3>Jeudi 26 octobre</h3>
@@ -102,7 +102,7 @@ export class SmoothieComponent extends Component {
           <div className="column is-one-quarter" />
         </div>
         <div className="columns">
-          <div className="column is-6 is-offset-3 itemsSmoothie">
+          <div className="column is-6 is-offset-1 itemsSmoothie">
             <div className="header-date">
               <h1>Jour 2</h1>
               <h3>Vendredi 27 octobre</h3>
