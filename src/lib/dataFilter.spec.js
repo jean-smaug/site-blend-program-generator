@@ -19,6 +19,10 @@ describe('database.lib', () => {
       selected: [conferencesTime1[0], conferencesTime1[1]],
       remaining: [conferencesTime1[2], conferencesTime1[3]],
     });
+    expect(orderConferencesV2(conferencesTime1).dayOne.sixteen).toEqual({
+      selected: [conferencesTime1[0], conferencesTime1[1]],
+      remaining: [conferencesTime1[2], conferencesTime1[3]],
+    });
     expect(orderConferencesV2([])).toEqual({
       dayOne: {
         eight: {
