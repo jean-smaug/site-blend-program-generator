@@ -4,54 +4,94 @@ exports[`blender.component should render blender component 1`] = `
 Array [
   <div>
     <div
-        className="form"
+        id="pool"
     >
         <div
-            className="form-header"
-        >
-            <h1>
-                Choisissez les ingrédients de vos smoothies
-            </h1>
-            <h2>
-                et laissez-nous vous proposer un BlendWebMix sur mesure...
-            </h2>
-        </div>
-        <div
-            className="columns"
+            className="button-wrapper"
         >
             <div
-                className="modal-wrap column"
+                className="layer"
+            />
+            <button
+                className="btn-info main-button fa fa-info"
+                onClick={[Function]}
             >
                 <div
-                    className="modal-header"
-                >
-                    <span
-                        className="is-active"
-                    />
-                    <span
-                        className={null}
-                    />
-                    <span
-                        className={null}
-                    />
-                    <span
-                        className={null}
-                    />
-                </div>
+                    className="ripple"
+                />
+            </button>
+        </div>
+        <div
+            className="layered-content"
+        >
+            <button
+                className="btn-info close-button close-button1 fa fa-times"
+                onClick={[Function]}
+            />
+            <div
+                className="content"
+            >
+                <p>
+                    Développeur
+                </p>
+                <h1>
+                    Maxime Blanc
+                </h1>
+                <h1>
+                    Maxime Chabert
+                </h1>
+                <p>
+                    On peut aussi mettre ici plein de texte, ça quoi sert  etc
+                </p>
+            </div>
+        </div>
+    </div>
+    <div
+        className="columns"
+    >
+        <div
+            className="modal-wrap column is-10 is-offset-1"
+        >
+            <div
+                className="modal-header"
+            >
+                <span
+                    className="is-active"
+                />
+                <span
+                    className={null}
+                />
+                <span
+                    className={null}
+                />
+                <span
+                    className={null}
+                />
+            </div>
+            <div
+                className="modal-bodies"
+            >
                 <div
-                    className="modal-bodies"
+                    className="modal-body"
                 >
+                    <a
+                        className="link-restore"
+                        onClick={[Function]}
+                        role="presentation"
+                    >
+                        Vous avez déja généré un planning ? Cliquez-ici 
+                    </a>
                     <div
-                        className="modal-body"
+                        className="columns"
                     >
                         <div
-                            className="items"
+                            className="column is-12"
                         >
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column"
+                                    className="column is-12"
                                 >
                                     <h1
                                         className="category-title"
@@ -68,7 +108,7 @@ Array [
                                         className="columns"
                                     >
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -80,7 +120,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -92,7 +132,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -104,7 +144,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -129,28 +169,22 @@ Array [
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div
+                        className="columns"
+                    >
                         <div
-                            className="modal-footer"
+                            className="column is-12"
                         >
                             <hr />
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column is-4"
+                                    className="column is-3"
                                 />
                                 <div
-                                    className="column is-4"
-                                >
-                                    <a
-                                        onClick={[Function]}
-                                        role="presentation"
-                                    >
-                                        Vous avez déja généré un planning ? Cliquez-ici
-                                    </a>
-                                </div>
-                                <div
-                                    className="column is-4 is-offset-2"
+                                    className="column is-3 is-offset-7"
                                 >
                                     <input
                                         className="btn-suivant"

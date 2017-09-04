@@ -8,7 +8,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div>
+  "node": <div
+    className="smoothie"
+>
     <ToastContainer
         className="toast-bottom-full-width"
         id="toast-container"
@@ -100,7 +102,9 @@ ShallowWrapper {
     />
 </div>,
   "nodes": Array [
-    <div>
+    <div
+      className="smoothie"
+>
       <ToastContainer
             className="toast-bottom-full-width"
             id="toast-container"
@@ -237,7 +241,9 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
+        "_currentElement": <div
+          className="smoothie"
+>
           <ToastContainer
                     className="toast-bottom-full-width"
                     id="toast-container"
@@ -329,7 +335,9 @@ ShallowWrapper {
           />
 </div>,
         "_debugID": 2,
-        "_renderedOutput": <div>
+        "_renderedOutput": <div
+          className="smoothie"
+>
           <ToastContainer
                     className="toast-bottom-full-width"
                     id="toast-container"

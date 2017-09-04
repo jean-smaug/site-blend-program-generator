@@ -1,3 +1,12 @@
 html {
-  background: radial-gradient(#fff176, #f5dd65);
+  background-size: cover;
+  background: url('https://img11.hostingpics.net/pics/194880pineapple17043411920.jpg') no-repeat;
+}
+
+.header {
+  text-align: center;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  background-color: white;
+  color: #435965;
 }

@@ -12,6 +12,16 @@ ShallowWrapper {
     className="App"
 >
     <div
+        className="header"
+    >
+        <img
+            alt="BlendWebMix 2017"
+            height="45"
+            src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+            width="145"
+        />
+    </div>
+    <div
         className="columns"
     >
         <div
@@ -24,7 +34,7 @@ ShallowWrapper {
         className="columns"
     >
         <div
-            className="column"
+            className="column "
         />
     </div>
 </div>,
@@ -32,6 +42,16 @@ ShallowWrapper {
     <div
       className="App"
 >
+      <div
+            className="header"
+      >
+            <img
+                  alt="BlendWebMix 2017"
+                  height="45"
+                  src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                  width="145"
+            />
+      </div>
       <div
             className="columns"
       >
@@ -45,7 +65,7 @@ ShallowWrapper {
             className="columns"
       >
             <div
-                  className="column"
+                  className="column "
             />
       </div>
 </div>,
@@ -102,6 +122,16 @@ ShallowWrapper {
           className="App"
 >
           <div
+                    className="header"
+          >
+                    <img
+                              alt="BlendWebMix 2017"
+                              height="45"
+                              src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                              width="145"
+                    />
+          </div>
+          <div
                     className="columns"
           >
                     <div
@@ -114,7 +144,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column"
+                              className="column "
                     />
           </div>
 </div>,
@@ -123,6 +153,16 @@ ShallowWrapper {
           className="App"
 >
           <div
+                    className="header"
+          >
+                    <img
+                              alt="BlendWebMix 2017"
+                              height="45"
+                              src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                              width="145"
+                    />
+          </div>
+          <div
                     className="columns"
           >
                     <div
@@ -135,7 +175,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column"
+                              className="column "
                     />
           </div>
 </div>,
