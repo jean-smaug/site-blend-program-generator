@@ -85,10 +85,7 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
   const { minuteBegin } = convertToMinutes(newConference);
 
   _.forEach(timeSlotCurrentConferences, (item) => {
-    if (
-      minuteBegin > item.minuteBegin &&
-      minuteBegin < item.minuteEnd
-    ) {
+    if (minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) {
       isSlotFree = false;
     }
   });
@@ -144,6 +141,7 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
 
+    console.log('issou', day.selected);
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
     } else {
