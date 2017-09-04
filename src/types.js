@@ -1,5 +1,5 @@
 // @flow
 
-export type Filter = { domain: string, level: string };
+export type Domain = { domain: string, level: string };
 
-export type Filters = [Filter];
+export type Domains = [Domain];

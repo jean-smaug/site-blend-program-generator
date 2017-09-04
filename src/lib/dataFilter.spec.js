@@ -4,7 +4,7 @@
 //   filterByLevelAndDomain,
 //   orderConfences,
 // } from './dataFilter.lib';
-import { getTags, orderConferencesV2 } from './dataFilter.lib';
+import { getTags, orderConferencesV2, filterByTags } from './dataFilter.lib';
 
 import conferencesTag from './__fixtures__/conference--tags.json';
 import conferencesTime1 from './__fixtures__/conference--time-1.json';
@@ -63,6 +63,20 @@ describe('database.lib', () => {
       },
     });
   });
+});
+
+it('should filter conferences by tags', () => {
+  expect(filterByTags(conferencesTag, ['blog'])).toEqual([
+    {
+      tags: ['blog', 'slasheuse', 'entreprendre'],
+      title: "Comment le blogging m'a permis d'inventer mon propre métier",
+    },
+    {
+      tags: ['blog', 'slasheuse', 'entreprendre'],
+      title:
+        "Comment publier une application mobile en un clic ? Notre expérience de l'intégration continue sur mobile",
+    },
+  ]);
 });
 
 it('should filter conferences by domain', () => {

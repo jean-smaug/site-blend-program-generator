@@ -19,6 +19,10 @@ export const filterByDomain = (conferences: Conferences, domain: string) =>
 export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
+export const filterByTags = (conferences: Conferences, tags) =>
+  _.filter(conferences, conference =>
+    _.forEach(conference.tags, conferenceTag => _.includes(tags, conferenceTag)),
+  );
 /**
  * Filter conferences by level and by domain
  */
