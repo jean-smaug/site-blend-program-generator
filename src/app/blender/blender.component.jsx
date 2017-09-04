@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 
 import './blender.css';
-import * as keywords from './data/keywords.json';
 import * as domains from './data/domains.json';
 import * as objectifs from './data/objectives.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
@@ -11,6 +10,8 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 import ModalRestore from './modalRestore/modalRestore.component';
+import { getTags } from '../../lib/dataFilter.lib';
+import { getConferences } from '../../lib/database';
 
 export default class Blender extends React.Component {
   state = {
@@ -35,20 +36,26 @@ export default class Blender extends React.Component {
   toggleModal = () => {
     this.setState({
       isModalVisible: !this.state.isModalVisible,
+      tags: [],
     });
   };
 
-  handleClickOpen = () => {
-    document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
-    document.getElementById('pool').className = 'onShow';
-    setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
-  };
+  componentDidMount = async () => {
+    const conferences = await getConferences() || [];
+    this.setState({ tags: getTags(conferences) });
+  }
 
-  handleClickClose = () => {
-    document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
-    document.getElementsByClassName('layered-content')[0].className = 'layered-content';
-    setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
-  };
+  // handleClickOpen = () => {
+  //   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
+  //   document.getElementById('pool').className = 'onShow';
+  //   setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
+  // };
+  //
+  // handleClickClose = () => {
+  //   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
+  //   document.getElementsByClassName('layered-content')[0].className = 'layered-content';
+  //   setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
+  // };
 
   renderPage = () => {
     switch (this.state.currentPage) {
@@ -68,12 +75,12 @@ export default class Blender extends React.Component {
                 placeholder="Rechercher d'autres mots clefs..."
               />
             </div>
-            {_.map(keywords, (item) => {
+            {_.map(this.state.tags, (item) => {
               if (
                 this.state.filterKeywords === '' ||
                   item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
               ) {
-                return <CheckboxKeyword item={item} key={item.id} />;
+                return <CheckboxKeyword item={item} key={item} />;
               }
               return null;
             })
