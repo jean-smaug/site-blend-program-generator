@@ -54,39 +54,39 @@ export default class Blender extends React.Component {
     switch (this.state.currentPage) {
       case 2:
         return (
-            <div className="column is-12">
-              <h1 className="category-title">Les thématiques</h1>
-              <h2 className="category-desc">
+          <div className="column is-12">
+            <h1 className="category-title">Les thématiques</h1>
+            <h2 className="category-desc">
                 Cochez les mots clefs qui correspondent à votre profil de chef... :)
-              </h2>
-              <hr />
-              <div className="control">
-                <input
-                  className="input"
-                  onChange={this.handleFilterKeyword}
-                  type="text"
-                  placeholder="Rechercher d'autres mots clefs..."
-                />
-              </div>
-              {_.map(keywords, (item) => {
-                if (
-                  this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-                ) {
-                  return <CheckboxKeyword item={item} key={item.id} />;
-                }
-                return null;
-              })
-                .filter(item => item !== null)
-                .slice(0, 10)}
+            </h2>
+            <hr />
+            <div className="control">
+              <input
+                className="input"
+                onChange={this.handleFilterKeyword}
+                type="text"
+                placeholder="Rechercher d'autres mots clefs..."
+              />
             </div>
+            {_.map(keywords, (item) => {
+              if (
+                this.state.filterKeywords === '' ||
+                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+              ) {
+                return <CheckboxKeyword item={item} key={item.id} />;
+              }
+              return null;
+            })
+              .filter(item => item !== null)
+              .slice(0, 10)}
+          </div>
         );
       case 3:
         return (
-            <div className="column is-12">
-              <h1 className="category-title">Les objectifs</h1>
-              {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
-            </div>
+          <div className="column is-12">
+            <h1 className="category-title">Les objectifs</h1>
+            {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
+          </div>
         );
       case 4:
         return (
@@ -125,23 +125,24 @@ export default class Blender extends React.Component {
   render() {
     return (
       <div>
-        {/*<div id="pool" >*/}
-          {/*<div className="button-wrapper">*/}
-            {/*<div className="layer" />*/}
-            {/*<button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">*/}
-              {/*<div className="ripple" />*/}
-            {/*</button>*/}
-          {/*</div>*/}
-          {/*<div className="layered-content">*/}
-            {/*<button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />*/}
-            {/*<div className="content">*/}
-              {/*<p>Développeur</p>*/}
-              {/*<h1>Maxime Blanc</h1>*/}
-              {/*<h1>Maxime Chabert</h1>*/}
-              {/*<p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>*/}
-            {/*</div>*/}
-          {/*</div>*/}
-        {/*</div>*/}
+        {/* <div id="pool" > */}
+        {/* <div className="button-wrapper"> */}
+        {/* <div className="layer" /> */}
+        {/* <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info"> */}
+        {/* <div className="ripple" /> */}
+        {/* </button> */}
+        {/* </div> */}
+        {/* <div className="layered-content"> */}
+        {/* <button onClick={this.handleClickClose} */}
+        {/* className="btn-info close-button close-button1 fa fa-times" /> */}
+        {/* <div className="content"> */}
+        {/* <p>Développeur</p> */}
+        {/* <h1>Maxime Blanc</h1> */}
+        {/* <h1>Maxime Chabert</h1> */}
+        {/* <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
         {this.state.isModalVisible
           ? <ModalRestore
             closeModal={this.toggleModal}

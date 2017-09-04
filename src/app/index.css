@@ -1,6 +1,7 @@
 html {
   background-size: cover;
   background: url('https://img11.hostingpics.net/pics/194880pineapple17043411920.jpg') no-repeat;
+  width: 100%;
 }
 
 .header {
@@ -10,3 +11,4 @@ html {
   background-color: white;
   color: #435965;
 }
+

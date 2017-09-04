@@ -4,53 +4,10 @@ exports[`blender.component should render blender component 1`] = `
 Array [
   <div>
     <div
-        id="pool"
-    >
-        <div
-            className="button-wrapper"
-        >
-            <div
-                className="layer"
-            />
-            <button
-                className="btn-info main-button fa fa-info"
-                onClick={[Function]}
-            >
-                <div
-                    className="ripple"
-                />
-            </button>
-        </div>
-        <div
-            className="layered-content"
-        >
-            <button
-                className="btn-info close-button close-button1 fa fa-times"
-                onClick={[Function]}
-            />
-            <div
-                className="content"
-            >
-                <p>
-                    Développeur
-                </p>
-                <h1>
-                    Maxime Blanc
-                </h1>
-                <h1>
-                    Maxime Chabert
-                </h1>
-                <p>
-                    On peut aussi mettre ici plein de texte, ça quoi sert  etc
-                </p>
-            </div>
-        </div>
-    </div>
-    <div
         className="columns"
     >
         <div
-            className="modal-wrap column is-10 is-offset-1"
+            className="modal-wrap column is-8 is-offset-2"
         >
             <div
                 className="modal-header"
@@ -74,98 +31,98 @@ Array [
                 <div
                     className="modal-body"
                 >
-                    <a
-                        className="link-restore"
-                        onClick={[Function]}
-                        role="presentation"
+                    <article
+                        className="message is-info"
                     >
-                        Vous avez déja généré un planning ? Cliquez-ici 
-                    </a>
+                        <div
+                            className="message-body"
+                        >
+                            <a
+                                className="link-restore"
+                                onClick={[Function]}
+                                role="presentation"
+                            >
+                                Vous avez déja généré un planning ? Cliquez-ici 
+                            </a>
+                        </div>
+                    </article>
                     <div
                         className="columns"
                     >
                         <div
                             className="column is-12"
                         >
+                            <h1
+                                className="category-title"
+                            >
+                                Vos sujets favoris
+                            </h1>
+                            <h2
+                                className="category-desc"
+                            >
+                                Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
+                            </h2>
+                            <hr />
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column is-12"
+                                    className="column is-4"
                                 >
-                                    <h1
-                                        className="category-title"
-                                    >
-                                        Vos sujets favoris
-                                    </h1>
-                                    <h2
-                                        className="category-desc"
-                                    >
-                                        Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
-                                    </h2>
-                                    <hr />
-                                    <div
-                                        className="columns"
-                                    >
-                                        <div
-                                            className="column is-4"
-                                        >
-                                            <Connect(CheckboxDomainComponent)
-                                                item={
-                                                    Object {
-                                                        "id": "tech",
-                                                        "libelle": "Tech",
-                                                      }
-                                                }
-                                            />
-                                        </div>
-                                        <div
-                                            className="column is-4"
-                                        >
-                                            <Connect(CheckboxDomainComponent)
-                                                item={
-                                                    Object {
-                                                        "id": "market",
-                                                        "libelle": "Webmarketing",
-                                                      }
-                                                }
-                                            />
-                                        </div>
-                                        <div
-                                            className="column is-4"
-                                        >
-                                            <Connect(CheckboxDomainComponent)
-                                                item={
-                                                    Object {
-                                                        "id": "design",
-                                                        "libelle": "Design",
-                                                      }
-                                                }
-                                            />
-                                        </div>
-                                        <div
-                                            className="column is-4"
-                                        >
-                                            <Connect(CheckboxDomainComponent)
-                                                item={
-                                                    Array [
-                                                        Object {
-                                                          "id": "tech",
-                                                          "libelle": "Tech",
-                                                        },
-                                                        Object {
-                                                          "id": "market",
-                                                          "libelle": "Webmarketing",
-                                                        },
-                                                        Object {
-                                                          "id": "design",
-                                                          "libelle": "Design",
-                                                        },
-                                                      ]
-                                                }
-                                            />
-                                        </div>
-                                    </div>
+                                    <Connect(CheckboxDomainComponent)
+                                        item={
+                                            Object {
+                                                "id": "tech",
+                                                "libelle": "Tech",
+                                              }
+                                        }
+                                    />
+                                </div>
+                                <div
+                                    className="column is-4"
+                                >
+                                    <Connect(CheckboxDomainComponent)
+                                        item={
+                                            Object {
+                                                "id": "market",
+                                                "libelle": "Webmarketing",
+                                              }
+                                        }
+                                    />
+                                </div>
+                                <div
+                                    className="column is-4"
+                                >
+                                    <Connect(CheckboxDomainComponent)
+                                        item={
+                                            Object {
+                                                "id": "design",
+                                                "libelle": "Design",
+                                              }
+                                        }
+                                    />
+                                </div>
+                                <div
+                                    className="column is-4"
+                                >
+                                    <Connect(CheckboxDomainComponent)
+                                        item={
+                                            Array [
+                                                Object {
+                                                  "id": "tech",
+                                                  "libelle": "Tech",
+                                                },
+                                                Object {
+                                                  "id": "market",
+                                                  "libelle": "Webmarketing",
+                                                },
+                                                Object {
+                                                  "id": "design",
+                                                  "libelle": "Design",
+                                                },
+                                              ]
+                                        }
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -184,7 +141,7 @@ Array [
                                     className="column is-3"
                                 />
                                 <div
-                                    className="column is-3 is-offset-7"
+                                    className="column is-3 is-offset-6"
                                 >
                                     <input
                                         className="btn-suivant"
