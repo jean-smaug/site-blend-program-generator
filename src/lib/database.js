@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import randomString from 'randomstring';
+import slug from 'slug';
 
 import { db } from '../firebase';
 
@@ -40,6 +41,9 @@ export const getConferences = async () => {
 
 export const getTags = async () => {
   const conferences = (await dbRef('/conferences').once('value')).val();
-  const tags = _.map(conferences, conference => conference.tags);
+  const tags = _.map(conferences, conference => ({
+    id: conference.tags,
+    libelle: conference.tags,
+  }));
   return _.uniq(tags);
 };

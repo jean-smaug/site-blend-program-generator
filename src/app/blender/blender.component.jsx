@@ -11,15 +11,21 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 import ModalRestore from './modalRestore/modalRestore.component';
-import {getTags} from '../../lib/database.js'
-
+import { getTags } from '../../lib/database';
 
 export default class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
     isModalVisible: false,
+    tags: [],
   };
+
+  async componentWillMount() {
+    this.setState({
+      tags: await getTags(),
+    });
+  }
 
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
@@ -43,17 +49,20 @@ export default class Blender extends React.Component {
   handleClickOpen = () => {
     document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
     document.getElementById('pool').className = 'onShow';
-    setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
+    setTimeout(() => {
+      document.getElementsByClassName('layered-content')[0].className = 'layered-content active';
+    }, 700);
   };
 
   handleClickClose = () => {
     document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper';
     document.getElementsByClassName('layered-content')[0].className = 'layered-content';
-    setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
+    setTimeout(() => {
+      document.getElementById('pool').className = '';
+    }, 1500);
   };
 
-  renderPage = async () => {
-    const tags =  await getTags()
+  renderPage = () => {
     switch (this.state.currentPage) {
       case 2:
         return (
@@ -72,7 +81,7 @@ export default class Blender extends React.Component {
                   placeholder="Rechercher d'autres mots clefs..."
                 />
               </div>
-              {_.map(tags, (item) => {
+              {_.map(this.state.tags, (item) => {
                 if (
                   this.state.filterKeywords === '' ||
                   item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
@@ -96,15 +105,17 @@ export default class Blender extends React.Component {
           </div>
         );
       case 4:
-        return (<div className="columns">
-          <div className="column is-8">
-            <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput />
+        return (
+          <div className="columns">
+            <div className="column is-8">
+              <h1 className="category-title">Vos informations (facultatif)</h1>
+              <InformationsInput />
+            </div>
+            <div className="column is-4">
+              <Mixeur />
+            </div>
           </div>
-          <div className="column is-4">
-            <Mixeur />
-          </div>
-        </div>);
+        );
       default:
         return (
           <div className="columns">
@@ -115,11 +126,11 @@ export default class Blender extends React.Component {
               </h2>
               <hr />
               <div className="columns">
-                {_.map(domains, item =>
-                  (<div className="column is-4">
+                {_.map(domains, item => (
+                  <div className="column is-4">
                     <CheckboxDomain item={item} key={item.id} />
-                  </div>),
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -130,7 +141,7 @@ export default class Blender extends React.Component {
   render() {
     return (
       <div>
-        <div id="pool" >
+        <div id="pool">
           <div className="button-wrapper">
             <div className="layer" />
             <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">
@@ -138,20 +149,19 @@ export default class Blender extends React.Component {
             </button>
           </div>
           <div className="layered-content">
-            <button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
+            <button
+              onClick={this.handleClickClose}
+              className="btn-info close-button close-button1 fa fa-times"
+            />
             <div className="content">
               <p>Développeur</p>
               <h1>Maxime Blanc</h1>
               <h1>Maxime Chabert</h1>
-              <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>
+              <p>On peut aussi mettre ici plein de texte, ça quoi sert etc</p>
             </div>
           </div>
         </div>
-        {this.state.isModalVisible
-          ? <ModalRestore
-            closeModal={this.toggleModal}
-          />
-          : null}
+        {this.state.isModalVisible ? <ModalRestore closeModal={this.toggleModal} /> : null}
         <div className="columns">
           <div className="modal-wrap column is-10 is-offset-1">
             <div className="modal-header">
@@ -162,36 +172,39 @@ export default class Blender extends React.Component {
             </div>
             <div className="modal-bodies">
               <div className="modal-body">
-                <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
-                  Vous avez déja généré un planning ? Cliquez-ici </a>
+                <a className="link-restore" role="presentation" onClick={() => this.toggleModal()}>
+                  Vous avez déja généré un planning ? Cliquez-ici{' '}
+                </a>
                 <div className="columns">
-                  <div className="column is-12">
-                    {this.renderPage()}
-                  </div>
+                  <div className="column is-12">{this.renderPage()}</div>
                 </div>
                 <div className="columns">
                   <div className="column is-12">
                     <hr />
                     <div className="columns">
                       <div className="column is-3">
-                        {this.state.currentPage > 1
-                          ? <input
+                        {this.state.currentPage > 1 ? (
+                          <input
                             className="btn-precedent"
                             type="button"
                             onClick={this.previousPage}
                             value="< Précédent"
                           />
-                          : ''}
+                        ) : (
+                          ''
+                        )}
                       </div>
-                      <div className="column is-3 is-offset-7" >
-                        {this.state.currentPage < 4
-                          ? <input
+                      <div className="column is-3 is-offset-7">
+                        {this.state.currentPage < 4 ? (
+                          <input
                             className="btn-suivant"
                             type="button"
                             onClick={this.nextPage}
                             value="Suivant >"
                           />
-                          : ''}
+                        ) : (
+                          ''
+                        )}
                       </div>
                     </div>
                   </div>
