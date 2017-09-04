@@ -82,9 +82,11 @@ export class SmoothieComponent extends Component {
 
         <div className="outils columns">
           <div className="column">
-            {/*<a role="button" aria-pressed="true" tabIndex="0" onClick={this.handleClickSave}>*/}
-              {/*<i className="fa fa-save" />*/}
-            {/*</a>*/}
+            {/* <a role="button" aria-pressed="true" tabIndex="0" */}
+            {/* <i className="fa fa-save" /> */}
+            {/* onClick={this.handleClickSave}> */}
+            {/* <i className="fa fa-save" /> */}
+            {/* </a> */}
             { isStore('key') ?
               <a role="button" aria-pressed="true" tabIndex="0" onClick={this.toggleModal}>
                 <i className="fa fa-info" />

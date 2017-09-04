@@ -25,7 +25,7 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
             <div className="columns">
               <div className="div-remix column is-2">
                 <input
-                 className="btn-remix"
+                  className="btn-remix"
                   type="button"
                   value="Remix"
                   onClick={removeConferencesFromState}

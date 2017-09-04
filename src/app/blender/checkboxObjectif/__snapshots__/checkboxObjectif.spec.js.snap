@@ -3,15 +3,13 @@
 exports[`checkboxDomain.component should render component 1`] = `
 Array [
   <div>
-    <div>
-        <input
-            checked={false}
-            name="1"
-            onChange={[Function]}
-            type="checkbox"
-        />
+    <li
+        className=""
+        onClick={[Function]}
+        role="presentation"
+    >
         tech
-    </div>
+    </li>
 </div>,
 ]
 `;

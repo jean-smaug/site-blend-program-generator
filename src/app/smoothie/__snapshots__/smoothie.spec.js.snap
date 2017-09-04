@@ -40,16 +40,6 @@ ShallowWrapper {
                 tabIndex="0"
             >
                 <i
-                    className="fa fa-save"
-                />
-            </a>
-            <a
-                aria-pressed="true"
-                onClick={[Function]}
-                role="button"
-                tabIndex="0"
-            >
-                <i
                     className="fa fa-info"
                 />
             </a>
@@ -59,7 +49,7 @@ ShallowWrapper {
         className="columns"
     >
         <div
-            className="column is-6 is-offset-3 itemsSmoothie"
+            className="column is-6 is-offset-1 itemsSmoothie"
         >
             <div
                 className="header-date"
@@ -83,7 +73,7 @@ ShallowWrapper {
         className="columns"
     >
         <div
-            className="column is-6 is-offset-3 itemsSmoothie"
+            className="column is-6 is-offset-1 itemsSmoothie"
         >
             <div
                 className="header-date"
@@ -137,16 +127,6 @@ ShallowWrapper {
                         tabIndex="0"
                   >
                         <i
-                              className="fa fa-save"
-                        />
-                  </a>
-                  <a
-                        aria-pressed="true"
-                        onClick={[Function]}
-                        role="button"
-                        tabIndex="0"
-                  >
-                        <i
                               className="fa fa-info"
                         />
                   </a>
@@ -156,7 +136,7 @@ ShallowWrapper {
             className="columns"
       >
             <div
-                  className="column is-6 is-offset-3 itemsSmoothie"
+                  className="column is-6 is-offset-1 itemsSmoothie"
             >
                   <div
                         className="header-date"
@@ -180,7 +160,7 @@ ShallowWrapper {
             className="columns"
       >
             <div
-                  className="column is-6 is-offset-3 itemsSmoothie"
+                  className="column is-6 is-offset-1 itemsSmoothie"
             >
                   <div
                         className="header-date"
@@ -279,16 +259,6 @@ ShallowWrapper {
                                         tabIndex="0"
                               >
                                         <i
-                                                  className="fa fa-save"
-                                        />
-                              </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        <i
                                                   className="fa fa-info"
                                         />
                               </a>
@@ -298,7 +268,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-6 is-offset-3 itemsSmoothie"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -322,7 +292,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-6 is-offset-3 itemsSmoothie"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -376,16 +346,6 @@ ShallowWrapper {
                                         tabIndex="0"
                               >
                                         <i
-                                                  className="fa fa-save"
-                                        />
-                              </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        <i
                                                   className="fa fa-info"
                                         />
                               </a>
@@ -395,7 +355,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-6 is-offset-3 itemsSmoothie"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -419,7 +379,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-6 is-offset-3 itemsSmoothie"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
