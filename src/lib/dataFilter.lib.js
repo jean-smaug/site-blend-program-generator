@@ -1,6 +1,9 @@
 // @flow
 
 import _ from 'lodash';
+
+import type { Filters } from '../types';
+
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
 import { convertToMinutes, convertHourToString } from './time.lib';
 
@@ -19,7 +22,6 @@ export const filterByLevel = (conferences: Conferences, level: string) =>
 /**
  * Filter conferences by level and by domain
  */
-type Filters = [{ domain: string, level: string }];
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
   _.filter(conferences, conference =>
     _.includes(
@@ -141,7 +143,6 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
 
-    console.log('issou', day.selected);
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
     } else {
