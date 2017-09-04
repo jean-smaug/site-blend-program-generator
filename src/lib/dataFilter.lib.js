@@ -1,7 +1,11 @@
 // @flow
 
 import _ from 'lodash';
+
+import type { Filters } from '../types';
+
 import { Conference, Conferences } from '../app/smoothie/smoothie.type';
+import { convertToMinutes, convertHourToString } from './time.lib';
 
 /**
  * Return conferences filtered by domain
@@ -15,10 +19,13 @@ export const filterByDomain = (conferences: Conferences, domain: string) =>
 export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
+export const filterByTags = (conferences: Conferences, tags) =>
+  _.filter(conferences, conference =>
+    _.forEach(conference.tags, conferenceTag => _.includes(tags, conferenceTag)),
+  );
 /**
  * Filter conferences by level and by domain
  */
-type Filters = [{ domain: string, level: string }];
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
   _.filter(conferences, conference =>
     _.includes(
@@ -67,3 +74,85 @@ export const reorderConferences = (conference: Conference, conferences: Conferen
  */
 export const getTags = (conferences: Conferences) =>
   _.uniq(_.flatten(_.map(conferences, item => item.tags)));
+
+/**
+ *
+ * @param {*} currentConferences
+ * @param {*} newConference
+ */
+const isConferenceSlotFree = (currentConferences, newConference) => {
+  const timeSlotCurrentConferences = [];
+  let isSlotFree = true;
+
+  _.forEach(currentConferences, (currentConference) => {
+    timeSlotCurrentConferences.push(convertToMinutes(currentConference));
+  });
+
+  const { minuteBegin } = convertToMinutes(newConference);
+
+  _.forEach(timeSlotCurrentConferences, (item) => {
+    if (minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) {
+      isSlotFree = false;
+    }
+  });
+
+  return isSlotFree;
+};
+
+/**
+ * Pour obtenir l'effet aléatoire on passera un
+ * tabeau de conférences shuffle au préalable
+ */
+export const orderConferencesV2 = (conferences: Conferences) => {
+  const smoothie = {
+    dayOne: {
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
+    },
+    dayTwo: {
+      eight: {
+        selected: [],
+        remaining: [],
+      },
+      ten: {
+        selected: [],
+        remaining: [],
+      },
+      fourteen: {
+        selected: [],
+        remaining: [],
+      },
+      sixteen: {
+        selected: [],
+        remaining: [],
+      },
+    },
+  };
+
+  _.forEach(conferences, (item) => {
+    const [timeBegin] = _.split(item.timeBegin, 'h');
+    const day = smoothie[item.day][convertHourToString(timeBegin)];
+
+    if (isConferenceSlotFree(day.selected, item)) {
+      day.selected.push(item);
+    } else {
+      day.remaining.push(item);
+    }
+  });
+
+  return smoothie;
+};
