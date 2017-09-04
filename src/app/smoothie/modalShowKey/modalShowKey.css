@@ -1,0 +1,28 @@
+.header-show-key {
+  text-align: center;
+}
+
+.header-show-key > h1 {
+  margin: 15px;
+}
+
+.footer-show-key {
+  background-color: white;
+}
+
+.body-show-key {
+  text-align: center;
+}
+
+.body-show-key p {
+  font-size: 1.2em;
+  color: black;
+}
+
+.body-show-key > p > span{
+  font-size: 2.0em;
+  color: #E6421D;
+  font-weight: bolder;
+  display: block;
+  margin: 20px;
+}

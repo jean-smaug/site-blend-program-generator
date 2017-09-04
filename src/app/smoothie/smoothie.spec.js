@@ -9,6 +9,12 @@ const props = {
 
 describe('Smoothie component', () => {
   it('should render Smoothie Component', () => {
+    if (!global.window.localStorage) {
+      global.window.localStorage = {
+        getItem() { return '{}'; },
+        setItem() {},
+      };
+    }
     const smoothie = shallow(
       <SmoothieComponent dayOne={props.dayOne} dayTwo={props.dayTwo} />,
     );

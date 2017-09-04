@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import randomString from 'randomstring';
+
 import { db } from '../firebase';
 
 const dbRef = (suffix = '') => db.ref(`2017${suffix}`);

@@ -26,18 +26,32 @@ ShallowWrapper {
         }
     />
     <div
-        className="outils"
+        className="outils columns"
     >
-        <a
-            aria-pressed="true"
-            onClick={[Function]}
-            role="button"
-            tabIndex="0"
+        <div
+            className="column"
         >
-            <i
-                className="fa fa-save"
-            />
-        </a>
+            <a
+                aria-pressed="true"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+            >
+                <i
+                    className="fa fa-save"
+                />
+            </a>
+            <a
+                aria-pressed="true"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+            >
+                <i
+                    className="fa fa-info"
+                />
+            </a>
+        </div>
     </div>
     <div
         className="columns itemsSmoothie"
@@ -104,18 +118,32 @@ ShallowWrapper {
             }
       />
       <div
-            className="outils"
+            className="outils columns"
       >
-            <a
-                  aria-pressed="true"
-                  onClick={[Function]}
-                  role="button"
-                  tabIndex="0"
+            <div
+                  className="column"
             >
-                  <i
-                        className="fa fa-save"
-                  />
-            </a>
+                  <a
+                        aria-pressed="true"
+                        onClick={[Function]}
+                        role="button"
+                        tabIndex="0"
+                  >
+                        <i
+                              className="fa fa-save"
+                        />
+                  </a>
+                  <a
+                        aria-pressed="true"
+                        onClick={[Function]}
+                        role="button"
+                        tabIndex="0"
+                  >
+                        <i
+                              className="fa fa-info"
+                        />
+                  </a>
+            </div>
       </div>
       <div
             className="columns itemsSmoothie"
@@ -179,6 +207,7 @@ ShallowWrapper {
       "_hostParent": null,
       "_instance": SmoothieComponent {
         "_reactInternalInstance": [Circular],
+        "componentDidMount": [Function],
         "context": Object {},
         "handleClickSave": [Function],
         "props": Object {
@@ -186,7 +215,10 @@ ShallowWrapper {
           "dayTwo": Object {},
         },
         "refs": Object {},
-        "state": null,
+        "state": Object {
+          "isModalVisible": false,
+        },
+        "toggleModal": [Function],
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -223,18 +255,32 @@ ShallowWrapper {
                     }
           />
           <div
-                    className="outils"
+                    className="outils columns"
           >
-                    <a
-                              aria-pressed="true"
-                              onClick={[Function]}
-                              role="button"
-                              tabIndex="0"
+                    <div
+                              className="column"
                     >
-                              <i
-                                        className="fa fa-save"
-                              />
-                    </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        <i
+                                                  className="fa fa-save"
+                                        />
+                              </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        <i
+                                                  className="fa fa-info"
+                                        />
+                              </a>
+                    </div>
           </div>
           <div
                     className="columns itemsSmoothie"
@@ -301,18 +347,32 @@ ShallowWrapper {
                     }
           />
           <div
-                    className="outils"
+                    className="outils columns"
           >
-                    <a
-                              aria-pressed="true"
-                              onClick={[Function]}
-                              role="button"
-                              tabIndex="0"
+                    <div
+                              className="column"
                     >
-                              <i
-                                        className="fa fa-save"
-                              />
-                    </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        <i
+                                                  className="fa fa-save"
+                                        />
+                              </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        <i
+                                                  className="fa fa-info"
+                                        />
+                              </a>
+                    </div>
           </div>
           <div
                     className="columns itemsSmoothie"
