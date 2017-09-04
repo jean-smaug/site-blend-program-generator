@@ -91,25 +91,26 @@ export class SmoothieComponent extends Component {
               </a> : '' }
           </div>
         </div>
-        <div className="columns itemsSmoothie">
-          <div className="column">
+        <div className="columns">
+          <div className="column is-6 is-offset-3 itemsSmoothie">
             <div className="header-date">
-              <h2>Jour 1</h2>
+              <h1>Jour 1</h1>
               <h3>Jeudi 26 octobre</h3>
             </div>
             <ListConference day={dayOne} />
           </div>
+          <div className="column is-one-quarter" />
         </div>
-        <div className="columns itemsSmoothie">
-          <div className="column">
+        <div className="columns">
+          <div className="column is-6 is-offset-3 itemsSmoothie">
             <div className="header-date">
               <h1>Jour 2</h1>
               <h3>Vendredi 27 octobre</h3>
             </div>
             <ListConference day={dayTwo} />
           </div>
+          <div className="column is-one-quarter" />
         </div>
-        <div className="column is-one-quarter" />
       </div>
     );
   }
