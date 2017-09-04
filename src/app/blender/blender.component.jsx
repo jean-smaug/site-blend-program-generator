@@ -20,6 +20,11 @@ export default class Blender extends React.Component {
     isModalVisible: false,
   };
 
+  componentDidMount = async () => {
+    const conferences = await getConferences() || [];
+    this.setState({ tags: getTags(conferences) });
+  }
+
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
   };
@@ -40,15 +45,11 @@ export default class Blender extends React.Component {
     });
   };
 
-  componentDidMount = async () => {
-    const conferences = await getConferences() || [];
-    this.setState({ tags: getTags(conferences) });
-  }
-
   // handleClickOpen = () => {
   //   document.getElementsByClassName('button-wrapper')[0].className = 'button-wrapper clicked';
   //   document.getElementById('pool').className = 'onShow';
-  //   setTimeout(() => { document.getElementsByClassName('layered-content')[0].className = 'layered-content active'; }, 700);
+  //   setTimeout(() => { document.getElementsByClassName('layered-content')[0].className
+  // = 'layered-content active'; }, 700);
   // };
   //
   // handleClickClose = () => {

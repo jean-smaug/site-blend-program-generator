@@ -20,7 +20,7 @@ export class CheckboxKeywordComponent extends Component {
     if (!_.includes(this.props.keywords, this.props.item)) {
       this.props.addKeyword(this.props.item);
     } else this.props.removeKeyword(this.props.item);
-  }
+  };
 
   render() {
     return (

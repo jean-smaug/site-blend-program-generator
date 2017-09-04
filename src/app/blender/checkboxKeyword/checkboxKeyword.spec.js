@@ -3,10 +3,7 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import { CheckboxKeywordComponent } from './checkboxKeyword.component';
 
-const item = {
-  id: '1',
-  libelle: 'tech',
-};
+const item = 'test';
 
 describe('checkboxDomain.component', () => {
   let wrapper;
