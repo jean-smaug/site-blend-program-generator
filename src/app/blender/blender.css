@@ -47,6 +47,8 @@ CONTAINER FORM
   width: 100%;
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  padding: 2% 5% 2% 5%;
+
 }
 
 /** Liste des mots clefs **/

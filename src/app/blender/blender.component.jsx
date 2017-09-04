@@ -125,23 +125,23 @@ export default class Blender extends React.Component {
   render() {
     return (
       <div>
-        <div id="pool" >
-          <div className="button-wrapper">
-            <div className="layer" />
-            <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">
-              <div className="ripple" />
-            </button>
-          </div>
-          <div className="layered-content">
-            <button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
-            <div className="content">
-              <p>Développeur</p>
-              <h1>Maxime Blanc</h1>
-              <h1>Maxime Chabert</h1>
-              <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>
-            </div>
-          </div>
-        </div>
+        {/*<div id="pool" >*/}
+          {/*<div className="button-wrapper">*/}
+            {/*<div className="layer" />*/}
+            {/*<button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">*/}
+              {/*<div className="ripple" />*/}
+            {/*</button>*/}
+          {/*</div>*/}
+          {/*<div className="layered-content">*/}
+            {/*<button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />*/}
+            {/*<div className="content">*/}
+              {/*<p>Développeur</p>*/}
+              {/*<h1>Maxime Blanc</h1>*/}
+              {/*<h1>Maxime Chabert</h1>*/}
+              {/*<p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>*/}
+            {/*</div>*/}
+          {/*</div>*/}
+        {/*</div>*/}
         {this.state.isModalVisible
           ? <ModalRestore
             closeModal={this.toggleModal}
@@ -157,8 +157,13 @@ export default class Blender extends React.Component {
             </div>
             <div className="modal-bodies">
               <div className="modal-body">
-                <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
-                  Vous avez déja généré un planning ? Cliquez-ici </a>
+                <article className="message is-info">
+                  <div className="message-body">
+                    <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
+                      Vous avez déja généré un planning ? Cliquez-ici </a>
+                  </div>
+                </article>
+
                 <div className="columns">
                   {this.renderPage()}
                 </div>
