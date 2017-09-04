@@ -17,16 +17,21 @@ export class CheckboxObjectifComponent extends Component {
   render() {
     return (
       <div>
-        <div>
+        <li className="done">
           <input
             onChange={this.toggleCheckbox}
             name={this.props.item.id}
             type="checkbox"
+            id={this.props.item.id}
+            className="graphic"
             checked={_.includes(this.props.objectifs, this.props.item.id)}
           />
+          <label className="toggle" htmlFor={this.props.item.id}/>
           {this.props.item.libelle}
-        </div>
+        </li>
       </div>
+
+
     );
   }
 }

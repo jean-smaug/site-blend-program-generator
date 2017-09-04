@@ -85,7 +85,10 @@ export default class Blender extends React.Component {
         return (
           <div className="column is-12">
             <h1 className="category-title">Les objectifs</h1>
-            {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
+            <section className="todo">
+              <ul className="todo-list">
+                {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
+            </section>
           </div>
         );
       case 4:
@@ -164,7 +167,6 @@ export default class Blender extends React.Component {
                       Vous avez déja généré un planning ? Cliquez-ici </a>
                   </div>
                 </article>
-
                 <div className="columns">
                   {this.renderPage()}
                 </div>
