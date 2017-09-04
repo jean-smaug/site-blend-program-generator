@@ -11,6 +11,14 @@ export function isStore(name) {
 }
 
 /**
+ * Remove a key in localstorage
+ * @param name
+ */
+export function remove(name) {
+  window.localStorage.removeItem(name);
+}
+
+/**
  * Set conferences of user in localstorage
  * @param data
  * @return void
@@ -27,6 +35,14 @@ export function setConferencesStore(data) {
  */
 export function setKeyStore(key) {
   window.localStorage.setItem('key', key);
+}
+
+/**
+ * Set if popup which give the user's key is alreader show one time
+ * @return void
+ */
+export function setOneShow() {
+  window.localStorage.setItem('isAlreadyShow', true);
 }
 
 
