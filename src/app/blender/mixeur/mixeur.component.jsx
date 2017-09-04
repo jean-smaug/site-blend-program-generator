@@ -7,7 +7,7 @@ import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilte
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
-import { setKeyStore } from '../../../lib/localStorage.lib';
+import { setConferencesStore, setKeyStore, remove, isStore } from '../../../lib/localStorage.lib';
 
 /**
  * Component for Submit button to mix
@@ -27,7 +27,12 @@ export class MixeurComponent extends Component {
       );
 
       setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
+      if (isStore('isAlreadyShow')) remove('isAlreadyShow');
       addConference(orderedConferences);
+      setConferencesStore({
+        dayOne: orderedConferences.dayOne,
+        dayTwo: orderedConferences.dayTwo,
+      });
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",

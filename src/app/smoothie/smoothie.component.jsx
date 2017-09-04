@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
-import { setConferencesStore, isStore } from '../../lib/localStorage.lib';
+import { setConferencesStore, isStore, setOneShow } from '../../lib/localStorage.lib';
 
 import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
@@ -21,9 +21,11 @@ export class SmoothieComponent extends Component {
   };
 
   componentDidMount = () => {
-    if (isStore('key')) {
+    if (isStore('key') && !isStore('isAlreadyShow')) {
       this.setState({
         isModalVisible: !this.state.isModalVisible,
+      }, () => {
+        setOneShow();
       });
     }
   };
