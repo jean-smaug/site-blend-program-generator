@@ -11,6 +11,8 @@ import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 import ModalRestore from './modalRestore/modalRestore.component';
+import {getTags} from '../../lib/database.js'
+
 
 export default class Blender extends React.Component {
   state = {
@@ -50,7 +52,8 @@ export default class Blender extends React.Component {
     setTimeout(() => { document.getElementById('pool').className = ''; }, 1500);
   };
 
-  renderPage = () => {
+  renderPage = async () => {
+    const tags =  await getTags()
     switch (this.state.currentPage) {
       case 2:
         return (
@@ -69,7 +72,7 @@ export default class Blender extends React.Component {
                   placeholder="Rechercher d'autres mots clefs..."
                 />
               </div>
-              {_.map(keywords, (item) => {
+              {_.map(tags, (item) => {
                 if (
                   this.state.filterKeywords === '' ||
                   item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())

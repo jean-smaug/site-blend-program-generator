@@ -16,7 +16,9 @@ export const writeStore = async (state) => {
   });
 
   try {
-    await dbRef('/users').child(userKey).set(state);
+    await dbRef('/users')
+      .child(userKey)
+      .set(state);
   } catch (error) {
     writeStore(state);
   }
@@ -24,16 +26,20 @@ export const writeStore = async (state) => {
   return userKey;
 };
 
-export const readStoreByKey = async id => ((await dbRef(`/users/${id}`).once('value')).val());
+export const readStoreByKey = async id => (await dbRef(`/users/${id}`).once('value')).val();
 
 export const readStoreByEmail = async (email) => {
   const users = (await dbRef('/users').once('value')).val();
-  return _.filter(users, user => (user.blender.informations.email === email))[0];
+  return _.filter(users, user => user.blender.informations.email === email)[0];
 };
-
 
 export const getConferences = async () => {
   const conferences = (await dbRef('/conferences').once('value')).val();
   return _.map(conferences, (conference, key) => ({ ...conference, id: key }));
 };
 
+export const getTags = async () => {
+  const conferences = (await dbRef('/conferences').once('value')).val();
+  const tags = _.map(conferences, conference => conference.tags);
+  return _.uniq(tags);
+};
