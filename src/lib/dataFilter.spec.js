@@ -8,6 +8,7 @@ import { getTags, orderConferencesV2 } from './dataFilter.lib';
 
 import conferencesTag from './__fixtures__/conference--tags.json';
 import conferencesTime1 from './__fixtures__/conference--time-1.json';
+import conferencesTime2 from './__fixtures__/conference--time-2.json';
 
 describe('database.lib', () => {
   it('should get tags', async () => {
@@ -19,9 +20,9 @@ describe('database.lib', () => {
       selected: [conferencesTime1[0], conferencesTime1[1]],
       remaining: [conferencesTime1[2], conferencesTime1[3]],
     });
-    expect(orderConferencesV2(conferencesTime1).dayOne.sixteen).toEqual({
-      selected: [conferencesTime1[0], conferencesTime1[1]],
-      remaining: [conferencesTime1[2], conferencesTime1[3]],
+    expect(orderConferencesV2(conferencesTime2).dayOne.sixteen).toEqual({
+      selected: [conferencesTime2[0]],
+      remaining: [conferencesTime2[1], conferencesTime2[2], conferencesTime2[3]],
     });
     expect(orderConferencesV2([])).toEqual({
       dayOne: {
