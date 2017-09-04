@@ -54,7 +54,6 @@ export default class Blender extends React.Component {
     switch (this.state.currentPage) {
       case 2:
         return (
-          <div className="columns">
             <div className="column is-12">
               <h1 className="category-title">Les thématiques</h1>
               <h2 className="category-desc">
@@ -81,43 +80,42 @@ export default class Blender extends React.Component {
                 .filter(item => item !== null)
                 .slice(0, 10)}
             </div>
-          </div>
         );
       case 3:
         return (
-          <div className="columns">
             <div className="column is-12">
               <h1 className="category-title">Les objectifs</h1>
               {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
             </div>
-          </div>
         );
       case 4:
-        return (<div className="columns">
-          <div className="column is-8">
-            <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput />
+        return (
+          <div className="column is-12">
+            <div className="columns">
+              <div className="column is-8">
+                <h1 className="category-title">Vos informations (facultatif)</h1>
+                <InformationsInput />
+              </div>
+              <div className="column is-4">
+                <Mixeur />
+              </div>
+            </div>
           </div>
-          <div className="column is-4">
-            <Mixeur />
-          </div>
-        </div>);
+        );
       default:
         return (
-          <div className="columns">
-            <div className="column is-12">
-              <h1 className="category-title">Vos sujets favoris</h1>
-              <h2 className="category-desc">
+          <div className="column is-12">
+            <h1 className="category-title">Vos sujets favoris</h1>
+            <h2 className="category-desc">
                 Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
-              </h2>
-              <hr />
-              <div className="columns">
-                {_.map(domains, item =>
-                  (<div className="column is-4">
-                    <CheckboxDomain item={item} key={item.id} />
-                  </div>),
-                )}
-              </div>
+            </h2>
+            <hr />
+            <div className="columns">
+              {_.map(domains, item =>
+                (<div className="column is-4">
+                  <CheckboxDomain item={item} key={item.id} />
+                </div>),
+              )}
             </div>
           </div>
         );
@@ -150,7 +148,7 @@ export default class Blender extends React.Component {
           />
           : null}
         <div className="columns">
-          <div className="modal-wrap column is-10 is-offset-1">
+          <div className="modal-wrap column is-8 is-offset-2">
             <div className="modal-header">
               <span className={this.state.currentPage === 1 ? 'is-active' : null} />
               <span className={this.state.currentPage === 2 ? 'is-active' : null} />
@@ -162,9 +160,7 @@ export default class Blender extends React.Component {
                 <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
                   Vous avez déja généré un planning ? Cliquez-ici </a>
                 <div className="columns">
-                  <div className="column is-12">
-                    {this.renderPage()}
-                  </div>
+                  {this.renderPage()}
                 </div>
                 <div className="columns">
                   <div className="column is-12">
@@ -180,7 +176,7 @@ export default class Blender extends React.Component {
                           />
                           : ''}
                       </div>
-                      <div className="column is-3 is-offset-7" >
+                      <div className="column is-3 is-offset-6" >
                         {this.state.currentPage < 4
                           ? <input
                             className="btn-suivant"
