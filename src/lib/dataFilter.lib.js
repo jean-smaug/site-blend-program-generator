@@ -84,11 +84,14 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
 
   const { minuteBegin } = convertToMinutes(newConference);
 
-  for (let i = 0; i < currentConferences.length - 1; i += 1) {
-    if (minuteBegin) {
+  _.forEach(timeSlotCurrentConferences, (item) => {
+    if (
+      minuteBegin > item.minuteBegin &&
+      minuteBegin < item.minuteEnd
+    ) {
       isSlotFree = false;
     }
-  }
+  });
 
   return isSlotFree;
 };
