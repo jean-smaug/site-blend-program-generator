@@ -41,50 +41,57 @@ Array [
                     Maxime Chabert
                 </h1>
                 <p>
-                    On peut aussi mettre ici plein de texte, ça quoi sert l\\'application etc
+                    On peut aussi mettre ici plein de texte, ça quoi sert  etc
                 </p>
             </div>
         </div>
     </div>
     <div
-        className="form"
+        className="columns"
     >
         <div
-            className="columns"
+            className="modal-wrap column is-10 is-offset-1"
         >
             <div
-                className="modal-wrap column"
+                className="modal-header"
+            >
+                <span
+                    className="is-active"
+                />
+                <span
+                    className={null}
+                />
+                <span
+                    className={null}
+                />
+                <span
+                    className={null}
+                />
+            </div>
+            <div
+                className="modal-bodies"
             >
                 <div
-                    className="modal-header"
+                    className="modal-body"
                 >
-                    <span
-                        className="is-active"
-                    />
-                    <span
-                        className={null}
-                    />
-                    <span
-                        className={null}
-                    />
-                    <span
-                        className={null}
-                    />
-                </div>
-                <div
-                    className="modal-bodies"
-                >
+                    <a
+                        className="link-restore"
+                        onClick={[Function]}
+                        role="presentation"
+                    >
+                        Vous avez déja généré un planning ? Cliquez-ici 
+                    </a>
                     <div
-                        className="modal-body"
+                        className="columns"
                     >
                         <div
-                            className="items"
+                            className="column is-12"
                         >
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column"
+                                    className="column is-12"
                                 >
                                     <h1
                                         className="category-title"
@@ -101,7 +108,7 @@ Array [
                                         className="columns"
                                     >
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -113,7 +120,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -125,7 +132,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -137,7 +144,7 @@ Array [
                                             />
                                         </div>
                                         <div
-                                            className="column"
+                                            className="column is-4"
                                         >
                                             <Connect(CheckboxDomainComponent)
                                                 item={
@@ -162,29 +169,22 @@ Array [
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div
+                        className="columns"
+                    >
                         <div
-                            className="modal-footer"
+                            className="column is-12"
                         >
                             <hr />
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column is-4"
+                                    className="column is-3"
                                 />
                                 <div
-                                    className="column is-4"
-                                >
-                                    <a
-                                        className="link-restore"
-                                        onClick={[Function]}
-                                        role="presentation"
-                                    >
-                                        Vous avez déja généré un planning ? Cliquez-ici
-                                    </a>
-                                </div>
-                                <div
-                                    className="column is-4 is-offset-2"
+                                    className="column is-3 is-offset-7"
                                 >
                                     <input
                                         className="btn-suivant"
