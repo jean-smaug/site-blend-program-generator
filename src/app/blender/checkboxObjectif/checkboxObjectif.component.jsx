@@ -9,24 +9,44 @@ import * as formActions from '../blender.action';
  */
 
 export class CheckboxObjectifComponent extends Component {
-  toggleCheckbox = (e) => {
-    if (e.target.checked) this.props.addObjectif(this.props.item.id);
-    else this.props.removeObjectif(this.props.item.id);
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: _.sample(['blue', 'orange', 'red', 'green']),
+    };
   }
+
+  isChecked = () => {
+    let checked = false;
+    _.forEach(this.props.objectifs, (element) => {
+      if (element === this.props.item.id) {
+        checked = true;
+      }
+    });
+    return checked;
+  };
+
+  toogleChecked = () => {
+    if (!this.isChecked()) {
+      this.props.addObjectif(this.props.item.id);
+    } else {
+      this.props.removeObjectif(this.props.item.id);
+    }
+  };
 
   render() {
     return (
       <div>
-        <div>
-          <input
-            onChange={this.toggleCheckbox}
-            name={this.props.item.id}
-            type="checkbox"
-            checked={_.includes(this.props.objectifs, this.props.item.id)}
-          />
+        <li
+          onClick={this.toogleChecked}
+          className={this.isChecked() ? `is-${this.state.color}` : ''}
+          role="presentation"
+        >
           {this.props.item.libelle}
-        </div>
+        </li>
       </div>
+
+
     );
   }
 }

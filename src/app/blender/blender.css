@@ -1,43 +1,26 @@
-/** Form **/
-
-.form {
-  padding:2% 12%;
-}
-
-
-
 /**
 CONTAINER FORM
  */
 
 
 .modal-wrap {
-  margin-top: 30px;
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  transition: -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
+  margin-top: 50px;
 }
 
 .modal-header {
   height: 45px;
   background: white;
   border-bottom: 1px solid #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .modal-header span {
   display: block;
+  margin:5px;
   height: 12px;
   width: 12px;
-  margin: 5px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -48,7 +31,6 @@ CONTAINER FORM
 
 .modal-bodies {
   position: relative;
-  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
@@ -57,16 +39,16 @@ CONTAINER FORM
 .modal-body {
   text-align: center;
   background: white;
-  padding: 40px 100px;
+  padding: 20px 20px;
   box-shadow: 0px 50px 30px -30px rgba(0, 0, 0, 0.3);
-  margin-bottom: 50px;
   position: absolute;
   top: 0;
   box-sizing: border-box;
   width: 100%;
   -webkit-transform-origin: top left;
   transform-origin: top left;
-  min-height: 550px;
+  padding: 2% 5% 2% 5%;
+
 }
 
 /** Liste des mots clefs **/
@@ -113,8 +95,8 @@ CONTAINER FORM
 .blockDomain{
   background-color: grey;
   background-size: 100%;
+  width: 100%;
   height: 300px;
-  width: 300px;
   color: white;
   cursor: pointer;
   position: relative;
@@ -165,8 +147,9 @@ CONTAINER FORM
   letter-spacing: 1px;
   display: inline-block;
   cursor: pointer;
-  margin-left: 10px;
   float: left;
+  width: 100%;
+  margin-top: 5px;
 }
 .btn-suivant:hover,
 .btn-precedent:hover {
@@ -382,4 +365,76 @@ button:hover { opacity: .8; }
   top: 0;
   -webkit-transition: .5s all ease 1s;
   transition: .5s all ease 1s;
+}
+
+
+
+ol, ul { list-style: none }
+
+blockquote, q { quotes: none }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* ========================================================
+   TODO liste objectifs
+   =====================================================
+   ================================================== */
+
+.todo {
+  position: relative;
+  margin: 0 auto;
+  padding: 12px 0;
+  background: #fff;
+  border: 1px solid;
+  border-color: #dfdcdc #d9d6d6 #ccc;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.lt-ie9 .todo:before, .lt-ie9 .todo:after {
+  height: 1px;
+  border-top: 0;
+}
+
+.todo-list { border-top: 1px solid #e6ebed }
+
+
+.todo-list li {
+  position: relative;
+  padding: 7px 15px 7px 50px;
+  line-height: 21px;
+  font-size: 1.3em;
+  color: #8b8f97;
+  border-bottom: 1px solid #e6ebed;
+  cursor: pointer;
+}
+
+.is-blue {
+  background-color: #00A3DF;
+  color: white !important;
+}
+
+.is-green {
+  background-color: #B2CC35;
+  color: white !important;
+}
+
+.is-orange {
+  background-color: #E6421D;
+  color: white !important;
+}
+
+.is-red {
+  background-color: #E5421C;
+  color: white !important;
 }

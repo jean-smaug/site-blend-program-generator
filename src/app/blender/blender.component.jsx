@@ -54,70 +54,71 @@ export default class Blender extends React.Component {
     switch (this.state.currentPage) {
       case 2:
         return (
-          <div className="columns">
-            <div className="column is-12">
-              <h1 className="category-title">Les thématiques</h1>
-              <h2 className="category-desc">
+          <div className="column is-12">
+            <h1 className="category-title">Les thématiques</h1>
+            <h2 className="category-desc">
                 Cochez les mots clefs qui correspondent à votre profil de chef... :)
-              </h2>
-              <hr />
-              <div className="control">
-                <input
-                  className="input"
-                  onChange={this.handleFilterKeyword}
-                  type="text"
-                  placeholder="Rechercher d'autres mots clefs..."
-                />
-              </div>
-              {_.map(keywords, (item) => {
-                if (
-                  this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-                ) {
-                  return <CheckboxKeyword item={item} key={item.id} />;
-                }
-                return null;
-              })
-                .filter(item => item !== null)
-                .slice(0, 10)}
+            </h2>
+            <hr />
+            <div className="control">
+              <input
+                className="input"
+                onChange={this.handleFilterKeyword}
+                type="text"
+                placeholder="Rechercher d'autres mots clefs..."
+              />
             </div>
+            {_.map(keywords, (item) => {
+              if (
+                this.state.filterKeywords === '' ||
+                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+              ) {
+                return <CheckboxKeyword item={item} key={item.id} />;
+              }
+              return null;
+            })
+              .filter(item => item !== null)
+              .slice(0, 10)}
           </div>
         );
       case 3:
         return (
-          <div className="columns">
-            <div className="column is-12">
-              <h1 className="category-title">Les objectifs</h1>
-              {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}
-            </div>
+          <div className="column is-12">
+            <h1 className="category-title">Les objectifs</h1>
+            <section className="todo">
+              <ul className="todo-list">
+                {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
+            </section>
           </div>
         );
       case 4:
-        return (<div className="columns">
-          <div className="column is-8">
-            <h1 className="category-title">Vos informations (facultatif)</h1>
-            <InformationsInput />
+        return (
+          <div className="column is-12">
+            <div className="columns">
+              <div className="column is-8">
+                <h1 className="category-title">Vos informations (facultatif)</h1>
+                <InformationsInput />
+              </div>
+              <div className="column is-4">
+                <Mixeur />
+              </div>
+            </div>
           </div>
-          <div className="column is-4">
-            <Mixeur />
-          </div>
-        </div>);
+        );
       default:
         return (
-          <div className="columns">
-            <div className="column is-12">
-              <h1 className="category-title">Vos sujets favoris</h1>
-              <h2 className="category-desc">
+          <div className="column is-12">
+            <h1 className="category-title">Vos sujets favoris</h1>
+            <h2 className="category-desc">
                 Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
-              </h2>
-              <hr />
-              <div className="columns">
-                {_.map(domains, item =>
-                  (<div className="column is-4">
-                    <CheckboxDomain item={item} key={item.id} />
-                  </div>),
-                )}
-              </div>
+            </h2>
+            <hr />
+            <div className="columns">
+              {_.map(domains, item =>
+                (<div className="column is-4">
+                  <CheckboxDomain item={item} key={item.id} />
+                </div>),
+              )}
             </div>
           </div>
         );
@@ -127,30 +128,31 @@ export default class Blender extends React.Component {
   render() {
     return (
       <div>
-        <div id="pool" >
-          <div className="button-wrapper">
-            <div className="layer" />
-            <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info">
-              <div className="ripple" />
-            </button>
-          </div>
-          <div className="layered-content">
-            <button onClick={this.handleClickClose} className="btn-info close-button close-button1 fa fa-times" />
-            <div className="content">
-              <p>Développeur</p>
-              <h1>Maxime Blanc</h1>
-              <h1>Maxime Chabert</h1>
-              <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p>
-            </div>
-          </div>
-        </div>
+        {/* <div id="pool" > */}
+        {/* <div className="button-wrapper"> */}
+        {/* <div className="layer" /> */}
+        {/* <button onClick={this.handleClickOpen} className="btn-info main-button fa fa-info"> */}
+        {/* <div className="ripple" /> */}
+        {/* </button> */}
+        {/* </div> */}
+        {/* <div className="layered-content"> */}
+        {/* <button onClick={this.handleClickClose} */}
+        {/* className="btn-info close-button close-button1 fa fa-times" /> */}
+        {/* <div className="content"> */}
+        {/* <p>Développeur</p> */}
+        {/* <h1>Maxime Blanc</h1> */}
+        {/* <h1>Maxime Chabert</h1> */}
+        {/* <p>On peut aussi mettre ici plein de texte, ça quoi sert  etc</p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
         {this.state.isModalVisible
           ? <ModalRestore
             closeModal={this.toggleModal}
           />
           : null}
         <div className="columns">
-          <div className="modal-wrap column is-10 is-offset-1">
+          <div className="modal-wrap column is-8 is-offset-2">
             <div className="modal-header">
               <span className={this.state.currentPage === 1 ? 'is-active' : null} />
               <span className={this.state.currentPage === 2 ? 'is-active' : null} />
@@ -159,12 +161,14 @@ export default class Blender extends React.Component {
             </div>
             <div className="modal-bodies">
               <div className="modal-body">
-                <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
-                  Vous avez déja généré un planning ? Cliquez-ici </a>
-                <div className="columns">
-                  <div className="column is-12">
-                    {this.renderPage()}
+                <article className="message is-info">
+                  <div className="message-body">
+                    <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
+                      Vous avez déja généré un planning ? Cliquez-ici </a>
                   </div>
+                </article>
+                <div className="columns">
+                  {this.renderPage()}
                 </div>
                 <div className="columns">
                   <div className="column is-12">
@@ -180,7 +184,7 @@ export default class Blender extends React.Component {
                           />
                           : ''}
                       </div>
-                      <div className="column is-3 is-offset-7" >
+                      <div className="column is-3 is-offset-6" >
                         {this.state.currentPage < 4
                           ? <input
                             className="btn-suivant"

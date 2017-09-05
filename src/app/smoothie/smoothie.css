@@ -20,23 +20,31 @@
 }
 
 .itemsSmoothie{
-  margin: 0% 30% 30%;
   padding: 0% 2%;
   background-color: rgba(255, 255, 242, 0.7);
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .outils {
   position: fixed;
   top: 500px;
-  right: 0px;
-  width: 70px;
+  right: 0;
   background-color: rgba(255, 255, 242, 0.7);
   padding: 20px;
   text-align: center;
 }
 
-.outils > a {
+.outils > div >  a > i {
   color: black;
-  font-weight: bold;
+  font-size: 1.9em;
+}
+
+.outils > div >  a > i:hover {
+  color: #E6421C;
+}
+
+
+.outils > div  {
+  margin: 5%;
 }

@@ -40,33 +40,23 @@ ShallowWrapper {
                 tabIndex="0"
             >
                 <i
-                    className="fa fa-save"
-                />
-            </a>
-            <a
-                aria-pressed="true"
-                onClick={[Function]}
-                role="button"
-                tabIndex="0"
-            >
-                <i
                     className="fa fa-info"
                 />
             </a>
         </div>
     </div>
     <div
-        className="columns itemsSmoothie"
+        className="columns"
     >
         <div
-            className="column"
+            className="column is-6 is-offset-1 itemsSmoothie"
         >
             <div
                 className="header-date"
             >
-                <h2>
+                <h1>
                     Jour 1
-                </h2>
+                </h1>
                 <h3>
                     Jeudi 26 octobre
                 </h3>
@@ -75,12 +65,15 @@ ShallowWrapper {
                 day={Object {}}
             />
         </div>
+        <div
+            className="column is-one-quarter"
+        />
     </div>
     <div
-        className="columns itemsSmoothie"
+        className="columns"
     >
         <div
-            className="column"
+            className="column is-6 is-offset-1 itemsSmoothie"
         >
             <div
                 className="header-date"
@@ -96,10 +89,10 @@ ShallowWrapper {
                 day={Object {}}
             />
         </div>
+        <div
+            className="column is-one-quarter"
+        />
     </div>
-    <div
-        className="column is-one-quarter"
-    />
 </div>,
   "nodes": Array [
     <div
@@ -134,33 +127,23 @@ ShallowWrapper {
                         tabIndex="0"
                   >
                         <i
-                              className="fa fa-save"
-                        />
-                  </a>
-                  <a
-                        aria-pressed="true"
-                        onClick={[Function]}
-                        role="button"
-                        tabIndex="0"
-                  >
-                        <i
                               className="fa fa-info"
                         />
                   </a>
             </div>
       </div>
       <div
-            className="columns itemsSmoothie"
+            className="columns"
       >
             <div
-                  className="column"
+                  className="column is-6 is-offset-1 itemsSmoothie"
             >
                   <div
                         className="header-date"
                   >
-                        <h2>
+                        <h1>
                               Jour 1
-                        </h2>
+                        </h1>
                         <h3>
                               Jeudi 26 octobre
                         </h3>
@@ -169,12 +152,15 @@ ShallowWrapper {
                         day={Object {}}
                   />
             </div>
+            <div
+                  className="column is-one-quarter"
+            />
       </div>
       <div
-            className="columns itemsSmoothie"
+            className="columns"
       >
             <div
-                  className="column"
+                  className="column is-6 is-offset-1 itemsSmoothie"
             >
                   <div
                         className="header-date"
@@ -190,10 +176,10 @@ ShallowWrapper {
                         day={Object {}}
                   />
             </div>
+            <div
+                  className="column is-one-quarter"
+            />
       </div>
-      <div
-            className="column is-one-quarter"
-      />
 </div>,
   ],
   "options": Object {},
@@ -273,33 +259,23 @@ ShallowWrapper {
                                         tabIndex="0"
                               >
                                         <i
-                                                  className="fa fa-save"
-                                        />
-                              </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        <i
                                                   className="fa fa-info"
                                         />
                               </a>
                     </div>
           </div>
           <div
-                    className="columns itemsSmoothie"
+                    className="columns"
           >
                     <div
-                              className="column"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
                               >
-                                        <h2>
+                                        <h1>
                                                   Jour 1
-                                        </h2>
+                                        </h1>
                                         <h3>
                                                   Jeudi 26 octobre
                                         </h3>
@@ -308,12 +284,15 @@ ShallowWrapper {
                                         day={Object {}}
                               />
                     </div>
+                    <div
+                              className="column is-one-quarter"
+                    />
           </div>
           <div
-                    className="columns itemsSmoothie"
+                    className="columns"
           >
                     <div
-                              className="column"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -329,10 +308,10 @@ ShallowWrapper {
                                         day={Object {}}
                               />
                     </div>
+                    <div
+                              className="column is-one-quarter"
+                    />
           </div>
-          <div
-                    className="column is-one-quarter"
-          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -367,33 +346,23 @@ ShallowWrapper {
                                         tabIndex="0"
                               >
                                         <i
-                                                  className="fa fa-save"
-                                        />
-                              </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        <i
                                                   className="fa fa-info"
                                         />
                               </a>
                     </div>
           </div>
           <div
-                    className="columns itemsSmoothie"
+                    className="columns"
           >
                     <div
-                              className="column"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
                               >
-                                        <h2>
+                                        <h1>
                                                   Jour 1
-                                        </h2>
+                                        </h1>
                                         <h3>
                                                   Jeudi 26 octobre
                                         </h3>
@@ -402,12 +371,15 @@ ShallowWrapper {
                                         day={Object {}}
                               />
                     </div>
+                    <div
+                              className="column is-one-quarter"
+                    />
           </div>
           <div
-                    className="columns itemsSmoothie"
+                    className="columns"
           >
                     <div
-                              className="column"
+                              className="column is-6 is-offset-1 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -423,10 +395,10 @@ ShallowWrapper {
                                         day={Object {}}
                               />
                     </div>
+                    <div
+                              className="column is-one-quarter"
+                    />
           </div>
-          <div
-                    className="column is-one-quarter"
-          />
 </div>,
       },
       "_renderedNodeType": 0,
