@@ -79,7 +79,7 @@ export default class Blender extends React.Component {
             {_.map(this.state.tags, (item) => {
               if (
                 this.state.filterKeywords === '' ||
-                  item.libelle.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+                  item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
               ) {
                 return <CheckboxKeyword item={item} key={item} />;
               }
