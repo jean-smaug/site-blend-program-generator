@@ -94,8 +94,7 @@ CONTAINER FORM
 
 .blockDomain{
   background-color: grey;
-  background-size: 100%;
-  width: 100%;
+  background-size: cover;
   height: 300px;
   color: white;
   cursor: pointer;
