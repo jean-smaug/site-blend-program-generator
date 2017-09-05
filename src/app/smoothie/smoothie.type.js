@@ -23,8 +23,20 @@ export type Conference = {
 export type Conferences = Array<Conference> | [];
 
 export type Day = {
-  eight: Array<Conference> | [],
-  ten: Array<Conference> | [],
-  fourteen: Array<Conference> | [],
-  sixteen: Array<Conference> | [],
+  eight: {
+    selected: Array<Conference> | [],
+    remaining: Array<Conference> | [],
+  },
+  ten: {
+    selected: Array<Conference> | [],
+    remaining: Array<Conference> | [],
+  },
+  fourteen: {
+    selected: Array<Conference> | [],
+    remaining: Array<Conference> | [],
+  },
+  sixteen: {
+    selected: Array<Conference> | [],
+    remaining: Array<Conference> | [],
+  },
 };
