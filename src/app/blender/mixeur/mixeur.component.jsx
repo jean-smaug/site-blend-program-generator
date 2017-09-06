@@ -22,6 +22,7 @@ export class MixeurComponent extends Component {
     if (this.props.form.informations.isValidEmail) {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
+      console.log(filterConferences(conferences, form.domains, form.keywords));
       const orderedConferences = orderConferences(
         filterConferences(conferences, form.domains, form.keywords),
       );

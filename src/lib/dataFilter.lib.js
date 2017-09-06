@@ -40,9 +40,12 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
     ),
   );
 
-export const filterConferences = (conferences, domains, tags) => {
+export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
+  console.log(conferences);
+  console.log(domains);
+  console.log(tags);
   return _.union(domainConferences, tagsConferences);
 };
 
