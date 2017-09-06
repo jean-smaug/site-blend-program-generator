@@ -4,7 +4,7 @@
 //   filterByLevelAndDomain,
 //   orderConfences,
 // } from './dataFilter.lib';
-import { getTags, orderConferencesV2 } from './dataFilter.lib';
+import { getTags, orderConferencesV2, filterByTags } from './dataFilter.lib';
 
 import conferencesTag from './__fixtures__/conference--tags.json';
 import conferencesTime1 from './__fixtures__/conference--time-1.json';
@@ -13,6 +13,11 @@ import conferencesTime2 from './__fixtures__/conference--time-2.json';
 describe('database.lib', () => {
   it('should get tags', async () => {
     expect((await getTags(conferencesTag)).length).toBe(8);
+  });
+
+  it('should filter conferences by tag', () => {
+    expect(filterByTags(conferencesTag, ['blog']).length).toBe(2);
+    expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
   });
 
   it('should order conferences', () => {

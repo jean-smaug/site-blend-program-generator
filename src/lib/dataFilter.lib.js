@@ -16,6 +16,13 @@ export const filterByDomain = (conferences: Conferences, domain: string) =>
 export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
+export const filterByTags = (conferences: Conferences, tags) =>
+  _.filter(conferences, (conference) => {
+    const areTagsMatched = _.every(tags, tag => _.includes(conference.tags, tag));
+    if (areTagsMatched) {
+      return conference;
+    }
+  });
 /**
  * Filter conferences by level and by domain
  */
@@ -141,7 +148,6 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
 
-    console.log('issou', day.selected);
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
     } else {
