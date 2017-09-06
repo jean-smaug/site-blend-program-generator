@@ -40,6 +40,12 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
     ),
   );
 
+export const filterConferences = (conferences, domains, tags) => {
+  const domainConferences = filterByLevelAndDomain(conferences, domains);
+  const tagsConferences = filterByTags(conferences, tags);
+  return _.union(domainConferences, tagsConferences);
+};
+
 /**
  * Return conferences reordered by days and by time
  * @param {Array} data
