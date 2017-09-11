@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import { filterConferences, orderConferences, filterByTags } from '../../../lib/dataFilter.lib';
+import _ from 'lodash';
+import { filterConferences, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
@@ -23,18 +24,16 @@ export class MixeurComponent extends Component {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
       const orderedConferences = orderConferences(
-        filterConferences(conferences, form.domains, form.keywords),
+        filterConferences(_.shuffle(conferences), form.domains, form.keywords),
       );
-      console.log('tags', filterByTags(conferences, form.keywords));
-      console.log('tags', conferences, form.keywords);
 
-      // setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
-      // if (isStore('isAlreadyShow')) remove('isAlreadyShow');
-      // addConference(orderedConferences);
-      // setConferencesStore({
-      //   dayOne: orderedConferences.dayOne,
-      //   dayTwo: orderedConferences.dayTwo,
-      // });
+      setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
+      if (isStore('isAlreadyShow')) remove('isAlreadyShow');
+      addConference(orderedConferences);
+      setConferencesStore({
+        dayOne: orderedConferences.dayOne,
+        dayTwo: orderedConferences.dayTwo,
+      });
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",
