@@ -19,6 +19,7 @@ describe('database.lib', () => {
   it('should filter conferences by tag', () => {
     expect(filterByTags(conferencesTag, ['blog']).length).toBe(2);
     expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
+    expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
   });
 
   it('should filter conferences', () => {
@@ -75,16 +76,16 @@ describe('database.lib', () => {
   });
 });
 
-it('should filter conferences by domain', () => {
-  //   expect(filterByDomain(data, 'tech').length).toBe(19);
-  //   expect(filterByDomain(data, 'blend').length).toBe(24);
-  // });
+// it('should filter conferences by domain', () => {
+//   expect(filterByDomain(data, 'tech').length).toBe(19);
+//   expect(filterByDomain(data, 'blend').length).toBe(24);
+// });
 
-  // it('should filter conferences by level', () => {
-  //   expect(filterByLevel(data, 'confirmed').length).toBe(56);
-  //   expect(filterByLevel(data, 'noob').length).toBe(44);
-  expect(1).toBe(1);
-});
+// it('should filter conferences by level', () => {
+//   expect(filterByLevel(data, 'confirmed').length).toBe(56);
+//   expect(filterByLevel(data, 'noob').length).toBe(44);
+// expect(1).toBe(1);
+// });
 
 // it('should filter conferences by domain and level', () => {
 //   const filters = [

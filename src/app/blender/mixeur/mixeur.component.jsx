@@ -26,14 +26,15 @@ export class MixeurComponent extends Component {
       const orderedConferences = orderConferences(
         filterConferences(conferences, form.domains, form.keywords),
       );
+      console.log('fp', orderedConferences);
 
-      setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
-      if (isStore('isAlreadyShow')) remove('isAlreadyShow');
-      addConference(orderedConferences);
-      setConferencesStore({
-        dayOne: orderedConferences.dayOne,
-        dayTwo: orderedConferences.dayTwo,
-      });
+      // setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
+      // if (isStore('isAlreadyShow')) remove('isAlreadyShow');
+      // addConference(orderedConferences);
+      // setConferencesStore({
+      //   dayOne: orderedConferences.dayOne,
+      //   dayTwo: orderedConferences.dayTwo,
+      // });
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",

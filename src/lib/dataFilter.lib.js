@@ -1,7 +1,7 @@
 // @flow
 
 import _ from 'lodash';
-import { Conference, Conferences } from '../app/smoothie/smoothie.type';
+import type { Conference, Conferences, Filters } from '../types';
 import { convertToMinutes, convertHourToString } from './time.lib';
 
 /**
@@ -17,16 +17,11 @@ export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
 export const filterByTags = (conferences: Conferences, tags) =>
-  _.filter(conferences, (conference) => {
-    const areTagsMatched = _.every(tags, tag => _.includes(conference.tags, tag));
-    if (areTagsMatched) {
-      return conference;
-    }
-  });
+  _.filter(conferences, conference => _.every(tags, tag => _.includes(conference.tags, tag)));
+
 /**
  * Filter conferences by level and by domain
  */
-type Filters = [{ domain: string, level: string }];
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
   _.filter(conferences, conference =>
     _.includes(
@@ -43,9 +38,9 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
-  console.log(conferences);
-  console.log(domains);
-  console.log(tags);
+  // console.log(domainConferences, 'domainConferences');
+  // console.log(tagsConferences, 'tagsConf');
+  // console.log(tags);
   return _.union(domainConferences, tagsConferences);
 };
 
