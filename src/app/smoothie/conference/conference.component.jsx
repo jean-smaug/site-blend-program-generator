@@ -10,13 +10,13 @@ import './conference.css';
 
 export class ConferenceComponent extends Component {
   state = {
-    currentConferenceId: !_.isEmpty(this.props.conferences) ? this.props.conferences[0].id : 0,
+    currentConferences: [],
     isModalVisible: false,
     isSwitcherOpened: false,
   };
 
   state: {
-    currentConferenceId: number,
+    currentConferenceId: Conferences,
     isModalVisible: boolean,
     isSwitcherOpened: boolean,
   };
@@ -49,26 +49,25 @@ export class ConferenceComponent extends Component {
     const { timeBegin, timeEnd, conferences } = this.props;
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
-        {this.state.isModalVisible && !_.isEmpty(conferences)
-          ? <Modal
+        {this.state.isModalVisible && !_.isEmpty(conferences) ? (
+          <Modal
             closeModal={this.toggleModal}
             conference={_.find(conferences, { id: this.state.currentConferenceId })}
           />
-          : null}
+        ) : null}
         <div className="columns">
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                {conferences.length > 1
-                  ? <i
+                {conferences.length > 1 ? (
+                  <i
                     className="fa fa-arrows-h circle"
                     role="presentation"
-                    onClick={e =>
-                      this.openSwitcher(e, this.state.currentConferenceId, conferences)}
+                    onClick={e => this.openSwitcher(e, this.state.currentConferenceId, conferences)}
                   />
-                  : null}
+                ) : null}
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null}
+                {/* {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null} */}
               </div>
               <div role="button" className="conference-title">
                 {conferences[0] !== undefined ? conferences[0].title : 'Temps libre'}
