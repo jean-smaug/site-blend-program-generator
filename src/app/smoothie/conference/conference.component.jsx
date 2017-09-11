@@ -47,6 +47,7 @@ export class ConferenceComponent extends Component {
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
+
     return (
       <div onClick={() => this.toggleModal()} role="presentation">
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
@@ -59,7 +60,7 @@ export class ConferenceComponent extends Component {
           <div className="column">
             <div className="conference">
               <div className="conference-opt">
-                {conferences.length > 1 ? (
+                {conferences.remaining.length > 1 ? (
                   <i
                     className="fa fa-arrows-h circle"
                     role="presentation"
@@ -70,7 +71,17 @@ export class ConferenceComponent extends Component {
                 {/* {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null} */}
               </div>
               <div role="button" className="conference-title">
-                {conferences[0] !== undefined ? conferences[0].title : 'Temps libre'}
+                {conferences.selected.length !== 0 ? (
+                  _.map(conferences.selected, ({ title }) => (
+                    <div>
+                      {title}
+                      <br />
+                      <br />
+                    </div>
+                  ))
+                ) : (
+                  'Temps libre'
+                )}
               </div>
             </div>
           </div>
