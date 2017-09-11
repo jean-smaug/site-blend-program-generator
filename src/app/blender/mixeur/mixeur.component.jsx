@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import { filterByLevelAndDomain, orderConferences } from '../../../lib/dataFilter.lib';
+import _ from 'lodash';
+import { filterConferences, orderConferences } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
@@ -23,7 +24,7 @@ export class MixeurComponent extends Component {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
       const orderedConferences = orderConferences(
-        filterByLevelAndDomain(conferences, form.domains),
+        filterConferences(_.shuffle(conferences), form.domains, form.keywords),
       );
 
       setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));

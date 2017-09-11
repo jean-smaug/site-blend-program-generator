@@ -1,7 +1,7 @@
 // @flow
 
 import _ from 'lodash';
-import { Conference, Conferences } from '../app/smoothie/smoothie.type';
+import type { Conference, Conferences, Filters } from '../types';
 import { convertToMinutes, convertHourToString } from './time.lib';
 
 /**
@@ -16,10 +16,20 @@ export const filterByDomain = (conferences: Conferences, domain: string) =>
 export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
+export const filterByTags = (conferences: Conferences, tags) =>
+  _.filter(conferences, (conference) => {
+    let includeTag = false;
+    _.forEach(conference.tags, (tag) => {
+      if (_.includes(tags, tag)) {
+        includeTag = true;
+      }
+    });
+    return includeTag;
+  });
+
 /**
  * Filter conferences by level and by domain
  */
-type Filters = [{ domain: string, level: string }];
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
   _.filter(conferences, conference =>
     _.includes(
@@ -32,6 +42,15 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
       true,
     ),
   );
+
+export const filterConferences = (conferences: Conferences, domains, tags) => {
+  const domainConferences = filterByLevelAndDomain(conferences, domains);
+  const tagsConferences = filterByTags(conferences, tags);
+  // console.log(domainConferences, 'domainConferences');
+  // console.log(tagsConferences, 'tagsConf');
+  // console.log(tags);
+  return _.union(domainConferences, tagsConferences);
+};
 
 /**
  * Return conferences reordered by days and by time
@@ -141,7 +160,6 @@ export const orderConferencesV2 = (conferences: Conferences) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
 
-    console.log('issou', day.selected);
     if (isConferenceSlotFree(day.selected, item)) {
       day.selected.push(item);
     } else {
