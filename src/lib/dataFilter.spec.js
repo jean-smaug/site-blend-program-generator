@@ -19,7 +19,7 @@ describe('database.lib', () => {
   it('should filter conferences by tag', () => {
     expect(filterByTags(conferencesTag, ['blog']).length).toBe(2);
     expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
-    expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
+    expect(filterByTags(conferencesTag, ['blog', 'ux', 'react']).length).toBe(4);
   });
 
   it('should filter conferences', () => {

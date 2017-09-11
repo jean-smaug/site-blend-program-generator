@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import { filterConferences, orderConferences } from '../../../lib/dataFilter.lib';
+import { filterConferences, orderConferences, filterByTags } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
@@ -22,11 +22,11 @@ export class MixeurComponent extends Component {
     if (this.props.form.informations.isValidEmail) {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
-      console.log(filterConferences(conferences, form.domains, form.keywords));
       const orderedConferences = orderConferences(
         filterConferences(conferences, form.domains, form.keywords),
       );
-      console.log('fp', orderedConferences);
+      console.log('tags', filterByTags(conferences, form.keywords));
+      console.log('tags', conferences, form.keywords);
 
       // setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
       // if (isStore('isAlreadyShow')) remove('isAlreadyShow');
