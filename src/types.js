@@ -44,3 +44,5 @@ export type Day = {
     remaining: Conferences,
   },
 };
+
+export type Tags = Array<String>;

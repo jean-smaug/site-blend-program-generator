@@ -17,7 +17,15 @@ export const filterByLevel = (conferences: Conferences, level: string) =>
   _.filter(conferences, conference => conference.level === level);
 
 export const filterByTags = (conferences: Conferences, tags) =>
-  _.filter(conferences, conference => _.every(tags, tag => _.includes(conference.tags, tag)));
+  _.filter(conferences, (conference) => {
+    let includeTag = false;
+    _.forEach(conference.tags, (tag) => {
+      if (_.includes(tags, tag)) {
+        includeTag = true;
+      }
+    });
+    return includeTag;
+  });
 
 /**
  * Filter conferences by level and by domain
