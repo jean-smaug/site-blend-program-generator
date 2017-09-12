@@ -41,7 +41,6 @@ export default class Blender extends React.Component {
   toggleModal = () => {
     this.setState({
       isModalVisible: !this.state.isModalVisible,
-      tags: [],
     });
   };
 
