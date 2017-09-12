@@ -4,7 +4,13 @@
 //   filterByLevelAndDomain,
 //   orderConfences,
 // } from './dataFilter.lib';
-import { getTags, orderConferencesV2, filterByTags, filterConferences } from './dataFilter.lib';
+import {
+  getTags,
+  orderConferencesV2,
+  filterByTags,
+  filterConferences,
+  filterByLevelAndDomain,
+} from './dataFilter.lib';
 
 import conferences from './__fixtures__/conferences.json';
 import conferencesTag from './__fixtures__/conference--tags.json';
@@ -17,7 +23,6 @@ describe('database.lib', () => {
   });
 
   it('should filter conferences by tag', () => {
-    console.log(filterByTags(conferencesTag, ['blog']));
     expect(filterByTags(conferencesTag, ['blog']).length).toBe(2);
     expect(filterByTags(conferencesTag, ['blog'])).toEqual([conferencesTag[2], conferencesTag[3]]);
     expect(filterByTags(conferencesTag, ['blog', 'ux', 'react']).length).toBe(4);
@@ -77,6 +82,30 @@ describe('database.lib', () => {
   });
 });
 
+it('should filter conferences by domain and level', () => {
+  expect(
+    filterByLevelAndDomain(conferences, [
+      {
+        domain: 'tech',
+        level: 'beginner',
+      },
+    ]).length,
+  ).toBe(2);
+
+  expect(
+    filterByLevelAndDomain(conferences, [
+      {
+        domain: 'tech',
+        level: 'beginner',
+      },
+      {
+        domain: 'design',
+        level: 'beginner',
+      },
+    ]).length,
+  ).toBe(3);
+});
+
 // it('should filter conferences by domain', () => {
 //   expect(filterByDomain(data, 'tech').length).toBe(19);
 //   expect(filterByDomain(data, 'blend').length).toBe(24);
@@ -86,34 +115,6 @@ describe('database.lib', () => {
 //   expect(filterByLevel(data, 'confirmed').length).toBe(56);
 //   expect(filterByLevel(data, 'noob').length).toBe(44);
 // expect(1).toBe(1);
-// });
-
-// it('should filter conferences by domain and level', () => {
-//   const filters = [
-//     {
-//       level: 'noob',
-//       domain: 'tech',
-//     },
-//     {
-//       level: 'confirmed',
-//       domain: 'tech',
-//     },
-//   ];
-//   const filters2 = [
-//     {
-//       level: 'noob',
-//       domain: 'tech',
-//     },
-//     {
-//       level: 'noob',
-//       domain: 'design',
-//     },
-//   ];
-
-//   expect(filterByLevelAndDomain(data, filters).length).toBe(
-//     filterByDomain(data, 'tech').length,
-//   );
-//   expect(filterByLevelAndDomain(data, filters2).length).toBe(19);
 // });
 
 // it('should reorder conferences', () => {

@@ -5,6 +5,7 @@
     "domain": "tech",
     "duration": 15,
     "room": "Amphi X",
+    "level": "beginner",
     "speaker": {
       "linkedin": "linkedin.com/fe156vse1",
       "name": "Maxime Blanc",
