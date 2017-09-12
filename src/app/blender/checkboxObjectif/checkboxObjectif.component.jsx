@@ -11,9 +11,6 @@ import * as formActions from '../blender.action';
 export class CheckboxObjectifComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      color: _.sample(['blue', 'orange', 'red', 'green']),
-    };
   }
 
   isChecked = () => {
@@ -39,7 +36,7 @@ export class CheckboxObjectifComponent extends Component {
       <div>
         <li
           onClick={this.toogleChecked}
-          className={this.isChecked() ? `is-${this.state.color}` : ''}
+          className={this.isChecked() ? `is-${this.props.item.color}` : ''}
           role="presentation"
         >
           {this.props.item.libelle}
@@ -57,6 +54,7 @@ CheckboxObjectifComponent.propTypes = {
   item: PropType.shape({
     id: PropType.number.isRequired,
     libelle: PropType.string.isRequired,
+    oolor: PropType.string.isRequired,
   }).isRequired,
   objectifs: PropType.arrayOf({
     id: PropType.number.isRequired,

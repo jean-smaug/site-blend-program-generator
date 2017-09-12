@@ -1,16 +1,18 @@
 [
   {
     "id" : "reseau",
-    "libelle" : "Reseauter"
+    "libelle" : "Reseauter",
+    "color" : "blue"
   },
   {
     "id" : "culture",
-    "libelle" : "Me cultiver"
+    "libelle" : "Me cultiver",
+    "color" : "green"
+
   },
   {
     "id" : "learn",
-    "libelle" : "Apprendre"
+    "libelle" : "Apprendre",
+    "color" : "orange"
   }
-
-
 ]
