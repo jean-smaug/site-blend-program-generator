@@ -12,12 +12,14 @@ export class ConferenceComponent extends Component {
   state = {
     currentConferences: [],
     isModalVisible: false,
+    showMoreConferenceId: null,
     isSwitcherOpened: false,
   };
 
   state: {
     currentConferenceId: Conferences,
     isModalVisible: boolean,
+    showMoreConferenceId: number,
     isSwitcherOpened: boolean,
   };
 
@@ -34,9 +36,10 @@ export class ConferenceComponent extends Component {
     conferences: Conferences,
   };
 
-  toggleModal = () => {
+  toggleModal = (key) => {
     this.setState({
       isModalVisible: !this.state.isModalVisible,
+      showMoreConferenceId: key,
     });
   };
 
@@ -47,13 +50,13 @@ export class ConferenceComponent extends Component {
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
-
+    console.log(conferences[this.state.showMoreConferenceId], '####');
     return (
-      <div onClick={() => this.toggleModal()} role="presentation">
+      <div>
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
           <Modal
             closeModal={this.toggleModal}
-            conference={_.find(conferences, { id: this.state.currentConferenceId })}
+            conference={conferences.selected[this.state.showMoreConferenceId]}
           />
         ) : null}
         <div className="columns">
@@ -72,8 +75,8 @@ export class ConferenceComponent extends Component {
               </div>
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
-                  _.map(conferences.selected, ({ title }) => (
-                    <div>
+                  _.map(conferences.selected, ({ title }, key) => (
+                    <div onClick={() => this.toggleModal(key)} role="presentation">
                       {title}
                       <br />
                       <br />
