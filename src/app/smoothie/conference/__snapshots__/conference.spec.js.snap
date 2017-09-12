@@ -27,7 +27,9 @@ Array [
                 <div
                     className="conference-title"
                     role="button"
-                />
+                >
+                    Temps libre
+                </div>
             </div>
         </div>
     </div>
