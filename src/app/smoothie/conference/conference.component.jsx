@@ -40,9 +40,9 @@ export class ConferenceComponent extends Component {
     });
   };
 
-  openSwitcher = (e: Event, currentConferenceId: number, conferences: Conferences) => {
+  openSwitcher = (e: Event) => {
     e.stopPropagation();
-    this.props.openSwitcher(currentConferenceId, conferences);
+    this.props.openSwitcher(this.state.conferences.remaining);
   };
 
   render() {
@@ -92,8 +92,7 @@ export class ConferenceComponent extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  openSwitcher: (currentConferenceId, conferences) =>
-    dispatch(openSwitcherAction(currentConferenceId, conferences)),
+  openSwitcher: remainingConferences => dispatch(openSwitcherAction(remainingConferences)),
 });
 
 export default connect(null, mapDispatchToProps)(ConferenceComponent);
