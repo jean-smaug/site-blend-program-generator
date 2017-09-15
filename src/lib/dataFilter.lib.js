@@ -30,19 +30,21 @@ export const filterByTags = (conferences: Conferences, tags) =>
 /**
  * Filter conferences by level and by domain
  */
-export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
-  _.filter(conferences, conference =>
-    _.includes(
-      _.map(filters, (filter) => {
-        if (filter.domain === conference.domain && filter.level === conference.level) {
-          return true;
-        }
-        return false;
-      }),
-      true,
-    ),
-  );
-
+export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) => {
+  console.log(filters);
+  _.filter(conferences, (conference) => {
+    let keepConference = false;
+    _.map(filters, (filter) => {
+      if (
+        (conference.domain === filter.domain || conference.domain === 'société') &&
+        filter.level === conference.level
+      ) {
+        keepConference = true;
+      }
+    });
+    return keepConference;
+  });
+};
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);

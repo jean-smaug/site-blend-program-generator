@@ -1,9 +1,3 @@
-// import {
-//   filterByDomain,
-//   filterByLevel,
-//   filterByLevelAndDomain,
-//   orderConfences,
-// } from './dataFilter.lib';
 import {
   getTags,
   orderConferencesV2,
