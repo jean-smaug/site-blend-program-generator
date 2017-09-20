@@ -13,9 +13,17 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
     <div className="header">
       <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
     </div>
+
     <div className="columns">
       <div className="column  is-12">
-        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ? <FormContainer /> : null}
+        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
+          <div>
+            <div className="column is-4 is-offset-4">
+              <img src="https://img11.hostingpics.net/pics/699212header.png" alt="header"/>
+            </div>
+            <FormContainer />
+          </div>
+          : null}
       </div>
     </div>
     <div className="columns">

@@ -62,9 +62,9 @@ export default class Blender extends React.Component {
       case 2:
       return (
         <div className="column is-12">
-          <h1 className="category-title">Vos sujets favoris</h1>
+          <h1 className="category-title">Les thématiques</h1>
           <h2 className="category-desc">
-            Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
+            Quels sont les domaines qui vous intéressent ? A quel niveau les abordez-vous?
           </h2>
           <hr />
           <div className="columns">
@@ -79,9 +79,9 @@ export default class Blender extends React.Component {
       case 3:
         return (
           <div className="column is-12">
-            <h1 className="category-title">Les thématiques</h1>
+            <h1 className="category-title">Les sujets</h1>
             <h2 className="category-desc">
-                Cochez les mots clefs qui correspondent à votre profil de chef... :)
+                Sélectionnez les mots-clefs qui vous intéressent.
             </h2>
             <hr />
             <div className="control">
@@ -119,12 +119,17 @@ export default class Blender extends React.Component {
         return (
           <div className="column is-12">
             <div className="columns">
-              <div className="column is-8">
-                <h1 className="category-title">Vos informations (facultatif)</h1>
-                <InformationsInput />
-              </div>
-              <div className="column is-4">
-                <Mixeur />
+              <div className="column is-10 is-offset-1">
+                <h1 className="category-title">Vos informations</h1>
+                <h2 className="category-desc">
+                  Ces informations sont facultatives, elles nous permettront l'année prochaine
+                  de vous envoyer des informations plus adaptées à vos centres d'intérêt.
+                </h2>
+                <div className="columns">
+                  <div className="column is-8 is-offset-2">
+                    <InformationsInput />
+                  </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -218,7 +223,7 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-3 is-offset-6" >
-                        {this.state.currentPage < 4 && this.state.currentPage > 1
+                        {this.state.currentPage !== 4 && this.state.currentPage !== 1
                           ? <input
                             className="btn-suivant"
                             type="button"
@@ -226,6 +231,7 @@ export default class Blender extends React.Component {
                             value="Suivant >"
                           />
                           : ''}
+                        {this.state.currentPage ===4 ? <Mixeur />: ''}
                       </div>
                     </div>
                   </div>

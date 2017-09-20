@@ -19,9 +19,7 @@ CONTAINER FORM
   font-family: 'Montserrat', sans-serif;
 }
 
-.modal-wrap {
-  margin-top: 50px;
-}
+
 
 .modal-header {
   height: 45px;
@@ -105,6 +103,8 @@ CONTAINER FORM
 
 .category-desc {
   margin-bottom: 2%;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .blockDomain{
@@ -155,7 +155,7 @@ CONTAINER FORM
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
-  background: #FF6F00;
+  background: #E5421C;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -168,7 +168,7 @@ CONTAINER FORM
 .btn-suivant:hover,
 .btn-precedent:hover,
 .btn-begin:hover {
-  background: #e66400;
+  background: #e51d13;
 }
 
 .btn-begin{
