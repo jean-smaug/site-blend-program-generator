@@ -124,8 +124,8 @@ export default class Blender extends React.Component {
               <div className="column is-10 is-offset-1">
                 <h1 className="category-title">Vos informations</h1>
                 <h2 className="category-desc">
-                  Ces informations sont facultatives, elles nous permettront l'année prochaine
-                  de vous envoyer des informations plus adaptées à vos centres d'intérêt.
+                  {`Ces informations sont facultatives, elles nous permettront l'année prochaine
+                    de vous envoyer des informations plus adaptées à vos centres d'intérêt.`}
                 </h2>
                 <div className="columns">
                   <div className="column is-8 is-offset-2">
@@ -163,7 +163,7 @@ export default class Blender extends React.Component {
             </div>
           </div>
         );
-    };
+    }
   };
 
   render() {
