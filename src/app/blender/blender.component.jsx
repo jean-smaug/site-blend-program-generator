@@ -195,10 +195,10 @@ export default class Blender extends React.Component {
         <div className="columns">
           <div className="modal-wrap column is-8 is-offset-2">
             <div className="modal-header">
-              <span className={this.state.currentPage === 1 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 2 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 3 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 4 ? 'is-active' : null} />
+              <span role="presentation" className={this.state.currentPage === 1 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 1 })} />
+              <span role="presentation" className={this.state.currentPage === 2 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 2 })} />
+              <span role="presentation" className={this.state.currentPage === 3 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 3 })} />
+              <span role="presentation" className={this.state.currentPage === 4 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 4 })} />
             </div>
             <div className="modal-bodies">
               <div className="modal-body">

@@ -33,10 +33,11 @@ CONTAINER FORM
 .modal-header span {
   display: block;
   margin:5px;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .modal-header span.is-active {
   background: rgba(0, 0, 0, 0.4);
@@ -468,3 +469,5 @@ table {
   background-color: #E5421C;
   color: white !important;
 }
+
+
