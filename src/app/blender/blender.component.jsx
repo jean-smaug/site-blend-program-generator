@@ -60,6 +60,23 @@ export default class Blender extends React.Component {
   renderPage = () => {
     switch (this.state.currentPage) {
       case 2:
+      return (
+        <div className="column is-12">
+          <h1 className="category-title">Vos sujets favoris</h1>
+          <h2 className="category-desc">
+            Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
+          </h2>
+          <hr />
+          <div className="columns">
+            {_.map(domains, item =>
+              (<div className="column is-4">
+                <CheckboxDomain item={item} key={item.id} />
+              </div>),
+            )}
+          </div>
+        </div>
+      );
+      case 3:
         return (
           <div className="column is-12">
             <h1 className="category-title">Les thématiques</h1>
@@ -88,16 +105,16 @@ export default class Blender extends React.Component {
               .slice(0, 10)}
           </div>
         );
-      case 3:
-        return (
-          <div className="column is-12">
-            <h1 className="category-title">Les objectifs</h1>
-            <section className="todo">
-              <ul className="todo-list">
-                {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
-            </section>
-          </div>
-        );
+      // case 4:
+      //   return (
+      //     <div className="column is-12">
+      //       <h1 className="category-title">Les objectifs</h1>
+      //       <section className="todo">
+      //         <ul className="todo-list">
+      //           {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
+      //       </section>
+      //     </div>
+      //   );
       case 4:
         return (
           <div className="column is-12">
@@ -115,20 +132,29 @@ export default class Blender extends React.Component {
       default:
         return (
           <div className="column is-12">
-            <h1 className="category-title">Vos sujets favoris</h1>
-            <h2 className="category-desc">
-                Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
-            </h2>
-            <hr />
             <div className="columns">
-              {_.map(domains, item =>
-                (<div className="column is-4">
-                  <CheckboxDomain item={item} key={item.id} />
-                </div>),
-              )}
+              <div className="column is-6 is-offset-3 accueil" >
+              <h1>Laissez-nous vous concoctez un BlendWebMix sur mesure...</h1>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-8 is-offset-2 desc">
+                <p>Le blender est un compositeur de planning spécialement crafté pour vous sélectionner les conférences et
+                  les animations les plus suceptibles de correspondre à vos attentes.</p>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-4 is-offset-4" >
+                <input
+                  className="btn-begin"
+                  type="button"
+                  onClick={this.nextPage}
+                  value="Commencer >"
+                />
+              </div>
             </div>
           </div>
-        );
+        )
     }
   };
 
@@ -168,18 +194,18 @@ export default class Blender extends React.Component {
             </div>
             <div className="modal-bodies">
               <div className="modal-body">
-                <article className="message is-info">
+                {this.state.currentPage === 1 ? <article className="message is-info">
                   <div className="message-body">
                     <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
                       Vous avez déja généré un planning ? Cliquez-ici </a>
                   </div>
-                </article>
+                </article> : ''}
                 <div className="columns">
                   {this.renderPage()}
                 </div>
                 <div className="columns">
                   <div className="column is-12">
-                    <hr />
+                    {this.state.currentPage > 1? <hr /> : ''}
                     <div className="columns">
                       <div className="column is-3">
                         {this.state.currentPage > 1
@@ -192,7 +218,7 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-3 is-offset-6" >
-                        {this.state.currentPage < 4
+                        {this.state.currentPage < 4 && this.state.currentPage > 1
                           ? <input
                             className="btn-suivant"
                             type="button"
