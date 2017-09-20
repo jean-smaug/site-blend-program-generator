@@ -52,76 +52,39 @@ Array [
                         <div
                             className="column is-12"
                         >
-                            <h1
-                                className="category-title"
-                            >
-                                Vos sujets favoris
-                            </h1>
-                            <h2
-                                className="category-desc"
-                            >
-                                Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
-                            </h2>
-                            <hr />
                             <div
                                 className="columns"
                             >
                                 <div
-                                    className="column is-4"
+                                    className="column is-6 is-offset-3 accueil"
                                 >
-                                    <Connect(CheckboxDomainComponent)
-                                        item={
-                                            Object {
-                                                "id": "tech",
-                                                "libelle": "Tech",
-                                              }
-                                        }
-                                    />
+                                    <h1>
+                                        Laissez-nous vous concoctez un BlendWebMix sur mesure...
+                                    </h1>
                                 </div>
+                            </div>
+                            <div
+                                className="columns"
+                            >
                                 <div
-                                    className="column is-4"
+                                    className="column is-8 is-offset-2 desc"
                                 >
-                                    <Connect(CheckboxDomainComponent)
-                                        item={
-                                            Object {
-                                                "id": "market",
-                                                "libelle": "Webmarketing",
-                                              }
-                                        }
-                                    />
+                                    <p>
+                                        Le blender est un compositeur de planning spécialement crafté pour vous sélectionner les conférences et les animations les plus suceptibles de correspondre à vos attentes.
+                                    </p>
                                 </div>
+                            </div>
+                            <div
+                                className="columns"
+                            >
                                 <div
-                                    className="column is-4"
+                                    className="column is-4 is-offset-4"
                                 >
-                                    <Connect(CheckboxDomainComponent)
-                                        item={
-                                            Object {
-                                                "id": "design",
-                                                "libelle": "Design",
-                                              }
-                                        }
-                                    />
-                                </div>
-                                <div
-                                    className="column is-4"
-                                >
-                                    <Connect(CheckboxDomainComponent)
-                                        item={
-                                            Array [
-                                                Object {
-                                                  "id": "tech",
-                                                  "libelle": "Tech",
-                                                },
-                                                Object {
-                                                  "id": "market",
-                                                  "libelle": "Webmarketing",
-                                                },
-                                                Object {
-                                                  "id": "design",
-                                                  "libelle": "Design",
-                                                },
-                                              ]
-                                        }
+                                    <input
+                                        className="btn-begin"
+                                        onClick={[Function]}
+                                        type="button"
+                                        value="Commencer >"
                                     />
                                 </div>
                             </div>
@@ -133,7 +96,7 @@ Array [
                         <div
                             className="column is-12"
                         >
-                            <hr />
+                            
                             <div
                                 className="columns"
                             >
@@ -143,12 +106,8 @@ Array [
                                 <div
                                     className="column is-3 is-offset-6"
                                 >
-                                    <input
-                                        className="btn-suivant"
-                                        onClick={[Function]}
-                                        type="button"
-                                        value="Suivant >"
-                                    />
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

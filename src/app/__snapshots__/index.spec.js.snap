@@ -27,7 +27,17 @@ ShallowWrapper {
         <div
             className="column  is-12"
         >
-            <Blender />
+            <div>
+                <div
+                    className="column is-4 is-offset-4"
+                >
+                    <img
+                        alt="header"
+                        src="https://img11.hostingpics.net/pics/268136header.png"
+                    />
+                </div>
+                <Blender />
+            </div>
         </div>
     </div>
     <div
@@ -58,7 +68,17 @@ ShallowWrapper {
             <div
                   className="column  is-12"
             >
-                  <Blender />
+                  <div>
+                        <div
+                              className="column is-4 is-offset-4"
+                        >
+                              <img
+                                    alt="header"
+                                    src="https://img11.hostingpics.net/pics/268136header.png"
+                              />
+                        </div>
+                        <Blender />
+                  </div>
             </div>
       </div>
       <div
@@ -137,7 +157,17 @@ ShallowWrapper {
                     <div
                               className="column  is-12"
                     >
-                              <Blender />
+                              <div>
+                                        <div
+                                                  className="column is-4 is-offset-4"
+                                        >
+                                                  <img
+                                                            alt="header"
+                                                            src="https://img11.hostingpics.net/pics/268136header.png"
+                                                  />
+                                        </div>
+                                        <Blender />
+                              </div>
                     </div>
           </div>
           <div
@@ -168,7 +198,17 @@ ShallowWrapper {
                     <div
                               className="column  is-12"
                     >
-                              <Blender />
+                              <div>
+                                        <div
+                                                  className="column is-4 is-offset-4"
+                                        >
+                                                  <img
+                                                            alt="header"
+                                                            src="https://img11.hostingpics.net/pics/268136header.png"
+                                                  />
+                                        </div>
+                                        <Blender />
+                              </div>
                     </div>
           </div>
           <div

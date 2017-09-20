@@ -19,7 +19,7 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
         {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
           <div>
             <div className="column is-4 is-offset-4">
-              <img src="https://img11.hostingpics.net/pics/268136header.png" alt="header"/>
+              <img src="https://img11.hostingpics.net/pics/268136header.png" alt="header" />
             </div>
             <FormContainer />
           </div>

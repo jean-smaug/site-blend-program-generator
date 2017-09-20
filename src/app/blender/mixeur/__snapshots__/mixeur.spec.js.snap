@@ -20,10 +20,10 @@ Array [
         }
     />
     <input
-        className="mix-btn"
+        className="btn-begin"
         onClick={[Function]}
         type="button"
-        value="GO MIX"
+        value="Voir mon planning >"
     />
 </div>,
 ]

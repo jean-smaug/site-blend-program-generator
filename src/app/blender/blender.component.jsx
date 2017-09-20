@@ -3,10 +3,8 @@ import _ from 'lodash';
 
 import './blender.css';
 import * as domains from './data/domains.json';
-import * as objectifs from './data/objectives.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
 import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
-import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 import ModalRestore from './modalRestore/modalRestore.component';
@@ -148,8 +146,9 @@ export default class Blender extends React.Component {
             </div>
             <div className="columns">
               <div className="column is-8 is-offset-2 desc">
-                <p>Le blender est un compositeur de planning spécialement crafté pour vous sélectionner les conférences et
-                  les animations les plus suceptibles de correspondre à vos attentes.</p>
+                <p>Le blender est un compositeur de planning spécialement crafté pour vous
+                  sélectionner les conférences et les animations les plus suceptibles de
+                  correspondre à vos attentes.</p>
               </div>
             </div>
             <div className="columns">
@@ -163,8 +162,8 @@ export default class Blender extends React.Component {
               </div>
             </div>
           </div>
-        )
-    }
+        );
+    };
   };
 
   render() {
@@ -214,7 +213,7 @@ export default class Blender extends React.Component {
                 </div>
                 <div className="columns">
                   <div className="column is-12">
-                    {this.state.currentPage > 1? <hr /> : ''}
+                    {this.state.currentPage > 1 ? <hr /> : ''}
                     <div className="columns">
                       <div className="column is-3">
                         {this.state.currentPage > 1
@@ -227,15 +226,15 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-3 is-offset-6" >
-                        {this.state.currentPage !== 4 && this.state.currentPage !== 1
-                          ? <input
+                        {this.state.currentPage !== 4 && this.state.currentPage !== 1 ?
+                          <input
                             className="btn-suivant"
                             type="button"
                             onClick={this.nextPage}
                             value="Suivant >"
                           />
                           : ''}
-                        {this.state.currentPage ===4 ? <Mixeur />: ''}
+                        { this.state.currentPage === 4 ? <Mixeur /> : '' }
                       </div>
                     </div>
                   </div>
