@@ -60,49 +60,53 @@ export default class Blender extends React.Component {
   renderPage = () => {
     switch (this.state.currentPage) {
       case 2:
-      return (
-        <div className="column is-12">
-          <h1 className="category-title">Les thématiques</h1>
-          <h2 className="category-desc">
-            Quels sont les domaines qui vous intéressent ? A quel niveau les abordez-vous?
-          </h2>
-          <hr />
-          <div className="columns">
-            {_.map(domains, item =>
-              (<div className="column is-4">
-                <CheckboxDomain item={item} key={item.id} />
-              </div>),
-            )}
+        return (
+          <div className="column is-12">
+            <h1 className="category-title">Les thématiques</h1>
+            <h2 className="category-desc">
+              Quels sont les domaines qui vous intéressent ? A quel niveau les abordez-vous?
+            </h2>
+            <hr />
+            <div className="columns">
+              {_.map(domains, item =>
+                (<div className="column is-4">
+                  <CheckboxDomain item={item} key={item.id} />
+                </div>),
+              )}
+            </div>
           </div>
-        </div>
-      );
+        );
       case 3:
         return (
           <div className="column is-12">
             <h1 className="category-title">Les sujets</h1>
             <h2 className="category-desc">
-                Sélectionnez les mots-clefs qui vous intéressent.
+              Sélectionnez les mots-clefs qui vous intéressent.
             </h2>
             <hr />
-            <div className="control">
-              <input
-                className="input"
-                onChange={this.handleFilterKeyword}
-                type="text"
-                placeholder="Rechercher d'autres mots clefs..."
-              />
+            <div className="columns">
+              <div className="column is-6 is-offset-3">
+                <div className="control">
+                  <input
+                    className="input"
+                    onChange={this.handleFilterKeyword}
+                    type="text"
+                    placeholder="Rechercher d'autres mots clefs..."
+                  />
+                </div>
+                {_.map(this.state.tags, (item) => {
+                  if (
+                    this.state.filterKeywords === '' ||
+                    item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+                  ) {
+                    return <CheckboxKeyword item={item} key={item} />;
+                  }
+                  return null;
+                })
+                  .filter(item => item !== null)
+                  .slice(0, 10)}
+              </div>
             </div>
-            {_.map(this.state.tags, (item) => {
-              if (
-                this.state.filterKeywords === '' ||
-                  item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-              ) {
-                return <CheckboxKeyword item={item} key={item} />;
-              }
-              return null;
-            })
-              .filter(item => item !== null)
-              .slice(0, 10)}
           </div>
         );
       // case 4:
@@ -129,7 +133,7 @@ export default class Blender extends React.Component {
                   <div className="column is-8 is-offset-2">
                     <InformationsInput />
                   </div>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -139,7 +143,7 @@ export default class Blender extends React.Component {
           <div className="column is-12">
             <div className="columns">
               <div className="column is-6 is-offset-3 accueil" >
-              <h1>Laissez-nous vous concoctez un BlendWebMix sur mesure...</h1>
+                <h1>Laissez-nous vous concoctez un BlendWebMix sur mesure...</h1>
               </div>
             </div>
             <div className="columns">
