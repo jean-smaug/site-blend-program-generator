@@ -41,6 +41,7 @@
 .outils > div >  a > i {
   font-size: 2.5em;
   color: #E6421C;
+  animation: bigest 0.7s ease infinite;
 }
 
 .outils > div >  a > i:hover {
@@ -49,5 +50,12 @@
 
 
 .outils > div  {
-  margin: 3%;
+  margin: 1%;
+}
+
+
+@keyframes bigest{
+  from {font-size: 2.5em}
+  50%  {font-size: 2.7em}
+  to   {font-size: 2.5em;}
 }
