@@ -8,7 +8,7 @@ import { Conference } from '../smoothie.type';
 const ConferenceModal = ({
   conference,
   closeModal,
-  }: {
+}: {
   conference: Conference,
   closeModal: () => void,
 }) => {

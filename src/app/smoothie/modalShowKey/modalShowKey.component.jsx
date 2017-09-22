@@ -7,7 +7,7 @@ import { getKeyStore } from '../../../lib/localStorage.lib';
 
 const ModalShowKey = ({
   closeModal,
-  }: {
+}: {
   closeModal: () => void,
 }) => (
   <div className="modal is-active">
