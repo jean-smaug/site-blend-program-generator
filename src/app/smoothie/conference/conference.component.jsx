@@ -1,16 +1,13 @@
 // @flow
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import _ from 'lodash';
 import Modal from './conferenceModal.component';
-import { openSwitcherAction } from '../smoothie.action';
 import { Conferences } from '../smoothie.type';
 import './conference.css';
 
 export class ConferenceComponent extends Component {
   state = {
-    currentConferences: [],
     isModalVisible: false,
     showMoreConferenceId: null,
     isSwitcherOpened: false,
@@ -32,7 +29,6 @@ export class ConferenceComponent extends Component {
   props: {
     timeBegin: number,
     timeEnd: number,
-    openSwitcher: (currentConferenceId: number, conferences: Conferences) => void,
     conferences: Conferences,
   };
 
@@ -45,12 +41,13 @@ export class ConferenceComponent extends Component {
 
   openSwitcher = (e: Event) => {
     e.stopPropagation();
-    this.props.openSwitcher(this.state.conferences.remaining);
+    this.setState({
+      isSwitcherOpened: true,
+    });
   };
 
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
-    console.log(conferences[this.state.showMoreConferenceId], '####');
     return (
       <div>
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
@@ -67,7 +64,7 @@ export class ConferenceComponent extends Component {
                   <i
                     className="fa fa-arrows-h circle"
                     role="presentation"
-                    onClick={e => this.openSwitcher(e, this.state.currentConferenceId, conferences)}
+                    onClick={e => this.openSwitcher(e)}
                   />
                 ) : null}
                 <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
@@ -94,8 +91,4 @@ export class ConferenceComponent extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  openSwitcher: remainingConferences => dispatch(openSwitcherAction(remainingConferences)),
-});
-
-export default connect(null, mapDispatchToProps)(ConferenceComponent);
+export default ConferenceComponent;

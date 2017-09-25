@@ -1,10 +1,4 @@
-import {
-  MIX_CONFERENCES,
-  REMOVE_CONFERENCES,
-  SWITCH_CONFERENCE,
-  OPEN_SWITCHER,
-  CLOSE_SWITCHER,
-} from '../constants';
+import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
 import { getConferencesStore } from '../../lib/localStorage.lib';
 import { convertHourToString } from '../../lib/time.lib';
 import { reorderConferences } from '../../lib/dataFilter.lib';
@@ -47,21 +41,6 @@ export default (state = initialState, payload) => {
         },
       };
     }
-
-    case OPEN_SWITCHER:
-      return {
-        ...state,
-        isSwitcherOpened: true,
-        switcherConferences: payload.data.conferences,
-        currentConferenceId: payload.data.currentConferenceId,
-      };
-
-    case CLOSE_SWITCHER:
-      return {
-        ...state,
-        isSwitcherOpened: false,
-        switcherConferences: [],
-      };
 
     default:
       return state;

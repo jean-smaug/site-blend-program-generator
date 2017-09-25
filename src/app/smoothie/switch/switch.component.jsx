@@ -1,55 +1,60 @@
 // @flow
-
-import React, { Component } from 'react';
-import _ from 'lodash';
 import { connect } from 'react-redux';
-import { switchConference } from '../smoothie.action';
+import React, { Component } from 'react';
+import { ToastContainer, ToastMessage } from 'react-toastr';
+import _ from 'lodash';
 
-import { Conference, Conferences } from '../smoothie.type';
-import './switcher.css';
+import { readStoreByKey, readStoreByEmail } from '../../../lib/database';
+import { Conferences } from '../../smoothie/smoothie.type';
 
-export class SwitchComponent extends Component {
-  props: {
-    switchConference: (conference: Conference) => void,
-    conferences: Conferences,
-    currentConferenceId: number,
-  };
-
-  selectConference = (conference: Conference) => {
-    this.props.switchConference(conference);
-  };
-
+export class SwitcherComponent extends Component {
   render() {
-    const { conferences, currentConferenceId } = this.props;
-
-    const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
     return (
-      <div>
-        <div className="switcher">
-          <ul>
-            {_.map(remainingConferences, item =>
-              (<li
-                className="switcher__item"
-                key={item.id}
-                role="presentation"
-                onClick={() => this.selectConference(item)}
-              >
-                {item.title}
-              </li>),
-            )}
-          </ul>
+      <div className="modal is-active">
+        <div
+          className="modal-background"
+          onClick={this.props.closeModal}
+          role="button"
+          aria-pressed="true"
+          tabIndex="0"
+        />
+        <div className="modal-card">
+          <section className="modal-card-header header-restore">
+            <h1>Récupération de votre Menu !</h1>
+          </section>
+          <section className="modal-card-body">
+            <input
+              onChange={this.handleChangeInput}
+              className="input"
+              type="text"
+              name="key"
+              placeholder="Votre clef de planning..."
+            />
+            <div className="separation-input">
+              <p>Ou alors...</p>
+            </div>
+            <input
+              onChange={this.handleChangeInput}
+              name="email"
+              className="input"
+              type="text"
+              placeholder="Votre email..."
+            />
+          </section>
+          <section className="modal-card-foot footer-restore">
+            <button className="button is-success" onClick={this.onClickSubmit}>
+              Récuperer
+            </button>
+          </section>
+          <button className="modal-close is-large" onClick={this.props.closeModal} />
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  currentConferenceId: state.smoothie.currentConferenceId,
-});
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({
-  switchConference: conference => dispatch(switchConference(conference)),
-});
+const mapDispatchToProps = dispatch => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(SwitchComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SwitcherComponent);
