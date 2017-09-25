@@ -11,11 +11,21 @@ import { removeConferences } from './smoothie/smoothie.action';
 export const App = ({ smoothie, removeConferencesFromState }) =>
   (<div className="App">
     <div className="header">
-      <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
+      <a href="http://www.blendwebmix.com/">
+        <img src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png" width="145" height="45" alt="BlendWebMix 2017" />
+      </a>
     </div>
+
     <div className="columns">
       <div className="column  is-12">
-        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ? <FormContainer /> : null}
+        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
+          <div>
+            <div className="column is-6 is-offset-3">
+              <img src="https://img11.hostingpics.net/pics/268136header.png" alt="header" />
+            </div>
+            <FormContainer />
+          </div>
+          : null}
       </div>
     </div>
     <div className="columns">

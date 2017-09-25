@@ -14,12 +14,16 @@ ShallowWrapper {
     <div
         className="header"
     >
-        <img
-            alt="BlendWebMix 2017"
-            height="45"
-            src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
-            width="145"
-        />
+        <a
+            href="http://www.blendwebmix.com/"
+        >
+            <img
+                alt="BlendWebMix 2017"
+                height="45"
+                src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                width="145"
+            />
+        </a>
     </div>
     <div
         className="columns"
@@ -27,7 +31,17 @@ ShallowWrapper {
         <div
             className="column  is-12"
         >
-            <Blender />
+            <div>
+                <div
+                    className="column is-6 is-offset-3"
+                >
+                    <img
+                        alt="header"
+                        src="https://img11.hostingpics.net/pics/268136header.png"
+                    />
+                </div>
+                <Blender />
+            </div>
         </div>
     </div>
     <div
@@ -45,12 +59,16 @@ ShallowWrapper {
       <div
             className="header"
       >
-            <img
-                  alt="BlendWebMix 2017"
-                  height="45"
-                  src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
-                  width="145"
-            />
+            <a
+                  href="http://www.blendwebmix.com/"
+            >
+                  <img
+                        alt="BlendWebMix 2017"
+                        height="45"
+                        src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                        width="145"
+                  />
+            </a>
       </div>
       <div
             className="columns"
@@ -58,7 +76,17 @@ ShallowWrapper {
             <div
                   className="column  is-12"
             >
-                  <Blender />
+                  <div>
+                        <div
+                              className="column is-6 is-offset-3"
+                        >
+                              <img
+                                    alt="header"
+                                    src="https://img11.hostingpics.net/pics/268136header.png"
+                              />
+                        </div>
+                        <Blender />
+                  </div>
             </div>
       </div>
       <div
@@ -124,12 +152,16 @@ ShallowWrapper {
           <div
                     className="header"
           >
-                    <img
-                              alt="BlendWebMix 2017"
-                              height="45"
-                              src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
-                              width="145"
-                    />
+                    <a
+                              href="http://www.blendwebmix.com/"
+                    >
+                              <img
+                                        alt="BlendWebMix 2017"
+                                        height="45"
+                                        src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                                        width="145"
+                              />
+                    </a>
           </div>
           <div
                     className="columns"
@@ -137,7 +169,17 @@ ShallowWrapper {
                     <div
                               className="column  is-12"
                     >
-                              <Blender />
+                              <div>
+                                        <div
+                                                  className="column is-6 is-offset-3"
+                                        >
+                                                  <img
+                                                            alt="header"
+                                                            src="https://img11.hostingpics.net/pics/268136header.png"
+                                                  />
+                                        </div>
+                                        <Blender />
+                              </div>
                     </div>
           </div>
           <div
@@ -155,12 +197,16 @@ ShallowWrapper {
           <div
                     className="header"
           >
-                    <img
-                              alt="BlendWebMix 2017"
-                              height="45"
-                              src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
-                              width="145"
-                    />
+                    <a
+                              href="http://www.blendwebmix.com/"
+                    >
+                              <img
+                                        alt="BlendWebMix 2017"
+                                        height="45"
+                                        src="http://www.blendwebmix.com/wp-content/uploads/2017/04/Blend-Web-Mix-2-1-e1492005334702.png"
+                                        width="145"
+                              />
+                    </a>
           </div>
           <div
                     className="columns"
@@ -168,7 +214,17 @@ ShallowWrapper {
                     <div
                               className="column  is-12"
                     >
-                              <Blender />
+                              <div>
+                                        <div
+                                                  className="column is-6 is-offset-3"
+                                        >
+                                                  <img
+                                                            alt="header"
+                                                            src="https://img11.hostingpics.net/pics/268136header.png"
+                                                  />
+                                        </div>
+                                        <Blender />
+                              </div>
                     </div>
           </div>
           <div

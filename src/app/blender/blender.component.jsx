@@ -3,10 +3,8 @@ import _ from 'lodash';
 
 import './blender.css';
 import * as domains from './data/domains.json';
-import * as objectifs from './data/objectives.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
 import CheckboxDomain from './checkboxDomain/checkboxDomain.component';
-import CheckboxObjectif from './checkboxObjectif/checkboxObjectif.component';
 import InformationsInput from './informationsInput/informationsInputcomponent';
 import Mixeur from './mixeur/mixeur.component';
 import ModalRestore from './modalRestore/modalRestore.component';
@@ -64,60 +62,7 @@ export default class Blender extends React.Component {
           <div className="column is-12">
             <h1 className="category-title">Les thématiques</h1>
             <h2 className="category-desc">
-                Cochez les mots clefs qui correspondent à votre profil de chef... :)
-            </h2>
-            <hr />
-            <div className="control">
-              <input
-                className="input"
-                onChange={this.handleFilterKeyword}
-                type="text"
-                placeholder="Rechercher d'autres mots clefs..."
-              />
-            </div>
-            {_.map(this.state.tags, (item) => {
-              if (
-                this.state.filterKeywords === '' ||
-                  item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-              ) {
-                return <CheckboxKeyword item={item} key={item} />;
-              }
-              return null;
-            })
-              .filter(item => item !== null)
-              .slice(0, 10)}
-          </div>
-        );
-      case 3:
-        return (
-          <div className="column is-12">
-            <h1 className="category-title">Les objectifs</h1>
-            <section className="todo">
-              <ul className="todo-list">
-                {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
-            </section>
-          </div>
-        );
-      case 4:
-        return (
-          <div className="column is-12">
-            <div className="columns">
-              <div className="column is-8">
-                <h1 className="category-title">Vos informations (facultatif)</h1>
-                <InformationsInput />
-              </div>
-              <div className="column is-4">
-                <Mixeur />
-              </div>
-            </div>
-          </div>
-        );
-      default:
-        return (
-          <div className="column is-12">
-            <h1 className="category-title">Vos sujets favoris</h1>
-            <h2 className="category-desc">
-                Choisissez vos types de conférences préférées ainsi que le niveau souhaité.. :)
+              Quels sont les domaines qui vous intéressent ? A quel niveau les abordez-vous?
             </h2>
             <hr />
             <div className="columns">
@@ -126,6 +71,95 @@ export default class Blender extends React.Component {
                   <CheckboxDomain item={item} key={item.id} />
                 </div>),
               )}
+            </div>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="column is-12">
+            <h1 className="category-title">Les sujets</h1>
+            <h2 className="category-desc">
+              Sélectionnez les mots-clefs qui vous intéressent.
+            </h2>
+            <hr />
+            <div className="columns">
+              <div className="column is-6 is-offset-3">
+                <div className="control">
+                  <input
+                    className="input"
+                    onChange={this.handleFilterKeyword}
+                    type="text"
+                    placeholder="Rechercher d'autres mots clefs..."
+                  />
+                </div>
+                {_.map(this.state.tags, (item) => {
+                  if (
+                    this.state.filterKeywords === '' ||
+                    item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
+                  ) {
+                    return <CheckboxKeyword item={item} key={item} />;
+                  }
+                  return null;
+                })
+                  .filter(item => item !== null)
+                  .slice(0, 10)}
+              </div>
+            </div>
+          </div>
+        );
+      // case 4:
+      //   return (
+      //     <div className="column is-12">
+      //       <h1 className="category-title">Les objectifs</h1>
+      //       <section className="todo">
+      //         <ul className="todo-list">
+      //           {_.map(objectifs, item => <CheckboxObjectif item={item} key={item.id} />)}</ul>
+      //       </section>
+      //     </div>
+      //   );
+      case 4:
+        return (
+          <div className="column is-12">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <h1 className="category-title">Vos informations</h1>
+                <h2 className="category-desc">
+                  {`Ces informations sont facultatives, elles nous permettront l'année prochaine
+                    de vous envoyer des informations plus adaptées à vos centres d'intérêt.`}
+                </h2>
+                <div className="columns">
+                  <div className="column is-8 is-offset-2">
+                    <InformationsInput />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return (
+          <div className="column is-12">
+            <div className="columns">
+              <div className="column is-6 is-offset-3 accueil" >
+                <h1>Laissez-nous vous concoctez un BlendWebMix sur mesure...</h1>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-8 is-offset-2 desc">
+                <p>Le blender est un compositeur de planning spécialement crafté pour vous
+                  sélectionner les conférences et les animations les plus suceptibles de
+                  correspondre à vos attentes.</p>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-4 is-offset-4" >
+                <input
+                  className="btn-begin"
+                  type="button"
+                  onClick={this.nextPage}
+                  value="Commencer >"
+                />
+              </div>
             </div>
           </div>
         );
@@ -161,25 +195,25 @@ export default class Blender extends React.Component {
         <div className="columns">
           <div className="modal-wrap column is-8 is-offset-2">
             <div className="modal-header">
-              <span className={this.state.currentPage === 1 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 2 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 3 ? 'is-active' : null} />
-              <span className={this.state.currentPage === 4 ? 'is-active' : null} />
+              <span role="presentation" className={this.state.currentPage === 1 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 1 })} />
+              <span role="presentation" className={this.state.currentPage === 2 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 2 })} />
+              <span role="presentation" className={this.state.currentPage === 3 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 3 })} />
+              <span role="presentation" className={this.state.currentPage === 4 ? 'is-active' : null} onClick={() => this.setState({ currentPage: 4 })} />
             </div>
             <div className="modal-bodies">
               <div className="modal-body">
-                <article className="message is-info">
+                {this.state.currentPage === 1 ? <article className="message is-info">
                   <div className="message-body">
                     <a className="link-restore" role="presentation" onClick={() => this.toggleModal()} >
                       Vous avez déja généré un planning ? Cliquez-ici </a>
                   </div>
-                </article>
+                </article> : ''}
                 <div className="columns">
                   {this.renderPage()}
                 </div>
                 <div className="columns">
                   <div className="column is-12">
-                    <hr />
+                    {this.state.currentPage > 1 ? <hr /> : ''}
                     <div className="columns">
                       <div className="column is-3">
                         {this.state.currentPage > 1
@@ -192,14 +226,15 @@ export default class Blender extends React.Component {
                           : ''}
                       </div>
                       <div className="column is-3 is-offset-6" >
-                        {this.state.currentPage < 4
-                          ? <input
+                        {this.state.currentPage !== 4 && this.state.currentPage !== 1 ?
+                          <input
                             className="btn-suivant"
                             type="button"
                             onClick={this.nextPage}
                             value="Suivant >"
                           />
                           : ''}
+                        { this.state.currentPage === 4 ? <Mixeur /> : '' }
                       </div>
                     </div>
                   </div>

@@ -8,6 +8,9 @@
   "plugins": ["react", "jsx-a11y", "jest", "flowtype"],
   "rules": {
     "react/jsx-filename-extension": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
   }
 }

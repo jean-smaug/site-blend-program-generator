@@ -2,10 +2,24 @@
 CONTAINER FORM
  */
 
-
-.modal-wrap {
-  margin-top: 50px;
+.accueil{
+  text-align: center;
 }
+
+.accueil > h1 {
+  font-size: 2em;
+  display: block;
+  color: #E5421C;
+  text-transform: uppercase;
+  font-family: 'Permanent Marker';
+}
+
+.desc > p {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 
 .modal-header {
   height: 45px;
@@ -19,10 +33,11 @@ CONTAINER FORM
 .modal-header span {
   display: block;
   margin:5px;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .modal-header span.is-active {
   background: rgba(0, 0, 0, 0.4);
@@ -81,15 +96,16 @@ CONTAINER FORM
 
 .category-title {
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   text-align: center;
-  font-size: 1.4em;
-  font-weight: 300;
-  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  color: #E6421D;
+  font-family: 'Permanent Marker', sans-serifserif;
 }
 
 .category-desc {
   margin-bottom: 2%;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .blockDomain{
@@ -140,7 +156,7 @@ CONTAINER FORM
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
-  background: #FF6F00;
+  background: #E5421C;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -151,8 +167,24 @@ CONTAINER FORM
   margin-top: 5px;
 }
 .btn-suivant:hover,
-.btn-precedent:hover {
-  background: #e66400;
+.btn-precedent:hover,
+.btn-begin:hover {
+  background: #e51d13;
+}
+
+.btn-begin{
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  background: #E5421C;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+  float: left;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .link-restore{
@@ -437,3 +469,5 @@ table {
   background-color: #E5421C;
   color: white !important;
 }
+
+
