@@ -27,16 +27,16 @@ export class SwitchComponent extends Component {
       <div>
         <div className="switcher">
           <ul>
-            {_.map(remainingConferences, item =>
-              (<li
+            {_.map(remainingConferences, item => (
+              <li
                 className="switcher__item"
                 key={item.id}
                 role="presentation"
                 onClick={() => this.selectConference(item)}
               >
                 {item.title}
-              </li>),
-            )}
+              </li>
+            ))}
           </ul>
         </div>
       </div>

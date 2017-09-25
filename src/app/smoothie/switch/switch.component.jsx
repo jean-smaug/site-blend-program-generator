@@ -1,11 +1,9 @@
 // @flow
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { ToastContainer, ToastMessage } from 'react-toastr';
-import _ from 'lodash';
+// import _ from 'lodash';
 
-import { readStoreByKey, readStoreByEmail } from '../../../lib/database';
-import { Conferences } from '../../smoothie/smoothie.type';
+// import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
   render() {

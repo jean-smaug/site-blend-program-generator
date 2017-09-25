@@ -20,11 +20,11 @@ export class ConferenceComponent extends Component {
     isSwitcherOpened: boolean,
   };
 
-  componentWillReceiveProps(nextProps: Object) {
-    this.setState({
-      currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : 0,
-    });
-  }
+  // componentWillReceiveProps(nextProps: Object) {
+  //   this.setState({
+  //     currentConferenceId: !_.isEmpty(nextProps.conferences) ? nextProps.conferences[0].id : 0,
+  //   });
+  // }
 
   props: {
     timeBegin: number,
