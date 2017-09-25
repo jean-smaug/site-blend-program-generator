@@ -40,6 +40,7 @@ export class ConferenceComponent extends Component {
   };
 
   openSwitcher = (e: Event) => {
+    console.log('foo');
     e.stopPropagation();
     this.setState({
       isSwitcherOpened: true,

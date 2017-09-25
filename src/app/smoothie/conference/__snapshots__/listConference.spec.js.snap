@@ -5,22 +5,22 @@ Array [
   <div
     className="conferences"
 >
-    <Connect(ConferenceComponent)
+    <ConferenceComponent
         conferences={Array []}
         timeBegin={8}
         timeEnd={10}
     />
-    <Connect(ConferenceComponent)
+    <ConferenceComponent
         conferences={Array []}
         timeBegin={10}
         timeEnd={12}
     />
-    <Connect(ConferenceComponent)
+    <ConferenceComponent
         conferences={Array []}
         timeBegin={14}
         timeEnd={16}
     />
-    <Connect(ConferenceComponent)
+    <ConferenceComponent
         conferences={Array []}
         timeBegin={16}
         timeEnd={18}
