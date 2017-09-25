@@ -14,15 +14,23 @@ Array [
             >
                 <span
                     className="is-active"
+                    onClick={[Function]}
+                    role="presentation"
                 />
                 <span
                     className={null}
+                    onClick={[Function]}
+                    role="presentation"
                 />
                 <span
                     className={null}
+                    onClick={[Function]}
+                    role="presentation"
                 />
                 <span
                     className={null}
+                    onClick={[Function]}
+                    role="presentation"
                 />
             </div>
             <div
