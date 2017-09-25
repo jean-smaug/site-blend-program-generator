@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Modal from './conferenceModal.component';
+import Switcher from '../switch/switch.component';
 import { Conferences } from '../smoothie.type';
 import './conference.css';
 
@@ -40,7 +41,6 @@ export class ConferenceComponent extends Component {
   };
 
   openSwitcher = (e: Event) => {
-    console.log('foo');
     e.stopPropagation();
     this.setState({
       isSwitcherOpened: true,
@@ -57,6 +57,9 @@ export class ConferenceComponent extends Component {
             conference={conferences.selected[this.state.showMoreConferenceId]}
           />
         ) : null}
+
+        {this.state.isSwitcherOpened ? <Switcher conferences={conferences.remaining} /> : null}
+
         <div className="columns">
           <div className="column">
             <div className="conference">

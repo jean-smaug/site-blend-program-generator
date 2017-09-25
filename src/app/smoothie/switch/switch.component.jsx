@@ -1,11 +1,21 @@
 // @flow
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-// import _ from 'lodash';
-
+import _ from 'lodash';
+import { Conference, Conferences } from '../smoothie.type';
+import { switchConference } from '../smoothie.action';
 // import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
+  props = {
+    conferences: Conferences,
+    switchConference: (conference): void => {},
+  };
+
+  switchConference = (conference: Conference) => {
+    this.props.switchConference(conference);
+  };
+
   render() {
     return (
       <div className="modal is-active">
@@ -18,31 +28,14 @@ export class SwitcherComponent extends Component {
         />
         <div className="modal-card">
           <section className="modal-card-header header-restore">
-            <h1>Récupération de votre Menu !</h1>
+            <h1>Switcher de conférence !</h1>
           </section>
           <section className="modal-card-body">
-            <input
-              onChange={this.handleChangeInput}
-              className="input"
-              type="text"
-              name="key"
-              placeholder="Votre clef de planning..."
-            />
-            <div className="separation-input">
-              <p>Ou alors...</p>
-            </div>
-            <input
-              onChange={this.handleChangeInput}
-              name="email"
-              className="input"
-              type="text"
-              placeholder="Votre email..."
-            />
-          </section>
-          <section className="modal-card-foot footer-restore">
-            <button className="button is-success" onClick={this.onClickSubmit}>
-              Récuperer
-            </button>
+            <ul>
+              {_.map(this.props.conferences, conference => (
+                <li onClick={() => this.switchConference(conference)}>{conference.title}</li>
+              ))}
+            </ul>
           </section>
           <button className="modal-close is-large" onClick={this.props.closeModal} />
         </div>
@@ -51,8 +44,8 @@ export class SwitcherComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapDispatchToProps = dispatch => ({
+  switchConference: conference => dispatch(switchConference(conference)),
+});
 
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SwitcherComponent);
+export default connect(null, mapDispatchToProps)(SwitcherComponent);
