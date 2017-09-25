@@ -9,7 +9,6 @@ import { switchConference } from '../smoothie.action';
 export class SwitcherComponent extends Component {
   props = {
     conferences: Conferences,
-    switchConference: (conference): void => {},
   };
 
   switchConference = (conference: Conference) => {
@@ -32,8 +31,10 @@ export class SwitcherComponent extends Component {
           </section>
           <section className="modal-card-body">
             <ul>
-              {_.map(this.props.conferences, conference => (
-                <li onClick={() => this.switchConference(conference)}>{conference.title}</li>
+              {_.map(this.props.conferences, (conference, id) => (
+                <li key={id} onClick={() => this.switchConference(conference)}>
+                  {conference.title}
+                </li>
               ))}
             </ul>
           </section>

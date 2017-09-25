@@ -1,7 +1,7 @@
 import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
 import { getConferencesStore } from '../../lib/localStorage.lib';
-import { convertHourToString } from '../../lib/time.lib';
-import { reorderConferences } from '../../lib/dataFilter.lib';
+import { convertHourToString, getEndTime, convertToMinutes } from '../../lib/time.lib';
+import { reorderConferences, orderConferencesV2 } from '../../lib/dataFilter.lib';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -34,12 +34,15 @@ export default (state = initialState, payload) => {
 
       return {
         ...state,
-        isSwitcherOpened: false,
-        [day]: {
-          ...state[day],
-          [letterTime]: reorderConferences(conference, timeSlotConferences),
-        },
       };
+      // return {
+      //   ...state,
+      //   isSwitcherOpened: false,
+      //   [day]: {
+      //     ...state[day],
+      //     [letterTime]: reorderConferences(conference, timeSlotConferences),
+      //   },
+      // };
     }
 
     default:
