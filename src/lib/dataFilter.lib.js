@@ -31,7 +31,6 @@ export const filterByTags = (conferences: Conferences, tags) =>
  * Filter conferences by level and by domain
  */
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) => {
-  console.log(filters);
   _.filter(conferences, (conference) => {
     let keepConference = false;
     _.map(filters, (filter) => {
@@ -48,9 +47,6 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
-  // console.log(domainConferences, 'domainConferences');
-  // console.log(tagsConferences, 'tagsConf');
-  // console.log(tags);
   return _.union(domainConferences, tagsConferences);
 };
 
@@ -170,4 +166,25 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   });
 
   return smoothie;
+};
+
+export const reorderConferencesV2 = (conference: Conference, conferences: Conferences) => {
+  const { remaining, selected } = conferences;
+
+  if (isConferenceSlotFree(selected, conference)) {
+    return {
+      remainging: _.reject(remaining, conferenceRemaining =>
+        _.isEqual(conferenceRemaining, conference),
+      ),
+      selected: [...selected, conference],
+    };
+  }
+
+  const remain = _.reject(remaining, conferenceRemaining =>
+    _.isEqual(conferenceRemaining, conference),
+  );
+  return {
+    remainging: [...selected, remain],
+    selected: [...selected],
+  };
 };
