@@ -37,18 +37,13 @@ export default (state = initialState, payload) => {
       const timeSlotConferences = state[day][letterTime];
 
       const { selected } = timeSlotConferences;
-      console.log(timeSlotConferences);
       return {
         ...state,
+        [day]: {
+          ...state[day],
+          [letterTime]: reorderConferencesV2(conference, timeSlotConferences),
+        },
       };
-      // return {
-      //   ...state,
-      //   isSwitcherOpened: false,
-      //   [day]: {
-      //     ...state[day],
-      //     [letterTime]: reorderConferences(conference, timeSlotConferences),
-      //   },
-      // };
     }
 
     default:
