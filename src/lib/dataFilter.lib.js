@@ -173,7 +173,7 @@ export const reorderConferencesV2 = (conference: Conference, conferences: Confer
 
   if (isConferenceSlotFree(selected, conference)) {
     return {
-      remainging: _.reject(remaining, conferenceRemaining =>
+      remaining: _.reject(remaining, conferenceRemaining =>
         _.isEqual(conferenceRemaining, conference),
       ),
       selected: [...selected, conference],
@@ -183,8 +183,9 @@ export const reorderConferencesV2 = (conference: Conference, conferences: Confer
   const remain = _.reject(remaining, conferenceRemaining =>
     _.isEqual(conferenceRemaining, conference),
   );
+
   return {
-    remainging: [...selected, remain],
-    selected: [...selected],
+    remaining: [...selected, ...remain],
+    selected: [conference],
   };
 };
