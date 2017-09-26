@@ -1,44 +1,4 @@
-.conference-title {
-  font-size: 1.5em;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.conference-time{
-  font-size: 1.5em;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-
-.conferences {
-  background-color: rgb(254, 206, 142);
-  padding-top: 4%;
-  margin-bottom: 5%;
-}
-
-.conference {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2%;
-  cursor: pointer;
-}
-
-.conference-opt {
-  color: white;
-}
-
-.conference-opt > a {
-  color: white;
-}
-
-.conference-opt > a:hover {
-  color: black;
-}
-
-.conference-time {
-  padding: 0 3%;
-}
+/** BEGIN POP UP **/
 
 .circle {
   width: 25px;
@@ -108,4 +68,18 @@
 
 .is-notselected {
   border: 1px dashed;
+}
+
+/** END POP-UP **/
+
+.teste {
+  background-color: #E53324;
+}
+
+.teste :nth-child(3n-7) {
+  background-color: #A4DA30;
+}
+
+.teste :nth-child(4n-7) {
+  background-color: #3198DC;
 }

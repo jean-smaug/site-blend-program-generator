@@ -41,7 +41,7 @@ export const App = ({ smoothie, removeConferencesFromState }) =>
                   onClick={removeConferencesFromState}
                 />{' '}
               </div>
-              <div className="column is-12">
+              <div className="column is-10">
                 <SmoothieContainer />
               </div>
             </div>

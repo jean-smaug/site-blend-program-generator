@@ -1,3 +1,8 @@
+html {
+  background-image: url('../../../src/fond_planning.png');
+  background-size: 100%;
+}
+
 
 .header-date {
   font-family: 'Permanent Marker';
@@ -20,7 +25,32 @@
   font-size: 1.4em;
 }
 
+.billy {
+  position: absolute;
+  top: -36%;
+  right: -15%;
+  background-image: url('../../paille.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 270px;
+  width: 150px;
+}
+
+.billy2 {
+  position: absolute;
+  top: -28%;
+  left: -20%;
+  background-image: url('../../citron.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 170px;
+  width: 170px;
+}
+
 .itemsSmoothie{
+  position: relative;
+  z-index: 1000;
+  margin-top: 120px;
   padding: 0% 2%;
   background-color: rgba(255, 255, 242, 0.9);
   text-align: center;
