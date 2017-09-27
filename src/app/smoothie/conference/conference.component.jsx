@@ -84,7 +84,7 @@ export class ConferenceComponent extends Component {
               </div>
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
-                  _.map(conferences.selected, ({ title, timeBegin, duration }, key) => (
+                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration }, key) => (
                     <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
                       <p className="horaire-preview">{`${timeBegin} > ${getEndTime(timeBegin, duration)}`}</p>
                       <p className="title-preview"> {title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()}</p>
