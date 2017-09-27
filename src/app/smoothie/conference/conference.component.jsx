@@ -84,7 +84,7 @@ export class ConferenceComponent extends Component {
               </div>
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
-                  _.map(conferences.selected, ({ title }, key) => (
+                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title }, key) => (
                     <div onClick={() => this.toggleModal(key)} role="presentation">
                       {title}
                       <br />
