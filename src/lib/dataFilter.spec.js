@@ -3,7 +3,7 @@ import {
   orderConferencesV2,
   filterByTags,
   filterConferences,
-  filterByLevelAndDomain,
+  // filterByLevelAndDomain,
   reorderConferencesV2,
 } from './dataFilter.lib';
 

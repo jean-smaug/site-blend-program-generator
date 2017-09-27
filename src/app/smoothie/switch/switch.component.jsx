@@ -1,4 +1,6 @@
 // @flow
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import _ from 'lodash';

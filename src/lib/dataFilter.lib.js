@@ -33,10 +33,6 @@ export const filterByTags = (conferences: Conferences, tags) =>
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) => {
   const confs = _.filter(conferences, (conference) => {
     let keepConference = false;
-    if (conference.level === '') {
-      conference.level = 'beginner';
-    }
-
     _.map(filters, (filter) => {
       if (
         (conference.domain === filter.domain ||
@@ -51,16 +47,12 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
     return keepConference;
   });
 
-  console.log(confs);
   return confs;
 };
 
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
-
-  console.log(domainConferences);
-  console.log(tagsConferences);
 
   return _.union(domainConferences, tagsConferences);
 };
