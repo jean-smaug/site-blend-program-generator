@@ -92,17 +92,19 @@ export default class Blender extends React.Component {
                     placeholder="Rechercher d'autres mots clefs..."
                   />
                 </div>
-                {_.map(this.state.tags, (item) => {
-                  if (
-                    this.state.filterKeywords === '' ||
-                    item.toLowerCase().includes(this.state.filterKeywords.toLowerCase())
-                  ) {
-                    return <CheckboxKeyword item={item} key={item} />;
+                {_.map(_.shuffle(this.state.tags), (item) => {
+                  if (item !== undefined) {
+                    if (
+                      this.state.filterKeywords === '' ||
+                      _.startsWith(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
+                    ) {
+                      return <CheckboxKeyword item={item} key={item} />;
+                    }
                   }
                   return null;
                 })
                   .filter(item => item !== null)
-                  .slice(0, 10)}
+                  .slice(0, 25)}
               </div>
             </div>
           </div>
