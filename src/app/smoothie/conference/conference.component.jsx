@@ -47,6 +47,12 @@ export class ConferenceComponent extends Component {
     });
   };
 
+  closeSwitcher = () => {
+    this.setState({
+      isSwitcherOpened: false,
+    });
+  };
+
   render() {
     const { timeBegin, timeEnd, conferences } = this.props;
     return (
@@ -58,7 +64,9 @@ export class ConferenceComponent extends Component {
           />
         ) : null}
 
-        {this.state.isSwitcherOpened ? <Switcher conferences={conferences.remaining} /> : null}
+        {this.state.isSwitcherOpened ? (
+          <Switcher closeModal={this.closeSwitcher} conferences={conferences.remaining} />
+        ) : null}
 
         <div className="columns">
           <div className="column">

@@ -7,30 +7,25 @@ import { switchConference } from '../smoothie.action';
 // import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
-  state = {
-    showModal: false,
-  };
-
   props: {
     conferences: Conferences,
+    closeModal: () => void,
+    switchConference: (conference: Conference) => void,
   };
 
   switchConference = (conference: Conference) => {
     this.props.switchConference(conference);
-  };
-
-  closeModal = () => {
-    this.setState({
-      showModal: false,
-    });
+    this.props.closeModal();
   };
 
   render() {
-    return this.state.showModal ? (
+    return (
       <div className="modal is-active">
         <div
           className="modal-background"
-          onClick={this.closeModal}
+          onClick={() => {
+            console.log('oui');
+          }}
           role="button"
           aria-pressed="true"
           tabIndex="0"
@@ -51,7 +46,7 @@ export class SwitcherComponent extends Component {
           <button className="modal-close is-large" onClick={this.props.closeModal} />
         </div>
       </div>
-    ) : null;
+    );
   }
 }
 
