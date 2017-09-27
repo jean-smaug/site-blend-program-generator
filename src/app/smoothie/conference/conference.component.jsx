@@ -72,17 +72,18 @@ export class ConferenceComponent extends Component {
             <div className="conference">
               {conferences.remaining.length > 1 ? (
                 <i
-                  className="fa fa-arrows-h circle"
+                  className="fa fa-arrows-h circle switcher_link"
                   role="presentation"
                   onClick={e => this.openSwitcher(e)}
                 />
               ) : null}
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
-                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration }, key) => (
+                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration, room }, key) => (
                     <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
                       <p className="horaire-preview">{`${timeBegin} > ${getEndTime(timeBegin, duration)}`}</p>
                       <p className="title-preview"> {title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()}</p>
+                      <p className="room-preview"> {`Salle: ${room}`}</p>
                     </div>
                   ))
                 ) : (

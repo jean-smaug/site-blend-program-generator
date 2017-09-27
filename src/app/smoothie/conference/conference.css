@@ -9,6 +9,13 @@
 
 }
 
+
+
+.switcher_link{
+  position: relative;
+  float: left;
+}
+
 .conferences {
   margin-bottom: 5%;
 }
@@ -30,13 +37,13 @@
 }
 
 .conference-15 {
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .conference-40 {
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .conference-generic {
@@ -46,8 +53,7 @@
   cursor: auto;
 }
 .title-preview {
-  font-size: 0.8em;
-  font-weight: lighter;
+  font-size: 0.7em;
 }
 
 .horaire-preview {
@@ -55,6 +61,10 @@
   font-weight: bold;
 }
 
+.room-preview {
+  font-size: 0.7em;
+  font-weight: bold;
+}
 .conference:nth-child(2n) {
   background-color: #E5421C;
 }
