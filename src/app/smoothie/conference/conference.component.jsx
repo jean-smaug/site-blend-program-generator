@@ -6,6 +6,7 @@ import Modal from './conferenceModal.component';
 import Switcher from '../switch/switch.component';
 import { Conferences } from '../smoothie.type';
 import './conference.css';
+import { getEndTime } from '../../../lib/time.lib';
 
 export class ConferenceComponent extends Component {
   state = {
@@ -54,7 +55,7 @@ export class ConferenceComponent extends Component {
   };
 
   render() {
-    const { timeBegin, timeEnd, conferences } = this.props;
+    const { conferences } = this.props;
     return (
       <div>
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
@@ -79,14 +80,13 @@ export class ConferenceComponent extends Component {
                     onClick={e => this.openSwitcher(e)}
                   />
                 ) : null}
-                <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
                 {/* {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null} */}
               </div>
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
                   _.map(conferences.selected, ({ title, timeBegin, duration }, key) => (
-                    <div onClick={() => this.toggleModal(key)} role="presentation" className="conference conference-{duration}">
-                      <p className="horaire-preview">{timeBegin} - {duration} minutes</p>
+                    <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
+                      <p className="horaire-preview">{`${timeBegin} > ${getEndTime(timeBegin, duration)}`}</p>
                       <p className="title-preview"> {title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()}</p>
                     </div>
                   ))

@@ -10,8 +10,6 @@
 }
 
 .conferences {
-  background-color: rgb(254, 206, 142);
-  padding-top: 4%;
   margin-bottom: 5%;
 }
 
@@ -25,6 +23,28 @@
   font-weight: lighter;
 }
 
+.pause {
+  background-color: #B2CC35;
+  color: white;
+  font-weight: lighter;
+}
+
+.conference-15 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.conference-40 {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.conference-generic {
+  background-color: #193E5F;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  cursor: auto;
+}
 .title-preview {
   font-size: 0.8em;
   font-weight: lighter;
@@ -59,6 +79,8 @@
   padding: 0 3%;
 }
 
+
+
 .circle {
   width: 25px;
   border: 1px solid white;
@@ -72,22 +94,22 @@
 .modal-card-header > h1 {
   color: white;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .modal-card-body > h1 {
-  color: #e6421c;
+  color: #193E5F;
   font-size: 1.4em;
   font-weight: bold;
 }
 
 .modal-card-body > h2 {
-  color: #e6421c;
+  color: #193E5F;
   padding-bottom: 10px;
 }
 
 .modal-card-header {
-  background-color: #e6421c;
+  background-color: #193E5F;
   padding-bottom: 5px;
 }
 
