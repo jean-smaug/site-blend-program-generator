@@ -1,13 +1,14 @@
-import {
-  MIX_CONFERENCES,
-  REMOVE_CONFERENCES,
-  SWITCH_CONFERENCE,
-  OPEN_SWITCHER,
-  CLOSE_SWITCHER,
-} from '../constants';
+import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
 import { getConferencesStore } from '../../lib/localStorage.lib';
-import { convertHourToString } from '../../lib/time.lib';
-import { reorderConferences } from '../../lib/dataFilter.lib';
+import {
+  convertHourToString,
+  // ,  getEndTime, convertToMinutes
+} from '../../lib/time.lib';
+import {
+  // reorderConferences,
+  // orderConferencesV2,
+  reorderConferencesV2,
+} from '../../lib/dataFilter.lib';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -40,28 +41,12 @@ export default (state = initialState, payload) => {
 
       return {
         ...state,
-        isSwitcherOpened: false,
         [day]: {
           ...state[day],
-          [letterTime]: reorderConferences(conference, timeSlotConferences),
+          [letterTime]: reorderConferencesV2(conference, timeSlotConferences),
         },
       };
     }
-
-    case OPEN_SWITCHER:
-      return {
-        ...state,
-        isSwitcherOpened: true,
-        switcherConferences: payload.data.conferences,
-        currentConferenceId: payload.data.currentConferenceId,
-      };
-
-    case CLOSE_SWITCHER:
-      return {
-        ...state,
-        isSwitcherOpened: false,
-        switcherConferences: [],
-      };
 
     default:
       return state;

@@ -2,10 +2,7 @@
 
 exports[`conference.component should render conference.component 1`] = `
 Array [
-  <div
-    onClick={[Function]}
-    role="presentation"
->
+  <div>
     <div
         className="columns"
     >
@@ -27,7 +24,9 @@ Array [
                 <div
                     className="conference-title"
                     role="button"
-                />
+                >
+                    Temps libre
+                </div>
             </div>
         </div>
     </div>

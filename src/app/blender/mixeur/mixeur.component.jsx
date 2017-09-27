@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import _ from 'lodash';
-import { filterConferences, orderConferences } from '../../../lib/dataFilter.lib';
+import { filterConferences, orderConferencesV2 } from '../../../lib/dataFilter.lib';
 import { getConferences, writeStore } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
@@ -23,7 +23,7 @@ export class MixeurComponent extends Component {
     if (this.props.form.informations.isValidEmail) {
       const conferences = (await getConferences()) || [];
       const { addConference, form } = this.props;
-      const orderedConferences = orderConferences(
+      const orderedConferences = orderConferencesV2(
         filterConferences(_.shuffle(conferences), form.domains, form.keywords),
       );
 
@@ -57,7 +57,12 @@ export class MixeurComponent extends Component {
           toastMessageFactory={React.createFactory(ToastMessage.animation)}
           className="toast-top-full-width"
         />
-        <input className="btn-begin" type="button" onClick={this.submitBtn} value="Voir mon planning >" />
+        <input
+          className="btn-begin"
+          type="button"
+          onClick={this.submitBtn}
+          value="Voir mon planning >"
+        />
       </div>
     );
   }

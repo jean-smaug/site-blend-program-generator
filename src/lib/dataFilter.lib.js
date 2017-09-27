@@ -30,25 +30,30 @@ export const filterByTags = (conferences: Conferences, tags) =>
 /**
  * Filter conferences by level and by domain
  */
-export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) =>
-  _.filter(conferences, conference =>
-    _.includes(
-      _.map(filters, (filter) => {
-        if (filter.domain === conference.domain && filter.level === conference.level) {
-          return true;
-        }
-        return false;
-      }),
-      true,
-    ),
-  );
+export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) => {
+  const confs = _.filter(conferences, (conference) => {
+    let keepConference = false;
+    _.map(filters, (filter) => {
+      if (
+        (conference.domain === filter.domain ||
+          conference.domain === 'société' ||
+          conference.domain === 'societe') &&
+        (filter.level === conference.level || conference.level === '')
+      ) {
+        keepConference = true;
+      }
+    });
+
+    return keepConference;
+  });
+
+  return confs;
+};
 
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
-  // console.log(domainConferences, 'domainConferences');
-  // console.log(tagsConferences, 'tagsConf');
-  // console.log(tags);
+
   return _.union(domainConferences, tagsConferences);
 };
 
@@ -159,13 +164,36 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   _.forEach(conferences, (item) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
-
-    if (isConferenceSlotFree(day.selected, item)) {
-      day.selected.push(item);
-    } else {
-      day.remaining.push(item);
+    if (day !== undefined) {
+      if (isConferenceSlotFree(day.selected, item)) {
+        day.selected.push(item);
+      } else {
+        day.remaining.push(item);
+      }
     }
   });
 
   return smoothie;
+};
+
+export const reorderConferencesV2 = (conference: Conference, conferences: Conferences) => {
+  const { remaining, selected } = conferences;
+
+  if (isConferenceSlotFree(selected, conference)) {
+    return {
+      remaining: _.reject(remaining, conferenceRemaining =>
+        _.isEqual(conferenceRemaining, conference),
+      ),
+      selected: [...selected, conference],
+    };
+  }
+
+  const remain = _.reject(remaining, conferenceRemaining =>
+    _.isEqual(conferenceRemaining, conference),
+  );
+
+  return {
+    remaining: [...selected, ...remain],
+    selected: [conference],
+  };
 };

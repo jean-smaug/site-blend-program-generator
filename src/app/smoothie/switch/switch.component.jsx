@@ -1,55 +1,59 @@
 // @flow
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { connect } from 'react-redux';
-import { switchConference } from '../smoothie.action';
-
 import { Conference, Conferences } from '../smoothie.type';
-import './switcher.css';
+import { switchConference } from '../smoothie.action';
+// import { Conferences } from '../../smoothie/smoothie.type';
 
-export class SwitchComponent extends Component {
+export class SwitcherComponent extends Component {
   props: {
-    switchConference: (conference: Conference) => void,
     conferences: Conferences,
-    currentConferenceId: number,
+    closeModal: () => void,
+    switchConference: (conference: Conference) => void,
   };
 
-  selectConference = (conference: Conference) => {
+  switchConference = (conference: Conference) => {
     this.props.switchConference(conference);
+    this.props.closeModal();
   };
 
   render() {
-    const { conferences, currentConferenceId } = this.props;
-
-    const remainingConferences = _.filter(conferences, item => item.id !== currentConferenceId);
     return (
-      <div>
-        <div className="switcher">
-          <ul>
-            {_.map(remainingConferences, item =>
-              (<li
-                className="switcher__item"
-                key={item.id}
-                role="presentation"
-                onClick={() => this.selectConference(item)}
-              >
-                {item.title}
-              </li>),
-            )}
-          </ul>
+      <div className="modal is-active">
+        <div
+          className="modal-background"
+          onClick={() => {
+            console.log('oui');
+          }}
+          role="button"
+          aria-pressed="true"
+          tabIndex="0"
+        />
+        <div className="modal-card">
+          <section className="modal-card-header header-restore">
+            <h1>Switcher de conférence !</h1>
+          </section>
+          <section className="modal-card-body">
+            <ul>
+              {_.map(this.props.conferences, (conference, id) => (
+                <li key={id} onClick={() => this.switchConference(conference)}>
+                  {conference.title}
+                </li>
+              ))}
+            </ul>
+          </section>
+          <button className="modal-close is-large" onClick={this.props.closeModal} />
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  currentConferenceId: state.smoothie.currentConferenceId,
-});
-
 const mapDispatchToProps = dispatch => ({
   switchConference: conference => dispatch(switchConference(conference)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SwitchComponent);
+export default connect(null, mapDispatchToProps)(SwitcherComponent);

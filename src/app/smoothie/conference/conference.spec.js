@@ -5,7 +5,7 @@ import { ConferenceComponent } from './conference.component';
 const props = {
   timeBegin: 10,
   timeEnd: 12,
-  conferences: [{}],
+  conferences: { remaining: [], selected: [] },
   openSwitcher: jest.fn(() => 1),
 };
 
