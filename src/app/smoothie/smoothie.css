@@ -6,7 +6,7 @@
 
 .header-date > h1 {
   padding:0; margin: 0;
-  font-size: 2.8em;
+  font-size: 10em;
   font-weight: bolder;
   color: #E6421C;
 }
@@ -25,7 +25,6 @@
   background-color: rgba(255, 255, 242, 0.9);
   text-align: center;
   margin-bottom: 20px;
-  border-radius: 2%;
 }
 
 .outils {

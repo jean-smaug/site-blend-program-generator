@@ -9,7 +9,6 @@
 
 }
 
-
 .conferences {
   background-color: rgb(254, 206, 142);
   padding-top: 4%;
@@ -17,11 +16,31 @@
 }
 
 .conference {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2%;
+  background-color: #B2CC35;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   cursor: pointer;
+  color: white;
+  font-weight: lighter;
+}
+
+.title-preview {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+
+.horaire-preview {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.conference:nth-child(2n) {
+  background-color: #E5421C;
+}
+
+.conference:nth-child(3n) {
+  background-color: #00A2DF;
 }
 
 .conference-opt {
