@@ -3,19 +3,19 @@
 import React, { Component } from 'react';
 
 class Modal extends Component {
-  state: {
-    showModal: Boolean,
-  };
-
   state = {
     showModal: false,
+  };
+
+  state: {
+    showModal: Boolean,
   };
 
   props: {
     render: () => void,
   };
 
-  toggleModal = () => {
+  closeModal = () => {
     this.setState({
       showModal: false,
     });
@@ -23,10 +23,11 @@ class Modal extends Component {
 
   render() {
     return (
-      <div className="modal is-active">
+      this.state.showModal ?
+  (<div className="modal is-active">
         <div
           className="modal-background"
-          onClick={closeModal}
+          onClick={() => this.closeModal()}
           role="button"
           aria-pressed="true"
           tabIndex="0"
@@ -37,13 +38,15 @@ class Modal extends Component {
           </section>
           <section className="modal-card-body body-show-key">{this.props.render()}</section>
           <section className="modal-card-foot footer-show-key">
-            <button className="button is-success" onClick={this.toggleModal}>
+            
+            
+            <button className="button is-success" onClick={() => this.closeModal()}>
               Ok !
             </button>
           </section>
-          <button className="modal-close is-large" onClick={closeModal} />
+          <button className="modal-close is-large" onClick={() => this.closeModal()} />
         </div>
-      </div>
-    );
+      </div>)
+    : null);
   }
 }
