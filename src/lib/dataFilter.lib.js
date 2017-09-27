@@ -31,22 +31,37 @@ export const filterByTags = (conferences: Conferences, tags) =>
  * Filter conferences by level and by domain
  */
 export const filterByLevelAndDomain = (conferences: Conferences, filters: Filters) => {
-  _.filter(conferences, (conference) => {
+  const confs = _.filter(conferences, (conference) => {
     let keepConference = false;
+    if (conference.level === '') {
+      conference.level = 'beginner';
+    }
+
     _.map(filters, (filter) => {
       if (
-        (conference.domain === filter.domain || conference.domain === 'société') &&
-        filter.level === conference.level
+        (conference.domain === filter.domain ||
+          conference.domain === 'société' ||
+          conference.domain === 'societe') &&
+        (filter.level === conference.level || conference.level === '')
       ) {
         keepConference = true;
       }
     });
+
     return keepConference;
   });
+
+  console.log(confs);
+  return confs;
 };
+
 export const filterConferences = (conferences: Conferences, domains, tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
+
+  console.log(domainConferences);
+  console.log(tagsConferences);
+
   return _.union(domainConferences, tagsConferences);
 };
 
@@ -157,11 +172,12 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   _.forEach(conferences, (item) => {
     const [timeBegin] = _.split(item.timeBegin, 'h');
     const day = smoothie[item.day][convertHourToString(timeBegin)];
-
-    if (isConferenceSlotFree(day.selected, item)) {
-      day.selected.push(item);
-    } else {
-      day.remaining.push(item);
+    if (day !== undefined) {
+      if (isConferenceSlotFree(day.selected, item)) {
+        day.selected.push(item);
+      } else {
+        day.remaining.push(item);
+      }
     }
   });
 

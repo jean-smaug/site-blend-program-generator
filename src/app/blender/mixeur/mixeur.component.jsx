@@ -57,7 +57,12 @@ export class MixeurComponent extends Component {
           toastMessageFactory={React.createFactory(ToastMessage.animation)}
           className="toast-top-full-width"
         />
-        <input className="btn-begin" type="button" onClick={this.submitBtn} value="Voir mon planning >" />
+        <input
+          className="btn-begin"
+          type="button"
+          onClick={this.submitBtn}
+          value="Voir mon planning >"
+        />
       </div>
     );
   }
