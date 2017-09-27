@@ -12,14 +12,16 @@ export class CheckboxKeywordComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: _.sample(['info', 'success', 'primary', 'warning']),
+      color: 'info',
     };
   }
 
   toggleCheckbox = () => {
     if (!_.includes(this.props.keywords, this.props.item)) {
       this.props.addKeyword(this.props.item);
-    } else this.props.removeKeyword(this.props.item);
+    } else {
+      this.props.removeKeyword(this.props.item);
+    }
   };
 
   render() {

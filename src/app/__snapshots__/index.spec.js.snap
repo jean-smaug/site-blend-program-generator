@@ -40,7 +40,7 @@ ShallowWrapper {
                         src="https://img11.hostingpics.net/pics/268136header.png"
                     />
                 </div>
-                <Blender />
+                <Connect(Blender) />
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@ ShallowWrapper {
                                     src="https://img11.hostingpics.net/pics/268136header.png"
                               />
                         </div>
-                        <Blender />
+                        <Connect(Blender) />
                   </div>
             </div>
       </div>
@@ -178,7 +178,7 @@ ShallowWrapper {
                                                             src="https://img11.hostingpics.net/pics/268136header.png"
                                                   />
                                         </div>
-                                        <Blender />
+                                        <Connect(Blender) />
                               </div>
                     </div>
           </div>
@@ -223,7 +223,7 @@ ShallowWrapper {
                                                             src="https://img11.hostingpics.net/pics/268136header.png"
                                                   />
                                         </div>
-                                        <Blender />
+                                        <Connect(Blender) />
                               </div>
                     </div>
           </div>

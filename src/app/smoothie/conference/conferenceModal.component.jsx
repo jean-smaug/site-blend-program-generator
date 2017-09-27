@@ -63,7 +63,7 @@ const ConferenceModal = ({
             {title}
           </h1>
           <h2>
-            {`${timeBegin}h00 > h00`}
+            {`${timeBegin}`}
           </h2>
           {description}
           <div className="tags">

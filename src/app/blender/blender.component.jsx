@@ -1,6 +1,9 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import * as formActions from './blender.action';
 import './blender.css';
 import * as domains from './data/domains.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
@@ -11,7 +14,7 @@ import ModalRestore from './modalRestore/modalRestore.component';
 import { getTags } from '../../lib/dataFilter.lib';
 import { getConferences } from '../../lib/database';
 
-export default class Blender extends React.Component {
+class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
@@ -20,8 +23,9 @@ export default class Blender extends React.Component {
 
   componentDidMount = async () => {
     const conferences = await getConferences() || [];
-    this.setState({ tags: getTags(conferences) });
-  }
+    this.setState({ tags: _.shuffle(getTags(conferences)) });
+  };
+
 
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
@@ -81,9 +85,20 @@ export default class Blender extends React.Component {
             <h2 className="category-desc">
               Sélectionnez les mots-clefs qui vous intéressent.
             </h2>
+            {_.map(this.props.keywords, item => (
+              <span
+                onClick={() => this.props.removeKeyword(item)}
+                role="presentation"
+                className={`tag is-${_.sample(['info', 'success', 'primary', 'warning'])} keyword-elt`}
+              >
+                {`${item} x`}
+              </span>
+            ),
+            )
+            }
             <hr />
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <div className="column is-8 is-offset-2">
                 <div className="control">
                   <input
                     className="input"
@@ -92,13 +107,16 @@ export default class Blender extends React.Component {
                     placeholder="Rechercher d'autres mots clefs..."
                   />
                 </div>
-                {_.map(_.shuffle(this.state.tags), (item) => {
+                {_.map(this.state.tags, (item) => {
                   if (item !== undefined) {
                     if (
                       this.state.filterKeywords === '' ||
                       _.startsWith(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
                     ) {
-                      return <CheckboxKeyword item={item} key={item} />;
+                      return (<CheckboxKeyword
+                        item={item}
+                        key={item}
+                      />);
                     }
                   }
                   return null;
@@ -249,3 +267,20 @@ export default class Blender extends React.Component {
     );
   }
 }
+
+Blender.propTypes = {
+  removeKeyword: PropTypes.func.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+};
+
+const mapStateToProps = state => ({
+  keywords: state.form.keywords,
+});
+
+const mapDispatchToProps = dispatch => ({
+  removeKeyword: (word) => {
+    dispatch(formActions.removeKeyword(word));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blender);

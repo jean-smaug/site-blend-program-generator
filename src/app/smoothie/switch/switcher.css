@@ -6,7 +6,15 @@
   width: 200px;
 }
 
-.switcher__item {
-  background: white;
+.item-switcher {
+  background: #E6421D;
+  padding: 2%;
   cursor: pointer;
+  margin: 2%;
+  color:white;
 }
+
+.item-switcher:hover {
+  background: #e62b18;
+}
+

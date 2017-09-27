@@ -6,6 +6,7 @@ import Modal from './conferenceModal.component';
 import Switcher from '../switch/switch.component';
 import { Conferences } from '../smoothie.type';
 import './conference.css';
+import { getEndTime } from '../../../lib/time.lib';
 
 export class ConferenceComponent extends Component {
   state = {
@@ -28,8 +29,6 @@ export class ConferenceComponent extends Component {
   // }
 
   props: {
-    timeBegin: number,
-    timeEnd: number,
     conferences: Conferences,
   };
 
@@ -54,13 +53,13 @@ export class ConferenceComponent extends Component {
   };
 
   render() {
-    const { timeBegin, timeEnd, conferences } = this.props;
+    const { conferences } = this.props;
     return (
       <div>
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
           <Modal
             closeModal={this.toggleModal}
-            conference={conferences.selected[this.state.showMoreConferenceId]}
+            conference={_.orderBy(conferences.selected, 'timeBegin', 'asc')[this.state.showMoreConferenceId]}
           />
         ) : null}
 
@@ -71,24 +70,19 @@ export class ConferenceComponent extends Component {
         <div className="columns">
           <div className="column">
             <div className="conference">
-              <div className="conference-opt">
-                {conferences.remaining.length > 1 ? (
-                  <i
-                    className="fa fa-arrows-h circle"
-                    role="presentation"
-                    onClick={e => this.openSwitcher(e)}
-                  />
-                ) : null}
-                <span className="conference-time">{`${timeBegin}h00 > ${timeEnd}h00`}</span>
-                {/* {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null} */}
-              </div>
+              {conferences.remaining.length > 1 ? (
+                <i
+                  className="fa fa-arrows-h circle"
+                  role="presentation"
+                  onClick={e => this.openSwitcher(e)}
+                />
+              ) : null}
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
-                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title }, key) => (
-                    <div onClick={() => this.toggleModal(key)} role="presentation">
-                      {title}
-                      <br />
-                      <br />
+                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration }, key) => (
+                    <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
+                      <p className="horaire-preview">{`${timeBegin} > ${getEndTime(timeBegin, duration)}`}</p>
+                      <p className="title-preview"> {title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()}</p>
                     </div>
                   ))
                 ) : (
