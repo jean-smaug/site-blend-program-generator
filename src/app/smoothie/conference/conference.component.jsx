@@ -61,7 +61,7 @@ export class ConferenceComponent extends Component {
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
           <Modal
             closeModal={this.toggleModal}
-            conference={conferences.selected[this.state.showMoreConferenceId]}
+            conference={_.orderBy(conferences.selected, 'timeBegin', 'asc')[this.state.showMoreConferenceId]}
           />
         ) : null}
 

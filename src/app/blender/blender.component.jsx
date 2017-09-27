@@ -16,12 +16,24 @@ export default class Blender extends React.Component {
     currentPage: 1,
     filterKeywords: '',
     isModalVisible: false,
+    tagsSelected: [],
   };
 
   componentDidMount = async () => {
     const conferences = await getConferences() || [];
-    this.setState({ tags: getTags(conferences) });
-  }
+    this.setState({ tags: _.shuffle(getTags(conferences)) });
+  };
+
+  keywordsChange = (type, tag) => {
+    if (type === 'ADD') {
+      this.setState({ tagsSelected: [...this.state.tagsSelected, { libelle: tag, color: _.sample(['info', 'success', 'primary', 'warning']) }] });
+    } else if (type === 'REMOVE') {
+      this.setState({ tagsSelected: _.filter(
+        this.state.tagsSelected,
+        element => element.libelle !== tag,
+      ) });
+    }
+  };
 
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
@@ -81,9 +93,19 @@ export default class Blender extends React.Component {
             <h2 className="category-desc">
               Sélectionnez les mots-clefs qui vous intéressent.
             </h2>
+            {_.map(this.state.tagsSelected, item => (
+              <span
+                role="presentation"
+                className={`tag is-${item.color} keyword-elt`}
+              >
+                {item.libelle}
+              </span>
+            ),
+            )
+            }
             <hr />
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <div className="column is-8 is-offset-2">
                 <div className="control">
                   <input
                     className="input"
@@ -92,13 +114,17 @@ export default class Blender extends React.Component {
                     placeholder="Rechercher d'autres mots clefs..."
                   />
                 </div>
-                {_.map(_.shuffle(this.state.tags), (item) => {
+                {_.map(this.state.tags, (item) => {
                   if (item !== undefined) {
                     if (
                       this.state.filterKeywords === '' ||
                       _.startsWith(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
                     ) {
-                      return <CheckboxKeyword item={item} key={item} />;
+                      return (<CheckboxKeyword
+                        change={this.keywordsChange}
+                        item={item}
+                        key={item}
+                      />);
                     }
                   }
                   return null;
