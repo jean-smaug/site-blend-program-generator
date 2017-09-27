@@ -1,6 +1,9 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import * as formActions from './blender.action';
 import './blender.css';
 import * as domains from './data/domains.json';
 import CheckboxKeyword from './checkboxKeyword/checkboxKeyword.component';
@@ -11,12 +14,11 @@ import ModalRestore from './modalRestore/modalRestore.component';
 import { getTags } from '../../lib/dataFilter.lib';
 import { getConferences } from '../../lib/database';
 
-export default class Blender extends React.Component {
+class Blender extends React.Component {
   state = {
     currentPage: 1,
     filterKeywords: '',
     isModalVisible: false,
-    tagsSelected: [],
   };
 
   componentDidMount = async () => {
@@ -24,16 +26,6 @@ export default class Blender extends React.Component {
     this.setState({ tags: _.shuffle(getTags(conferences)) });
   };
 
-  keywordsChange = (type, tag) => {
-    if (type === 'ADD') {
-      this.setState({ tagsSelected: [...this.state.tagsSelected, { libelle: tag, color: _.sample(['info', 'success', 'primary', 'warning']) }] });
-    } else if (type === 'REMOVE') {
-      this.setState({ tagsSelected: _.filter(
-        this.state.tagsSelected,
-        element => element.libelle !== tag,
-      ) });
-    }
-  };
 
   nextPage = () => {
     this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
@@ -93,12 +85,13 @@ export default class Blender extends React.Component {
             <h2 className="category-desc">
               Sélectionnez les mots-clefs qui vous intéressent.
             </h2>
-            {_.map(this.state.tagsSelected, item => (
+            {_.map(this.props.keywords, item => (
               <span
+                onClick={() => this.props.removeKeyword(item)}
                 role="presentation"
-                className={`tag is-${item.color} keyword-elt`}
+                className={`tag is-${_.sample(['info', 'success', 'primary', 'warning'])} keyword-elt`}
               >
-                {item.libelle}
+                {`${item} x`}
               </span>
             ),
             )
@@ -121,7 +114,6 @@ export default class Blender extends React.Component {
                       _.startsWith(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
                     ) {
                       return (<CheckboxKeyword
-                        change={this.keywordsChange}
                         item={item}
                         key={item}
                       />);
@@ -275,3 +267,20 @@ export default class Blender extends React.Component {
     );
   }
 }
+
+Blender.propTypes = {
+  removeKeyword: PropTypes.func.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+};
+
+const mapStateToProps = state => ({
+  keywords: state.form.keywords,
+});
+
+const mapDispatchToProps = dispatch => ({
+  removeKeyword: (word) => {
+    dispatch(formActions.removeKeyword(word));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blender);

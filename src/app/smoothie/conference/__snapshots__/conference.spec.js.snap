@@ -13,15 +13,6 @@ Array [
                 className="conference"
             >
                 <div
-                    className="conference-opt"
-                >
-                    <span
-                        className="conference-time"
-                    >
-                        10h00 &gt; 12h00
-                    </span>
-                </div>
-                <div
                     className="conference-title"
                     role="button"
                 >

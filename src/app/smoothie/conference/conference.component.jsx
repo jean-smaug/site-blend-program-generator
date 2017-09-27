@@ -29,8 +29,6 @@ export class ConferenceComponent extends Component {
   // }
 
   props: {
-    timeBegin: number,
-    timeEnd: number,
     conferences: Conferences,
   };
 
@@ -72,16 +70,13 @@ export class ConferenceComponent extends Component {
         <div className="columns">
           <div className="column">
             <div className="conference">
-              <div className="conference-opt">
-                {conferences.remaining.length > 1 ? (
-                  <i
-                    className="fa fa-arrows-h circle"
-                    role="presentation"
-                    onClick={e => this.openSwitcher(e)}
-                  />
-                ) : null}
-                {/* {conferences.length > 1 ? <i className="fa fa-lock circle" /> : null} */}
-              </div>
+              {conferences.remaining.length > 1 ? (
+                <i
+                  className="fa fa-arrows-h circle"
+                  role="presentation"
+                  onClick={e => this.openSwitcher(e)}
+                />
+              ) : null}
               <div role="button" className="conference-title">
                 {conferences.selected.length !== 0 ? (
                   _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration }, key) => (

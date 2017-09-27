@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { Conference, Conferences } from '../smoothie.type';
 import { switchConference } from '../smoothie.action';
+import './switcher.css';
 // import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
@@ -25,9 +26,7 @@ export class SwitcherComponent extends Component {
       <div className="modal is-active">
         <div
           className="modal-background"
-          onClick={() => {
-            console.log('oui');
-          }}
+          onClick={this.props.closeModal}
           role="button"
           aria-pressed="true"
           tabIndex="0"
@@ -37,9 +36,13 @@ export class SwitcherComponent extends Component {
             <h1>Switcher de conférence !</h1>
           </section>
           <section className="modal-card-body">
+            <div className="message-body">
+              {`Attention, certaines conférences peuvent
+                enlever celles déja présentes en cas de conflit d'horaire !`}
+            </div>
             <ul>
               {_.map(this.props.conferences, (conference, id) => (
-                <li key={id} onClick={() => this.switchConference(conference)}>
+                <li className="item-switcher" role="presentation" key={id} onClick={() => this.switchConference(conference)}>
                   {conference.title}
                 </li>
               ))}
