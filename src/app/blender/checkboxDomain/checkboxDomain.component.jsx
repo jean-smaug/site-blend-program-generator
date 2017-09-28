@@ -87,48 +87,53 @@ export class CheckboxDomainComponent extends Component {
         onMouseEnter={this.onMouseEnterHandler}
         onMouseLeave={this.onMouseLeaveHandler}
         style={
-          this.isChecked()
-            ? { backgroundImage: `url(img/domains/${this.props.item.id}.png)` }
-            : { backgroundImage: `url(./img/domains/${this.props.item.id}-disabled.png)` }
+          this.isChecked() ? (
+            { backgroundImage: `url(img/domains/${this.props.item.id}.png)` }
+          ) : (
+            { backgroundImage: `url(./img/domains/${this.props.item.id}-disabled.png)` }
+          )
         }
       >
         <div>
           <h1 style={this.isChecked() ? { backgroundColor: '#E6421C' } : { backgroundColor: '' }}>
-            {' '}{this.props.item.libelle}{' '}
+            {' '}
+            {this.props.item.libelle}{' '}
           </h1>
-          {!this.isChecked()
-            ? <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam asperiores
-                autem dicta dignissimos dolore dolorum ea facere, impedit in iste molestiae, nisi
-                nostrum perferendis, placeat quod sapiente tempora velit.
-            </p>
-            : ''}
-          {this.isChecked() || this.state.hover
-            ? <div className="groupBtnLevel">
+          {!this.isChecked() ? <p>{this.props.item.description}</p> : ''}
+          {this.isChecked() || this.state.hover ? (
+            <div className="groupBtnLevel">
               <span
                 role="presentation"
                 onClick={event => this.submitLevel(event, 'beginner')}
                 className={
-                  this.getCheckedLevel('beginner')
-                    ? 'tag domain-selected level-domain'
-                    : 'tag is-notselected level-domain'
+                  this.getCheckedLevel('beginner') ? (
+                    'tag domain-selected level-domain'
+                  ) : (
+                    'tag is-notselected level-domain'
+                  )
                 }
               >
-                {' '}Découvrir{' '}
+                {' '}
+                Découvrir{' '}
               </span>
               <span
                 role="presentation"
                 onClick={event => this.submitLevel(event, 'expert')}
                 className={
-                  this.getCheckedLevel('expert')
-                    ? 'tag domain-selected level-domain'
-                    : 'tag is-notselected level-domain'
+                  this.getCheckedLevel('expert') ? (
+                    'tag domain-selected level-domain'
+                  ) : (
+                    'tag is-notselected level-domain'
+                  )
                 }
               >
-                {' '}Approfondir{' '}
+                {' '}
+                Approfondir{' '}
               </span>
             </div>
-            : ''}
+          ) : (
+            ''
+          )}
         </div>
       </div>
     );
@@ -139,6 +144,7 @@ CheckboxDomainComponent.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     libelle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   }).isRequired,
   domains: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   updateLevel: PropTypes.func.isRequired,
