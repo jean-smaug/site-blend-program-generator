@@ -7,15 +7,8 @@ import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
-import { removeConferences } from './smoothie/smoothie.action';
 
-export const App = ({
-  smoothie,
-  removeConferencesFromState,
-}: {
-  smoothie: Object,
-  removeConferencesFromState: () => void,
-}) => (
+export const App = ({ smoothie }: { smoothie: Object }) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">
@@ -26,17 +19,6 @@ export const App = ({
           alt="BlendWebMix 2017"
         />
       </a>
-
-      {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ? (
-        <div className="div-remix column is-2">
-          <input
-            className="btn-remix"
-            type="button"
-            value="Remix"
-            onClick={removeConferencesFromState}
-          />{' '}
-        </div>
-      ) : null}
     </div>
 
     <div className="columns">
@@ -71,10 +53,4 @@ const mapStateToProps = ({ smoothie }) => ({
   smoothie,
 });
 
-const mapDispatchToProps = dispatch => ({
-  removeConferencesFromState: () => {
-    dispatch(removeConferences());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, null)(App);

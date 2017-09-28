@@ -6,6 +6,7 @@ import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
 import { setConferencesStore, isStore, setOneShow } from '../../lib/localStorage.lib';
+import { removeConferences } from './smoothie.action';
 
 import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
@@ -38,6 +39,7 @@ export class SmoothieComponent extends Component {
     dayTwo: Day,
     isSwitcherOpened: boolean,
     switcherConferences: Array<Conference>,
+    removeConferencesFromState: () => void,
   };
 
   handleClickSave = () => {
@@ -63,7 +65,9 @@ export class SmoothieComponent extends Component {
     });
   };
 
-  remix = () => {};
+  remix = () => {
+    this.props.removeConferencesFromState();
+  };
 
   render() {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
@@ -95,13 +99,9 @@ export class SmoothieComponent extends Component {
             ) : (
               ''
             )}
-            {isStore('key') ? (
-              <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
-                <i className="fa fa-info" />
-              </a>
-            ) : (
-              ''
-            )}
+            <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
+              {/* <i className="fa fa-info" /> */}Remix
+            </a>
           </div>
         </div>
         <div id="citron">
@@ -144,6 +144,10 @@ const mapStateToProps = ({
   switcherConferences,
 });
 
-const mapDispatchToProps = () => {};
+const mapDispatchToProps = dispatch => ({
+  removeConferencesFromState: () => {
+    dispatch(removeConferences());
+  },
+});
 
-export default connect(mapStateToProps)(SmoothieComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SmoothieComponent);
