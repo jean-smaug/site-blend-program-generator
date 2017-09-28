@@ -2,28 +2,22 @@
 CONTAINER FORM
  */
 
-.accueil{
+.accueil {
   text-align: center;
 }
 
-.accueil > h1 {
+.accueil>h1 {
   font-size: 2em;
   display: block;
-  color: #E5421C;
+  color: #e5421c;
   text-transform: uppercase;
-  font-family: 'Permanent Marker';
+  font-family: "Permanent Marker";
 }
 
-.desc > p {
+.desc>p {
   font-size: 1.2em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
-.modal {
-  z-index: 2000;
-}
-
-
 
 .modal-header {
   height: 45px;
@@ -36,24 +30,23 @@ CONTAINER FORM
 
 .modal-header span {
   display: block;
-  margin:5px;
+  margin: 5px;
   height: 16px;
   width: 16px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
 .modal-header span.is-active {
   background: rgba(0, 0, 0, 0.4);
-  background: #FF8F00;
+  background: #ff8f00;
 }
 
 .modal-bodies {
   position: relative;
   perspective: 1000px;
 }
-
-
 
 .modal-body {
   text-align: center;
@@ -66,7 +59,9 @@ CONTAINER FORM
   -webkit-transform-origin: top left;
   transform-origin: top left;
   padding: 2% 5% 2% 5%;
+  margin-bottom: 20px;
 }
+
 
 /** Liste des mots clefs **/
 
@@ -80,19 +75,21 @@ CONTAINER FORM
   margin-right: 3px;
 }
 
+
 /** button mixer **/
 
-.mix-btn{
+.mix-btn {
   text-align: center;
   height: 100px;
   width: 100px;
   border-radius: 50%;
   box-shadow: 2px 2px 8px #aaa;
-  background-color: #E6421D;
+  background-color: #e6421d;
   color: white;
   font-weight: bold;
   font-size: 1.2em;
 }
+
 
 /** Liste des mots clefs **/
 
@@ -100,17 +97,17 @@ CONTAINER FORM
   text-transform: uppercase;
   text-align: center;
   font-size: 2em;
-  color: #E6421D;
-  font-family: 'Permanent Marker', sans-serifserif;
+  color: #e6421d;
+  font-family: "Permanent Marker", sans-serifserif;
 }
 
 .category-desc {
   margin-bottom: 2%;
   font-size: 1.2em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.blockDomain{
+.blockDomain {
   background-color: grey;
   background-size: cover;
   height: 300px;
@@ -120,15 +117,15 @@ CONTAINER FORM
   z-index: 0;
 }
 
-.groupBtnLevel{
+.groupBtnLevel {
   position: absolute;
   bottom: 10px;
   width: 100%;
 }
 
-.domain-selected{
-  background-color: #E6421C;
-  color:white;
+.domain-selected {
+  background-color: #e6421c;
+  color: white;
 }
 
 .blockDomain h1 {
@@ -139,7 +136,7 @@ CONTAINER FORM
 
 .blockDomain p {
   padding: 10px;
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: bolder;
 }
 
@@ -154,11 +151,11 @@ CONTAINER FORM
 /** Button suivant/précédent **/
 
 .btn-suivant,
-.btn-precedent{
+.btn-precedent {
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
-  background: #E5421C;
+  background: #e5421c;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -168,17 +165,18 @@ CONTAINER FORM
   width: 100%;
   margin-top: 5px;
 }
+
 .btn-suivant:hover,
 .btn-precedent:hover,
 .btn-begin:hover {
   background: #e51d13;
 }
 
-.btn-begin{
+.btn-begin {
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
-  background: #E5421C;
+  background: #e5421c;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -189,38 +187,41 @@ CONTAINER FORM
   margin-top: 5px;
 }
 
-.link-restore{
+.link-restore {
   margin-bottom: 20px;
 }
+
+
 /** tag **/
 
-.is-notselected{
+.is-notselected {
   border: 1px dashed;
 }
 
-.is-notselected:hover{
+.is-notselected:hover {
   border: 1px solid;
 }
 
-.contain-a{
+.contain-a {
   width: 100%;
   height: 100%;
   background-color: white;
   border-bottom: 1px solid #ccc;
   text-align: center;
   padding: 5px;
-  color: #00A2DF;
+  color: #00a2df;
 }
-
-
 
 
 /** BTN INFO **/
 
+button:focus {
+  outline: none;
+}
 
-button:focus { outline: none; }
-
-button:hover { opacity: .8; }
+button:hover {
+  opacity: 0.8;
+}
 
 .fa {
   font-size: 20px;
@@ -267,7 +268,7 @@ button:hover { opacity: .8; }
   transform-origin: 50% 50%;
   right: 20px;
   bottom: 20px;
-  transition: 1.25s all ease .9s;
+  transition: 1.25s all ease 0.9s;
 }
 
 .btn-info {
@@ -278,12 +279,11 @@ button:hover { opacity: .8; }
   cursor: pointer;
   z-index: 4;
   position: relative;
-  transition: 1.25s all ease .1s;
-
+  transition: 1.25s all ease 0.1s;
 }
 
 .main-button {
-  background: #E6421D;
+  background: #e6421d;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -296,37 +296,41 @@ button:hover { opacity: .8; }
   bottom: 0;
   width: 54px;
   height: 54px;
-  background: #E6421D;
+  background: #e6421d;
   border-radius: 50%;
   z-index: -99;
   pointer-events: none;
-  transition: 1.25s all ease .5s;
+  transition: 1.25s all ease 0.5s;
 }
 
+
 /*déplacement btn i*/
+
 .button-wrapper.clicked {
   -webkit-transform: rotate(90deg) translateY(-96px);
   -ms-transform: rotate(90deg) translateY(-96px);
   transform: rotate(180deg) translateY(-20px) translateX(20px);
   right: 0;
   bottom: 0;
-  -webkit-transition: .3s all ease .6s;
-  transition: .3s all ease .6s;
+  -webkit-transition: 0.3s all ease 0.6s;
+  transition: 0.3s all ease 0.6s;
 }
 
 .button-wrapper.clicked .main-button {
   opacity: 0;
-  -webkit-transition: .3s all ease .3s;
-  transition: .3s all ease .3s;
+  -webkit-transition: 0.3s all ease 0.3s;
+  transition: 0.3s all ease 0.3s;
 }
 
+
 /*déclencheur layer*/
+
 .button-wrapper.clicked .layer {
   -webkit-transform: scale(100);
   -ms-transform: scale(100);
   transform: scale(100);
-  -webkit-transition: 2.25s all ease .9s;
-  transition: 1.25s all ease .9s;
+  -webkit-transition: 2.25s all ease 0.9s;
+  transition: 1.25s all ease 0.9s;
 }
 
 .layered-content {
@@ -348,10 +352,12 @@ button:hover { opacity: .8; }
   -ms-flex-pack: center;
   justify-content: center;
   opacity: 0;
-  transition: 0.7s all ease .3s;
+  transition: 0.7s all ease 0.3s;
 }
 
-.layered-content.active { opacity: 1; }
+.layered-content.active {
+  opacity: 1;
+}
 
 .close-button {
   background: white;
@@ -362,8 +368,8 @@ button:hover { opacity: .8; }
 }
 
 .layered-content.active .close-button {
-  -webkit-animation: .2s bounceIn;
-  animation: .2s bounceIn;
+  -webkit-animation: 0.2s bounceIn;
+  animation: 0.2s bounceIn;
 }
 
 .content p {
@@ -371,14 +377,14 @@ button:hover { opacity: .8; }
   font-weight: 300;
   text-align: center;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .content p a {
   font-size: 12px;
   background: white;
   padding: 2.5px 5px;
-  color: #E6421D;
+  color: #e6421d;
   text-decoration: none;
   border-radius: 50px;
   display: inline-block;
@@ -389,25 +395,32 @@ button:hover { opacity: .8; }
   opacity: 0;
   position: relative;
   top: -7.5px;
-  -webkit-transition: .5s all ease .5s;
-  transition: .5s all ease .5s;
+  -webkit-transition: 0.5s all ease 0.5s;
+  transition: 0.5s all ease 0.5s;
 }
 
 .layered-content.active .content p {
   opacity: 1;
   top: 0;
-  -webkit-transition: .5s all ease 1s;
-  transition: .5s all ease 1s;
+  -webkit-transition: 0.5s all ease 1s;
+  transition: 0.5s all ease 1s;
 }
 
+ol,
+ul {
+  list-style: none;
+}
 
+blockquote,
+q {
+  quotes: none;
+}
 
-ol, ul { list-style: none }
-
-blockquote, q { quotes: none }
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -433,14 +446,15 @@ table {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-.lt-ie9 .todo:before, .lt-ie9 .todo:after {
+.lt-ie9 .todo:before,
+.lt-ie9 .todo:after {
   height: 1px;
   border-top: 0;
 }
 
-.todo-list { border-top: 1px solid #e6ebed }
-
+.todo-list {
+  border-top: 1px solid #e6ebed;
+}
 
 .todo-list li {
   position: relative;
@@ -453,23 +467,21 @@ table {
 }
 
 .is-blue {
-  background-color: #00A3DF;
+  background-color: #00a3df;
   color: white !important;
 }
 
 .is-green {
-  background-color: #B2CC35;
+  background-color: #b2cc35;
   color: white !important;
 }
 
 .is-orange {
-  background-color: #E6421D;
+  background-color: #e6421d;
   color: white !important;
 }
 
 .is-red {
-  background-color: #E5421C;
+  background-color: #e5421c;
   color: white !important;
 }
-
-
