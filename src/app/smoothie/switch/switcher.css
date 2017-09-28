@@ -7,6 +7,14 @@
 }
 
 .item-switcher {
+  background: #435965;
+  padding: 2%;
+  cursor: pointer;
+  margin: 2%;
+  color:white;
+}
+
+.selected-conf{
   background: #E6421D;
   padding: 2%;
   cursor: pointer;
@@ -14,7 +22,8 @@
   color:white;
 }
 
+
 .item-switcher:hover {
-  background: #e62b18;
+  background: #292c65;
 }
 

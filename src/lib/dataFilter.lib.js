@@ -176,6 +176,29 @@ export const orderConferencesV2 = (conferences: Conferences) => {
   return smoothie;
 };
 
+/**
+ *
+ * @param {*} currentConferences
+ * @param {*} newConference
+ */
+export const getConferencesConflict = (currentConferences, newConference) => {
+  const timeSlotCurrentConferences = [];
+  const conferencesConflict = [];
+
+  _.forEach(currentConferences, (currentConference) => {
+    timeSlotCurrentConferences.push(convertToMinutes(currentConference));
+  });
+
+  const { minuteBegin } = convertToMinutes(newConference);
+
+  _.each(timeSlotCurrentConferences, (item, key) => {
+    if (minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) {
+      conferencesConflict.push(currentConferences[key]);
+    }
+  });
+  return conferencesConflict;
+};
+
 export const reorderConferencesV2 = (conference: Conference, conferences: Conferences) => {
   const { remaining, selected } = conferences;
 
@@ -188,12 +211,16 @@ export const reorderConferencesV2 = (conference: Conference, conferences: Confer
     };
   }
 
-  const remain = _.reject(remaining, conferenceRemaining =>
+  const conferencesConflit = getConferencesConflict(selected, conference);
+  const selectTab = _.reject(selected, conferenceSelected =>
+    _.includes(conferencesConflit, conferenceSelected),
+  );
+  const remained = _.reject(remaining, conferenceRemaining =>
     _.isEqual(conferenceRemaining, conference),
   );
 
   return {
-    remaining: [...selected, ...remain],
-    selected: [conference],
+    remaining: [...remained, ...conferencesConflit],
+    selected: [...selectTab, conference],
   };
 };
