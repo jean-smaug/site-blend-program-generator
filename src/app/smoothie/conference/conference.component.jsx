@@ -70,7 +70,7 @@ export class ConferenceComponent extends Component {
         <div className="columns">
           <div className="column">
             <div className="conference">
-              {conferences.remaining.length > 1 ? (
+              {conferences.remaining !== undefined && conferences.remaining.length > 1 ? (
                 <i
                   className="fa fa-arrows-h circle"
                   role="presentation"
