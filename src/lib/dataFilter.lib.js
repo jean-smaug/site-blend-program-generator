@@ -1,7 +1,7 @@
 // @flow
 
 import _ from 'lodash';
-import type { Conference, Conferences, Filters } from '../types';
+import type { Conference, Conferences, Filters, Domains, Tags } from '../types';
 import { convertToMinutes, convertHourToString } from './time.lib';
 
 /**
@@ -50,7 +50,7 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
   return confs;
 };
 
-export const filterConferences = (conferences: Conferences, domains, tags) => {
+export const filterConferences = (conferences: Conferences, domains: Domains, tags: Tags) => {
   const domainConferences = filterByLevelAndDomain(conferences, domains);
   const tagsConferences = filterByTags(conferences, tags);
 
@@ -98,7 +98,7 @@ export const getTags = (conferences: Conferences) =>
  * @param {*} currentConferences
  * @param {*} newConference
  */
-const isConferenceSlotFree = (currentConferences, newConference) => {
+const isConferenceSlotFree = (currentConferences: Conferences, newConference: Conference) => {
   const timeSlotCurrentConferences = [];
   let isSlotFree = true;
 
