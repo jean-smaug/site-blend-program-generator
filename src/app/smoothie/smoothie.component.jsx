@@ -97,7 +97,7 @@ export class SmoothieComponent extends Component {
           <img src="https://img11.hostingpics.net/pics/267927citron.png" alt="lemon" />
         </div>
         <div id="paille">
-            <img src="https://img11.hostingpics.net/pics/673317paille.png" alt="straw" />
+          <img src="https://img11.hostingpics.net/pics/673317paille.png" alt="straw" />
         </div>
         <div className="columns">
           <div className="column is-4 is-offset-2 itemsSmoothie">
