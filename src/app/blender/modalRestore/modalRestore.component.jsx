@@ -76,10 +76,10 @@ export class ModalRestoreComponent extends Component {
 
   formatDay = (day) => {
     const dayManip = day;
-    if (day.ten === undefined) dayManip.ten = [];
-    if (day.eight === undefined) dayManip.eight = [];
-    if (day.fourteen === undefined) dayManip.fourteen = [];
-    if (day.sixteen === undefined) dayManip.sixteen = [];
+    if (day.ten === undefined) dayManip.ten = [{ remaining: [], selected: [] }];
+    if (day.eight === undefined) dayManip.eight = [{ remaining: [], selected: [] }];
+    if (day.fourteen === undefined) dayManip.fourteen = [{ remaining: [], selected: [] }];
+    if (day.sixteen === undefined) dayManip.sixteen = [{ remaining: [], selected: [] }];
     return dayManip;
   };
 
