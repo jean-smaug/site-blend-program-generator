@@ -1,14 +1,21 @@
+// @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 import { removeConferences } from './smoothie/smoothie.action';
 
-export const App = ({ smoothie, removeConferencesFromState }) => (
+export const App = ({
+  smoothie,
+  removeConferencesFromState,
+}: {
+  smoothie: Object,
+  removeConferencesFromState: () => void,
+}) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">
@@ -59,11 +66,6 @@ export const App = ({ smoothie, removeConferencesFromState }) => (
     </div>
   </div>
 );
-
-App.propTypes = {
-  smoothie: SmoothieContainer.propTypes.isRequired,
-  removeConferencesFromState: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = ({ smoothie }) => ({
   smoothie,
