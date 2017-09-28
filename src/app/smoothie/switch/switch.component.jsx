@@ -7,19 +7,45 @@ import _ from 'lodash';
 import { Conference, Conferences } from '../smoothie.type';
 import { switchConference } from '../smoothie.action';
 import './switcher.css';
-import { getEndTime } from '../../../lib/time.lib';
+import { getEndTime, convertHourToString } from '../../../lib/time.lib';
+import { getConferencesConflict } from '../../../lib/dataFilter.lib';
 
 // import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
+  state = {
+    conferenceSelected: null,
+    conferencesConflits: null,
+  };
+
+  state: {
+    conferenceSelected: Conference,
+    conferencesConflits: Conferences,
+  };
+
   props: {
     conferences: Conferences,
     closeModal: () => void,
+    smoothie: Conferences,
     switchConference: (conference: Conference) => void,
   };
 
   switchConference = (conference: Conference) => {
-    this.props.switchConference(conference);
+    const time = conference.timeBegin.split('h')[0];
+    const letterTime = convertHourToString(time);
+    const timeSlotConferences = this.props.smoothie[conference.day][letterTime];
+    const conferencesConflits = getConferencesConflict(
+      timeSlotConferences.selected,
+      conference,
+    ).map(item => <li>{item.title}</li>);
+    this.setState({
+      conferencesConflits,
+      conferenceSelected: conference,
+    });
+  };
+
+  confirmSelection = () => {
+    this.props.switchConference(this.state.conferenceSelected);
     this.props.closeModal();
   };
 
@@ -38,18 +64,41 @@ export class SwitcherComponent extends Component {
             <h1>Switcher de conférence !</h1>
           </section>
           <section className="modal-card-body">
-            <div className="message-body">
-              {`Attention, certaines conférences peuvent
-                enlever celles déja présentes en cas de conflit d'horaire !`}
-            </div>
+            {this.state.conferencesConflits !== null ? (
+              <div className="message-body">
+                Attention les conférences suivantes sont en conflit horaire avec la séléction et
+                vont donc être enlevées du planning :
+                {this.state.conferencesConflits}
+              </div>
+            ) : null}
             <ul>
               {_.map(this.props.conferences, (conference, id) => (
-                <li className="item-switcher" role="presentation" key={id} onClick={() => this.switchConference(conference)}>
-                  <p>{`${conference.timeBegin} > ${getEndTime(conference.timeBegin, conference.duration)}`}</p>
+                <li
+                  className={
+                    this.state.conferenceSelected === conference ? (
+                      'item-switcher selected-conf'
+                    ) : (
+                      'item-switcher'
+                    )
+                  }
+                  role="presentation"
+                  key={id}
+                  onClick={() => this.switchConference(conference)}
+                >
+                  <p>{`${conference.timeBegin} > ${getEndTime(
+                    conference.timeBegin,
+                    conference.duration,
+                  )}`}</p>
                   <p>{conference.title}</p>
                 </li>
               ))}
             </ul>
+            <input
+              type="button"
+              className="btn-suivant"
+              onClick={this.confirmSelection}
+              value="confirmer"
+            />
           </section>
           <button className="modal-close is-large" onClick={this.props.closeModal} />
         </div>
@@ -58,8 +107,12 @@ export class SwitcherComponent extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  smoothie: state.smoothie,
+});
+
 const mapDispatchToProps = dispatch => ({
   switchConference: conference => dispatch(switchConference(conference)),
 });
 
-export default connect(null, mapDispatchToProps)(SwitcherComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(SwitcherComponent);

@@ -4,49 +4,50 @@ import {
   filterByTags,
   filterConferences,
   // filterByLevelAndDomain,
-  reorderConferencesV2,
+  // reorderConferencesV2,
 } from './dataFilter.lib';
 
 import conferences from './__fixtures__/conferences.json';
-import conferencesInState from './__fixtures__/conferences-in-store.json';
+// import conferencesInState from './__fixtures__/conferences-in-store.json';
 import conferencesTag from './__fixtures__/conference--tags.json';
 import conferencesTime1 from './__fixtures__/conference--time-1.json';
 import conferencesTime2 from './__fixtures__/conference--time-2.json';
 
 describe('database.lib', () => {
-  it('should reorder conferences properly V2', async () => {
-    expect(reorderConferencesV2(conferencesInState.remaining[0], conferencesInState)).toEqual({
-      selected: [
-        {
-          day: 'dayOne',
-          duration: 40,
-          timeBegin: '16h',
-          title:
-            "Comment publier une application mobile en un clic ? Notre expérience de l'intégration continue sur mobile",
-        },
-      ],
-      remaining: [
-        {
-          day: 'dayOne',
-          duration: 15,
-          timeBegin: '16h',
-          title: "Comment le blogging m'a permis d'inventer mon propre métier",
-        },
-        {
-          day: 'dayOne',
-          duration: 15,
-          timeBegin: '16h30',
-          title: 'React en 2017',
-        },
-        {
-          day: 'dayOne',
-          duration: 40,
-          timeBegin: '16h',
-          title: 'Guérilla UX, "quick" mais pas "dirty"',
-        },
-      ],
-    });
-  });
+  // it('should reorder conferences properly V2', async () => {
+  //   expect(reorderConferencesV2(conferencesInState.remaining[0], conferencesInState)).toEqual({
+  //     selected: [
+  //       {
+  //         day: 'dayOne',
+  //         duration: 40,
+  //         timeBegin: '16h',
+  //         title:
+  //           "Comment publier une application mobile en un clic ? Notre expérience
+  // de l'intégration continue sur mobile",
+  //       },
+  //     ],
+  //     remaining: [
+  //       {
+  //         day: 'dayOne',
+  //         duration: 15,
+  //         timeBegin: '16h',
+  //         title: "Comment le blogging m'a permis d'inventer mon propre métier",
+  //       },
+  //       {
+  //         day: 'dayOne',
+  //         duration: 15,
+  //         timeBegin: '16h30',
+  //         title: 'React en 2017',
+  //       },
+  //       {
+  //         day: 'dayOne',
+  //         duration: 40,
+  //         timeBegin: '16h',
+  //         title: 'Guérilla UX, "quick" mais pas "dirty"',
+  //       },
+  //     ],
+  //   });
+  // });
 
   it('should get tags', async () => {
     expect((await getTags(conferencesTag)).length).toBe(8);

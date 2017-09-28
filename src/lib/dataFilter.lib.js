@@ -181,7 +181,7 @@ export const orderConferencesV2 = (conferences: Conferences) => {
  * @param {*} currentConferences
  * @param {*} newConference
  */
-const getConferencesConflict = (currentConferences, newConference) => {
+export const getConferencesConflict = (currentConferences, newConference) => {
   const timeSlotCurrentConferences = [];
   const conferencesConflict = [];
 
@@ -196,7 +196,6 @@ const getConferencesConflict = (currentConferences, newConference) => {
       conferencesConflict.push(currentConferences[key]);
     }
   });
-
   return conferencesConflict;
 };
 
