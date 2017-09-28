@@ -99,7 +99,7 @@ export class SmoothieComponent extends Component {
               <h1>Jour 1</h1>
               <h3>Jeudi 26 octobre</h3>
             </div>
-            <ListConference day={dayOne} />
+            <ListConference number="one" day={dayOne} />
           </div>
           <div className="column is-one-quarter" />
         </div>
@@ -109,7 +109,7 @@ export class SmoothieComponent extends Component {
               <h1>Jour 2</h1>
               <h3>Vendredi 27 octobre</h3>
             </div>
-            <ListConference day={dayTwo} />
+            <ListConference number="two" day={dayTwo} />
           </div>
           <div className="column is-one-quarter" />
         </div>
