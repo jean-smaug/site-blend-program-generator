@@ -5,10 +5,7 @@ Array [
   <div
     className="conferences"
 >
-    <Generic
-        horaire="9h30 > 10h30"
-        message="Plénière d'ouverture et autres surprises "
-    />
+    
     <ConferenceComponent
         conferences={Array []}
         timeBegin={10}
@@ -16,16 +13,12 @@ Array [
     />
     <Generic
         horaire="12h > 14h"
-        message="Déjeuner"
+        message="Déjeuner dans le village"
     />
     <ConferenceComponent
         conferences={Array []}
         timeBegin={14}
         timeEnd={16}
-    />
-    <Generic
-        horaire="16h"
-        message="Petite pause (Pensez à visiter les nombreuses activités pendant vos temps libres !)"
     />
     <ConferenceComponent
         conferences={Array []}
