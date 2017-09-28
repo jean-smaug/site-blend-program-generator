@@ -9,13 +9,10 @@
 
 }
 
-
-
 .switcher_link{
   position: relative;
   float: left;
 }
-
 .conferences {
   margin-bottom: 5%;
 }
@@ -65,6 +62,7 @@
   font-size: 0.7em;
   font-weight: bold;
 }
+
 .conference:nth-child(2n) {
   background-color: #E5421C;
 }

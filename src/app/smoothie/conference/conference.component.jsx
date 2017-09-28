@@ -47,9 +47,7 @@ export class ConferenceComponent extends Component {
   };
 
   render() {
-    console.log('THIS.PROPS', this.props);
     const { conferences } = this.props;
-    console.log('CONFERENCES:', conferences);
     return (
       <div>
         {this.state.isModalVisible && !_.isEmpty(conferences) ? (
@@ -66,7 +64,8 @@ export class ConferenceComponent extends Component {
         <div className="columns">
           <div className="column">
             <div className="conference">
-              {conferences.remaining.length > 1 ? (
+
+              {conferences.remaining !== undefined && conferences.remaining.length > 1 ? (
                 <i
                   className="fa fa-arrows-h circle switcher_link"
                   role="presentation"
