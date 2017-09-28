@@ -1,3 +1,7 @@
+html {
+  background: url("https://img11.hostingpics.net/pics/587148backgroundplanning.png") fixed;
+  background-size: 100%;
+}
 
 .header-date {
   font-family: 'Permanent Marker', sans-serif;
@@ -25,8 +29,8 @@
   padding: 0% 1%;
   background-color: rgba(255, 255, 242, 0.9);
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 90px;
+  margin-bottom: 100px;
+  margin-top: 70px;
 }
 
 .outils {
@@ -70,26 +74,6 @@
   left: 29%;
 }
 
-@media screen and (max-width:1200px) {
-  #citron {
-    position: absolute;
-    z-index: 0;
-    width: 12%;
-    height: 12%;
-    top: 15%;
-    left: 29%;
-  }
-}
-
-@media screen and (max-width:769px) {
-  #citron {
-    display: none;
-  }
-  #paille {
-    display: none;
-  }
-}
-
 #citron > img {
   width: 100%;
   height: auto;
@@ -102,4 +86,29 @@
   height: 15%;
   top: 10%;
   right: 28%;
+}
+
+@media screen and (max-width:1280px) {
+  #citron {
+    width: 12%;
+    height: 12%;
+    top: 17%;
+  }
+}
+
+@media screen and (max-width:980) {
+  #citron {
+    width: 30%;
+    height: 30%;
+    top: 150px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #citron {
+    display: none;
+  }
+  #paille {
+    display: none;
+  }
 }
