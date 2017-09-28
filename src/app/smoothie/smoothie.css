@@ -21,10 +21,12 @@
 }
 
 .itemsSmoothie{
+  z-index: 1000;
   padding: 0% 1%;
   background-color: rgba(255, 255, 242, 0.9);
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 90px;
 }
 
 .outils {
@@ -57,4 +59,47 @@
   from {font-size: 2.5em}
   50%  {font-size: 2.7em}
   to   {font-size: 2.5em;}
+}
+
+#citron {
+  position: absolute;
+  z-index: 0;
+  width: 10%;
+  height: 9%;
+  top: 11%;
+  left: 29%;
+}
+
+@media screen and (max-width:1200px) {
+  #citron {
+    position: absolute;
+    z-index: 0;
+    width: 12%;
+    height: 12%;
+    top: 15%;
+    left: 29%;
+  }
+}
+
+@media screen and (max-width:769px) {
+  #citron {
+    display: none;
+  }
+  #paille {
+    display: none;
+  }
+}
+
+#citron > img {
+  width: 100%;
+  height: auto;
+}
+
+#paille {
+  position: absolute;
+  z-index: 0;
+  width: 10%;
+  height: 15%;
+  top: 10%;
+  right: 28%;
 }
