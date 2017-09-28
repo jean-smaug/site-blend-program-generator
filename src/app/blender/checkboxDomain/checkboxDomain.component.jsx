@@ -125,7 +125,7 @@ export class CheckboxDomainComponent extends Component {
                     : 'tag is-notselected level-domain'
                 }
               >
-                {' '}Appronfondir{' '}
+                {' '}Approfondir{' '}
               </span>
             </div>
             : ''}

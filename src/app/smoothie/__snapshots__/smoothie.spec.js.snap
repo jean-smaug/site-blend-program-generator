@@ -63,6 +63,7 @@ ShallowWrapper {
             </div>
             <ListConference
                 day={Object {}}
+                number="one"
             />
         </div>
         <div
@@ -87,6 +88,7 @@ ShallowWrapper {
             </div>
             <ListConference
                 day={Object {}}
+                number="two"
             />
         </div>
         <div
@@ -150,6 +152,7 @@ ShallowWrapper {
                   </div>
                   <ListConference
                         day={Object {}}
+                        number="one"
                   />
             </div>
             <div
@@ -174,6 +177,7 @@ ShallowWrapper {
                   </div>
                   <ListConference
                         day={Object {}}
+                        number="two"
                   />
             </div>
             <div
@@ -282,6 +286,7 @@ ShallowWrapper {
                               </div>
                               <ListConference
                                         day={Object {}}
+                                        number="one"
                               />
                     </div>
                     <div
@@ -306,6 +311,7 @@ ShallowWrapper {
                               </div>
                               <ListConference
                                         day={Object {}}
+                                        number="two"
                               />
                     </div>
                     <div
@@ -369,6 +375,7 @@ ShallowWrapper {
                               </div>
                               <ListConference
                                         day={Object {}}
+                                        number="one"
                               />
                     </div>
                     <div
@@ -393,6 +400,7 @@ ShallowWrapper {
                               </div>
                               <ListConference
                                         day={Object {}}
+                                        number="two"
                               />
                     </div>
                     <div
