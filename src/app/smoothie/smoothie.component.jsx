@@ -22,11 +22,14 @@ export class SmoothieComponent extends Component {
 
   componentDidMount = () => {
     if (isStore('key') && !isStore('isAlreadyShow')) {
-      this.setState({
-        isModalVisible: !this.state.isModalVisible,
-      }, () => {
-        setOneShow();
-      });
+      this.setState(
+        {
+          isModalVisible: !this.state.isModalVisible,
+        },
+        () => {
+          setOneShow();
+        },
+      );
     }
   };
 
@@ -60,15 +63,13 @@ export class SmoothieComponent extends Component {
     });
   };
 
+  remix = () => {};
+
   render() {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
     return (
       <div className="smoothie">
-        {this.state.isModalVisible
-          ? <ModalShowKey
-            closeModal={this.toggleModal}
-          />
-          : null}
+        {this.state.isModalVisible ? <ModalShowKey closeModal={this.toggleModal} /> : null}
 
         <ToastContainer
           ref={(input) => {
@@ -87,10 +88,20 @@ export class SmoothieComponent extends Component {
             {/* onClick={this.handleClickSave}> */}
             {/* <i className="fa fa-save" /> */}
             {/* </a> */}
-            { isStore('key') ?
+            {isStore('key') ? (
               <a role="button" aria-pressed="true" tabIndex="0" onClick={this.toggleModal}>
                 <i className="fa fa-info" />
-              </a> : '' }
+              </a>
+            ) : (
+              ''
+            )}
+            {isStore('key') ? (
+              <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
+                <i className="fa fa-info" />
+              </a>
+            ) : (
+              ''
+            )}
           </div>
         </div>
         <div id="citron">
@@ -124,11 +135,15 @@ export class SmoothieComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  dayOne: state.smoothie.dayOne,
-  dayTwo: state.smoothie.dayTwo,
-  isSwitcherOpened: state.smoothie.isSwitcherOpened,
-  switcherConferences: state.smoothie.switcherConferences,
+const mapStateToProps = ({
+  smoothie: { dayOne, dayTwo, isSwitcherOpened, switcherConferences },
+}) => ({
+  dayOne,
+  dayTwo,
+  isSwitcherOpened,
+  switcherConferences,
 });
+
+const mapDispatchToProps = () => {};
 
 export default connect(mapStateToProps)(SmoothieComponent);

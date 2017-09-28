@@ -18,6 +18,7 @@ export class ModalRestoreComponent extends Component {
       email: '',
     };
   }
+
   state: {
     key: string,
     email: string,
