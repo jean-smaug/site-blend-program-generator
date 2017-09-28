@@ -43,6 +43,14 @@ ShallowWrapper {
                     className="fa fa-info"
                 />
             </a>
+            <a
+                aria-pressed="true"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+            >
+                Remix
+            </a>
         </div>
     </div>
     <div
@@ -148,6 +156,14 @@ ShallowWrapper {
                               className="fa fa-info"
                         />
                   </a>
+                  <a
+                        aria-pressed="true"
+                        onClick={[Function]}
+                        role="button"
+                        tabIndex="0"
+                  >
+                        Remix
+                  </a>
             </div>
       </div>
       <div
@@ -241,6 +257,7 @@ ShallowWrapper {
           "dayTwo": Object {},
         },
         "refs": Object {},
+        "remix": [Function],
         "state": Object {
           "isModalVisible": false,
         },
@@ -297,6 +314,14 @@ ShallowWrapper {
                                         <i
                                                   className="fa fa-info"
                                         />
+                              </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        Remix
                               </a>
                     </div>
           </div>
@@ -402,6 +427,14 @@ ShallowWrapper {
                                         <i
                                                   className="fa fa-info"
                                         />
+                              </a>
+                              <a
+                                        aria-pressed="true"
+                                        onClick={[Function]}
+                                        role="button"
+                                        tabIndex="0"
+                              >
+                                        Remix
                               </a>
                     </div>
           </div>
