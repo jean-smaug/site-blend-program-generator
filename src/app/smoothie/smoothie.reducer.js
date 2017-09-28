@@ -13,8 +13,6 @@ import {
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
   dayTwo: getConferencesStore().dayTwo || {},
-  isSwitcherOpened: false,
-  switcherConferences: [],
 };
 
 export default (state = initialState, payload) => {
