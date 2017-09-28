@@ -7,6 +7,8 @@ import _ from 'lodash';
 import { Conference, Conferences } from '../smoothie.type';
 import { switchConference } from '../smoothie.action';
 import './switcher.css';
+import { getEndTime } from '../../../lib/time.lib';
+
 // import { Conferences } from '../../smoothie/smoothie.type';
 
 export class SwitcherComponent extends Component {
@@ -43,7 +45,8 @@ export class SwitcherComponent extends Component {
             <ul>
               {_.map(this.props.conferences, (conference, id) => (
                 <li className="item-switcher" role="presentation" key={id} onClick={() => this.switchConference(conference)}>
-                  {conference.title}
+                  <p>{`${conference.timeBegin} > ${getEndTime(conference.timeBegin, conference.duration)}`}</p>
+                  <p>{conference.title}</p>
                 </li>
               ))}
             </ul>
