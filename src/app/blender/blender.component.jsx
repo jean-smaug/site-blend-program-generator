@@ -111,7 +111,7 @@ class Blender extends React.Component {
                   if (item !== undefined) {
                     if (
                       this.state.filterKeywords === '' ||
-                      _.startsWith(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
+                      _.includes(item.toLowerCase(), this.state.filterKeywords.toLowerCase())
                     ) {
                       return (<CheckboxKeyword
                         item={item}
