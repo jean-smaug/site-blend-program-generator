@@ -54,6 +54,12 @@
   background-color: #0d235f;
   padding-top: 1%;
   padding-bottom: 1%;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  cursor: pointer;
+  color: white;
+  font-weight: lighter;
 }
 
 .conference-switch:hover{

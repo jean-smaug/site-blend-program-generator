@@ -89,7 +89,8 @@ export class SwitcherComponent extends Component {
                     conference.timeBegin,
                     conference.duration,
                   )}`}</p>
-                  <p>{conference.title}</p>
+                  <p>{conference.title.charAt(0).toUpperCase() +
+                  conference.title.substring(1).toLowerCase()}</p>
                 </li>
               ))}
             </ul>

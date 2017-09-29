@@ -71,7 +71,7 @@ export class ConferenceComponent extends Component {
                   <div
                     role="presentation"
                     onClick={e => this.openSwitcher(e)}
-                    className={'conference conference-switch'}
+                    className={'conference-switch'}
                   >
                     <p className="title-preview"> <i className="fa fa-arrow-circle-left" />{`  Switcher les conférences de ${this.props.timeBegin}h à  ${this.props.timeEnd}h`} </p>
                   </div>
