@@ -2,6 +2,7 @@ import _ from 'lodash';
 import randomString from 'randomstring';
 
 import { db } from '../firebase';
+import { isStore, getKeyStore } from './localStorage.lib';
 
 const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
 
@@ -10,10 +11,17 @@ const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
  * @param {*} state
  */
 export const writeStore = async (state) => {
-  const userKey = randomString.generate({
-    length: 4,
-    capitalization: 'uppercase',
-  });
+
+  let userKey = null;
+  if (!isStore('key')) {
+    userKey = randomString.generate({
+      length: 4,
+      capitalization: 'uppercase',
+    });
+  } else {
+    userKey = getKeyStore();
+  }
+
 
   try {
     await dbRef('/users')

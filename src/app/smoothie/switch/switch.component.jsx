@@ -44,7 +44,7 @@ export class SwitcherComponent extends Component {
     });
   };
 
-  confirmSelection = () => {
+  confirmSelection = async() => {
     this.props.switchConference(this.state.conferenceSelected);
     this.props.closeModal();
   };
