@@ -66,8 +66,8 @@ export class SwitcherComponent extends Component {
           <section className="modal-card-body">
             {this.state.conferencesConflits !== null ? (
               <div className="message-body">
-                Attention les conférences suivantes sont en conflit horaire avec la séléction et
-                vont donc être enlevées du planning :
+                <p className="msg-conflit">Attention les conférences suivantes sont en conflit horaire avec la séléction et
+                vont donc être enlevées du planning :</p>
                 {this.state.conferencesConflits}
               </div>
             ) : null}
@@ -89,7 +89,8 @@ export class SwitcherComponent extends Component {
                     conference.timeBegin,
                     conference.duration,
                   )}`}</p>
-                  <p>{conference.title}</p>
+                  <p>{conference.title.charAt(0).toUpperCase() +
+                  conference.title.substring(1).toLowerCase()}</p>
                 </li>
               ))}
             </ul>
