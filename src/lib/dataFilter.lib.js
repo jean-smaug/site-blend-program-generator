@@ -106,14 +106,15 @@ const isConferenceSlotFree = (currentConferences, newConference) => {
     timeSlotCurrentConferences.push(convertToMinutes(currentConference));
   });
 
-  const { minuteBegin } = convertToMinutes(newConference);
+  const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
 
   _.forEach(timeSlotCurrentConferences, (item) => {
-    if (minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) {
+    if ((minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) ||
+      (minuteBegin <= item.minuteBegin && minuteEnd >
+        item.minuteBegin)) {
       isSlotFree = false;
     }
   });
-
   return isSlotFree;
 };
 
@@ -189,10 +190,12 @@ export const getConferencesConflict = (currentConferences, newConference) => {
     timeSlotCurrentConferences.push(convertToMinutes(currentConference));
   });
 
-  const { minuteBegin } = convertToMinutes(newConference);
+  const { minuteBegin, minuteEnd } = convertToMinutes(newConference);
 
   _.each(timeSlotCurrentConferences, (item, key) => {
-    if (minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) {
+    if ((minuteBegin >= item.minuteBegin && minuteBegin <= item.minuteEnd) ||
+      (minuteBegin <= item.minuteBegin && minuteEnd >
+        item.minuteBegin)) {
       conferencesConflict.push(currentConferences[key]);
     }
   });
