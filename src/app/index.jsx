@@ -33,19 +33,7 @@ export const App = ({ smoothie }: { smoothie: Object }) => (
         ) : null}
       </div>
     </div>
-    <div className="columns">
-      <div className="column  is-12">
-        {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ? (
-          <div>
-            <div className="columns">
-              <div className="column is-12">
-                <SmoothieContainer />
-              </div>
-            </div>
-          </div>
-        ) : null}
-      </div>
-    </div>
+    {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ? <SmoothieContainer /> : null}
   </div>
 );
 

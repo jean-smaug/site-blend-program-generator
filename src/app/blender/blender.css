@@ -6,7 +6,7 @@ CONTAINER FORM
   text-align: center;
 }
 
-.accueil>h1 {
+.accueil > h1 {
   font-size: 2em;
   display: block;
   color: #e5421c;
@@ -14,7 +14,7 @@ CONTAINER FORM
   font-family: "Permanent Marker";
 }
 
-.desc>p {
+.desc > p {
   font-size: 1.2em;
   font-family: "Montserrat", sans-serif;
 }
@@ -62,7 +62,6 @@ CONTAINER FORM
   margin-bottom: 20px;
 }
 
-
 /** Liste des mots clefs **/
 
 .keyword-elt {
@@ -74,7 +73,6 @@ CONTAINER FORM
 .keyword-checkbox {
   margin-right: 3px;
 }
-
 
 /** button mixer **/
 
@@ -89,7 +87,6 @@ CONTAINER FORM
   font-weight: bold;
   font-size: 1.2em;
 }
-
 
 /** Liste des mots clefs **/
 
@@ -147,7 +144,6 @@ CONTAINER FORM
   font-weight: bolder;
 }
 
-
 /** Button suivant/précédent **/
 
 .btn-suivant,
@@ -191,7 +187,6 @@ CONTAINER FORM
   margin-bottom: 20px;
 }
 
-
 /** tag **/
 
 .is-notselected {
@@ -211,7 +206,6 @@ CONTAINER FORM
   padding: 5px;
   color: #00a2df;
 }
-
 
 /** BTN INFO **/
 
@@ -303,7 +297,6 @@ button:hover {
   transition: 1.25s all ease 0.5s;
 }
 
-
 /*déplacement btn i*/
 
 .button-wrapper.clicked {
@@ -321,7 +314,6 @@ button:hover {
   -webkit-transition: 0.3s all ease 0.3s;
   transition: 0.3s all ease 0.3s;
 }
-
 
 /*déclencheur layer*/
 
@@ -428,7 +420,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 
 /* ========================================================
    TODO liste objectifs
