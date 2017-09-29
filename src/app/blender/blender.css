@@ -62,6 +62,7 @@ CONTAINER FORM
   position: absolute;
   top: 0;
   box-sizing: border-box;
+  width: 100%;
   -webkit-transform-origin: top left;
   transform-origin: top left;
   padding: 2% 5% 2% 5%;
