@@ -27,3 +27,9 @@
   background: #292c65;
 }
 
+
+.msg-conflit {
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}

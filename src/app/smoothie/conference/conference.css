@@ -49,6 +49,17 @@
   padding-bottom: 1%;
   cursor: auto;
 }
+
+.conference-switch{
+  background-color: #0d235f;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.conference-switch:hover{
+  background-color: #5f0e2e;
+}
+
 .title-preview {
   font-size: 0.7em;
 }

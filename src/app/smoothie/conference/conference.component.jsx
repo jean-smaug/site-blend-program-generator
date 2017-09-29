@@ -24,6 +24,8 @@ export class ConferenceComponent extends Component {
 
   props: {
     conferences: Conferences,
+    timeBegin: number,
+    timeEnd: number,
   };
 
   toggleModal = (key) => {
@@ -64,15 +66,16 @@ export class ConferenceComponent extends Component {
         <div className="columns">
           <div className="column">
             <div className="conference">
-
-              {conferences.remaining !== undefined && conferences.remaining.length > 1 ? (
-                <i
-                  className="fa fa-arrows-h circle switcher_link"
-                  role="presentation"
-                  onClick={e => this.openSwitcher(e)}
-                />
-              ) : null}
               <div role="button" className="conference-title">
+                {conferences.remaining !== undefined && conferences.remaining.length > 1 ? (
+                  <div
+                    role="presentation"
+                    onClick={e => this.openSwitcher(e)}
+                    className={'conference conference-switch'}
+                  >
+                    <p className="title-preview"> <i className="fa fa-arrow-circle-left" />{`  Switcher les conférences de ${this.props.timeBegin}h à  ${this.props.timeEnd}h`} </p>
+                  </div>
+                ) : null}
                 {conferences.selected.length !== 0 ? (
                   _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration, room }, key) => (
                     <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
