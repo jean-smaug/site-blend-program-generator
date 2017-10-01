@@ -1,5 +1,5 @@
 import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
-import { getConferencesStore } from '../../lib/localStorage.lib';
+import { getConferencesStore, setConferencesStore } from '../../lib/localStorage.lib';
 import {
   convertHourToString,
   // ,  getEndTime, convertToMinutes
@@ -37,13 +37,17 @@ export default (state = initialState, payload) => {
       const letterTime = convertHourToString(time);
       const timeSlotConferences = state[day][letterTime];
 
-      return {
+      const newSate = {
         ...state,
         [day]: {
           ...state[day],
           [letterTime]: reorderConferencesV2(conference, timeSlotConferences),
         },
       };
+
+      setConferencesStore(newSate);
+
+      return newSate;
     }
 
     default:
