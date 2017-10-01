@@ -26,6 +26,16 @@ export const writeStore = async (state) => {
   return userKey;
 };
 
+
+/**
+* Write smoothie modification into firebase
+*/
+export const writeSmoothie = (userKey, smoothie) => {
+  dbRef('/users')
+    .child(userKey).child('customSmoothie')
+    .set(smoothie);
+};
+
 export const readStoreByKey = async id => (await dbRef(`/users/${id}`).once('value')).val();
 
 export const readStoreByEmail = async (email) => {
