@@ -16,18 +16,28 @@ export class SwitcherComponent extends Component {
   state = {
     conferenceSelected: null,
     conferencesConflits: null,
+    conferencesEligible: null,
   };
 
   state: {
     conferenceSelected: Conference,
     conferencesConflits: Conferences,
+    conferencesEligible: Conferences,
+
   };
 
   props: {
     conferences: Conferences,
+    conference: Conference,
     closeModal: () => void,
     smoothie: Conferences,
     switchConference: (conference: Conference) => void,
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      conferencesEligible: getConferencesConflict(this.props.conferences, this.props.conference),
+    });
   };
 
   switchConference = (conference: Conference) => {
@@ -72,7 +82,7 @@ export class SwitcherComponent extends Component {
               </div>
             ) : null}
             <ul>
-              {_.map(this.props.conferences, (conference, id) => (
+              {_.map(this.state.conferencesEligible, (conference, id) => (
                 <li
                   className={
                     this.state.conferenceSelected === conference ? (

@@ -7,12 +7,14 @@ import Switcher from '../switch/switch.component';
 import { Conferences } from '../smoothie.type';
 import './conference.css';
 import { getEndTime } from '../../../lib/time.lib';
+import { getConferencesConflict } from '../../../lib/dataFilter.lib';
 
 export class ConferenceComponent extends Component {
   state = {
     isModalVisible: false,
     showMoreConferenceId: null,
     isSwitcherOpened: false,
+    conferenceSwitch: null,
   };
 
   state: {
@@ -20,6 +22,7 @@ export class ConferenceComponent extends Component {
     isModalVisible: boolean,
     showMoreConferenceId: number,
     isSwitcherOpened: boolean,
+    conferenceSwitch: Conferences
   };
 
   props: {
@@ -37,14 +40,19 @@ export class ConferenceComponent extends Component {
 
   openSwitcher = (e: Event) => {
     e.stopPropagation();
+    const { conferences } = this.props;
+    console.log(e.target);
+    console.log('test');
     this.setState({
       isSwitcherOpened: true,
+      conferenceSwitch: _.orderBy(conferences.selected, 'timeBegin', 'asc')[e.target.id],
     });
   };
 
   closeSwitcher = () => {
     this.setState({
       isSwitcherOpened: false,
+      conferenceSwitch: null,
     });
   };
 
@@ -60,28 +68,35 @@ export class ConferenceComponent extends Component {
         ) : null}
 
         {this.state.isSwitcherOpened ? (
-          <Switcher closeModal={this.closeSwitcher} conferences={conferences.remaining} />
+          <Switcher
+            closeModal={this.closeSwitcher}
+            conferences={conferences.remaining}
+            conference={this.state.conferenceSwitch}
+          />
         ) : null}
 
         <div className="columns">
           <div className="column">
             <div className="conference">
               <div role="button" className="conference-title">
-                {conferences.remaining !== undefined && conferences.remaining.length > 1 ? (
-                  <div
-                    role="presentation"
-                    onClick={e => this.openSwitcher(e)}
-                    className={'conference-switch'}
-                  >
-                    <p className="title-preview"> <i className="fa fa-arrow-circle-left" />{`  Switcher les conférences de ${this.props.timeBegin}h à  ${this.props.timeEnd}h`} </p>
-                  </div>
-                ) : null}
                 {conferences.selected.length !== 0 ? (
-                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), ({ title, timeBegin, duration, room }, key) => (
-                    <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${duration}`}>
-                      <p className="horaire-preview">{`${timeBegin} > ${getEndTime(timeBegin, duration)}`}</p>
-                      <p className="title-preview"> {title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()}</p>
-                      <p className="room-preview"> {`Salle: ${room}`}</p>
+                  _.map(_.orderBy(conferences.selected, 'timeBegin', 'asc'), (conference, key) => (
+                    <div onClick={() => this.toggleModal(key)} role="presentation" className={`conference conference-${conference.duration}`}>
+                      {conferences.remaining !== undefined &&
+                       conferences.remaining.length >= 1 &&
+                       getConferencesConflict(conferences.remaining, conference).length >= 1 ? (
+                         <p
+                            role="presentation"
+                            onClick={e => this.openSwitcher(e)}
+                            className="switch-btn"
+                            id={key}
+                          > <i id={key} className="fa fa-arrow-circle-left" />
+                            <hr className="hr-switch" />
+                          </p>
+                        ) : null}
+                      <p className="horaire-preview">{`${conference.timeBegin} > ${getEndTime(conference.timeBegin, conference.duration)}`}</p>
+                      <p className="title-preview"> {conference.title.charAt(0).toUpperCase() + conference.title.substring(1).toLowerCase()}</p>
+                      <p className="room-preview"> {`Salle: ${conference.room}`}</p>
                     </div>
                   ))
                 ) : (

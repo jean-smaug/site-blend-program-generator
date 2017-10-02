@@ -27,6 +27,7 @@ export const filterByTags = (conferences: Conferences, tags) =>
     return includeTag;
   });
 
+
 /**
  * Filter conferences by level and by domain
  */
