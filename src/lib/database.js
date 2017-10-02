@@ -30,7 +30,7 @@ export const writeStore = async (state) => {
 /**
 * Write smoothie modification into firebase
 */
-export const writeSmoothie = (userKey, smoothie) => {
+export const writeCustomSmoothie = (userKey, smoothie) => {
   dbRef('/users')
     .child(userKey).child('customSmoothie')
     .set(smoothie);

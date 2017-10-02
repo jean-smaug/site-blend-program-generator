@@ -9,7 +9,7 @@ import {
   // orderConferencesV2,
   reorderConferencesV2,
 } from '../../lib/dataFilter.lib';
-import { writeSmoothie } from '../../lib/database';
+import { writeCustomSmoothie } from '../../lib/database';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -46,7 +46,7 @@ export default (state = initialState, payload) => {
         },
       };
 
-      writeSmoothie(getKeyStore(), newSate.smoothie);
+      writeCustomSmoothie(getKeyStore(), newSate.smoothie);
       setConferencesStore(newSate);
 
       return newSate;
