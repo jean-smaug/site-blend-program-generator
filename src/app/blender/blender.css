@@ -19,6 +19,10 @@ CONTAINER FORM
   font-family: "Montserrat", sans-serif;
 }
 
+.modal {
+  z-index: 2000;
+}
+
 .modal-header {
   height: 45px;
   background: white;
