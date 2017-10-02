@@ -179,8 +179,15 @@
 }
 
 .switch-btn{
- color: white;
-  font-size: 0.7em;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  color: white;
+  font-size: 1em;
+}
+
+.switch-btn :hover{
+  color: #0a0a0a;
 }
 
 .hr-switch{

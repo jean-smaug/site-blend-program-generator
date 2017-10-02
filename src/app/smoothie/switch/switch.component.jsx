@@ -26,18 +26,18 @@ export class SwitcherComponent extends Component {
 
   };
 
+  componentDidMount = () => {
+    this.setState({
+      conferencesEligible: getConferencesConflict(this.props.conferences, this.props.conference),
+    });
+  };
+
   props: {
     conferences: Conferences,
     conference: Conference,
     closeModal: () => void,
     smoothie: Conferences,
     switchConference: (conference: Conference) => void,
-  };
-
-  componentDidMount = () => {
-    this.setState({
-      conferencesEligible: getConferencesConflict(this.props.conferences, this.props.conference),
-    });
   };
 
   switchConference = (conference: Conference) => {
