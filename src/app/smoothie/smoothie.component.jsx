@@ -99,9 +99,6 @@ export class SmoothieComponent extends Component {
             ) : (
               ''
             )}
-            <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
-              {/* <i className="fa fa-info" /> */}Remix
-            </a>
           </div>
         </div>
         <div id="citron">
@@ -129,6 +126,16 @@ export class SmoothieComponent extends Component {
             <ListConference number="two" day={dayTwo} />
           </div>
           <div className="column is-one-quarter" />
+        </div>
+
+        <div className="remix">
+          <div className="columns">
+            <div className="column is-4 is-offset-4 itemsSmoothie">
+              <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
+              Remix
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     );
