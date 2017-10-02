@@ -25,6 +25,7 @@
   cursor: pointer;
   color: white;
   font-weight: lighter;
+  padding-top:0;
 }
 
 .pause {
@@ -175,4 +176,13 @@
 
 .is-notselected {
   border: 1px dashed;
+}
+
+.switch-btn{
+ color: white;
+  font-size: 0.7em;
+}
+
+.hr-switch{
+  margin-top: 0;
 }
