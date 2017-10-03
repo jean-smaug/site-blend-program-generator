@@ -43,14 +43,6 @@ ShallowWrapper {
                     className="fa fa-info"
                 />
             </a>
-            <a
-                aria-pressed="true"
-                onClick={[Function]}
-                role="button"
-                tabIndex="0"
-            >
-                Remix
-            </a>
         </div>
     </div>
     <div
@@ -155,14 +147,6 @@ ShallowWrapper {
                         <i
                               className="fa fa-info"
                         />
-                  </a>
-                  <a
-                        aria-pressed="true"
-                        onClick={[Function]}
-                        role="button"
-                        tabIndex="0"
-                  >
-                        Remix
                   </a>
             </div>
       </div>
@@ -315,14 +299,6 @@ ShallowWrapper {
                                                   className="fa fa-info"
                                         />
                               </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        Remix
-                              </a>
                     </div>
           </div>
           <div
@@ -427,14 +403,6 @@ ShallowWrapper {
                                         <i
                                                   className="fa fa-info"
                                         />
-                              </a>
-                              <a
-                                        aria-pressed="true"
-                                        onClick={[Function]}
-                                        role="button"
-                                        tabIndex="0"
-                              >
-                                        Remix
                               </a>
                     </div>
           </div>
