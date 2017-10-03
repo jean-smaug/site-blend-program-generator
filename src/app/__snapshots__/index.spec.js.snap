@@ -44,13 +44,6 @@ ShallowWrapper {
             </div>
         </div>
     </div>
-    <div
-        className="columns"
-    >
-        <div
-            className="column  is-12"
-        />
-    </div>
 </div>,
   "nodes": Array [
     <div
@@ -88,13 +81,6 @@ ShallowWrapper {
                         <Connect(Blender) />
                   </div>
             </div>
-      </div>
-      <div
-            className="columns"
-      >
-            <div
-                  className="column  is-12"
-            />
       </div>
 </div>,
   ],
@@ -182,13 +168,6 @@ ShallowWrapper {
                               </div>
                     </div>
           </div>
-          <div
-                    className="columns"
-          >
-                    <div
-                              className="column  is-12"
-                    />
-          </div>
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -226,13 +205,6 @@ ShallowWrapper {
                                         <Connect(Blender) />
                               </div>
                     </div>
-          </div>
-          <div
-                    className="columns"
-          >
-                    <div
-                              className="column  is-12"
-                    />
           </div>
 </div>,
       },

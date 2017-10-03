@@ -39,7 +39,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint --ext .js --ext .jsx src",
-    "lint:fix": "yarn lint -- --fix",
+    "lint:fix": "yarn lint --fix",
     "test:coverage": "yarn test -- --coverage",
     "start": "react-scripts start",
     "build": "react-scripts build",

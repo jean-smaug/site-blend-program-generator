@@ -1,14 +1,17 @@
 [
   {
     "id": "tech",
-    "libelle": "Tech"
+    "libelle": "Tech",
+    "description": "Du code, du code et encore du code !"
   },
   {
     "id": "market",
-    "libelle": "Webmarketing"
+    "libelle": "Webmarketing",
+    "description": "Tu veux bien vendre ton produit, viens faire un tour ici"
   },
   {
     "id": "design",
-    "libelle": "Design"
+    "libelle": "Design",
+    "description": "Moi j'aime bien quand c'est beau"
   }
 ]

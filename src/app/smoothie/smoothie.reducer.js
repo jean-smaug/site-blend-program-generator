@@ -1,5 +1,5 @@
 import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
-import { getConferencesStore } from '../../lib/localStorage.lib';
+import { getConferencesStore, setConferencesStore, getKeyStore } from '../../lib/localStorage.lib';
 import {
   convertHourToString,
   // ,  getEndTime, convertToMinutes
@@ -9,12 +9,11 @@ import {
   // orderConferencesV2,
   reorderConferencesV2,
 } from '../../lib/dataFilter.lib';
+import { writeCustomSmoothie } from '../../lib/database';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
   dayTwo: getConferencesStore().dayTwo || {},
-  isSwitcherOpened: false,
-  switcherConferences: [],
 };
 
 export default (state = initialState, payload) => {
@@ -39,13 +38,18 @@ export default (state = initialState, payload) => {
       const letterTime = convertHourToString(time);
       const timeSlotConferences = state[day][letterTime];
 
-      return {
+      const newSate = {
         ...state,
         [day]: {
           ...state[day],
           [letterTime]: reorderConferencesV2(conference, timeSlotConferences),
         },
       };
+
+      writeCustomSmoothie(getKeyStore(), newSate.smoothie);
+      setConferencesStore(newSate);
+
+      return newSate;
     }
 
     default:

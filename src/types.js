@@ -2,6 +2,14 @@ export type Filter = { domain: string, level: string };
 
 export type Filters = [Filter];
 
+export type Domain = { domain: string, level: string };
+
+export type Domains = Array<Domain>;
+
+export type Tag = string;
+
+export type Tags = Array<Tag>;
+
 export type Conference = {
   day: 'dayOne' | 'dayTwo',
   description: string,
@@ -44,5 +52,3 @@ export type Day = {
     remaining: Conferences,
   },
 };
-
-export type Tags = Array<String>;
