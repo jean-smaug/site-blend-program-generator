@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable max-len */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
@@ -7,8 +9,10 @@ import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
+import { removeConferences } from './smoothie/smoothie.action';
 
-export const App = ({ smoothie }: { smoothie: Object }) => (
+
+export const App = ({ smoothie, removeConferencesFromState }: { smoothie: Object, removeConferencesFromState: () => void }) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">
@@ -19,6 +23,8 @@ export const App = ({ smoothie }: { smoothie: Object }) => (
           alt="BlendWebMix 2017"
         />
       </a>
+      {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ?
+        <a className="button is-danger is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Remix</a> : null}
     </div>
 
     <div className="columns">
@@ -41,4 +47,10 @@ const mapStateToProps = ({ smoothie }) => ({
   smoothie,
 });
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = dispatch => ({
+  removeConferencesFromState: () => {
+    dispatch(removeConferences());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

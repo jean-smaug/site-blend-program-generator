@@ -58,12 +58,6 @@ html {
   margin: 1%;
 }
 
-.remix {
-  position: relative;
-  top: -100px;
-  margin-bottom: -100px;
-}
-
 @keyframes bigest{
   from {font-size: 2.5em}
   50%  {font-size: 2.7em}

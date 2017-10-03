@@ -127,20 +127,20 @@ export class SmoothieComponent extends Component {
           </div>
           <div className="column is-one-quarter" />
         </div>
-
-        <div className="remix">
-          <div className="columns">
-            <div className="column is-4 is-offset-4 itemsSmoothie">
-              <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
-              Remix
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
 }
+
+/* <div className="remix">
+  <div className="columns">
+    <div className="column is-4 is-offset-4 itemsSmoothie">
+      <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
+      Remix
+      </a>
+    </div>
+  </div>
+</div> */
 
 const mapStateToProps = ({
   smoothie: { dayOne, dayTwo, isSwitcherOpened, switcherConferences },

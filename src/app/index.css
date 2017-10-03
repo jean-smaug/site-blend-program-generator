@@ -10,6 +10,12 @@ html {
   color: #435965;
 }
 
+.remix {
+  float: right;
+  margin-top: 25px;
+  margin-right: 20px
+}
+
 .div-remix{
   text-align: center;
   margin-bottom: 10%;
