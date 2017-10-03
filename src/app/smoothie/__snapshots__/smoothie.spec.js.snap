@@ -65,7 +65,7 @@ ShallowWrapper {
         className="columns"
     >
         <div
-            className="column is-4 is-offset-2 itemsSmoothie"
+            className="column is-4 is-offset-4 itemsSmoothie"
         >
             <div
                 className="header-date"
@@ -90,7 +90,7 @@ ShallowWrapper {
         className="columns"
     >
         <div
-            className="column is-4 is-offset-2 itemsSmoothie"
+            className="column is-4 is-offset-4 itemsSmoothie"
         >
             <div
                 className="header-date"
@@ -170,7 +170,7 @@ ShallowWrapper {
             className="columns"
       >
             <div
-                  className="column is-4 is-offset-2 itemsSmoothie"
+                  className="column is-4 is-offset-4 itemsSmoothie"
             >
                   <div
                         className="header-date"
@@ -195,7 +195,7 @@ ShallowWrapper {
             className="columns"
       >
             <div
-                  className="column is-4 is-offset-2 itemsSmoothie"
+                  className="column is-4 is-offset-4 itemsSmoothie"
             >
                   <div
                         className="header-date"
@@ -241,6 +241,7 @@ ShallowWrapper {
           "dayTwo": Object {},
         },
         "refs": Object {},
+        "remix": [Function],
         "state": Object {
           "isModalVisible": false,
         },
@@ -320,7 +321,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-4 is-offset-2 itemsSmoothie"
+                              className="column is-4 is-offset-4 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -345,7 +346,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-4 is-offset-2 itemsSmoothie"
+                              className="column is-4 is-offset-4 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -425,7 +426,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-4 is-offset-2 itemsSmoothie"
+                              className="column is-4 is-offset-4 itemsSmoothie"
                     >
                               <div
                                         className="header-date"
@@ -450,7 +451,7 @@ ShallowWrapper {
                     className="columns"
           >
                     <div
-                              className="column is-4 is-offset-2 itemsSmoothie"
+                              className="column is-4 is-offset-4 itemsSmoothie"
                     >
                               <div
                                         className="header-date"

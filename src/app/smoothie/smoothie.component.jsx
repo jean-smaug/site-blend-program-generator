@@ -6,6 +6,7 @@ import { ToastContainer, ToastMessage } from 'react-toastr';
 import ListConference from './conference/listConference.component';
 import Switcher from './switch/switch.component';
 import { setConferencesStore, isStore, setOneShow } from '../../lib/localStorage.lib';
+import { removeConferences } from './smoothie.action';
 
 import { Day, Conference } from './smoothie.type';
 import './smoothie.css';
@@ -22,11 +23,14 @@ export class SmoothieComponent extends Component {
 
   componentDidMount = () => {
     if (isStore('key') && !isStore('isAlreadyShow')) {
-      this.setState({
-        isModalVisible: !this.state.isModalVisible,
-      }, () => {
-        setOneShow();
-      });
+      this.setState(
+        {
+          isModalVisible: !this.state.isModalVisible,
+        },
+        () => {
+          setOneShow();
+        },
+      );
     }
   };
 
@@ -35,6 +39,7 @@ export class SmoothieComponent extends Component {
     dayTwo: Day,
     isSwitcherOpened: boolean,
     switcherConferences: Array<Conference>,
+    removeConferencesFromState: () => void,
   };
 
   handleClickSave = () => {
@@ -60,15 +65,15 @@ export class SmoothieComponent extends Component {
     });
   };
 
+  remix = () => {
+    this.props.removeConferencesFromState();
+  };
+
   render() {
     const { dayOne, dayTwo, isSwitcherOpened, switcherConferences } = this.props;
     return (
       <div className="smoothie">
-        {this.state.isModalVisible
-          ? <ModalShowKey
-            closeModal={this.toggleModal}
-          />
-          : null}
+        {this.state.isModalVisible ? <ModalShowKey closeModal={this.toggleModal} /> : null}
 
         <ToastContainer
           ref={(input) => {
@@ -87,10 +92,13 @@ export class SmoothieComponent extends Component {
             {/* onClick={this.handleClickSave}> */}
             {/* <i className="fa fa-save" /> */}
             {/* </a> */}
-            { isStore('key') ?
+            {isStore('key') ? (
               <a role="button" aria-pressed="true" tabIndex="0" onClick={this.toggleModal}>
                 <i className="fa fa-info" />
-              </a> : '' }
+              </a>
+            ) : (
+              ''
+            )}
           </div>
         </div>
         <div id="citron">
@@ -100,7 +108,7 @@ export class SmoothieComponent extends Component {
           <img src="https://img11.hostingpics.net/pics/673317paille.png" alt="straw" />
         </div>
         <div className="columns">
-          <div className="column is-4 is-offset-2 itemsSmoothie">
+          <div className="column is-4 is-offset-4 itemsSmoothie">
             <div className="header-date">
               <h1>Jour 1</h1>
               <h3>Jeudi 26 octobre</h3>
@@ -110,7 +118,7 @@ export class SmoothieComponent extends Component {
           <div className="column is-one-quarter" />
         </div>
         <div className="columns">
-          <div className="column is-4 is-offset-2 itemsSmoothie">
+          <div className="column is-4 is-offset-4 itemsSmoothie">
             <div className="header-date">
               <h1>Jour 2</h1>
               <h3>Vendredi 27 octobre</h3>
@@ -124,11 +132,29 @@ export class SmoothieComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  dayOne: state.smoothie.dayOne,
-  dayTwo: state.smoothie.dayTwo,
-  isSwitcherOpened: state.smoothie.isSwitcherOpened,
-  switcherConferences: state.smoothie.switcherConferences,
+/* <div className="remix">
+  <div className="columns">
+    <div className="column is-4 is-offset-4 itemsSmoothie">
+      <a role="button" aria-pressed="true" tabIndex="0" onClick={this.remix}>
+      Remix
+      </a>
+    </div>
+  </div>
+</div> */
+
+const mapStateToProps = ({
+  smoothie: { dayOne, dayTwo, isSwitcherOpened, switcherConferences },
+}) => ({
+  dayOne,
+  dayTwo,
+  isSwitcherOpened,
+  switcherConferences,
 });
 
-export default connect(mapStateToProps)(SmoothieComponent);
+const mapDispatchToProps = dispatch => ({
+  removeConferencesFromState: () => {
+    dispatch(removeConferences());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SmoothieComponent);

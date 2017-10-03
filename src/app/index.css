@@ -1,6 +1,5 @@
 html {
-  background: url('https://img11.hostingpics.net/pics/822883motifdef.png') repeat;
-  width: 100%;
+  background: url('https://img11.hostingpics.net/pics/822883motifdef.png') fixed no-repeat;
 }
 
 .header {
@@ -9,6 +8,12 @@ html {
   font-family: 'Lato', sans-serif;
   background-color: white;
   color: #435965;
+}
+
+.remix {
+  float: right;
+  margin-top: 25px;
+  margin-right: 20px
 }
 
 .div-remix{
