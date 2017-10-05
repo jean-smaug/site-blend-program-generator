@@ -28,7 +28,7 @@ export const App = ({ smoothie, removeConferencesFromState, restoreConferencesIn
         <a className="button is-danger is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Remix</a> : null}
 
       {getKeyStore() !== null && _.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
-        <a className="button is-warning is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Mon Smoothie</a> : null}
+        <a className="button is-warning is-outlined remix" role="presentation" onClick={() => restoreConferencesInState()}>Mon Smoothie</a> : null}
     </div>
 
     <div className="columns">
