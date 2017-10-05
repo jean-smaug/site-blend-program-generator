@@ -10,6 +10,7 @@ import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
 import { removeConferences } from './smoothie/smoothie.action';
+import { getKeyStore } from '../lib/localStorage.lib'
 
 
 export const App = ({ smoothie, removeConferencesFromState }: { smoothie: Object, removeConferencesFromState: () => void }) => (
@@ -25,6 +26,9 @@ export const App = ({ smoothie, removeConferencesFromState }: { smoothie: Object
       </a>
       {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ?
         <a className="button is-danger is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Remix</a> : null}
+
+      {getKeyStore() !== null && _.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
+        <a className="button is-warning is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Mon Smoothie</a> : null}
     </div>
 
     <div className="columns">
