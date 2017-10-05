@@ -18,3 +18,7 @@ export const switchConference = (conference: Conference) => ({
   type: SWITCH_CONFERENCE,
   data: { conference },
 });
+
+export const restoreConferences = () => ({
+  type: 'RESTORE_CONFERENCE',
+});

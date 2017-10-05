@@ -9,11 +9,11 @@ import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
-import { removeConferences } from './smoothie/smoothie.action';
-import { getKeyStore } from '../lib/localStorage.lib'
+import { removeConferences, restoreConferences } from './smoothie/smoothie.action';
+import { getKeyStore } from '../lib/localStorage.lib';
 
 
-export const App = ({ smoothie, removeConferencesFromState }: { smoothie: Object, removeConferencesFromState: () => void }) => (
+export const App = ({ smoothie, removeConferencesFromState, restoreConferencesInState }: { smoothie: Object, restoreConferencesInState: () => void, removeConferencesFromState: () => void }) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">
@@ -55,6 +55,7 @@ const mapDispatchToProps = dispatch => ({
   removeConferencesFromState: () => {
     dispatch(removeConferences());
   },
+  restoreConferencesInState: () => { dispatch(restoreConferences()); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
