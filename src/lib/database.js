@@ -40,7 +40,9 @@ export const readStoreByKey = async id => (await dbRef(`/users/${id}`).once('val
 
 export const readStoreByEmail = async (email) => {
   const users = (await dbRef('/users').once('value')).val();
-  return _.filter(users, user => user.blender.informations.email === email)[0];
+  return _.filter(users, user =>
+    user.blender.informations !== undefined &&
+    user.blender.informations.email === email)[0];
 };
 
 export const getConferences = async () => {
