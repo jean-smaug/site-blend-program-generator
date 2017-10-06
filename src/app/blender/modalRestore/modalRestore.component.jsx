@@ -11,13 +11,18 @@ import { Conferences } from '../../smoothie/smoothie.type';
 import { restoreAllForm } from '../blender.action';
 
 export class ModalRestoreComponent extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       key: '',
       email: '',
     };
   }
+
+  state: {
+    key: string,
+    email: string,
+  };
 
   onClickSubmit = async () => {
     if (this.state.key !== '') {
@@ -25,20 +30,16 @@ export class ModalRestoreComponent extends Component {
     } else if (this.state.email !== '') {
       this.checkWithEmail();
     } else {
-      this.modalError('Vous devez remplir au moins l\'un des deux champs !');
+      this.modalError("Vous devez remplir au moins l'un des deux champs !");
     }
   };
 
-  modalError = (text) => {
-    this.toastErrorForm.error(
-      text,
-      'Erreur',
-      {
-        timeOut: 7000,
-        extendedTimeOut: 1000,
-        closeButton: true,
-      },
-    );
+  modalError = (text: string) => {
+    this.toastErrorForm.error(text, 'Erreur', {
+      timeOut: 7000,
+      extendedTimeOut: 1000,
+      closeButton: true,
+    });
   };
 
   checkWithKey = async () => {
@@ -55,7 +56,7 @@ export class ModalRestoreComponent extends Component {
     if (!_.isEmpty(userData)) {
       this.restoreStore(userData);
     } else {
-      this.modalError('Votre email n\'est pas encore connu chef..');
+      this.modalError("Votre email n'est pas encore connu chef..");
     }
   };
 
@@ -116,19 +117,34 @@ export class ModalRestoreComponent extends Component {
           <h1>Récupération de votre Menu !</h1>
         </section>
         <section className="modal-card-body">
-          <input onChange={this.handleChangeInput} className="input" type="text" name="key" placeholder="Votre clef de planning..." />
-          <div className="separation-input"><p >Ou alors...</p></div>
-          <input onChange={this.handleChangeInput} name="email" className="input" type="text" placeholder="Votre email..." />
+          <input
+            onChange={this.handleChangeInput}
+            className="input"
+            type="text"
+            name="key"
+            placeholder="Votre clef de planning..."
+          />
+          <div className="separation-input">
+            <p>Ou alors...</p>
+          </div>
+          <input
+            onChange={this.handleChangeInput}
+            name="email"
+            className="input"
+            type="text"
+            placeholder="Votre email..."
+          />
         </section>
         <section className="modal-card-foot footer-restore">
-          <button className="button is-success" onClick={this.onClickSubmit}>Récuperer</button>
+          <button className="button is-success" onClick={this.onClickSubmit}>
+            Récuperer
+          </button>
         </section>
         <button className="modal-close is-large" onClick={this.props.closeModal} />
       </div>
     </div>
-  )
+  );
 }
-
 
 const mapStateToProps = state => ({
   form: state.form,

@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import _ from 'lodash';
 import { filterConferences, orderConferencesV2 } from '../../../lib/dataFilter.lib';
-import { getConferences, writeStore } from '../../../lib/database';
+import { getConferences, writeStore, writeCustomSmoothie } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
-import { setConferencesStore, setKeyStore, remove, isStore } from '../../../lib/localStorage.lib';
+import { setConferencesStore, setKeyStore, remove, isStore, getKeyStore } from '../../../lib/localStorage.lib';
+import changePageAction from '../../app.action'
 
 /**
  * Component for Submit button to mix
@@ -16,6 +17,7 @@ import { setConferencesStore, setKeyStore, remove, isStore } from '../../../lib/
 export class MixeurComponent extends Component {
   props: {
     addConference: (orderedConferences: Conferences) => void,
+    changePage: (page: String) => void,
     form: Object,
   };
 
@@ -27,13 +29,21 @@ export class MixeurComponent extends Component {
         filterConferences(_.shuffle(conferences), form.domains, form.keywords),
       );
 
-      setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
+      const keyStore = getKeyStore();
+
+      if (keyStore !== null) {
+        writeCustomSmoothie(keyStore, orderedConferences);
+      } else {
+        setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
+      }
       if (isStore('isAlreadyShow')) remove('isAlreadyShow');
       addConference(orderedConferences);
       setConferencesStore({
         dayOne: orderedConferences.dayOne,
         dayTwo: orderedConferences.dayTwo,
       });
+
+      this.props.changePage('smoothie')
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",
@@ -76,6 +86,7 @@ const mapDispatchToProps = dispatch => ({
   addConference: (word) => {
     dispatch(mixConferencesAction(word));
   },
+  changePage: page => dispatch(changePageAction('smoothie'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MixeurComponent);

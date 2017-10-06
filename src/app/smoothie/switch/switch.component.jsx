@@ -40,6 +40,12 @@ export class SwitcherComponent extends Component {
     switchConference: (conference: Conference) => void,
   };
 
+  componentDidMount = () => {
+    this.setState({
+      conferencesEligible: getConferencesConflict(this.props.conferences, this.props.conference),
+    });
+  };
+
   switchConference = (conference: Conference) => {
     const time = conference.timeBegin.split('h')[0];
     const letterTime = convertHourToString(time);

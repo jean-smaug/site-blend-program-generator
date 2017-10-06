@@ -39,6 +39,7 @@ export class ConferenceComponent extends Component {
   openSwitcher = (e: Event) => {
     e.stopPropagation();
     const { conferences } = this.props;
+
     this.setState({
       isSwitcherOpened: true,
       conferenceSwitch: _.orderBy(conferences.selected, 'timeBegin', 'asc')[e.target.id],
