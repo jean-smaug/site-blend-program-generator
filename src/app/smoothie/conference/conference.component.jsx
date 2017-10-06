@@ -27,8 +27,6 @@ export class ConferenceComponent extends Component {
 
   props: {
     conferences: Conferences,
-    timeBegin: number,
-    timeEnd: number,
   };
 
   toggleModal = (key) => {
@@ -41,8 +39,7 @@ export class ConferenceComponent extends Component {
   openSwitcher = (e: Event) => {
     e.stopPropagation();
     const { conferences } = this.props;
-    console.log(e.target);
-    console.log('test');
+
     this.setState({
       isSwitcherOpened: true,
       conferenceSwitch: _.orderBy(conferences.selected, 'timeBegin', 'asc')[e.target.id],
@@ -85,14 +82,16 @@ export class ConferenceComponent extends Component {
                       {conferences.remaining !== undefined &&
                        conferences.remaining.length >= 1 &&
                        getConferencesConflict(conferences.remaining, conference).length >= 1 ? (
-                         <p
-                            role="presentation"
-                            onClick={e => this.openSwitcher(e)}
-                            className="switch-btn"
-                            id={key}
-                          > <i id={key} className="fa fa-arrow-circle-left" />
-                            <hr className="hr-switch" />
-                          </p>
+                         <div>
+                            <p
+                             role="presentation"
+                             onClick={e => this.openSwitcher(e)}
+                             className="switch-btn"
+                             id={key}
+                           >
+                             <i id={key} className="fa fa-list" />
+                           </p>
+                          </div>
                         ) : null}
                       <p className="horaire-preview">{`${conference.timeBegin} > ${getEndTime(conference.timeBegin, conference.duration)}`}</p>
                       <p className="title-preview"> {conference.title.charAt(0).toUpperCase() + conference.title.substring(1).toLowerCase()}</p>

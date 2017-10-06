@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import allReducers from './reducer';
-import App from './app';
+import App from './app/app.component';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(allReducers, composeWithDevTools(applyMiddleware(logger)));

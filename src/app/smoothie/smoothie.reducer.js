@@ -1,5 +1,7 @@
 import { MIX_CONFERENCES, REMOVE_CONFERENCES, SWITCH_CONFERENCE } from '../constants';
-import { getConferencesStore, setConferencesStore, getKeyStore } from '../../lib/localStorage.lib';
+import { getConferencesStore, setConferencesStore,
+  // getKeyStore
+} from '../../lib/localStorage.lib';
 import {
   convertHourToString,
   // ,  getEndTime, convertToMinutes
@@ -9,7 +11,7 @@ import {
   // orderConferencesV2,
   reorderConferencesV2,
 } from '../../lib/dataFilter.lib';
-import { writeCustomSmoothie } from '../../lib/database';
+// import { writeCustomSmoothie } from '../../lib/database';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -46,7 +48,7 @@ export default (state = initialState, payload) => {
         },
       };
 
-      writeCustomSmoothie(getKeyStore(), newSate.smoothie);
+      // writeCustomSmoothie(getKeyStore(), newSate.smoothie);
       setConferencesStore(newSate);
 
       return newSate;
