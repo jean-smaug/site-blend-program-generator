@@ -3,31 +3,54 @@
 exports[`checkboxDomain.component should render component 1`] = `
 Array [
   <div
-    className="blockDomain"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="presentation"
-    style={
-        Object {
-            "backgroundImage": "url(./img/domains/1-disabled.png)",
-          }
-    }
+    className="div-checkbox"
 >
+    <img
+        alt="tech"
+        src="/img/domains/tech.PNG"
+    />
+    <h1
+        className="titre-domaine tech"
+    >
+        tech
+    </h1>
     <div>
-        <h1
-            style={
-                Object {
-                    "backgroundColor": "",
-                  }
-            }
+        <div
+            className="checkbox-domain"
         >
+            <input
+                checked={false}
+                className="checkbox-domains-input"
+                id="tech-beginner"
+                onClick={[Function]}
+                type="checkbox"
+            />
              
-            tech
+            <label
+                className="titre-checkbox"
+                htmlFor="tech-beginner"
+            >
+                Découvrir
+            </label>
+        </div>
+        <div
+            className="checkbox-domain"
+        >
+            <input
+                checked={false}
+                className="checkbox-domains-input"
+                id="tech-expert"
+                onClick={[Function]}
+                type="checkbox"
+            />
              
-        </h1>
-        <p />
-        
+            <label
+                className="titre-checkbox"
+                htmlFor="tech-expert"
+            >
+                Approfondir
+            </label>
+        </div>
     </div>
 </div>,
 ]
