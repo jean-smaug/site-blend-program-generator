@@ -477,6 +477,59 @@ table {
 }
 
 .is-red {
-  background-color: #e5421c;
+  background-color: ;
   color: white !important;
+}
+
+.checkbox-domain {
+  display: block;
+}
+
+.titre-domaine {
+   font-size: 1.4em;
+   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.Tech{
+ color: #e5421c;
+}
+
+.Webmarketing{
+  color: #00a3df;
+}
+
+.Design {
+  color: #EDCB00;
+}
+
+.div-checkbox {
+  text-align: center;
+}
+
+.checkbox-domains-input{
+  display: none;
+}
+
+.checkbox-domains-input + label:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: #dddddd;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.checkbox-domains-input:checked + label:before {
+  content: "\2713";
+  color: #ffffff;
+  background-color: #e5421c;
+}
+
+.titre-checkbox {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }

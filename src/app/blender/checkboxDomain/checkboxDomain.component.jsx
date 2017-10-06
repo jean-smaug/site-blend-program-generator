@@ -79,61 +79,30 @@ export class CheckboxDomainComponent extends Component {
 
   render() {
     return (
-      <div
-        // className={this.isChecked() ? 'blockDomain domain-selected' : 'blockDomain'}
-        className="blockDomain"
-        role="presentation"
-        onClick={this.toogleChecked}
-        onMouseEnter={this.onMouseEnterHandler}
-        onMouseLeave={this.onMouseLeaveHandler}
-        style={
-          this.isChecked() ? (
-            { backgroundImage: `url(img/domains/${this.props.item.id}.png)` }
-          ) : (
-            { backgroundImage: `url(./img/domains/${this.props.item.id}-disabled.png)` }
-          )
-        }
-      >
+      <div className="div-checkbox">
+        <img src={`/img/domains/${this.props.item.libelle}.PNG`} alt={this.props.item.libelle} />
+        <h1 className={`titre-domaine ${this.props.item.libelle}`}>
+          {this.props.item.libelle}
+        </h1>
         <div>
-          <h1 style={this.isChecked() ? { backgroundColor: '#E6421C' } : { backgroundColor: '' }}>
-            {' '}
-            {this.props.item.libelle}{' '}
-          </h1>
-          {!this.isChecked() ? <p>{this.props.item.description}</p> : ''}
-          {this.isChecked() || this.state.hover ? (
-            <div className="groupBtnLevel">
-              <span
-                role="presentation"
-                onClick={event => this.submitLevel(event, 'beginner')}
-                className={
-                  this.getCheckedLevel('beginner') ? (
-                    'tag domain-selected level-domain'
-                  ) : (
-                    'tag is-notselected level-domain'
-                  )
-                }
-              >
-                {' '}
-                Découvrir{' '}
-              </span>
-              <span
-                role="presentation"
-                onClick={event => this.submitLevel(event, 'expert')}
-                className={
-                  this.getCheckedLevel('expert') ? (
-                    'tag domain-selected level-domain'
-                  ) : (
-                    'tag is-notselected level-domain'
-                  )
-                }
-              >
-                {' '}
-                Approfondir{' '}
-              </span>
-            </div>
-          ) : (
-            ''
-          )}
+          <div className="checkbox-domain">
+            <input
+              id={`${this.props.item.libelle}-beginner`}
+              type="checkbox"
+              onClick={event => this.submitLevel(event, 'beginner')}
+              checked={this.getCheckedLevel('beginner')}
+              className="checkbox-domains-input"
+            /> <label htmlFor={`${this.props.item.libelle}-beginner`} className="titre-checkbox">Découvrir</label>
+          </div>
+          <div className="checkbox-domain">
+            <input
+              id={`${this.props.item.libelle}-expert`}
+              type="checkbox"
+              onClick={event => this.submitLevel(event, 'expert')}
+              checked={this.getCheckedLevel('expert')}
+              className="checkbox-domains-input"
+            /> <label htmlFor={`${this.props.item.libelle}-expert`} className="titre-checkbox">Approfondir</label>
+          </div>
         </div>
       </div>
     );
