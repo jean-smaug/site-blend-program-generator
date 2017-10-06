@@ -2,16 +2,16 @@
   {
     "id": "tech",
     "libelle": "Tech",
-    "description": "Du code, du code et encore du code !"
+    "description": "Les conférences autour du code "
   },
   {
     "id": "market",
     "libelle": "Webmarketing",
-    "description": "Tu veux bien vendre ton produit, viens faire un tour ici"
+    "description": ""
   },
   {
     "id": "design",
     "libelle": "Design",
-    "description": "Moi j'aime bien quand c'est beau"
+    "description": ""
   }
 ]
