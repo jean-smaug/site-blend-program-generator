@@ -9,6 +9,7 @@ import { getConferences, writeStore, writeCustomSmoothie } from '../../../lib/da
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
 import { setConferencesStore, setKeyStore, remove, isStore, getKeyStore } from '../../../lib/localStorage.lib';
+import changePageAction from '../../app.action'
 
 /**
  * Component for Submit button to mix
@@ -16,6 +17,7 @@ import { setConferencesStore, setKeyStore, remove, isStore, getKeyStore } from '
 export class MixeurComponent extends Component {
   props: {
     addConference: (orderedConferences: Conferences) => void,
+    changePage: (page: String) => void,
     form: Object,
   };
 
@@ -40,6 +42,8 @@ export class MixeurComponent extends Component {
         dayOne: orderedConferences.dayOne,
         dayTwo: orderedConferences.dayTwo,
       });
+
+      this.props.changePage('smoothie')
     } else {
       this.toastError.error(
         "L'email que vous avez renseigné a un format incorrect.",
@@ -82,6 +86,7 @@ const mapDispatchToProps = dispatch => ({
   addConference: (word) => {
     dispatch(mixConferencesAction(word));
   },
+  changePage: page => dispatch(changePageAction('smoothie'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MixeurComponent);
