@@ -9,7 +9,7 @@ import {
   // orderConferencesV2,
   reorderConferencesV2,
 } from '../../lib/dataFilter.lib';
-import { writeCustomSmoothie, readStoreByKey } from '../../lib/database';
+import { writeCustomSmoothie } from '../../lib/database';
 
 const initialState = {
   dayOne: getConferencesStore().dayOne || {},
@@ -23,6 +23,7 @@ export default (state = initialState, payload) => {
         ...state,
         dayOne: payload.data.dayOne,
         dayTwo: payload.data.dayTwo,
+        page: 'smoothie'
       };
 
     case REMOVE_CONFERENCES:
@@ -51,14 +52,6 @@ export default (state = initialState, payload) => {
 
       return newSate;
     }
-
-    // case 'RESTORE_CONFERENCE': {
-    //   const {smoothie} = await readStoreByKey(getKeyStore());
-    //
-    //   console.log(smoothie)
-    //
-    //   return { ...state, smoothie: smoothie };
-    // }
 
     default:
       return state;

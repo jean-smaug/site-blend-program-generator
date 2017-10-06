@@ -4,16 +4,15 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import 'bulma/css/bulma.css';
 import './index.css';
 import FormContainer from './blender/blender.component';
 import SmoothieContainer from './smoothie/smoothie.component';
-import { removeConferences, restoreConferences } from './smoothie/smoothie.action';
+import changePageAction from './app.action';
 import { getKeyStore } from '../lib/localStorage.lib';
 
 
-export const App = ({ smoothie, removeConferencesFromState, restoreConferencesInState }: { smoothie: Object, restoreConferencesInState: () => void, removeConferencesFromState: () => void }) => (
+export const App = ({page, changePage }: { page: String, changePage: () => void }) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">
@@ -24,16 +23,16 @@ export const App = ({ smoothie, removeConferencesFromState, restoreConferencesIn
           alt="BlendWebMix 2017"
         />
       </a>
-      {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ?
-        <a className="button is-danger is-outlined remix" role="presentation" onClick={() => removeConferencesFromState()}>Remix</a> : null}
+      {page === 'smoothie' ?
+        <a className="button is-danger is-outlined remix" role="presentation" onClick={() => changePage('blender')}>Remix</a> : null}
 
-      {getKeyStore() !== null && _.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ?
-        <a className="button is-warning is-outlined remix" role="presentation" onClick={() => restoreConferencesInState()}>Mon Smoothie</a> : null}
+      {getKeyStore() !== null && page === 'blender' ?
+        <a className="button is-warning is-outlined remix" role="presentation" onClick={() => changePage('smoothie')}>Mon Smoothie</a> : null}
     </div>
 
     <div className="columns">
       <div className="column  is-12">
-        {_.isEmpty(smoothie.dayOne) && _.isEmpty(smoothie.dayTwo) ? (
+        {page === 'blender' ? (
           <div>
             <div className="column is-6 is-offset-3">
               <img src="https://img11.hostingpics.net/pics/268136header.png" alt="header" />
@@ -43,19 +42,16 @@ export const App = ({ smoothie, removeConferencesFromState, restoreConferencesIn
         ) : null}
       </div>
     </div>
-    {!_.isEmpty(smoothie.dayOne) && !_.isEmpty(smoothie.dayTwo) ? <SmoothieContainer /> : null}
+    {page === 'smoothie' ? <SmoothieContainer /> : null}
   </div>
 );
 
-const mapStateToProps = ({ smoothie }) => ({
-  smoothie,
+const mapStateToProps = ({ page }) => ({
+  page,
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeConferencesFromState: () => {
-    dispatch(removeConferences());
-  },
-  restoreConferencesInState: () => { dispatch(restoreConferences()); },
+  changePage: (page) => { dispatch(changePageAction(page)) }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
