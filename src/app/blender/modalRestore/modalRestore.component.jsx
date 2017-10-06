@@ -9,6 +9,7 @@ import { readStoreByKey, readStoreByEmail } from '../../../lib/database';
 import { mixConferencesAction } from '../../smoothie/smoothie.action';
 import { Conferences } from '../../smoothie/smoothie.type';
 import { restoreAllForm } from '../blender.action';
+import changePageAction from '../../app.action';
 
 export class ModalRestoreComponent extends Component {
   constructor() {
@@ -73,6 +74,7 @@ export class ModalRestoreComponent extends Component {
     this.props.addConference({ ...userData.smoothie });
 
     this.props.closeModal();
+    this.props.changePage('smoothie');
   };
 
   formatDay = (day) => {
@@ -156,6 +158,9 @@ const mapDispatchToProps = dispatch => ({
   },
   restoreAllForm: (blender) => {
     dispatch(restoreAllForm(blender));
+  },
+  changePage: (page) => {
+    dispatch(changePageAction(page));
   },
 });
 
