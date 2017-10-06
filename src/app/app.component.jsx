@@ -12,7 +12,7 @@ import changePageAction from './app.action';
 import { getKeyStore } from '../lib/localStorage.lib';
 
 
-export const App = ({page, changePage }: { page: String, changePage: () => void }) => (
+export const App = ({page: {page}, changePage }: { page: String, changePage: () => void }) => (
   <div className="App">
     <div className="header">
       <a href="http://www.blendwebmix.com/">

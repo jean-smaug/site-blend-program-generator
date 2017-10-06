@@ -23,7 +23,6 @@ export default (state = initialState, payload) => {
         ...state,
         dayOne: payload.data.dayOne,
         dayTwo: payload.data.dayTwo,
-        page: 'smoothie'
       };
 
     case REMOVE_CONFERENCES:
