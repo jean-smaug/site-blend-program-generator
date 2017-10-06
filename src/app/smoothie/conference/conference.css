@@ -179,6 +179,14 @@
 }
 
 .switch-btn{
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  color: white;
+  font-size: 1em;
+}
+
+.switch-btn :hover{
  color: white;
   font-size: 0.7em;
 }
