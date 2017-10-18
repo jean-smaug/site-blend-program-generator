@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import randomString from 'randomstring';
-
+import { getKeyStore } from './localStorage.lib';
 import { db } from '../firebase';
 
 const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
@@ -10,7 +10,7 @@ const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
  * @param {*} state
  */
 export const writeStore = async (state) => {
-  const userKey = randomString.generate({
+  const userKey = getKeyStore() ? getKeyStore() : randomString.generate({
     length: 4,
     capitalization: 'uppercase',
   });
