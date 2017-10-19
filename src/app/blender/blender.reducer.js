@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const initialState = {
   keywords: [],
-  domains: [],
+  domains: [{ domain: 'societe', level: 'beginner' }],
   objectifs: [],
   informations: { firstname: '', lastname: '', email: '', isValidEmail: true },
 };

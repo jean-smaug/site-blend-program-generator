@@ -26,7 +26,6 @@ export const writeStore = async (state) => {
   return userKey;
 };
 
-
 /**
 * Write smoothie modification into firebase
 */

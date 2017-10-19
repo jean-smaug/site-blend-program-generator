@@ -493,16 +493,20 @@ table {
   margin-bottom: 15px;
 }
 
-.Tech{
+.tech{
  color: #e5421c;
 }
 
-.Webmarketing{
+.market{
   color: #00a3df;
 }
 
-.Design {
+.design {
   color: #EDCB00;
+}
+
+.societe {
+  color: #AECA27;
 }
 
 .div-checkbox {

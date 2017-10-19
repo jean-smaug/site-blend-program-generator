@@ -36,9 +36,7 @@ export const filterByLevelAndDomain = (conferences: Conferences, filters: Filter
     let keepConference = false;
     _.map(filters, (filter) => {
       if (
-        (conference.domain === filter.domain ||
-          conference.domain === 'société' ||
-          conference.domain === 'societe') &&
+        conference.domain === filter.domain &&
         (filter.level === conference.level || conference.level === '')
       ) {
         keepConference = true;
