@@ -80,8 +80,8 @@ export class CheckboxDomainComponent extends Component {
   render() {
     return (
       <div className="div-checkbox">
-        <img src={`/blender/img/domains/${this.props.item.libelle}.PNG`} alt={this.props.item.libelle} />
-        <h1 className={`titre-domaine ${this.props.item.libelle}`}>
+        <img style={{ height: '77px' }} src={`/blender/img/domains/${this.props.item.id}.png`} alt={this.props.item.libelle} />
+        <h1 className={`titre-domaine ${this.props.item.id}`}>
           {this.props.item.libelle}
         </h1>
         <div>

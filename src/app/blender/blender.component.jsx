@@ -71,7 +71,7 @@ class Blender extends React.Component {
             <hr />
             <div className="columns">
               {_.map(domains, item =>
-                (<div className="column is-4">
+                (<div className="column is-3">
                   <CheckboxDomain item={item} key={item.id} />
                 </div>),
               )}
@@ -161,7 +161,7 @@ class Blender extends React.Component {
           <div className="column is-12">
             <div className="columns">
               <div className="column is-6 is-offset-3 accueil" >
-                <h1>Laissez-nous vous concoctez un BlendWebMix sur mesure...</h1>
+                <h1>Laissez-nous vous concocter un BlendWebMix sur mesure...</h1>
               </div>
             </div>
             <div className="columns">

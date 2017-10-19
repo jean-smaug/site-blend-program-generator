@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import randomString from 'randomstring';
-
+import { getKeyStore } from './localStorage.lib';
 import { db } from '../firebase';
 
 const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
@@ -10,7 +10,7 @@ const dbRef = (suffix = '') => db.ref(`2017${suffix}`);
  * @param {*} state
  */
 export const writeStore = async (state) => {
-  const userKey = randomString.generate({
+  const userKey = getKeyStore() ? getKeyStore() : randomString.generate({
     length: 4,
     capitalization: 'uppercase',
   });
@@ -26,7 +26,6 @@ export const writeStore = async (state) => {
   return userKey;
 };
 
-
 /**
 * Write smoothie modification into firebase
 */
@@ -41,6 +40,7 @@ export const readStoreByKey = async id => (await dbRef(`/users/${id}`).once('val
 export const readStoreByEmail = async (email) => {
   const users = (await dbRef('/users').once('value')).val();
   return _.filter(users, user =>
+    user.blender !== undefined &&
     user.blender.informations !== undefined &&
     user.blender.informations.email === email)[0];
 };

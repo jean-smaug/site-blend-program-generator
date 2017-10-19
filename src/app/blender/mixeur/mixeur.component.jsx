@@ -29,13 +29,7 @@ export class MixeurComponent extends Component {
         filterConferences(_.shuffle(conferences), form.domains, form.keywords),
       );
 
-      const keyStore = getKeyStore();
-
-      if (keyStore !== null) {
-        writeCustomSmoothie(keyStore, orderedConferences);
-      } else {
-        setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
-      }
+      setKeyStore(await writeStore({ smoothie: orderedConferences, blender: form }));
       if (isStore('isAlreadyShow')) remove('isAlreadyShow');
       addConference(orderedConferences);
       setConferencesStore({
